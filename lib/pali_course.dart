@@ -25,6 +25,7 @@ export 'data/lessons/lesson_19_data.dart';
 export 'data/lessons/lesson_20_data.dart';
 export 'data/lessons/lesson_21_data.dart';
 export 'data/lessons/lesson_22_data.dart';
+export 'data/lessons/lesson_23_data.dart';
 export 'data/lessons/lesson_24_data.dart';
 export 'data/lessons/lesson_25_data.dart';
 export 'data/lessons/lesson_26_data.dart';
