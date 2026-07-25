@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:palineti/data/lessons/lesson_11_data.dart';
 import 'package:palineti/pali_course.dart';
+
 import 'lesson_detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -137,10 +137,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Text(
                       'Nārada Mahāthera',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.grey[700],
-                      ),
+                      style: TextStyle(fontSize: 12, color: Colors.grey[700]),
                     ),
                   ],
                 ),
@@ -177,11 +174,11 @@ class HomeScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         onTap: hasData
             ? () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => LessonDetailScreen(lesson: lesson),
-                  ),
-                )
+                context,
+                MaterialPageRoute(
+                  builder: (_) => LessonDetailScreen(lesson: lesson),
+                ),
+              )
             : null,
         child: Padding(
           padding: const EdgeInsets.all(16),
@@ -239,9 +236,7 @@ class HomeScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: AppColors.paliSaffron.withOpacity(0.2),
                               borderRadius: BorderRadius.circular(4),
-                              border: Border.all(
-                                color: AppColors.paliSaffron,
-                              ),
+                              border: Border.all(color: AppColors.paliSaffron),
                             ),
                             child: const Text(
                               'DATA READY',
@@ -265,18 +260,12 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Text(
                       lesson.titleEn,
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.grey[600],
-                      ),
+                      style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       lesson.description,
-                      style: TextStyle(
-                        fontSize: 11,
-                        color: Colors.grey[500],
-                      ),
+                      style: TextStyle(fontSize: 11, color: Colors.grey[500]),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -324,10 +313,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Text(
                   'Coming soon — data structure ready',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey[600],
-                  ),
+                  style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                 ),
               ],
             ),
@@ -337,3 +323,53 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+LessonMeta getLesson21Meta() => const LessonMeta(
+  id: 'theme_21_avyaya_upasagga',
+  lessonNumber: 21,
+  titleVi: 'Bất Biến Từ — 20 Tiếp Đầu Ngữ',
+  titleEn: 'Indeclinables — 20 Prefixes (Upasagga)',
+  iconEmoji: '🔤',
+  colorValue: 0xFF2E8B57,
+  description: 'Học 20 tiền tố Pāḷi và quy tắc nhân đôi, biến đổi âm',
+);
+
+LessonMeta getLesson22Meta() => const LessonMeta(
+  id: 'theme_22_taddhita',
+  lessonNumber: 22,
+  titleVi: 'Cách Thành Lập Danh Từ — Hậu tố',
+  titleEn: 'Nominal Derivatives (Taddhita)',
+  iconEmoji: '➕',
+  colorValue: 0xFF8A2BE2,
+  description: 'Học 11 hậu tố Taddhita và quy tắc Vuddhi',
+);
+
+LessonMeta getLesson24Meta() => const LessonMeta(
+  id: 'theme_24_sandhi',
+  lessonNumber: 24,
+  titleVi: 'Luật Hài Âm (Sandhi)',
+  titleEn: 'Rules of Combination (Sandhi)',
+  iconEmoji: '🧩',
+  colorValue: 0xFFFF4500,
+  description: 'Học 24 quy tắc Sandhi: Sara, Vyañjana, Niggahita',
+);
+
+LessonMeta getLesson25Meta() => const LessonMeta(
+  id: 'theme_25_exercise_a',
+  lessonNumber: 25,
+  titleVi: 'Thực Hành Dịch Thuật (A)',
+  titleEn: 'Translation Practice (A)',
+  iconEmoji: '📝',
+  colorValue: 0xFF20B2AA,
+  description: 'Luyện tập dịch các câu Pāḷi phức hợp',
+);
+
+LessonMeta getLesson26Meta() => const LessonMeta(
+  id: 'theme_26_exercise_b',
+  lessonNumber: 26,
+  titleVi: 'Thực Hành Dịch Thuật (B)',
+  titleEn: 'Translation Practice (B)',
+  iconEmoji: '✒️',
+  colorValue: 0xFFDC143C,
+  description: 'Tổng ôn tập bài học cuối khóa',
+);
