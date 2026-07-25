@@ -1,6 +1,6 @@
 // packages/pali_course/example/lib/screens/phases/mind_game_screen.dart
 import 'package:flutter/material.dart';
-import 'package:pali_course/pali_course.dart';
+import 'package:palineti/pali_course.dart';
 
 class MindGameScreen extends StatefulWidget {
   final LessonPhase phase;

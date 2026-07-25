@@ -17,7 +17,7 @@
 
 // ============================ MODEL CLASSES ================================
 
-import 'package:pali_course/data/lessons/lesson_09_data.dart';
+import 'package:palineti/data/lessons/lesson_09_data.dart';
 
 enum PaliCase { nom, voc, acc, ins, dat, abl, gen, loc }
 

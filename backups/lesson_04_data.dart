@@ -7,7 +7,7 @@
 // Pattern: kLesson04Vocab + getLesson04Day1() + getLesson04Day2()
 // =============================================================================
 
-import 'package:pali_course/pali_course.dart';
+import 'package:palineti/pali_course.dart';
 
 // =============================================================================
 // PHẦN 1: DANH SÁCH TỪ VỰNG MỚI (PaliVocabModel)

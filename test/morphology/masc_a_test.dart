@@ -1,11 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
 
 // ✅ SỬA: package name đúng
-import 'package:pali_course/data/morphology/pali_enums.dart';
-import 'package:pali_course/data/morphology/paradigms/masc_a_paradigm.dart';
-import 'package:pali_course/data/morphology/pali_paradigm_engine.dart';
-import 'package:pali_course/data/models/pali_vocab_model.dart';
-import 'package:pali_course/data/lessons/lesson_01_data.dart';
+import 'package:palineti/data/morphology/pali_enums.dart';
+import 'package:palineti/data/morphology/paradigms/masc_a_paradigm.dart';
+import 'package:palineti/data/morphology/pali_paradigm_engine.dart';
+import 'package:palineti/data/models/pali_vocab_model.dart';
+import 'package:palineti/data/lessons/lesson_01_data.dart';
 
 // Toàn bộ test body giữ nguyên — không sửa gì khác
 void main() {

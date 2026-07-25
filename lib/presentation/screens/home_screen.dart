@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pali_course/data/lessons/lesson_11_data.dart';
-import 'package:pali_course/pali_course.dart';
+import 'package:palineti/data/lessons/lesson_11_data.dart';
+import 'package:palineti/pali_course.dart';
 import 'lesson_detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {

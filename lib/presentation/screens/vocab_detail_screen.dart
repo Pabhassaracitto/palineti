@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pali_course/pali_course.dart';
+import 'package:palineti/pali_course.dart';
 
 class VocabDetailScreen extends StatelessWidget {
   final PaliVocabModel vocab;

@@ -1,6 +1,6 @@
 // packages/pali_course/test/pali_course_test.dart
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pali_course/pali_course.dart';
+import 'package:palineti/pali_course.dart';
 
 void main() {
   test('pali_course barrel export works', () {
