@@ -15,6 +15,11 @@ class HomeScreen extends StatelessWidget {
     getLesson12Meta(),
     getLesson16Meta(),
     getLesson20Meta(),
+    getLesson21Meta(),
+    getLesson22Meta(),
+    getLesson24Meta(),
+    getLesson25Meta(),
+    getLesson26Meta(),
     // Lesson 1 - currently doesn't have getLesson01Meta in pali_course.dart so we keep the hardcoded meta
     const LessonMeta(
       id: 'theme_01_masc_a_nom_acc',
