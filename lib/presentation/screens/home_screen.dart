@@ -96,9 +96,22 @@ class HomeScreen extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Text(
-                '🙏',
-                style: TextStyle(fontSize: 32),
+              // Logo NGUYÊN BẢN (không chỉnh sửa) — dùng thẳng assets/branding
+              Container(
+                width: 64,
+                height: 64,
+                decoration: BoxDecoration(
+                  color: AppColors.paliBg,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: AppColors.paliGold.withOpacity(0.5),
+                  ),
+                ),
+                padding: const EdgeInsets.all(4),
+                child: Image.asset(
+                  'assets/branding/palineti_mark.png',
+                  fit: BoxFit.contain,
+                ),
               ),
               const SizedBox(width: 12),
               Expanded(
@@ -106,9 +119,18 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
+                      'PALINETI',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 3,
+                        color: AppColors.paliInk,
+                      ),
+                    ),
+                    const Text(
                       'An Elementary Pāḷi Course',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 13,
                         fontWeight: FontWeight.bold,
                         color: AppColors.paliInk,
                       ),
@@ -116,7 +138,7 @@ class HomeScreen extends StatelessWidget {
                     Text(
                       'Nārada Mahāthera',
                       style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 12,
                         color: Colors.grey[700],
                       ),
                     ),
