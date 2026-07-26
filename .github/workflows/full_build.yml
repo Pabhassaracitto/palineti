@@ -145,9 +145,10 @@ jobs:
       - name: Install Pods
         run: |
           cd ios
-          pod init || true
-          pod repo update
-          pod install --repo-update
+          # Xóa các tệp cũ để đảm bảo sạch sẽ
+          rm -rf Podfile Podfile.lock Pods
+          pod init
+          pod install
 
       - name: Build iOS (no codesign)
         # Sử dụng --no-pub vì chúng ta đã get dependencies và install pods ở bước trên
