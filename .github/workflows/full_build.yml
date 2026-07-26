@@ -145,6 +145,7 @@ jobs:
       - name: Install Pods
         run: |
           cd ios
+          pod init || true
           pod repo update
           pod install
 
