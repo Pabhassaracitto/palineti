@@ -147,7 +147,7 @@ jobs:
           cd ios
           pod init || true
           pod repo update
-          pod install
+          pod install --repo-update
 
       - name: Build iOS (no codesign)
         # Sử dụng --no-pub vì chúng ta đã get dependencies và install pods ở bước trên
