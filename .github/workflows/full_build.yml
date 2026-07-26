@@ -143,12 +143,11 @@ jobs:
         run: dart run flutter_launcher_icons || true
 
       - name: Install Pods
-        run: |
-          cd ios
-          # Xóa các tệp cũ để đảm bảo sạch sẽ
-          rm -rf Podfile Podfile.lock Pods
-          pod init
-          pod install
+       run: |
+         cd ios
+         # Xóa các tệp cũ để đảm bảo sạch sẽ
+         rm -rf Podfile Podfile.lock Pods
+         pod install
 
       - name: Build iOS (no codesign)
         # Sử dụng --no-pub vì chúng ta đã get dependencies và install pods ở bước trên
