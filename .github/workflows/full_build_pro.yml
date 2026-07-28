@@ -1,4 +1,4 @@
-name: * Flutter Full Build Pro - Android, iOS, Windows, Linux, Web (v0.1.5 with version params)
+name: "* Flutter Full Build Pro - Android, iOS, Windows, Linux, Web (v0.1.5 with version params)"
 
 on:
   push:
