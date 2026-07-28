@@ -1,0 +1,160 @@
+name: Android Build with Version Params
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Nhập version release (vd: 1.0.0, 1.0.0-rc1). Để trống = build thường không release'
+        required: false
+        default: ''
+        type: string
+      force_package:
+        description: 'Tick để force đóng gói/upload artifact kể cả khi không tạo Release'
+        required: false
+        default: false
+        type: boolean
+      build_profile:
+        description: 'Build profile'
+        required: false
+        default: 'release'
+        type: choice
+        options:
+          - release
+          - debug
+
+permissions:
+  contents: write
+
+jobs:
+  # Job 1: Tính toán điều kiện phân nhánh
+  prepare:
+    name: Prepare conditions
+    runs-on: ubuntu-latest
+    outputs:
+      is_stable_release: ${{ steps.check.outputs.is_stable_release }}
+      should_package: ${{ steps.check.outputs.should_package }}
+      version: ${{ steps.check.outputs.version }}
+    steps:
+      - id: check
+        run: |
+          VERSION="${{ inputs.version }}"
+          FORCE="${{ inputs.force_package }}"
+
+          echo "Input version='$VERSION'"
+          echo "Input force_package='$FORCE'"
+
+          # is_stable_release: true khi version có giá trị VÀ không chứa "-"
+          IS_STABLE="false"
+          if [[ -n "$VERSION" && "$VERSION" != *"-"* ]]; then
+            IS_STABLE="true"
+          fi
+
+          # should_package: true khi is_stable_release=true HOẶC force_package=true
+          SHOULD_PACKAGE="false"
+          if [[ "$IS_STABLE" == "true" || "$FORCE" == "true" ]]; then
+            SHOULD_PACKAGE="true"
+          fi
+
+          echo "is_stable_release=$IS_STABLE"
+          echo "should_package=$SHOULD_PACKAGE"
+
+          echo "is_stable_release=$IS_STABLE" >> $GITHUB_OUTPUT
+          echo "should_package=$SHOULD_PACKAGE" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Summary
+        run: |
+          echo "### Conditions" >> $GITHUB_STEP_SUMMARY
+          echo "- version: \`${{ inputs.version }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- force_package: \`${{ inputs.force_package }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- is_stable_release: \`${{ steps.check.outputs.is_stable_release }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- should_package: \`${{ steps.check.outputs.should_package }}\`" >> $GITHUB_STEP_SUMMARY
+
+  build-android:
+    name: Build Android
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Create asset dirs
+        run: mkdir -p assets/animations assets/audio assets/data assets/branding
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Generate Launcher Icons
+        run: dart run flutter_launcher_icons || true
+
+      - name: Build APK
+        run: |
+          VERSION_NAME="${{ needs.prepare.outputs.version }}"
+          if [ -z "$VERSION_NAME" ]; then
+            VERSION_NAME="dev-${{ github.run_number }}"
+          fi
+          echo "Building with version name: $VERSION_NAME"
+          # Dùng --build-name nếu bạn muốn override version trong pubspec.yaml
+          flutter build apk --release --target-platform android-arm64 --build-name=${VERSION_NAME} -v
+          mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/palineti-Android-ARM64-${VERSION_NAME}.apk
+          ls -lh build/app/outputs/flutter-apk/
+
+      # Step Build & Package Artifact: Chỉ chạy khi should_package == true
+      - name: Upload APK Artifact
+        if: ${{ needs.prepare.outputs.should_package == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk-${{ needs.prepare.outputs.version || 'dev' }}
+          path: build/app/outputs/flutter-apk/palineti-Android-ARM64-*.apk
+          if-no-files-found: error
+
+      - name: Build AppBundle
+        if: ${{ needs.prepare.outputs.should_package == 'true' }}
+        run: flutter build appbundle --release --build-name=${{ needs.prepare.outputs.version || '0.0.0-dev' }}
+
+      - name: Upload AppBundle Artifact
+        if: ${{ needs.prepare.outputs.should_package == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-aab-${{ needs.prepare.outputs.version || 'dev' }}
+          path: build/app/outputs/bundle/release/app-release.aab
+
+  create-release:
+    name: Create GitHub Release
+    needs: [prepare, build-android]
+    # Step Create GitHub Release: Chỉ chạy khi is_stable_release == true
+    if: ${{ needs.prepare.outputs.is_stable_release == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: List artifacts
+        run: ls -R artifacts
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ needs.prepare.outputs.version }}
+          name: Release v${{ needs.prepare.outputs.version }}
+          files: |
+            artifacts/android-apk-*/**/*.apk
+            artifacts/android-aab-*/**/*.aab
+          generate_release_notes: true
+          fail_on_unmatched_files: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
