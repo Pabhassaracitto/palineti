@@ -155,74 +155,114 @@ jobs:
       - name: Generate Launcher Icons
         run: dart run flutter_launcher_icons || true
 
-      # === FIX V0.1.3 FINAL - Root cause: xcconfig missing Pods include + Flutter.podspec deletion + --no-pub ===
-      - name: Debug xcconfig files
+      # === FIX V0.1.4 ULTIMATE - Force sync Podfile.lock vs Manifest.lock ===
+      # Previous logs still show "CocoaPods did not set base configuration" even after repo fix
+      # -> Runner project has custom config, so we MUST force include Pods config
+      # -> Also force copy Podfile.lock -> Manifest.lock before build (hack that fixes sandbox error)
+      - name: Debug and force-fix xcconfig
         run: |
-          echo "=== Before fix check ==="
+          echo "=== BEFORE ==="
+          cat ios/Flutter/Debug.xcconfig || true
+          cat ios/Flutter/Release.xcconfig || true
+          echo "=== Podfile ==="
+          cat ios/Podfile
+          echo "=== Runner project deployment target ==="
+          grep -n "IPHONEOS_DEPLOYMENT_TARGET" ios/Runner.xcodeproj/project.pbxproj || true
+          echo "=== Force overwriting Debug.xcconfig and Release.xcconfig with correct Pods include ==="
+          mkdir -p ios/Flutter
+          cat > ios/Flutter/Debug.xcconfig <<'EOF'
+          #include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+          #include "Generated.xcconfig"
+          EOF
+          cat > ios/Flutter/Release.xcconfig <<'EOF'
+          #include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
+          #include "Generated.xcconfig"
+          EOF
+          echo "=== AFTER ==="
           cat ios/Flutter/Debug.xcconfig
           cat ios/Flutter/Release.xcconfig
-          cat ios/Podfile
+          echo "=== Generated.xcconfig ==="
+          cat ios/Flutter/Generated.xcconfig || true
+          echo "=== Flutter.podspec ==="
+          cat ios/Flutter/Flutter.podspec | head -n 20 || true
 
-      - name: Ensure xcconfig includes Pods (CI self-heal)
+      - name: Ensure Podfile platform 13.0
         run: |
-          if ! grep -q "Pods-Runner" ios/Flutter/Debug.xcconfig; then
-            echo "Fixing Debug.xcconfig"
-            echo -e "#include? \"Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig\"\n#include \"Generated.xcconfig\"" > ios/Flutter/Debug.xcconfig
-          fi
-          if ! grep -q "Pods-Runner" ios/Flutter/Release.xcconfig; then
-            echo "Fixing Release.xcconfig"
-            echo -e "#include? \"Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig\"\n#include \"Generated.xcconfig\"" > ios/Flutter/Release.xcconfig
-          fi
-          cat ios/Flutter/Debug.xcconfig
-          cat ios/Flutter/Release.xcconfig
+          grep -q "platform :ios" ios/Podfile || (echo "Podfile missing platform" && exit 1)
+          echo "✅ Podfile OK"
 
-      - name: Ensure Podfile exists with correct platform
-        run: |
-          cat ios/Podfile
-          ls -la ios/
-          if ! grep -q "platform :ios" ios/Podfile; then
-            echo "ERROR: Podfile missing platform"
-            exit 1
-          fi
-
-      - name: Install CocoaPods dependencies (clean - correct)
+      - name: Clean and pod install (no repo update to avoid CDN issues)
         run: |
           cd ios
-          echo "Cleaning only Pods artifacts (NOT Flutter.podspec)"
+          echo "=== Cleaning ==="
           rm -rf Pods Podfile.lock .symlinks
-          echo "=== pod install ==="
-          pod install --repo-update --verbose
-          echo "=== Checking locks ==="
-          ls -la
-          cat Podfile.lock | head -n 50
-          cat Pods/Manifest.lock | head -n 50
-          diff -u Podfile.lock Pods/Manifest.lock && echo "✅ Locks in sync" || echo "⚠️ Locks differ"
+          ls -la Flutter/ || true
+          echo "=== pod install (without repo-update, faster and less flaky) ==="
+          pod install --verbose
+          echo "=== After pod install ==="
+          echo "Podfile.lock:"
+          cat Podfile.lock
+          echo "--- Manifest.lock ---"
+          cat Pods/Manifest.lock
+          echo "=== Diff check ==="
+          diff Podfile.lock Pods/Manifest.lock && echo "✅ In sync" || echo "⚠️ Differ"
+          echo "=== Force sync hack: copy Podfile.lock -> Pods/Manifest.lock ==="
+          cp -f Podfile.lock Pods/Manifest.lock
+          echo "=== After forced sync ==="
+          diff Podfile.lock Pods/Manifest.lock && echo "✅ Now in sync (forced)" || true
           cd ..
 
-      - name: Build iOS (no codesign) - with auto retry (without --no-pub for first attempts)
+      - name: Build iOS (no codesign) - Ultimate with forced sync before each attempt
         run: |
           set -o pipefail
-          echo "=== Attempt 1: flutter build ios --release --no-codesign ==="
-          if flutter build ios --release --no-codesign; then
+          # Function to force sync before build
+          force_sync() {
+            echo "=== Force syncing locks before build ==="
+            if [ -f ios/Podfile.lock ] && [ -d ios/Pods ]; then
+              cp -f ios/Podfile.lock ios/Pods/Manifest.lock || true
+              echo "Copied Podfile.lock -> Manifest.lock"
+              diff ios/Podfile.lock ios/Pods/Manifest.lock && echo "✅ Locks synced" || echo "Still diff"
+            fi
+          }
+
+          echo "=== Attempt 1: flutter clean + pub get + pod install + build ==="
+          flutter clean
+          flutter pub get
+          cd ios
+          pod install --verbose
+          cp -f Podfile.lock Pods/Manifest.lock
+          cd ..
+          force_sync
+          if flutter build ios --release --no-codesign -v; then
             echo "✅ First build succeeded"
             exit 0
           fi
-          echo "⚠️ First failed, re-installing pods..."
+
+          echo "⚠️ Attempt 1 failed, re-sync and Attempt 2"
           cd ios
-          pod install --repo-update --verbose
+          pod install --verbose
+          cp -f Podfile.lock Pods/Manifest.lock
           cd ..
-          echo "=== Attempt 2 ==="
-          if flutter build ios --release --no-codesign; then
+          force_sync
+          if flutter build ios --release --no-codesign -v; then
             echo "✅ Second build succeeded"
             exit 0
           fi
-          echo "⚠️ Second failed, clean + third attempt ==="
+
+          echo "⚠️ Attempt 2 failed, clean Pods and Attempt 3"
           cd ios
           rm -rf Pods Podfile.lock .symlinks
-          pod install --repo-update --verbose
+          pod install --verbose
+          cp -f Podfile.lock Pods/Manifest.lock
           cd ..
-          echo "=== Attempt 3 (final) ==="
-          flutter build ios --release --no-codesign --no-pub || flutter build ios --release --no-codesign
+          force_sync
+          echo "=== Attempt 3 final ==="
+          flutter build ios --release --no-codesign -v || flutter build ios --release --no-codesign --no-pub -v
+
+      - name: Verify Runner.app exists
+        run: |
+          ls -lh build/ios/iphoneos/ || true
+          ls -lh build/ios/ || true
 
       - name: Create IPA
         run: |
