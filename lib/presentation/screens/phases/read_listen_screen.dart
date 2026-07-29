@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
 
 class ReadListenScreen extends StatelessWidget {
@@ -13,6 +14,8 @@ class ReadListenScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return SafeArea(
         child: Column(
       children: [
@@ -59,7 +62,7 @@ class ReadListenScreen extends StatelessWidget {
               // FAB Vocab
               if (phase.fabVocab != null && phase.fabVocab!.isNotEmpty) ...[
                 _buildFabSection(
-                  '📖 Từ Vựng Quan Trọng',
+                  l10n.importantVocabulary,
                   phase.fabVocab!.map((item) => _buildVocabItem(item)).toList(),
                 ),
                 const SizedBox(height: 16),
@@ -68,7 +71,7 @@ class ReadListenScreen extends StatelessWidget {
               // FAB Phrases
               if (phase.fabPhrases != null && phase.fabPhrases!.isNotEmpty) ...[
                 _buildFabSection(
-                  '💡 Cấu Trúc Cần Nhớ',
+                  l10n.importantStructures,
                   phase.fabPhrases!
                       .map((item) => _buildPhraseItem(item))
                       .toList(),
@@ -235,15 +238,18 @@ class ReadListenScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
           ),
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Tiếp tục',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                AppLocalizations.of(context).continueAction,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              SizedBox(width: 8),
-              Icon(Icons.arrow_forward, size: 20),
+              const SizedBox(width: 8),
+              const Icon(Icons.arrow_forward, size: 20),
             ],
           ),
         ),

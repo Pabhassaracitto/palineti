@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:palineti/l10n/generated/app_localizations.dart';
 import '../../data/morphology/pali_enums.dart';
 import '../../data/morphology/pali_paradigm_engine.dart';
+import '../localization/pali_grammar_localizations.dart';
 import 'morph_visual_widget.dart';
 
 /// Bảng biến cách đầy đủ 8 hàng × 3 cột.
@@ -22,11 +24,13 @@ class DeclensionTableWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Header
-        _buildHeader(root),
+        _buildHeader(l10n, root),
         const SizedBox(height: 8),
         // Table
         Container(
@@ -36,23 +40,23 @@ class DeclensionTableWidget extends StatelessWidget {
           ),
           child: Column(
             children: [
-              _buildTableHeader(),
+              _buildTableHeader(l10n),
               const Divider(height: 1, color: Color(0xFFDAA520)),
-              ...PaliCase.values.map((c) => _buildCaseRow(c)),
+              ...PaliCase.values.map((c) => _buildCaseRow(l10n, c)),
             ],
           ),
         ),
         const SizedBox(height: 8),
-        _buildLegend(),
+        _buildLegend(l10n),
       ],
     );
   }
 
-  Widget _buildHeader(String root) {
+  Widget _buildHeader(AppLocalizations l10n, String root) {
     return Row(
       children: [
         Text(
-          'Bảng biến cách: ',
+          '${l10n.declensionTableTitle} ',
           style: const TextStyle(
             fontSize: 14,
             color: Color(0xFF5D4037),
@@ -71,15 +75,15 @@ class DeclensionTableWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildTableHeader() {
+  Widget _buildTableHeader(AppLocalizations l10n) {
     return Container(
       color: const Color(0xFFF5E6C8),
       padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
       child: Row(
         children: [
-          _headerCell('Biến cách', flex: 2),
-          _headerCell('Số ít', flex: 3),
-          _headerCell('Số nhiều', flex: 3),
+          _headerCell(l10n.declensionCase, flex: 2),
+          _headerCell(l10n.singular, flex: 3),
+          _headerCell(l10n.plural, flex: 3),
         ],
       ),
     );
@@ -100,7 +104,7 @@ class DeclensionTableWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildCaseRow(PaliCase c) {
+  Widget _buildCaseRow(AppLocalizations l10n, PaliCase c) {
     final isHighlighted = highlightedCases.contains(c);
     final sgKey = '${c.name}_${PaliNumber.singular.name}';
     final plKey = '${c.name}_${PaliNumber.plural.name}';
@@ -128,7 +132,7 @@ class DeclensionTableWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      c.abbreviationVI,
+                      c.localizedAbbreviation(l10n),
                       style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
@@ -138,7 +142,7 @@ class DeclensionTableWidget extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      c.fullNameVI,
+                      c.localizedName(l10n),
                       style: const TextStyle(
                         fontSize: 9,
                         color: Color(0xFF8D6E63),
@@ -176,22 +180,22 @@ class DeclensionTableWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildLegend() {
+  Widget _buildLegend(AppLocalizations l10n) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(width: 12, height: 12, color: const Color(0xFF8B0000)),
         const SizedBox(width: 4),
-        const Text('Chưa thuộc', style: TextStyle(fontSize: 11)),
+        Text(l10n.notMastered, style: const TextStyle(fontSize: 11)),
         const SizedBox(width: 12),
         Container(width: 12, height: 12, color: const Color(0xFFE65100)),
         const SizedBox(width: 4),
-        const Text('Đã thuộc', style: TextStyle(fontSize: 11)),
+        Text(l10n.mastered, style: const TextStyle(fontSize: 11)),
         if (highlightedCases.isNotEmpty) ...[
           const SizedBox(width: 12),
           const Icon(Icons.star, size: 12, color: Color(0xFFDAA520)),
           const SizedBox(width: 4),
-          const Text('Bài đang học', style: TextStyle(fontSize: 11)),
+          Text(l10n.currentLesson, style: const TextStyle(fontSize: 11)),
         ],
       ],
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
 
 import 'phase_navigator_screen.dart';
@@ -70,6 +71,7 @@ class DayNavigatorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final day1 = _getDay(lesson.lessonNumber, 1);
     final day2 = _getDay(lesson.lessonNumber, 2);
+    final l10n = AppLocalizations.of(context);
 
     return Scaffold(
       backgroundColor: AppColors.paliBg,
@@ -77,7 +79,7 @@ class DayNavigatorScreen extends StatelessWidget {
         backgroundColor: Color(lesson.colorValue),
         foregroundColor: Colors.white,
         title: Text(
-          'Lesson ${lesson.lessonNumber} — Chọn Ngày Học',
+          l10n.selectStudyDayTitle(lesson.lessonNumber),
           style: const TextStyle(fontSize: 16),
         ),
       ),
@@ -93,6 +95,7 @@ class DayNavigatorScreen extends StatelessWidget {
   }
 
   Widget _buildDayCard(BuildContext context, LessonDay day, int dayNum) {
+    final l10n = AppLocalizations.of(context);
     final color = dayNum == 1 ? AppColors.paliGold : AppColors.paliSaffron;
 
     return Card(
@@ -136,7 +139,7 @@ class DayNavigatorScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      'Day $dayNum',
+                      l10n.dayLabel(dayNum),
                       style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
@@ -181,7 +184,7 @@ class DayNavigatorScreen extends StatelessWidget {
                 spacing: 6,
                 runSpacing: 6,
                 children: day.phases.map((phase) {
-                  return _buildPhaseChip(phase);
+                  return _buildPhaseChip(context, phase);
                 }).toList(),
               ),
               const SizedBox(height: 12),
@@ -192,7 +195,7 @@ class DayNavigatorScreen extends StatelessWidget {
                   Icon(Icons.play_circle_outline, color: color, size: 20),
                   const SizedBox(width: 6),
                   Text(
-                    'Bắt đầu học →',
+                    l10n.startStudying,
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
@@ -208,8 +211,8 @@ class DayNavigatorScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPhaseChip(LessonPhase phase) {
-    final info = _getPhaseInfo(phase.phaseTypeStr);
+  Widget _buildPhaseChip(BuildContext context, LessonPhase phase) {
+    final info = _getPhaseInfo(context, phase.phaseTypeStr);
     final icon = info[0] as IconData;
     final label = info[1] as String;
     final color = info[2] as Color;
@@ -239,14 +242,15 @@ class DayNavigatorScreen extends StatelessWidget {
     );
   }
 
-  List<dynamic> _getPhaseInfo(String type) {
+  List<dynamic> _getPhaseInfo(BuildContext context, String type) {
+    final l10n = AppLocalizations.of(context);
     switch (type) {
       case 'read_listen':
-        return [Icons.menu_book, 'Đọc', AppColors.paliJade];
+        return [Icons.menu_book, l10n.readPhase, AppColors.paliJade];
       case 'mind_game':
-        return [Icons.psychology, 'Mind Game', AppColors.paliSaffron];
+        return [Icons.psychology, l10n.mindGamePhase, AppColors.paliSaffron];
       case 'listening_quiz':
-        return [Icons.quiz, 'Quiz', AppColors.paliMaroon];
+        return [Icons.quiz, l10n.quizPhase, AppColors.paliMaroon];
       default:
         return [Icons.circle, type, Colors.grey];
     }

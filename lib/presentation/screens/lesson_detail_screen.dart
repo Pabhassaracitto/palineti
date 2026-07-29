@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
 import 'day_navigator_screen.dart';
 
@@ -9,13 +10,15 @@ class LessonDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Scaffold(
       backgroundColor: AppColors.paliBg,
       appBar: AppBar(
         backgroundColor: Color(lesson.colorValue),
         foregroundColor: Colors.white,
         title: Text(
-          'Lesson ${lesson.lessonNumber}',
+          l10n.lessonLabel(lesson.lessonNumber),
           style: const TextStyle(fontSize: 16),
         ),
       ),
@@ -23,7 +26,7 @@ class LessonDetailScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           // Header
-          _buildLessonHeader(),
+          _buildLessonHeader(context),
           const SizedBox(height: 24),
           // CTA button to start lesson
           const SizedBox(height: 24),
@@ -45,9 +48,9 @@ class LessonDetailScreen extends StatelessWidget {
                 ),
               ),
               icon: const Icon(Icons.play_circle_fill),
-              label: const Text(
-                'Bắt đầu bài học',
-                style: TextStyle(
+              label: Text(
+                l10n.startLesson,
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
@@ -78,9 +81,9 @@ class LessonDetailScreen extends StatelessWidget {
                   children: [
                     Icon(Icons.menu_book, color: Color(lesson.colorValue)),
                     const SizedBox(width: 8),
-                    const Text(
-                      'Từ vựng & Ngữ pháp',
-                      style: TextStyle(
+                    Text(
+                      l10n.vocabAndGrammar,
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         color: AppColors.paliInk,
@@ -90,7 +93,7 @@ class LessonDetailScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Nhấn Bắt đầu bài học để xem chi tiết từ vựng và ngữ pháp của bài này.',
+                  l10n.lessonDetailHint,
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.grey[600],
@@ -104,7 +107,8 @@ class LessonDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildLessonHeader() {
+  Widget _buildLessonHeader(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -116,7 +120,7 @@ class LessonDetailScreen extends StatelessWidget {
             border: Border.all(color: Color(lesson.colorValue)),
           ),
           child: Text(
-            'LESSON ${lesson.lessonNumber}',
+            l10n.lessonUppercase(lesson.lessonNumber),
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.bold,

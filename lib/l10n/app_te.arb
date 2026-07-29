@@ -1,0 +1,179 @@
+{
+  "@@locale": "te",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "Pāḷi కోర్సు — {count} పాఠాలు",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "ప్రాథమిక Pāḷi కోర్సు",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "ఫ్రేమ్‌వర్క్: VipLang Mind Game పద్ధతి",
+  "lessonLabel": "పాఠం {number}",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "పాఠం {number}",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "డేటా సిద్ధం",
+  "otherLessons": "ఇతర పాఠాలు",
+  "comingSoonDataReady": "త్వరలో — డేటా నిర్మాణం సిద్ధం",
+  "startLesson": "పాఠం ప్రారంభించండి",
+  "vocabAndGrammar": "పదసంపద & వ్యాకరణం",
+  "lessonDetailHint": "ఈ పాఠంలోని పదసంపద, వ్యాకరణ వివరాలను చూడటానికి పాఠం ప్రారంభించండి నొక్కండి.",
+  "selectStudyDayTitle": "పాఠం {number} — అధ్యయన దినం ఎంచుకోండి",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "రోజు {number}",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "అధ్యయనం ప్రారంభించండి",
+  "readPhase": "చదవండి",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "క్విజ్",
+  "phaseProgress": "దశ {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "Unknown phase type: {type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 పూర్తయింది!",
+  "completionMessage": "మీరు {title} పూర్తి చేశారు",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "వెనక్కి",
+  "previous": "మునుపటి",
+  "continueAction": "కొనసాగించండి",
+  "noContent": "కంటెంట్ లేదు",
+  "noQuestions": "ప్రశ్నలు లేవు",
+  "mindGameTitle": "మైండ్ గేమ్",
+  "mindGameInstruction": "💡 సూచన భాగాన్ని నొక్కండి → Pāḷi ని గట్టిగా చెప్పండి → సమాధానం చూపడానికి మళ్లీ నొక్కండి",
+  "revealAll": "అన్నీ చూపండి",
+  "importantVocabulary": "📖 ముఖ్య పదసంపద",
+  "importantStructures": "💡 కీలక నిర్మాణాలు",
+  "quizResultsTitle": "📊 ఫలితాలు",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "అద్భుతం! 🎉",
+  "goodFeedback": "బాగా చేశారు! 👍",
+  "tryHarderFeedback": "అభ్యాసం కొనసాగించండి! 💪",
+  "listeningQuizTitle": "వినికిడి క్విజ్",
+  "questionProgress": "ప్రశ్న {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "ప్రతిలిపి",
+  "correctAnswer": "సరైంది!",
+  "explanation": "వివరణ",
+  "answersAndExplanation": "📝 సమాధానాలు & వివరణ",
+  "viewResults": "ఫలితాలు చూడండి",
+  "nextQuestion": "తదుపరి ప్రశ్న",
+  "fullDeclensionTable": "📚 పూర్తి విభక్తి పట్టిక",
+  "examplesSection": "📖 ఉదాహరణలు",
+  "declensionTableTitle": "విభక్తి పట్టిక:",
+  "declensionCase": "విభక్తి",
+  "singular": "ఏకవచనం",
+  "plural": "బహువచనం",
+  "notMastered": "ఇంకా సాధించలేదు",
+  "mastered": "సాధించారు",
+  "currentLesson": "ప్రస్తుత పాఠం",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "sg",
+  "pluralAbbr": "pl",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

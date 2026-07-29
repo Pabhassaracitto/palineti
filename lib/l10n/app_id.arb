@@ -1,0 +1,179 @@
+{
+  "@@locale": "id",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "Kursus Pāḷi — {count} pelajaran",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "Kursus Pāḷi Dasar",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "Kerangka: Metode VipLang Mind Game",
+  "lessonLabel": "Pelajaran {number}",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "PELAJARAN {number}",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "DATA SIAP",
+  "otherLessons": "Pelajaran lain",
+  "comingSoonDataReady": "Segera hadir — struktur data siap",
+  "startLesson": "Mulai pelajaran",
+  "vocabAndGrammar": "Kosakata & Tata Bahasa",
+  "lessonDetailHint": "Ketuk Mulai pelajaran untuk melihat kosakata dan tata bahasa pelajaran ini.",
+  "selectStudyDayTitle": "Pelajaran {number} — Pilih Hari Belajar",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "Hari {number}",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "Mulai belajar",
+  "readPhase": "Baca",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "Kuis",
+  "phaseProgress": "Fase {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "Jenis fase tidak dikenal: {type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 Selesai!",
+  "completionMessage": "Anda telah menyelesaikan {title}",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "Kembali",
+  "previous": "Sebelumnya",
+  "continueAction": "Lanjutkan",
+  "noContent": "Tidak ada konten",
+  "noQuestions": "Tidak ada pertanyaan",
+  "mindGameTitle": "Mind Game",
+  "mindGameInstruction": "💡 Ketuk bagian petunjuk → Ucapkan Pāḷi dengan lantang → Ketuk lagi untuk menampilkan jawaban",
+  "revealAll": "Tampilkan semua",
+  "importantVocabulary": "📖 Kosakata Penting",
+  "importantStructures": "💡 Struktur Kunci",
+  "quizResultsTitle": "📊 Hasil",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "Luar biasa! 🎉",
+  "goodFeedback": "Bagus! 👍",
+  "tryHarderFeedback": "Terus berlatih! 💪",
+  "listeningQuizTitle": "Kuis Mendengarkan",
+  "questionProgress": "Pertanyaan {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "Transkrip",
+  "correctAnswer": "Benar!",
+  "explanation": "Penjelasan",
+  "answersAndExplanation": "📝 Jawaban & Penjelasan",
+  "viewResults": "Lihat hasil",
+  "nextQuestion": "Pertanyaan berikutnya",
+  "fullDeclensionTable": "📚 Tabel Deklinasi Lengkap",
+  "examplesSection": "📖 Contoh",
+  "declensionTableTitle": "Tabel deklinasi:",
+  "declensionCase": "Kasus",
+  "singular": "Tunggal",
+  "plural": "Jamak",
+  "notMastered": "Belum dikuasai",
+  "mastered": "Dikuasai",
+  "currentLesson": "Pelajaran saat ini",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "sg",
+  "pluralAbbr": "pl",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

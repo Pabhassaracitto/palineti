@@ -1,5 +1,6 @@
 // packages/pali_course/example/lib/screens/phases/quiz_screen.dart
 import 'package:flutter/material.dart';
+import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -65,17 +66,18 @@ class _QuizScreenState extends State<QuizScreen> {
       final question = widget.phase.questions![entry.key];
       return entry.value == question.correctIndex;
     }).length;
+    final l10n = AppLocalizations.of(context);
 
     showDialog(
       context: context,
       barrierDismissible: false,
       builder: (ctx) => AlertDialog(
-        title: const Text('📊 Kết Quả'),
+        title: Text(l10n.quizResultsTitle),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              '$correctCount/${widget.phase.questions!.length}',
+              l10n.scoreLabel(correctCount, widget.phase.questions!.length),
               style: const TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
@@ -85,10 +87,10 @@ class _QuizScreenState extends State<QuizScreen> {
             const SizedBox(height: 8),
             Text(
               correctCount == widget.phase.questions!.length
-                  ? 'Xuất sắc! 🎉'
+                  ? l10n.excellentFeedback
                   : correctCount >= widget.phase.questions!.length * 0.7
-                      ? 'Tốt lắm! 👍'
-                      : 'Cần cố gắng thêm! 💪',
+                      ? l10n.goodFeedback
+                      : l10n.tryHarderFeedback,
               style: const TextStyle(fontSize: 16),
             ),
           ],
@@ -99,7 +101,7 @@ class _QuizScreenState extends State<QuizScreen> {
               Navigator.pop(ctx);
               widget.onNext(); // Chuyển phase tiếp theo
             },
-            child: const Text('Tiếp tục'),
+            child: Text(l10n.continueAction),
           ),
         ],
       ),
@@ -109,8 +111,9 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     final questions = widget.phase.questions ?? [];
+    final l10n = AppLocalizations.of(context);
     if (questions.isEmpty) {
-      return const Center(child: Text('No questions'));
+      return Center(child: Text(l10n.noQuestions));
     }
 
     return SafeArea(
@@ -177,7 +180,7 @@ class _QuizScreenState extends State<QuizScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.phase.titleVi ?? 'Listening Quiz',
+                  widget.phase.titleVi ?? AppLocalizations.of(context).listeningQuizTitle,
                   style: const TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
@@ -185,7 +188,10 @@ class _QuizScreenState extends State<QuizScreen> {
                   ),
                 ),
                 Text(
-                  'Câu ${_currentQuestionIndex + 1}/${widget.phase.questions!.length}',
+                  AppLocalizations.of(context).questionProgress(
+                    _currentQuestionIndex + 1,
+                    widget.phase.questions!.length,
+                  ),
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.grey[600],
@@ -241,7 +247,7 @@ class _QuizScreenState extends State<QuizScreen> {
               Icon(Icons.hearing, size: 16, color: Colors.grey[600]),
               const SizedBox(width: 6),
               Text(
-                'Transcript',
+                AppLocalizations.of(context).transcript,
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
@@ -399,7 +405,9 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
               const SizedBox(width: 8),
               Text(
-                isCorrect ? 'Chính xác!' : 'Giải thích',
+                isCorrect
+                    ? AppLocalizations.of(context).correctAnswer
+                    : AppLocalizations.of(context).explanation,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -427,7 +435,7 @@ class _QuizScreenState extends State<QuizScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            '📝 Đáp Án & Giải Thích',
+            AppLocalizations.of(context).answersAndExplanation,
             style: const TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.bold,
@@ -472,7 +480,7 @@ class _QuizScreenState extends State<QuizScreen> {
             OutlinedButton.icon(
               onPressed: _previousQuestion,
               icon: const Icon(Icons.arrow_back, size: 18),
-              label: const Text('Trước'),
+              label: Text(AppLocalizations.of(context).previous),
               style: OutlinedButton.styleFrom(
                 foregroundColor: AppColors.paliMaroon,
               ),
@@ -490,7 +498,9 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
             ),
             child: Text(
-              _isLastQuestion ? 'Xem kết quả' : 'Câu tiếp',
+              _isLastQuestion
+                  ? AppLocalizations.of(context).viewResults
+                  : AppLocalizations.of(context).nextQuestion,
               style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
           ),

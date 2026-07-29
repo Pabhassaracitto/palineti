@@ -1,0 +1,179 @@
+{
+  "@@locale": "hi",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "Pāḷi पाठ्यक्रम — {count} पाठ",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "प्रारंभिक Pāḷi पाठ्यक्रम",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "ढाँचा: VipLang Mind Game विधि",
+  "lessonLabel": "पाठ {number}",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "पाठ {number}",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "डेटा तैयार",
+  "otherLessons": "अन्य पाठ",
+  "comingSoonDataReady": "जल्द आ रहा है — डेटा संरचना तैयार है",
+  "startLesson": "पाठ शुरू करें",
+  "vocabAndGrammar": "शब्दावली और व्याकरण",
+  "lessonDetailHint": "इस पाठ की शब्दावली और व्याकरण देखने के लिए पाठ शुरू करें पर टैप करें।",
+  "selectStudyDayTitle": "पाठ {number} — अध्ययन दिवस चुनें",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "दिन {number}",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "अध्ययन शुरू करें",
+  "readPhase": "पढ़ें",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "क्विज़",
+  "phaseProgress": "चरण {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "अज्ञात चरण प्रकार: {type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 पूर्ण हुआ!",
+  "completionMessage": "आपने {title} पूरा कर लिया है",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "वापस",
+  "previous": "पिछला",
+  "continueAction": "जारी रखें",
+  "noContent": "कोई सामग्री नहीं",
+  "noQuestions": "कोई प्रश्न नहीं",
+  "mindGameTitle": "माइंड गेम",
+  "mindGameInstruction": "💡 संकेत खंड पर टैप करें → Pāḷi को ज़ोर से बोलें → उत्तर दिखाने के लिए फिर टैप करें",
+  "revealAll": "सभी दिखाएँ",
+  "importantVocabulary": "📖 महत्वपूर्ण शब्दावली",
+  "importantStructures": "💡 मुख्य संरचनाएँ",
+  "quizResultsTitle": "📊 परिणाम",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "उत्कृष्ट! 🎉",
+  "goodFeedback": "बहुत अच्छा! 👍",
+  "tryHarderFeedback": "अभ्यास जारी रखें! 💪",
+  "listeningQuizTitle": "श्रवण क्विज़",
+  "questionProgress": "प्रश्न {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "लिप्यंतरण",
+  "correctAnswer": "सही!",
+  "explanation": "व्याख्या",
+  "answersAndExplanation": "📝 उत्तर और व्याख्या",
+  "viewResults": "परिणाम देखें",
+  "nextQuestion": "अगला प्रश्न",
+  "fullDeclensionTable": "📚 पूर्ण विभक्ति तालिका",
+  "examplesSection": "📖 उदाहरण",
+  "declensionTableTitle": "विभक्ति तालिका:",
+  "declensionCase": "विभक्ति",
+  "singular": "एकवचन",
+  "plural": "बहुवचन",
+  "notMastered": "अभी याद नहीं",
+  "mastered": "याद हो गया",
+  "currentLesson": "वर्तमान पाठ",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "एक",
+  "pluralAbbr": "बहु",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 // packages/pali_course/example/lib/screens/phases/mind_game_screen.dart
 import 'package:flutter/material.dart';
+import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
 
 class MindGameScreen extends StatefulWidget {
@@ -52,9 +53,10 @@ class _MindGameScreenState extends State<MindGameScreen> {
   @override
   Widget build(BuildContext context) {
     final segments = widget.phase.mixedSegments ?? [];
+    final l10n = AppLocalizations.of(context);
 
     if (segments.isEmpty) {
-      return const Center(child: Text('No content'));
+      return Center(child: Text(l10n.noContent));
     }
 
     return SafeArea(
@@ -84,9 +86,9 @@ class _MindGameScreenState extends State<MindGameScreen> {
                       size: 24,
                     ),
                     const SizedBox(width: 8),
-                    const Text(
-                      'Trò Chơi Tư Duy',
-                      style: TextStyle(
+                    Text(
+                      l10n.mindGameTitle,
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         color: AppColors.paliInk,
@@ -96,7 +98,7 @@ class _MindGameScreenState extends State<MindGameScreen> {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  '💡 Nhấn vào đoạn tiếng Việt → Nói to tiếng Pāḷi → Nhấn lại để xem đáp án',
+                  l10n.mindGameInstruction,
                   style: TextStyle(
                     fontSize: 13,
                     color: Colors.grey[700],
@@ -124,7 +126,7 @@ class _MindGameScreenState extends State<MindGameScreen> {
           ),
 
           // Bottom actions
-          _buildBottomActions(),
+          _buildBottomActions(context),
         ],
       ),
     );
@@ -195,7 +197,8 @@ class _MindGameScreenState extends State<MindGameScreen> {
     );
   }
 
-  Widget _buildBottomActions() {
+  Widget _buildBottomActions(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -252,7 +255,7 @@ class _MindGameScreenState extends State<MindGameScreen> {
                 child: OutlinedButton.icon(
                   onPressed: _revealedIndices.isEmpty ? null : _revealAll,
                   icon: const Icon(Icons.visibility, size: 18),
-                  label: const Text('Hiện tất cả'),
+                  label: Text(l10n.revealAll),
                   style: OutlinedButton.styleFrom(
                     foregroundColor: AppColors.paliGold,
                   ),
@@ -272,16 +275,18 @@ class _MindGameScreenState extends State<MindGameScreen> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Tiếp tục',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
+                        l10n.continueAction,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                      SizedBox(width: 8),
-                      Icon(Icons.arrow_forward, size: 20),
+                      const SizedBox(width: 8),
+                      const Icon(Icons.arrow_forward, size: 20),
                     ],
                   ),
                 ),

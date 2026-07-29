@@ -1,0 +1,179 @@
+{
+  "@@locale": "lo",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "ຫຼັກສູດ Pāḷi — {count} ບົດຮຽນ",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "ຫຼັກສູດ Pāḷi ພື້ນຖານ",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "ກອບ: ວິທີ VipLang Mind Game",
+  "lessonLabel": "ບົດຮຽນ {number}",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "ບົດຮຽນ {number}",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "ຂໍ້ມູນພ້ອມ",
+  "otherLessons": "ບົດຮຽນອື່ນ",
+  "comingSoonDataReady": "ຈະມາໄວໆນີ້ — ໂຄງສ້າງຂໍ້ມູນພ້ອມ",
+  "startLesson": "ເລີ່ມບົດຮຽນ",
+  "vocabAndGrammar": "ຄຳສັບ ແລະ ໄວຍາກອນ",
+  "lessonDetailHint": "ແຕະ ເລີ່ມບົດຮຽນ ເພື່ອເບິ່ງຄຳສັບ ແລະ ໄວຍາກອນຂອງບົດນີ້.",
+  "selectStudyDayTitle": "ບົດຮຽນ {number} — ເລືອກມື້ຮຽນ",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "ມື້ {number}",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "ເລີ່ມຮຽນ",
+  "readPhase": "ອ່ານ",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "ຄິວຊ໌",
+  "phaseProgress": "ໄລຍະ {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "Unknown phase type: {type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 ສຳເລັດ!",
+  "completionMessage": "ທ່ານໄດ້ສຳເລັດ {title}",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "ກັບຄືນ",
+  "previous": "ກ່ອນໜ້າ",
+  "continueAction": "ດຳເນີນຕໍ່",
+  "noContent": "ບໍ່ມີເນື້ອຫາ",
+  "noQuestions": "ບໍ່ມີຄຳຖາມ",
+  "mindGameTitle": "ເກມຄວາມຄິດ",
+  "mindGameInstruction": "💡 ແຕະສ່ວນຄຳແນະນຳ → ເວົ້າ Pāḷi ດັງໆ → ແຕະອີກເພື່ອເບິ່ງຄຳຕອບ",
+  "revealAll": "ສະແດງທັງໝົດ",
+  "importantVocabulary": "📖 ຄຳສັບສຳຄັນ",
+  "importantStructures": "💡 ໂຄງສ້າງສຳຄັນ",
+  "quizResultsTitle": "📊 ຜົນ",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "ດີເລີດ! 🎉",
+  "goodFeedback": "ດີຫຼາຍ! 👍",
+  "tryHarderFeedback": "ຝຶກຕໍ່ໄປ! 💪",
+  "listeningQuizTitle": "ຄິວຊ໌ການຟັງ",
+  "questionProgress": "ຄຳຖາມ {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "ບົດຖອດຄວາມ",
+  "correctAnswer": "ຖືກຕ້ອງ!",
+  "explanation": "ຄຳອະທິບາຍ",
+  "answersAndExplanation": "📝 ຄຳຕອບ ແລະ ຄຳອະທິບາຍ",
+  "viewResults": "ເບິ່ງຜົນ",
+  "nextQuestion": "ຄຳຖາມຕໍ່ໄປ",
+  "fullDeclensionTable": "📚 ຕາຕະລາງຜັນຄຳເຕັມ",
+  "examplesSection": "📖 ຕົວຢ່າງ",
+  "declensionTableTitle": "ຕາຕະລາງຜັນຄຳ:",
+  "declensionCase": "ກໍລະນີ",
+  "singular": "ເອກະພົດ",
+  "plural": "ພະຫຸພົດ",
+  "notMastered": "ຍັງບໍ່ຊຳນານ",
+  "mastered": "ຊຳນານ",
+  "currentLesson": "ບົດຮຽນປັດຈຸບັນ",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "sg",
+  "pluralAbbr": "pl",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

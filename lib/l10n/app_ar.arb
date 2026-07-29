@@ -1,0 +1,179 @@
+{
+  "@@locale": "ar",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "دورة Pāḷi — {count} دروس",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "دورة Pāḷi ابتدائية",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "الإطار: طريقة VipLang Mind Game",
+  "lessonLabel": "الدرس {number}",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "الدرس {number}",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "البيانات جاهزة",
+  "otherLessons": "دروس أخرى",
+  "comingSoonDataReady": "قريبًا — بنية البيانات جاهزة",
+  "startLesson": "ابدأ الدرس",
+  "vocabAndGrammar": "المفردات والقواعد",
+  "lessonDetailHint": "اضغط على ابدأ الدرس لعرض تفاصيل المفردات والقواعد لهذا الدرس.",
+  "selectStudyDayTitle": "الدرس {number} — اختر يوم الدراسة",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "اليوم {number}",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "ابدأ الدراسة",
+  "readPhase": "اقرأ",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "اختبار",
+  "phaseProgress": "المرحلة {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "نوع مرحلة غير معروف: {type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 اكتمل!",
+  "completionMessage": "لقد أكملت {title}",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "رجوع",
+  "previous": "السابق",
+  "continueAction": "متابعة",
+  "noContent": "لا يوجد محتوى",
+  "noQuestions": "لا توجد أسئلة",
+  "mindGameTitle": "لعبة ذهنية",
+  "mindGameInstruction": "💡 اضغط على مقطع التلميح ← انطق Pāḷi بصوت عالٍ ← اضغط مرة أخرى لإظهار الإجابة",
+  "revealAll": "إظهار الكل",
+  "importantVocabulary": "📖 مفردات مهمة",
+  "importantStructures": "💡 تراكيب أساسية",
+  "quizResultsTitle": "📊 النتائج",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "ممتاز! 🎉",
+  "goodFeedback": "أحسنت! 👍",
+  "tryHarderFeedback": "واصل التمرين! 💪",
+  "listeningQuizTitle": "اختبار الاستماع",
+  "questionProgress": "السؤال {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "النص",
+  "correctAnswer": "صحيح!",
+  "explanation": "الشرح",
+  "answersAndExplanation": "📝 الإجابات والشرح",
+  "viewResults": "عرض النتائج",
+  "nextQuestion": "السؤال التالي",
+  "fullDeclensionTable": "📚 جدول الإعراب الكامل",
+  "examplesSection": "📖 أمثلة",
+  "declensionTableTitle": "جدول الإعراب:",
+  "declensionCase": "الحالة",
+  "singular": "مفرد",
+  "plural": "جمع",
+  "notMastered": "غير متقن",
+  "mastered": "متقن",
+  "currentLesson": "الدرس الحالي",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "sg",
+  "pluralAbbr": "pl",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

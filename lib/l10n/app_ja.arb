@@ -1,0 +1,179 @@
+{
+  "@@locale": "ja",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "Pāḷi コース — {count} レッスン",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "初級 Pāḷi コース",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "フレームワーク: VipLang Mind Game メソッド",
+  "lessonLabel": "レッスン {number}",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "レッスン {number}",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "データ準備完了",
+  "otherLessons": "その他のレッスン",
+  "comingSoonDataReady": "まもなく公開 — データ構造は準備済み",
+  "startLesson": "レッスンを開始",
+  "vocabAndGrammar": "語彙と文法",
+  "lessonDetailHint": "レッスンを開始をタップして、このレッスンの語彙と文法を確認します。",
+  "selectStudyDayTitle": "レッスン {number} — 学習日を選択",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "日 {number}",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "学習を開始",
+  "readPhase": "読む",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "クイズ",
+  "phaseProgress": "フェーズ {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "Unknown phase type: {type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 完了！",
+  "completionMessage": "{title} を完了しました",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "戻る",
+  "previous": "前へ",
+  "continueAction": "続ける",
+  "noContent": "コンテンツがありません",
+  "noQuestions": "質問がありません",
+  "mindGameTitle": "マインドゲーム",
+  "mindGameInstruction": "💡 ヒントをタップ → Pāḷi を声に出す → もう一度タップして答えを表示",
+  "revealAll": "すべて表示",
+  "importantVocabulary": "📖 重要語彙",
+  "importantStructures": "💡 重要構文",
+  "quizResultsTitle": "📊 結果",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "すばらしい！🎉",
+  "goodFeedback": "よくできました！👍",
+  "tryHarderFeedback": "練習を続けましょう！💪",
+  "listeningQuizTitle": "リスニングクイズ",
+  "questionProgress": "質問 {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "文字起こし",
+  "correctAnswer": "正解！",
+  "explanation": "説明",
+  "answersAndExplanation": "📝 答えと説明",
+  "viewResults": "結果を見る",
+  "nextQuestion": "次の質問",
+  "fullDeclensionTable": "📚 完全な語形変化表",
+  "examplesSection": "📖 例",
+  "declensionTableTitle": "語形変化表:",
+  "declensionCase": "格",
+  "singular": "単数",
+  "plural": "複数",
+  "notMastered": "未習得",
+  "mastered": "習得済み",
+  "currentLesson": "現在のレッスン",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "sg",
+  "pluralAbbr": "pl",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "@@locale": "pt",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "Curso de Pāḷi — {count} lições",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "Curso elementar de Pāḷi",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "Estrutura: método VipLang Mind Game",
+  "lessonLabel": "Lição {number}",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "Lição {number}",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "DADOS PRONTOS",
+  "otherLessons": "Outras lições",
+  "comingSoonDataReady": "Em breve — estrutura de dados pronta",
+  "startLesson": "Começar lição",
+  "vocabAndGrammar": "Vocabulário e gramática",
+  "lessonDetailHint": "Toque em Começar lição para ver o vocabulário e a gramática desta lição.",
+  "selectStudyDayTitle": "Lição {number} — Escolha o dia de estudo",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "Dia {number}",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "Começar a estudar",
+  "readPhase": "Ler",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "Quiz",
+  "phaseProgress": "Fase {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "Unknown phase type: {type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 Concluído!",
+  "completionMessage": "Você concluiu {title}",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "Voltar",
+  "previous": "Anterior",
+  "continueAction": "Continuar",
+  "noContent": "Sem conteúdo",
+  "noQuestions": "Sem perguntas",
+  "mindGameTitle": "Jogo mental",
+  "mindGameInstruction": "💡 Toque em uma dica → Diga Pāḷi em voz alta → Toque novamente para revelar a resposta",
+  "revealAll": "Mostrar tudo",
+  "importantVocabulary": "📖 Vocabulário importante",
+  "importantStructures": "💡 Estruturas-chave",
+  "quizResultsTitle": "📊 Resultados",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "Excelente! 🎉",
+  "goodFeedback": "Muito bem! 👍",
+  "tryHarderFeedback": "Continue praticando! 💪",
+  "listeningQuizTitle": "Quiz de escuta",
+  "questionProgress": "Pergunta {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "Transcrição",
+  "correctAnswer": "Correto!",
+  "explanation": "Explicação",
+  "answersAndExplanation": "📝 Respostas e explicação",
+  "viewResults": "Ver resultados",
+  "nextQuestion": "Próxima pergunta",
+  "fullDeclensionTable": "📚 Tabela completa de declinação",
+  "examplesSection": "📖 Exemplos",
+  "declensionTableTitle": "Tabela de declinação:",
+  "declensionCase": "Caso",
+  "singular": "Singular",
+  "plural": "Plural",
+  "notMastered": "Não dominado",
+  "mastered": "Dominado",
+  "currentLesson": "Lição atual",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "sg",
+  "pluralAbbr": "pl",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

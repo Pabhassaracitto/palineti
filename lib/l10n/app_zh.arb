@@ -1,0 +1,179 @@
+{
+  "@@locale": "zh",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "Pāḷi 课程 — {count} 课",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "初级 Pāḷi 课程",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "框架：VipLang Mind Game 方法",
+  "lessonLabel": "第 {number} 课",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "第 {number} 课",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "数据已就绪",
+  "otherLessons": "其他课程",
+  "comingSoonDataReady": "即将推出 — 数据结构已就绪",
+  "startLesson": "开始课程",
+  "vocabAndGrammar": "词汇与语法",
+  "lessonDetailHint": "点击“开始课程”查看本课词汇和语法详情。",
+  "selectStudyDayTitle": "第 {number} 课 — 选择学习日",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "第 {number} 天",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "开始学习",
+  "readPhase": "阅读",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "测验",
+  "phaseProgress": "阶段 {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "未知阶段类型：{type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 已完成！",
+  "completionMessage": "你已完成 {title}",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "返回",
+  "previous": "上一步",
+  "continueAction": "继续",
+  "noContent": "没有内容",
+  "noQuestions": "没有问题",
+  "mindGameTitle": "思维游戏",
+  "mindGameInstruction": "💡 点击提示片段 → 大声说出 Pāḷi → 再次点击显示答案",
+  "revealAll": "显示全部",
+  "importantVocabulary": "📖 重要词汇",
+  "importantStructures": "💡 关键结构",
+  "quizResultsTitle": "📊 结果",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "太棒了！🎉",
+  "goodFeedback": "做得好！👍",
+  "tryHarderFeedback": "继续练习！💪",
+  "listeningQuizTitle": "听力测验",
+  "questionProgress": "题目 {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "文本",
+  "correctAnswer": "正确！",
+  "explanation": "解释",
+  "answersAndExplanation": "📝 答案与解释",
+  "viewResults": "查看结果",
+  "nextQuestion": "下一题",
+  "fullDeclensionTable": "📚 完整变格表",
+  "examplesSection": "📖 示例",
+  "declensionTableTitle": "变格表：",
+  "declensionCase": "格",
+  "singular": "单数",
+  "plural": "复数",
+  "notMastered": "未掌握",
+  "mastered": "已掌握",
+  "currentLesson": "当前课程",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "单",
+  "pluralAbbr": "复",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

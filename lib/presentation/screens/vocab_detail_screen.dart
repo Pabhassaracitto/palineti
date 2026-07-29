@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
 
 class VocabDetailScreen extends StatelessWidget {
@@ -8,6 +9,8 @@ class VocabDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Scaffold(
       backgroundColor: AppColors.paliBg,
       appBar: AppBar(
@@ -26,7 +29,7 @@ class VocabDetailScreen extends StatelessWidget {
           const SizedBox(height: 24),
 
           // Declension table
-          _buildSectionTitle('📚 Bảng Biến Cách Đầy Đủ'),
+          _buildSectionTitle(l10n.fullDeclensionTable),
           const SizedBox(height: 8),
           DeclensionTableWidget(
             root: vocab.root,
@@ -36,7 +39,7 @@ class VocabDetailScreen extends StatelessWidget {
 
           // Examples
           if (vocab.examplePali != null) ...[
-            _buildSectionTitle('📖 Ví Dụ Minh Họa'),
+            _buildSectionTitle(l10n.examplesSection),
             const SizedBox(height: 8),
             _buildExampleCard(),
           ],
