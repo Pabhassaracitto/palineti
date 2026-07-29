@@ -2198,7 +2198,7 @@ class _AppLocalizationsDelegate
     if (AppLocalizations._localizedValues.containsKey(locale.languageCode)) {
       return locale.languageCode;
     }
-    return 'vi';
+    return 'en';
   }
 
   static String _localeNameOf(Locale locale) {

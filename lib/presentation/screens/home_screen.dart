@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
 
+import '../localization/app_locale_controller.dart';
 import '../localization/learning_content_localizations.dart';
 import 'lesson_detail_screen.dart';
+import 'settings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final AppLocaleController localeController;
+
+  const HomeScreen({
+    required this.localeController,
+    super.key,
+  });
 
   // Load all metadata from actual lessons
   static final _lessons = <LessonMeta>[
@@ -63,6 +70,20 @@ class HomeScreen extends StatelessWidget {
           style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
+        actions: [
+          IconButton(
+            tooltip: 'Settings / Cài đặt',
+            icon: const Icon(Icons.settings),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => SettingsScreen(
+                  localeController: localeController,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
