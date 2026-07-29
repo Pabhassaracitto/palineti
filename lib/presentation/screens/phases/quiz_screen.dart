@@ -286,7 +286,7 @@ class _QuizScreenState extends State<QuizScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            _currentQuestion.questionText,
+            _currentQuestion.localizedQuestionText(context),
             style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
@@ -296,7 +296,7 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
           const SizedBox(height: 16),
           ...List.generate(
-            _currentQuestion.options.length,
+            _currentQuestion.localizedOptions(context).length,
             (index) => _buildOptionButton(index),
           ),
         ],
@@ -305,7 +305,7 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   Widget _buildOptionButton(int index) {
-    final option = _currentQuestion.options[index];
+    final option = _currentQuestion.localizedOptions(context)[index];
     final isSelected = _userAnswers[_currentQuestionIndex] == index;
     final isCorrect = index == _currentQuestion.correctIndex;
     final showResult = _hasAnswered;

@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 
+import '../../data/localization/learning_content_translations.dart';
 import '../../data/models/lesson_model.dart';
 import '../../data/models/pali_vocab_model.dart';
 
@@ -7,6 +8,57 @@ bool prefersVietnameseLearningContent(BuildContext context) =>
     Localizations.localeOf(context).languageCode == 'vi';
 
 bool _hasText(String? value) => value != null && value.trim().isNotEmpty;
+
+String _localeNameOf(Locale locale) {
+  final countryCode = locale.countryCode;
+  if (countryCode == null || countryCode.isEmpty) {
+    return locale.languageCode;
+  }
+  return '${locale.languageCode}_$countryCode';
+}
+
+List<String> _contentLocaleCandidates(BuildContext context) {
+  final locale = Localizations.localeOf(context);
+  final exact = _localeNameOf(locale);
+  final language = locale.languageCode;
+  final candidates = <String>[];
+
+  void add(String code) {
+    if (!candidates.contains(code)) {
+      candidates.add(code);
+    }
+  }
+
+  add(exact);
+  add(language);
+
+  if (language != 'vi') {
+    add('en');
+  }
+  add('vi');
+
+  return candidates;
+}
+
+T? _lookupSidecar<T>(
+  BuildContext context,
+  Map<String, Map<String, T>> registry,
+  String id,
+) {
+  final translationsByLocale = registry[id];
+  if (translationsByLocale == null) {
+    return null;
+  }
+
+  for (final localeCode in _contentLocaleCandidates(context)) {
+    final translation = translationsByLocale[localeCode];
+    if (translation != null) {
+      return translation;
+    }
+  }
+
+  return null;
+}
 
 String localizedLearningText(
   BuildContext context, {
@@ -41,7 +93,12 @@ String? localizedOptionalLearningText(
 }
 
 extension LessonMetaLearningLocalization on LessonMeta {
-  String localizedTitle(BuildContext context) => localizedLearningText(
+  LocalizedLearningText? _sidecar(BuildContext context) =>
+      _lookupSidecar(context, lessonMetaTranslations, id);
+
+  String localizedTitle(BuildContext context) =>
+      _sidecar(context)?.title ??
+      localizedLearningText(
         context,
         vi: titleVi,
         en: titleEn,
@@ -50,21 +107,47 @@ extension LessonMetaLearningLocalization on LessonMeta {
   String localizedSecondaryTitle(BuildContext context) =>
       prefersVietnameseLearningContent(context) ? titleEn : titleVi;
 
-  String localizedDescription(BuildContext _) => description;
+  String localizedDescription(BuildContext context) =>
+      _sidecar(context)?.description ?? description;
 }
 
 extension LessonDayLearningLocalization on LessonDay {
-  String localizedTitle(BuildContext _) => titleVi;
+  LocalizedLearningText? _sidecar(BuildContext context) =>
+      _lookupSidecar(context, lessonDayTranslations, id);
+
+  String localizedTitle(BuildContext context) =>
+      _sidecar(context)?.title ?? titleVi;
 }
 
 extension LessonPhaseLearningLocalization on LessonPhase {
-  String? localizedTitle(BuildContext _) => titleVi;
+  LocalizedLearningText? _sidecar(BuildContext context) =>
+      _lookupSidecar(context, lessonPhaseTranslations, id);
 
-  String? localizedContent(BuildContext context) => localizedOptionalLearningText(
+  String? localizedTitle(BuildContext context) => _sidecar(context)?.title ?? titleVi;
+
+  String? localizedContent(BuildContext context) =>
+      _sidecar(context)?.content ??
+      localizedOptionalLearningText(
         context,
         vi: contentVi,
         en: contentEn,
       );
+}
+
+extension QuizQuestionLearningLocalization on QuizQuestion {
+  LocalizedQuizQuestionText? _sidecar(BuildContext context) {
+    final translation = _lookupSidecar(context, quizQuestionTranslations, id);
+    if (translation == null || translation.options.length != options.length) {
+      return null;
+    }
+    return translation;
+  }
+
+  String localizedQuestionText(BuildContext context) =>
+      _sidecar(context)?.questionText ?? questionText;
+
+  List<String> localizedOptions(BuildContext context) =>
+      _sidecar(context)?.options ?? options;
 }
 
 extension FabVocabItemLearningLocalization on FabVocabItem {
