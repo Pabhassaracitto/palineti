@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
+import '../localization/learning_content_localizations.dart';
 import 'day_navigator_screen.dart';
 
 class LessonDetailScreen extends StatelessWidget {
@@ -131,7 +132,7 @@ class LessonDetailScreen extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         Text(
-          lesson.titleVi,
+          lesson.localizedTitle(context),
           style: const TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -140,7 +141,7 @@ class LessonDetailScreen extends StatelessWidget {
         ),
         const SizedBox(height: 4),
         Text(
-          lesson.titleEn,
+          lesson.localizedSecondaryTitle(context),
           style: TextStyle(
             fontSize: 16,
             color: Colors.grey[600],
@@ -149,7 +150,7 @@ class LessonDetailScreen extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         Text(
-          lesson.description,
+          lesson.localizedDescription(context),
           style: const TextStyle(
             fontSize: 15,
             color: AppColors.paliInk,

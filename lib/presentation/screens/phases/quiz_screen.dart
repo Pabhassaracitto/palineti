@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
 
+import '../../localization/learning_content_localizations.dart';
+
 class QuizScreen extends StatefulWidget {
   final LessonPhase phase;
   final VoidCallback onNext;
@@ -112,6 +114,7 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget build(BuildContext context) {
     final questions = widget.phase.questions ?? [];
     final l10n = AppLocalizations.of(context);
+    final transcript = widget.phase.localizedContent(context);
     if (questions.isEmpty) {
       return Center(child: Text(l10n.noQuestions));
     }
@@ -129,8 +132,8 @@ class _QuizScreenState extends State<QuizScreen> {
               padding: const EdgeInsets.all(16),
               children: [
                 // Transcript
-                if (widget.phase.contentVi != null) ...[
-                  _buildTranscriptCard(),
+                if (transcript != null) ...[
+                  _buildTranscriptCard(transcript),
                   const SizedBox(height: 16),
                 ],
 
@@ -180,7 +183,8 @@ class _QuizScreenState extends State<QuizScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.phase.titleVi ?? AppLocalizations.of(context).listeningQuizTitle,
+                  widget.phase.localizedTitle(context) ??
+                      AppLocalizations.of(context).listeningQuizTitle,
                   style: const TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
@@ -231,7 +235,7 @@ class _QuizScreenState extends State<QuizScreen> {
     );
   }
 
-  Widget _buildTranscriptCard() {
+  Widget _buildTranscriptCard(String transcript) {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -258,7 +262,7 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
           const SizedBox(height: 8),
           Text(
-            widget.phase.contentVi!,
+            transcript,
             style: TextStyle(
               fontSize: 13,
               height: 1.5,
@@ -447,7 +451,7 @@ class _QuizScreenState extends State<QuizScreen> {
             return Padding(
               padding: const EdgeInsets.only(bottom: 6),
               child: Text(
-                answer.vi,
+                answer.localizedExplanation(context),
                 style: TextStyle(
                   fontSize: 12,
                   color: Colors.grey[700],

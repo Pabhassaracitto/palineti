@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
 
+import '../localization/learning_content_localizations.dart';
 import '../localization/pali_grammar_localizations.dart';
 
 class VocabCardWidget extends StatelessWidget {
@@ -61,7 +62,7 @@ class VocabCardWidget extends StatelessWidget {
 
               // Dòng 2: Nghĩa
               Text(
-                vocab.wordVi,
+                vocab.localizedWord(context),
                 style: const TextStyle(
                   fontSize: 15,
                   color: AppColors.paliSaffron,
@@ -69,7 +70,7 @@ class VocabCardWidget extends StatelessWidget {
                 ),
               ),
               Text(
-                vocab.wordEn,
+                vocab.localizedSecondaryWord(context),
                 style: TextStyle(
                   fontSize: 13,
                   color: Colors.grey[500],
@@ -89,9 +90,9 @@ class VocabCardWidget extends StatelessWidget {
                     fontStyle: FontStyle.italic,
                   ),
                 ),
-                if (vocab.exampleVi != null)
+                if (vocab.localizedExample(context) != null)
                   Text(
-                    vocab.exampleVi!,
+                    vocab.localizedExample(context)!,
                     style: TextStyle(
                       fontSize: 12,
                       color: Colors.grey[600],

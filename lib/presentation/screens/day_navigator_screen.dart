@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
 
+import '../localization/learning_content_localizations.dart';
 import 'phase_navigator_screen.dart';
 
 class DayNavigatorScreen extends StatelessWidget {
@@ -170,7 +171,7 @@ class DayNavigatorScreen extends StatelessWidget {
 
               // Title
               Text(
-                day.titleVi,
+                day.localizedTitle(context),
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,

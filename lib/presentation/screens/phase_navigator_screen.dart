@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
+import '../localization/learning_content_localizations.dart';
 import 'phases/read_listen_screen.dart';
 import 'phases/mind_game_screen.dart';
 import 'phases/quiz_screen.dart';
@@ -67,7 +68,7 @@ class _PhaseNavigatorScreenState extends State<PhaseNavigatorScreen> {
       builder: (ctx) => AlertDialog(
         title: Text(l10n.completionTitle),
         content: Text(
-          l10n.completionMessage(widget.lessonDay.titleVi),
+          l10n.completionMessage(widget.lessonDay.localizedTitle(context)),
         ),
         actions: [
           TextButton(
@@ -95,7 +96,7 @@ class _PhaseNavigatorScreenState extends State<PhaseNavigatorScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              widget.lessonDay.titleVi,
+              widget.lessonDay.localizedTitle(context),
               style: const TextStyle(fontSize: 14),
             ),
             Text(
