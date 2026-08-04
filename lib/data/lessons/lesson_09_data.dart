@@ -16,8 +16,6 @@ LessonMeta getLesson09Meta() => const LessonMeta(
   iconEmoji: '🌍',
   colorValue: 0xFF8FBC8F,
   description: 'Học về nữ tánh kết thúc bằng -i ngắn và chia thì tương lai',
-      complexity: LessonComplexity.low,
-      estimatedMinutes: 35,
 );
 
 
@@ -467,7 +465,7 @@ LessonDay getLesson09Day1() {
     id: 'lesson09_day1',
     dayNumber: 1,
     themeId: 'theme_09_fem_i_future',
-    titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Nữ tánh "-i" & Tương lai',
+    titleVi: 'Ngày 1: Nữ tánh "-i" & Tương lai — Lý thuyết & Từ vựng',
     phases: [
       _buildDay1Phase1(),
       _buildDay1Phase2(),
@@ -480,7 +478,7 @@ LessonPhase _buildDay1Phase1() {
   return LessonPhase(
     id: 'lesson09_phase1',
     phaseTypeStr: 'read_listen',
-    titleVi: '📘 Lý thuyết: Nữ tánh "-i" & Tương lai',
+    titleVi: 'Bài đọc: Nữ tánh "-i" & Tương lai',
     contentVi: '''
 BÀI 9 — DANH TỪ NỮ TÁNH "-i" & THÌ TƯƠNG LAI
 
@@ -630,7 +628,7 @@ LessonPhase _buildDay1Phase2() {
   return LessonPhase(
     id: 'lesson09_phase2',
     phaseTypeStr: 'read_listen',
-    titleVi: '📖 Từ vựng: Nữ tánh "-i" & Tương lai',
+    titleVi: 'Từ vựng Bài 9 — Nữ tánh "-i", Nam/Trung tánh, Động từ',
     contentVi: 'Học thuộc các từ mới bên dưới. Chú ý: các NỮ tánh "-i" chia theo bảng "bhūmi"; các NAM tánh tận cùng "-i" (ví dụ: agni — lửa, đã học ở Bài 8) chia theo một bảng KHÁC (đuôi số ít -i / -iṃ nhưng gián tiếp -inā, -ino…).',
     fabVocab: _buildVocabFabList(),
   );
@@ -884,7 +882,7 @@ LessonDay getLesson09Day2() {
     id: 'lesson09_day2',
     dayNumber: 2,
     themeId: 'theme_09_fem_i_future',
-    titleVi: 'Ngày 2 — Luyện tập: Nữ tánh "-i" & Tương lai',
+    titleVi: 'Ngày 2: Thực hành Mind Game & Quiz — Nữ tánh "-i" & Tương lai',
     phases: [
       _buildDay2MindGame(),
       _buildDay2Quiz(),
@@ -897,7 +895,7 @@ LessonPhase _buildDay2MindGame() {
   return LessonPhase(
     id: 'lesson09_phase3',
     phaseTypeStr: 'mind_game',
-    titleVi: '🧠 Ghép câu: Nữ tánh "-i" & Tương lai',
+    titleVi: 'Trò Chơi Tư Duy — Bài Tập 9',
     contentVi: 'Nhấn vào cụm tiếng Việt để nói to cụm Pāḷi tương ứng; nhấn lại để xem đáp án. Chú ý các dạng **thì tương lai** (-issati/-issanti/-issasi/-issatha/-issāmi/-issāma) và các từ Nữ tánh "-i" (bhūmiyā, rattiyaṃ, aṭavīsu …).',
     mixedSegments: kLesson09MindGameSegments,
   );
@@ -1057,7 +1055,7 @@ LessonPhase _buildDay2Quiz() {
   return LessonPhase(
     id: 'lesson09_phase4',
     phaseTypeStr: 'listening_quiz',
-    titleVi: '🎧 Quiz: Nữ tánh "-i" & Tương lai',
+    titleVi: 'Quiz — Kiểm tra kiến thức Bài 9',
     questions: _buildQuiz(),
     fabAnswers: _buildQuizAnswers(),
   );

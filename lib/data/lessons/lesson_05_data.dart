@@ -16,8 +16,6 @@ LessonMeta getLesson05Meta() => const LessonMeta(
   iconEmoji: '🌱',
   colorValue: 0xFF2E8B57,
   description: 'Học 8 biến cách và áp dụng vào từ trung tánh đuôi -a',
-      complexity: LessonComplexity.low,
-      estimatedMinutes: 30,
 );
 
 
@@ -379,7 +377,7 @@ LessonDay getLesson05Day1() {
     id: 'lesson05_day1',
     dayNumber: 1,
     themeId: 'theme_05_neuter_a_eight_cases',
-    titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Trung tánh "-a" & 8 Biến cách',
+    titleVi: 'Ngày 1: 8 Biến cách & Trung tánh "-a" — Lý thuyết & Từ vựng',
     phases: [
       _buildDay1Phase1(),
       _buildDay1Phase2(),
@@ -392,7 +390,7 @@ LessonPhase _buildDay1Phase1() {
   return LessonPhase(
     id: 'lesson05_phase1',
     phaseTypeStr: 'read_listen',
-    titleVi: '📘 Lý thuyết: Trung tánh "-a" & 8 Biến cách',
+    titleVi: 'Bài đọc: 8 Biến cách & Trung tánh "-a"',
     contentVi: '''
 BÀI 5 — TỔNG HỢP 8 BIẾN CÁCH "-a" & DANH TỪ TRUNG TÁNH
 
@@ -517,7 +515,7 @@ LessonPhase _buildDay1Phase2() {
   return LessonPhase(
     id: 'lesson05_phase2',
     phaseTypeStr: 'read_listen',
-    titleVi: '📖 Từ vựng: Trung tánh "-a" & 8 Biến cách',
+    titleVi: 'Từ vựng Bài 5 — Danh từ Trung tánh & Động từ mới',
     contentVi: 'Toàn bộ danh từ Trung tánh "-a" và các động từ mới của Bài 5. Lưu ý: hai từ "mitta" (bạn) và "pāda" (bàn chân) có thể chia như Nam tánh HOẶC Trung tánh (m./n.).',
     fabVocab: _buildVocabFabList(),
   );
@@ -723,7 +721,7 @@ LessonDay getLesson05Day2() {
     id: 'lesson05_day2',
     dayNumber: 2,
     themeId: 'theme_05_neuter_a_eight_cases',
-    titleVi: 'Ngày 2 — Luyện tập: Trung tánh "-a" & 8 Biến cách',
+    titleVi: 'Ngày 2: Thực hành Mind Game & Quiz — 8 Biến cách & Trung tánh "-a"',
     phases: [
       _buildDay2MindGame(),
       _buildDay2Quiz(),
@@ -736,7 +734,7 @@ LessonPhase _buildDay2MindGame() {
   return LessonPhase(
     id: 'lesson05_phase3',
     phaseTypeStr: 'mind_game',
-    titleVi: '🧠 Ghép câu: Trung tánh "-a" & 8 Biến cách',
+    titleVi: 'Trò Chơi Tư Duy — Bài Tập 5',
     contentVi: 'Nhấn vào cụm tiếng Việt để nói to cụm Pāḷi tương ứng, rồi nhấn lại để xem đáp án. Chú ý các dạng số nhiều Trung tánh đuôi "-āni".',
     mixedSegments: kLesson05MindGameSegments,
   );
@@ -889,7 +887,7 @@ LessonPhase _buildDay2Quiz() {
   return LessonPhase(
     id: 'lesson05_phase4',
     phaseTypeStr: 'listening_quiz',
-    titleVi: '🎧 Quiz: Trung tánh "-a" & 8 Biến cách',
+    titleVi: 'Quiz — Kiểm tra kiến thức Bài 5',
     questions: _buildQuiz(),
     fabAnswers: _buildQuizAnswers(),
   );

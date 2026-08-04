@@ -18,8 +18,6 @@ LessonMeta getLesson07Meta() => const LessonMeta(
       colorValue: 0xFFDAA520,
       description:
           'Thì quá khứ bất định (aorist) với tiền tố a- và các đuôi -i/-ī/-uṃ/-iṃsu/-o/-ittha/-iṃ/-imhā; đại từ sở hữu STC của đại từ nhân xưng.',
-      complexity: LessonComplexity.medium,
-      estimatedMinutes: 40,
     );
 
 // ──────────────────────────────────────────────────────────────
@@ -101,7 +99,7 @@ LessonDay getLesson07Day1() => LessonDay(
       id: 'lesson07_day1',
       dayNumber: 1,
       themeId: 'theme_07_lesson',
-      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Thì Ajjatanī & Đại từ sở hữu',
+      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng',
       phases: [
         _buildDay1Phase1(),
         _buildDay1Phase2(),
@@ -112,7 +110,7 @@ LessonDay getLesson07Day1() => LessonDay(
 LessonPhase _buildDay1Phase1() => LessonPhase(
       id: 'lesson07_phase1',
       phaseTypeStr: 'read_listen',
-      titleVi: '📘 Lý thuyết: Thì Ajjatanī & Đại từ sở hữu',
+      titleVi: '📘 Thì Ajjatanī & Đại từ sở hữu',
       contentVi: '''
 🎯 MỤC TIÊU BÀI 7
 ───────────────────
@@ -226,7 +224,7 @@ C. LUẬT SANDHI CƠ BẢN TRONG BÀI
 LessonPhase _buildDay1Phase2() => LessonPhase(
       id: 'lesson07_phase2',
       phaseTypeStr: 'mind_game',
-      titleVi: '🧠 Ghép từ: 10 từ mới',
+      titleVi: '🧠 Ghép từ: 10 từ vựng + 10 đại từ sở hữu',
       contentVi:
           'Nhấn vào từng ô tiếng Việt → đọc to từ Pāḷi tương ứng → nhấn lại để xem đáp án.',
       mixedSegments: const [
@@ -371,7 +369,7 @@ LessonDay getLesson07Day2() => LessonDay(
       id: 'lesson07_day2',
       dayNumber: 2,
       themeId: 'theme_07_lesson',
-      titleVi: 'Ngày 2 — Luyện tập: Thì Ajjatanī & Đại từ sở hữu',
+      titleVi: 'Ngày 2 — Bài tập & Quiz dịch thuật',
       phases: [
         _buildDay2Phase1(),
         _buildDay2Phase2(),
@@ -382,7 +380,7 @@ LessonDay getLesson07Day2() => LessonDay(
 LessonPhase _buildDay2Phase1() => LessonPhase(
       id: 'lesson07_phase4',
       phaseTypeStr: 'read_listen',
-      titleVi: '📖 Đọc hiểu: 36 câu ví dụ',
+      titleVi: '📖 Đọc hiểu: Gợi ý dịch 36 câu Exercise 7',
       contentVi: '''
 ══════════════════════════════════════════════════════
 📖 BÀI TẬP 7 — Dịch 36 câu Pāḷi sang tiếng Việt
@@ -541,7 +539,7 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
 LessonPhase _buildDay2Phase3() => LessonPhase(
       id: 'lesson07_phase6',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: Dịch câu Exercise 7',
+      titleVi: '🎧 Quiz: Dịch câu Pāḷi (Exercise 7)',
       contentVi:
           'Chọn bản dịch tiếng Việt đúng cho mỗi câu Pāḷi từ Exercise 7.',
       questions: const [

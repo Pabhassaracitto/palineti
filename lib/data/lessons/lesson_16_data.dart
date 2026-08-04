@@ -16,8 +16,6 @@ LessonMeta getLesson16Meta() => const LessonMeta(
   iconEmoji: '🔢',
   colorValue: 0xFFDAA520,
   description: 'Học về cách đếm và số thứ tự trong tiếng Pāḷi',
-      complexity: LessonComplexity.low,
-      estimatedMinutes: 35,
 );
 
 
@@ -951,7 +949,7 @@ LessonDay getLesson16Day1() {
     id: 'lesson16_day1',
     dayNumber: 1,
     themeId: 'theme_16_numerals',
-    titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Số đếm & Số thứ tự',
+    titleVi: 'Ngày 1: Số đếm & Số thứ tự — Lý thuyết & Từ vựng',
     phases: [
       _buildDay1Phase1(),
       _buildDay1Phase2(),
@@ -964,7 +962,7 @@ LessonPhase _buildDay1Phase1() {
   return LessonPhase(
     id: 'lesson16_phase1',
     phaseTypeStr: 'read_listen',
-    titleVi: '📘 Lý thuyết: Số đếm & Số thứ tự',
+    titleVi: 'Bài đọc: Số đếm & Số thứ tự',
     contentVi: '''
 BÀI 16 — SỐ ĐẾM (CARDINALS) VÀ SỐ THỨ TỰ (ORDINALS)
 
@@ -1145,7 +1143,7 @@ LessonPhase _buildDay1Phase2() {
   return LessonPhase(
     id: 'lesson16_phase2',
     phaseTypeStr: 'read_listen',
-    titleVi: '📖 Từ vựng: Số đếm & Số thứ tự',
+    titleVi: 'Số đếm từ 1 đến koṭi + Từ vựng mới',
     contentVi: 'Học thuộc danh sách số đếm từ 1 → 1 tỉ và các từ vựng mới (divasa, ito, māsa…). Các số từ 19 trở lên có ghi chú giống / cách chia.',
     fabVocab: _buildVocabFabList(),
   );
@@ -1663,7 +1661,7 @@ LessonDay getLesson16Day2() {
     id: 'lesson16_day2',
     dayNumber: 2,
     themeId: 'theme_16_numerals',
-    titleVi: 'Ngày 2 — Luyện tập: Số đếm & Số thứ tự',
+    titleVi: 'Ngày 2: Thực hành Mind Game & Quiz — Số đếm & Số thứ tự',
     phases: [
       _buildDay2MindGame(),
       _buildDay2Quiz(),
@@ -1676,7 +1674,7 @@ LessonPhase _buildDay2MindGame() {
   return LessonPhase(
     id: 'lesson16_phase3',
     phaseTypeStr: 'mind_game',
-    titleVi: '🧠 Ghép câu: Số đếm & Số thứ tự',
+    titleVi: 'Trò Chơi Tư Duy — Bài Tập 16',
     contentVi: 'Nhấn vào cụm tiếng Việt để nói to cụm Pāḷi tương ứng, rồi nhấn lại để xem đáp án. Chú ý các dạng số đếm (tayo/tīni/tisso/cattāro/cattāri/catasso) và số thứ tự đuôi "-ma" (hòa hợp giống/cách).',
     mixedSegments: kLesson16MindGameSegments,
   );
@@ -1882,7 +1880,7 @@ LessonPhase _buildDay2Quiz() {
   return LessonPhase(
     id: 'lesson16_phase4',
     phaseTypeStr: 'listening_quiz',
-    titleVi: '🎧 Quiz: Số đếm & Số thứ tự',
+    titleVi: 'Quiz — Kiểm tra kiến thức Bài 16',
     questions: _buildQuiz(),
     fabAnswers: _buildQuizAnswers(),
   );

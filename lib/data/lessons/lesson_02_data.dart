@@ -19,8 +19,6 @@ LessonMeta getLesson02Meta() => const LessonMeta(
       colorValue: 0xFF1F6FEB,
       description:
           'Sở Dụng Cách (-ena / -ehi), Cách Dữ (-āya/-assa / -ānaṃ) và đuôi -si/-tha ngôi 2',
-      complexity: LessonComplexity.low,
-      estimatedMinutes: 35,
     );
 
 // ──────────────────────────────────────────────────────────────
@@ -98,7 +96,7 @@ LessonDay getLesson02Day1() => LessonDay(
       id: 'lesson02_day1',
       dayNumber: 1,
       themeId: 'theme_02_lesson',
-      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: SDC & CĐC (Nam -a) + Động từ Ngôi 2',
+      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng',
       phases: [
         _buildDay1Phase1(),
         _buildDay1Phase2(),
@@ -109,10 +107,7 @@ LessonDay getLesson02Day1() => LessonDay(
 LessonPhase _buildDay1Phase1() => LessonPhase(
       id: 'lesson02_phase1',
       phaseTypeStr: 'read_listen',
-      titleVi: '📘 Lý thuyết: SDC & CĐC (Nam -a) + Động từ Ngôi 2',
-      paradigmId: 'masc_a',
-      paradigmRoot: 'nara',
-      highlightedCases: const ['ins', 'dat'],
+      titleVi: '📘 Biến cách SDC & CĐC + Động từ Ngôi 2',
       contentVi: '''
 🎯 MỤC TIÊU BÀI 2
 ───────────────────
@@ -243,7 +238,7 @@ Lesson 2 covers the Instrumental (-ena / -ehi) "by/with" and Dative (-āya/-assa
 LessonPhase _buildDay1Phase2() => LessonPhase(
       id: 'lesson02_phase2',
       phaseTypeStr: 'mind_game',
-      titleVi: '🧠 Ghép từ: 11 từ mới',
+      titleVi: '🧠 Ghép từ: 11 danh từ mới',
       contentVi:
           'Nhấn vào từng ô tiếng Việt → đọc to từ Pāḷi tương ứng → nhấn lại để xem đáp án.',
       mixedSegments: const [
@@ -285,7 +280,7 @@ LessonPhase _buildDay1Phase2() => LessonPhase(
 LessonPhase _buildDay1Phase3() => LessonPhase(
       id: 'lesson02_phase3',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: SDC & CĐC (Nam -a) + Động từ Ngôi 2',
+      titleVi: '🎧 Quiz: Biến cách SDC, CĐC & Ngôi 2',
       contentVi:
           'Trả lời 7 câu hỏi trắc nghiệm về biến cách Sở Dụng (SDC), Cách Dữ (CĐC) và chia động từ Ngôi thứ 2.',
       questions: const [
@@ -375,7 +370,7 @@ LessonDay getLesson02Day2() => LessonDay(
       id: 'lesson02_day2',
       dayNumber: 2,
       themeId: 'theme_02_lesson',
-      titleVi: 'Ngày 2 — Luyện tập: SDC & CĐC (Nam -a) + Động từ Ngôi 2',
+      titleVi: 'Ngày 2 — Bài tập & Quiz dịch thuật',
       phases: [
         _buildDay2Phase1(),
         _buildDay2Phase2(),
@@ -386,7 +381,7 @@ LessonDay getLesson02Day2() => LessonDay(
 LessonPhase _buildDay2Phase1() => LessonPhase(
       id: 'lesson02_phase4',
       phaseTypeStr: 'read_listen',
-      titleVi: '📖 Đọc hiểu: 4 câu ví dụ',
+      titleVi: '📖 Đọc hiểu: 4 câu ví dụ minh họa',
       contentVi: '''
 ══════════════════════════════════════════════════════
 📖 CÂU VÍ DỤ MINH HỌA (Illustrations từ sách)
@@ -461,7 +456,7 @@ Ví dụ 4 — CĐC số nhiều + Ngôi 2 số nhiều:
 LessonPhase _buildDay2Phase2() => LessonPhase(
       id: 'lesson02_phase5',
       phaseTypeStr: 'mind_game',
-      titleVi: '🧠 Ghép câu: 4 câu',
+      titleVi: '🧠 Ghép câu: Dịch 4 câu ví dụ minh họa',
       contentVi:
           'Nhấn vào từng cụm tiếng Việt → đọc to cụm Pāḷi tương ứng → nhấn lại để xem đáp án.',
       mixedSegments: const [
@@ -492,7 +487,7 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
 LessonPhase _buildDay2Phase3() => LessonPhase(
       id: 'lesson02_phase6',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: Dịch câu Pāḷi',
+      titleVi: '🎧 Quiz: Dịch câu Pāḷi (Bài tập 2)',
       contentVi:
           'Trả lời 6 câu hỏi trắc nghiệm bằng cách CHỌN BẢN DỊCH TIẾNG VIỆT ĐÚNG cho mỗi câu Pāḷi.',
       questions: const [

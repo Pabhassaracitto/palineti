@@ -16,8 +16,6 @@ LessonMeta getLesson12Meta() => const LessonMeta(
   iconEmoji: '👈',
   colorValue: 0xFF4682B4,
   description: 'Cách sử dụng Đại từ nhân xưng và Khả năng cách',
-      complexity: LessonComplexity.low,
-      estimatedMinutes: 35,
 );
 
 
@@ -599,7 +597,7 @@ LessonDay getLesson12Day1() {
     id: 'lesson12_day1',
     dayNumber: 1,
     themeId: 'theme_12_pronouns_optative',
-    titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Đại từ & Khả năng cách',
+    titleVi: 'Ngày 1: Đại từ & Khả năng cách — Lý thuyết & Từ vựng',
     phases: [
       _buildDay1Phase1(),
       _buildDay1Phase2(),
@@ -612,7 +610,7 @@ LessonPhase _buildDay1Phase1() {
   return LessonPhase(
     id: 'lesson12_phase1',
     phaseTypeStr: 'read_listen',
-    titleVi: '📘 Lý thuyết: Đại từ & Khả năng cách',
+    titleVi: 'Bài đọc: Đại từ & Khả năng cách',
     contentVi: '''
 BÀI 12 — ĐẠI TỪ NHÂN XƯNG & KHẢ NĂNG CÁCH (SATTAMĪ)
 
@@ -787,7 +785,7 @@ LessonPhase _buildDay1Phase2() {
   return LessonPhase(
     id: 'lesson12_phase2',
     phaseTypeStr: 'read_listen',
-    titleVi: '📖 Từ vựng: Đại từ & Khả năng cách',
+    titleVi: 'Từ vựng Bài 12',
     contentVi: 'Toàn bộ từ mới theo sách (tr.108-110) và các dạng đại từ nhân xưng. Học kỹ các enclitic "me/te/vo/no" và nghĩa của chúng trong câu.',
     fabVocab: _buildVocabFabList(),
   );
@@ -1113,7 +1111,7 @@ LessonDay getLesson12Day2() {
     id: 'lesson12_day2',
     dayNumber: 2,
     themeId: 'theme_12_pronouns_optative',
-    titleVi: 'Ngày 2 — Luyện tập: Đại từ & Khả năng cách',
+    titleVi: 'Ngày 2: Thực hành Mind Game & Quiz — Đại từ & Khả năng cách',
     phases: [
       _buildDay2MindGame(),
       _buildDay2Quiz(),
@@ -1126,7 +1124,7 @@ LessonPhase _buildDay2MindGame() {
   return LessonPhase(
     id: 'lesson12_phase3',
     phaseTypeStr: 'mind_game',
-    titleVi: '🧠 Ghép câu: Đại từ & Khả năng cách',
+    titleVi: 'Trò Chơi Tư Duy — Bài Tập 12',
     contentVi: 'Nhấn vào cụm tiếng Việt để nói to cụm Pāḷi tương ứng; nhấn lại để xem đáp án. Chú ý các dạng Khả năng cách (-eyyāmi/-eyyāsi/-eyya/-eyyuṃ/-eyyāma/-eyyātha) và enclitic me/te/vo/no.',
     mixedSegments: kLesson12MindGameSegments,
   );
@@ -1315,7 +1313,7 @@ LessonPhase _buildDay2Quiz() {
   return LessonPhase(
     id: 'lesson12_phase4',
     phaseTypeStr: 'listening_quiz',
-    titleVi: '🎧 Quiz: Đại từ & Khả năng cách',
+    titleVi: 'Quiz — Kiểm tra kiến thức Bài 12',
     questions: _buildQuiz(),
     fabAnswers: _buildQuizAnswers(),
   );

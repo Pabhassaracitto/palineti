@@ -18,8 +18,6 @@ LessonMeta getLesson08Meta() => const LessonMeta(
       colorValue: 0xFF0F7B0F,
       description:
           'Biến cách danh từ đuôi -i (muni/aggi/atithi); danh động từ Gerund (-tvā / -tvāna / -tūna) chỉ hành động xảy ra trước.',
-      complexity: LessonComplexity.medium,
-      estimatedMinutes: 40,
     );
 
 // ──────────────────────────────────────────────────────────────
@@ -109,7 +107,7 @@ LessonDay getLesson08Day1() => LessonDay(
       id: 'lesson08_day1',
       dayNumber: 1,
       themeId: 'theme_08_lesson',
-      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Danh từ Nam "-i" & Danh động từ',
+      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng',
       phases: [
         _buildDay1Phase1(),
         _buildDay1Phase2(),
@@ -120,7 +118,7 @@ LessonDay getLesson08Day1() => LessonDay(
 LessonPhase _buildDay1Phase1() => LessonPhase(
       id: 'lesson08_phase1',
       phaseTypeStr: 'read_listen',
-      titleVi: '📘 Lý thuyết: Danh từ Nam "-i" & Danh động từ',
+      titleVi: '📘 Biến cách DT Nam "-i" + Danh động từ',
       contentVi: '''
 🎯 MỤC TIÊU BÀI 8
 ───────────────────
@@ -235,7 +233,7 @@ B. DANH ĐỘNG TỪ (GERUND) — Bất biến quá khứ phân từ
 LessonPhase _buildDay1Phase2() => LessonPhase(
       id: 'lesson08_phase2',
       phaseTypeStr: 'mind_game',
-      titleVi: '🧠 Ghép từ: 12 từ mới',
+      titleVi: '🧠 Ghép từ: 12 danh từ Nam "-i"',
       contentVi:
           'Nhấn vào từng ô tiếng Việt → đọc to từ Pāḷi tương ứng → nhấn lại để xem đáp án.',
       mixedSegments: const [
@@ -281,7 +279,7 @@ LessonPhase _buildDay1Phase2() => LessonPhase(
 LessonPhase _buildDay1Phase3() => LessonPhase(
       id: 'lesson08_phase3',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: Danh từ Nam "-i" & Danh động từ',
+      titleVi: '🎧 Quiz: Biến cách "-i" & Danh động từ',
       contentVi:
           'Trả lời 7 câu hỏi trắc nghiệm về biến cách danh từ Nam "-i" và cách thành lập Gerund.',
       questions: const [
@@ -377,7 +375,7 @@ LessonDay getLesson08Day2() => LessonDay(
       id: 'lesson08_day2',
       dayNumber: 2,
       themeId: 'theme_08_lesson',
-      titleVi: 'Ngày 2 — Luyện tập: Danh từ Nam "-i" & Danh động từ',
+      titleVi: 'Ngày 2 — Bài tập & Quiz dịch thuật',
       phases: [
         _buildDay2Phase1(),
         _buildDay2Phase2(),
@@ -388,7 +386,7 @@ LessonDay getLesson08Day2() => LessonDay(
 LessonPhase _buildDay2Phase1() => LessonPhase(
       id: 'lesson08_phase4',
       phaseTypeStr: 'read_listen',
-      titleVi: '📖 Đọc hiểu: Exercise 8',
+      titleVi: '📖 Đọc hiểu: Gợi ý dịch Exercise 8',
       contentVi: '''
 ══════════════════════════════════════════════════════
 📖 BÀI TẬP 8 — Dịch 30 câu Pāḷi sang tiếng Việt
@@ -526,7 +524,7 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
 LessonPhase _buildDay2Phase3() => LessonPhase(
       id: 'lesson08_phase6',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: Dịch câu Exercise 8',
+      titleVi: '🎧 Quiz: Dịch câu Pāḷi (Exercise 8)',
       contentVi:
           'Chọn bản dịch tiếng Việt đúng cho mỗi câu Pāḷi từ Exercise 8.',
       questions: const [
