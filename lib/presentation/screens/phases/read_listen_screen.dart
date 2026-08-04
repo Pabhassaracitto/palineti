@@ -67,7 +67,9 @@ class ReadListenScreen extends StatelessWidget {
               if (phase.fabVocab != null && phase.fabVocab!.isNotEmpty) ...[
                 _buildFabSection(
                   l10n.importantVocabulary,
-                  phase.fabVocab!.map((item) => _buildVocabItem(item)).toList(),
+                  phase.fabVocab!
+                      .map((item) => _buildVocabItem(context, item))
+                      .toList(),
                 ),
                 const SizedBox(height: 16),
               ],
@@ -116,7 +118,7 @@ class ReadListenScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildVocabItem(FabVocabItem item) {
+  Widget _buildVocabItem(BuildContext context, FabVocabItem item) {
     return Container(
       margin: const EdgeInsets.only(bottom: 6),
       padding: const EdgeInsets.all(10),
