@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
+import '../localization/learning_content_localizations.dart';
 import 'phases/read_listen_screen.dart';
 import 'phases/mind_game_screen.dart';
 import 'phases/quiz_screen.dart';
@@ -59,12 +61,14 @@ class _PhaseNavigatorScreenState extends State<PhaseNavigatorScreen> {
   }
 
   void _showCompletionDialog() {
+    final l10n = AppLocalizations.of(context);
+
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('🎉 Hoàn thành!'),
+        title: Text(l10n.completionTitle),
         content: Text(
-          'Bạn đã hoàn thành ${widget.lessonDay.titleVi}',
+          l10n.completionMessage(widget.lessonDay.localizedTitle(context)),
         ),
         actions: [
           TextButton(
@@ -72,7 +76,7 @@ class _PhaseNavigatorScreenState extends State<PhaseNavigatorScreen> {
               Navigator.pop(ctx); // Close dialog
               Navigator.pop(context); // Back to previous screen
             },
-            child: const Text('Quay lại'),
+            child: Text(l10n.back),
           ),
         ],
       ),
@@ -81,6 +85,8 @@ class _PhaseNavigatorScreenState extends State<PhaseNavigatorScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Scaffold(
       backgroundColor: AppColors.paliBg,
       appBar: AppBar(
@@ -90,11 +96,14 @@ class _PhaseNavigatorScreenState extends State<PhaseNavigatorScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              widget.lessonDay.titleVi,
+              widget.lessonDay.localizedTitle(context),
               style: const TextStyle(fontSize: 14),
             ),
             Text(
-              'Phase ${_currentPhaseIndex + 1}/${widget.lessonDay.phases.length}',
+              l10n.phaseProgress(
+                _currentPhaseIndex + 1,
+                widget.lessonDay.phases.length,
+              ),
               style: const TextStyle(fontSize: 11, fontWeight: FontWeight.normal),
             ),
           ],
@@ -143,7 +152,9 @@ class _PhaseNavigatorScreenState extends State<PhaseNavigatorScreen> {
         );
       default:
         return Center(
-          child: Text('Unknown phase type: ${phase.phaseTypeStr}'),
+          child: Text(
+            AppLocalizations.of(context).unknownPhaseType(phase.phaseTypeStr),
+          ),
         );
     }
   }
@@ -168,7 +179,7 @@ class _PhaseNavigatorScreenState extends State<PhaseNavigatorScreen> {
             OutlinedButton.icon(
               onPressed: _previousPhase,
               icon: const Icon(Icons.arrow_back, size: 18),
-              label: const Text('Trước'),
+              label: Text(AppLocalizations.of(context).previous),
               style: OutlinedButton.styleFrom(
                 foregroundColor: AppColors.paliGold,
               ),

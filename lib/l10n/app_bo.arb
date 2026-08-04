@@ -1,0 +1,179 @@
+{
+  "@@locale": "bo",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "Pāḷi སློབ་ཚན — སློབ་ཚན {count}",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "Pāḷi གཞི་རིམ་སློབ་ཚན",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "སྒྲོམ་གཞི། VipLang Mind Game ཐབས་ལམ",
+  "lessonLabel": "སློབ་ཚན {number}",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "སློབ་ཚན {number}",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "གཞི་གྲངས་གྲ་སྒྲིག",
+  "otherLessons": "སློབ་ཚན་གཞན",
+  "comingSoonDataReady": "མགྱོགས་པོར་ཡོང — གཞི་གྲངས་སྒྲིག་གཞི་གྲ་སྒྲིག",
+  "startLesson": "སློབ་ཚན་འགོ་འཛུགས",
+  "vocabAndGrammar": "ཚིག་མཛོད་དང་བརྡ་སྤྲོད",
+  "lessonDetailHint": "སློབ་ཚན་འདིའི་ཚིག་མཛོད་དང་བརྡ་སྤྲོད་ལ་བལྟ་ཕྱིར་སློབ་ཚན་འགོ་འཛུགས་ལ་རྡེབས།",
+  "selectStudyDayTitle": "སློབ་ཚན {number} — སློབ་ཉིན་འདེམས",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "ཉིན {number}",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "སློབ་འགོ་འཛུགས",
+  "readPhase": "ཀློག",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "དྲི་བ",
+  "phaseProgress": "མཚམས {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "Unknown phase type: {type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 ཚར་སོང་།",
+  "completionMessage": "ཁྱེད་ཀྱིས {title} ཚར་བྱས།",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "ཕྱིར",
+  "previous": "སྔོན་མ",
+  "continueAction": "མུ་མཐུད",
+  "noContent": "ནང་དོན་མེད",
+  "noQuestions": "དྲི་བ་མེད",
+  "mindGameTitle": "སེམས་རྩེད",
+  "mindGameInstruction": "💡 གསལ་བཤད་ཆ་ཤས་ལ་རྡེབས → Pāḷi སྐད་ཆེན་པོས་བཤད → ལན་སྟོན་ཕྱིར་ཡང་རྡེབས",
+  "revealAll": "ཚང་མ་སྟོན",
+  "importantVocabulary": "📖 གལ་ཆེའི་ཚིག་མཛོད",
+  "importantStructures": "💡 གནད་ཆེའི་སྒྲིག་གཞི",
+  "quizResultsTitle": "📊 འབྲས་བུ",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "ཡག་པོ་ཤིན་ཏུ! 🎉",
+  "goodFeedback": "ལེགས་པོ! 👍",
+  "tryHarderFeedback": "མུ་མཐུད་སྦྱངས། 💪",
+  "listeningQuizTitle": "ཉན་སྦྱོང་དྲི་བ",
+  "questionProgress": "དྲི་བ {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "ཡི་གེ",
+  "correctAnswer": "འགྲིག!",
+  "explanation": "འགྲེལ་བཤད",
+  "answersAndExplanation": "📝 ལན་དང་འགྲེལ་བཤད",
+  "viewResults": "འབྲས་བུ་ལ་བལྟ",
+  "nextQuestion": "དྲི་བ་རྗེས་མ",
+  "fullDeclensionTable": "📚 རྣམ་དབྱེ་རེའུ་མིག་ཆ་ཚང",
+  "examplesSection": "📖 དཔེར་བརྗོད",
+  "declensionTableTitle": "རྣམ་དབྱེ་རེའུ་མིག:",
+  "declensionCase": "རྣམ་དབྱེ",
+  "singular": "གཅིག་ཚིག",
+  "plural": "མང་ཚིག",
+  "notMastered": "ད་དུང་མ་ཤེས",
+  "mastered": "ཤེས་ཟིན",
+  "currentLesson": "ད་ལྟའི་སློབ་ཚན",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "sg",
+  "pluralAbbr": "pl",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

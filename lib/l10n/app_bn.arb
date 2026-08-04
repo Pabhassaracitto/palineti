@@ -1,0 +1,179 @@
+{
+  "@@locale": "bn",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "Pāḷi কোর্স — {count} পাঠ",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "প্রাথমিক Pāḷi কোর্স",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "ফ্রেমওয়ার্ক: VipLang Mind Game পদ্ধতি",
+  "lessonLabel": "পাঠ {number}",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "পাঠ {number}",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "ডেটা প্রস্তুত",
+  "otherLessons": "অন্যান্য পাঠ",
+  "comingSoonDataReady": "শীঘ্রই আসছে — ডেটা কাঠামো প্রস্তুত",
+  "startLesson": "পাঠ শুরু করুন",
+  "vocabAndGrammar": "শব্দভাণ্ডার ও ব্যাকরণ",
+  "lessonDetailHint": "এই পাঠের শব্দভাণ্ডার ও ব্যাকরণ দেখতে পাঠ শুরু করুন চাপুন।",
+  "selectStudyDayTitle": "পাঠ {number} — অধ্যয়নের দিন বেছে নিন",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "দিন {number}",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "অধ্যয়ন শুরু করুন",
+  "readPhase": "পড়ুন",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "কুইজ",
+  "phaseProgress": "পর্যায় {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "অজানা পর্যায়ের ধরন: {type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 সম্পন্ন!",
+  "completionMessage": "আপনি {title} সম্পন্ন করেছেন",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "ফিরে যান",
+  "previous": "পূর্ববর্তী",
+  "continueAction": "চালিয়ে যান",
+  "noContent": "কোনো বিষয়বস্তু নেই",
+  "noQuestions": "কোনো প্রশ্ন নেই",
+  "mindGameTitle": "মাইন্ড গেম",
+  "mindGameInstruction": "💡 ইঙ্গিত অংশে চাপুন → Pāḷi জোরে বলুন → উত্তর দেখাতে আবার চাপুন",
+  "revealAll": "সব দেখান",
+  "importantVocabulary": "📖 গুরুত্বপূর্ণ শব্দভাণ্ডার",
+  "importantStructures": "💡 মূল গঠন",
+  "quizResultsTitle": "📊 ফলাফল",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "চমৎকার! 🎉",
+  "goodFeedback": "ভালো হয়েছে! 👍",
+  "tryHarderFeedback": "অনুশীলন চালিয়ে যান! 💪",
+  "listeningQuizTitle": "শ্রবণ কুইজ",
+  "questionProgress": "প্রশ্ন {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "লিপি",
+  "correctAnswer": "সঠিক!",
+  "explanation": "ব্যাখ্যা",
+  "answersAndExplanation": "📝 উত্তর ও ব্যাখ্যা",
+  "viewResults": "ফলাফল দেখুন",
+  "nextQuestion": "পরবর্তী প্রশ্ন",
+  "fullDeclensionTable": "📚 পূর্ণ বিভক্তি তালিকা",
+  "examplesSection": "📖 উদাহরণ",
+  "declensionTableTitle": "বিভক্তি তালিকা:",
+  "declensionCase": "বিভক্তি",
+  "singular": "একবচন",
+  "plural": "বহুবচন",
+  "notMastered": "এখনো আয়ত্ত নয়",
+  "mastered": "আয়ত্ত",
+  "currentLesson": "বর্তমান পাঠ",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "sg",
+  "pluralAbbr": "pl",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

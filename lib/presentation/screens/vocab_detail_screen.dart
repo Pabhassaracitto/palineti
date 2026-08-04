@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
+
+import '../localization/learning_content_localizations.dart';
 
 class VocabDetailScreen extends StatelessWidget {
   final PaliVocabModel vocab;
@@ -8,6 +11,8 @@ class VocabDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Scaffold(
       backgroundColor: AppColors.paliBg,
       appBar: AppBar(
@@ -22,11 +27,11 @@ class VocabDetailScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           // Main info
-          _buildMainInfo(),
+          _buildMainInfo(context),
           const SizedBox(height: 24),
 
           // Declension table
-          _buildSectionTitle('📚 Bảng Biến Cách Đầy Đủ'),
+          _buildSectionTitle(l10n.fullDeclensionTable),
           const SizedBox(height: 8),
           DeclensionTableWidget(
             root: vocab.root,
@@ -36,16 +41,16 @@ class VocabDetailScreen extends StatelessWidget {
 
           // Examples
           if (vocab.examplePali != null) ...[
-            _buildSectionTitle('📖 Ví Dụ Minh Họa'),
+            _buildSectionTitle(l10n.examplesSection),
             const SizedBox(height: 8),
-            _buildExampleCard(),
+            _buildExampleCard(context),
           ],
         ],
       ),
     );
   }
 
-  Widget _buildMainInfo() {
+  Widget _buildMainInfo(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -102,7 +107,7 @@ class VocabDetailScreen extends StatelessWidget {
 
           // Meaning
           Text(
-            vocab.wordVi,
+            vocab.localizedWord(context),
             style: const TextStyle(
               fontSize: 18,
               color: AppColors.paliSaffron,
@@ -111,7 +116,7 @@ class VocabDetailScreen extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           Text(
-            vocab.wordEn,
+            vocab.localizedSecondaryWord(context),
             style: TextStyle(
               fontSize: 15,
               color: Colors.grey[600],
@@ -143,7 +148,7 @@ class VocabDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildExampleCard() {
+  Widget _buildExampleCard(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -163,10 +168,10 @@ class VocabDetailScreen extends StatelessWidget {
               height: 1.5,
             ),
           ),
-          if (vocab.exampleVi != null) ...[
+          if (vocab.localizedExample(context) != null) ...[
             const SizedBox(height: 8),
             Text(
-              vocab.exampleVi!,
+              vocab.localizedExample(context)!,
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey[700],

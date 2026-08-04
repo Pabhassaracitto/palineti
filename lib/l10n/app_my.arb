@@ -1,0 +1,179 @@
+{
+  "@@locale": "my",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "Pāḷi သင်ခန်းစာ — သင်ခန်းစာ {count} ခု",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "အခြေခံ Pāḷi သင်တန်း",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "မူဘောင်: VipLang Mind Game နည်းလမ်း",
+  "lessonLabel": "သင်ခန်းစာ {number}",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "သင်ခန်းစာ {number}",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "ဒေတာ အသင့်",
+  "otherLessons": "အခြားသင်ခန်းစာများ",
+  "comingSoonDataReady": "မကြာမီ — ဒေတာဖွဲ့စည်းပုံ အသင့်",
+  "startLesson": "သင်ခန်းစာ စတင်ရန်",
+  "vocabAndGrammar": "ဝေါဟာရနှင့် သဒ္ဒါ",
+  "lessonDetailHint": "ဤသင်ခန်းစာ၏ ဝေါဟာရနှင့် သဒ္ဒါအသေးစိတ်ကို ကြည့်ရန် သင်ခန်းစာ စတင်ရန် ကိုနှိပ်ပါ။",
+  "selectStudyDayTitle": "သင်ခန်းစာ {number} — လေ့လာမည့်နေ့ ရွေးပါ",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "နေ့ {number}",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "လေ့လာမှု စတင်ရန်",
+  "readPhase": "ဖတ်ရန်",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "မေးခွန်းစစ်",
+  "phaseProgress": "အဆင့် {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "မသိသော အဆင့်အမျိုးအစား: {type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 ပြီးဆုံးပါပြီ!",
+  "completionMessage": "သင် {title} ကိုပြီးဆုံးခဲ့ပါပြီ",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "ပြန်သွားရန်",
+  "previous": "ယခင်",
+  "continueAction": "ဆက်ရန်",
+  "noContent": "အကြောင်းအရာမရှိပါ",
+  "noQuestions": "မေးခွန်းမရှိပါ",
+  "mindGameTitle": "စိတ်ကစားနည်း",
+  "mindGameInstruction": "💡 အရိပ်အမြွက်ပိုင်းကို နှိပ်ပါ → Pāḷi ကို အသံထွက်ပြောပါ → အဖြေပြရန် ထပ်နှိပ်ပါ",
+  "revealAll": "အားလုံးပြရန်",
+  "importantVocabulary": "📖 အရေးကြီး ဝေါဟာရ",
+  "importantStructures": "💡 အဓိက တည်ဆောက်ပုံများ",
+  "quizResultsTitle": "📊 ရလဒ်များ",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "အလွန်ကောင်းသည်! 🎉",
+  "goodFeedback": "ကောင်းပါတယ်! 👍",
+  "tryHarderFeedback": "ဆက်လက်လေ့ကျင့်ပါ! 💪",
+  "listeningQuizTitle": "နားထောင်မှု မေးခွန်းစစ်",
+  "questionProgress": "မေးခွန်း {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "စာသားမှတ်တမ်း",
+  "correctAnswer": "မှန်ပါသည်!",
+  "explanation": "ရှင်းလင်းချက်",
+  "answersAndExplanation": "📝 အဖြေများနှင့် ရှင်းလင်းချက်",
+  "viewResults": "ရလဒ်ကြည့်ရန်",
+  "nextQuestion": "နောက်မေးခွန်း",
+  "fullDeclensionTable": "📚 ပြည့်စုံသော ဝိဘတ်ဇယား",
+  "examplesSection": "📖 ဥပမာများ",
+  "declensionTableTitle": "ဝိဘတ်ဇယား:",
+  "declensionCase": "ဝိဘတ်",
+  "singular": "အနည်းကိန်း",
+  "plural": "အများကိန်း",
+  "notMastered": "မကျွမ်းကျင်သေး",
+  "mastered": "ကျွမ်းကျင်ပြီး",
+  "currentLesson": "လက်ရှိသင်ခန်းစာ",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "sg",
+  "pluralAbbr": "pl",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

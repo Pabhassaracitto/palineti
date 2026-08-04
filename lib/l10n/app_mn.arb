@@ -1,0 +1,179 @@
+{
+  "@@locale": "mn",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "Pāḷi курс — {count} хичээл",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "Анхан шатны Pāḷi курс",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "Хүрээ: VipLang Mind Game арга",
+  "lessonLabel": "Хичээл {number}",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "Хичээл {number}",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "Өгөгдөл бэлэн",
+  "otherLessons": "Бусад хичээл",
+  "comingSoonDataReady": "Удахгүй — өгөгдлийн бүтэц бэлэн",
+  "startLesson": "Хичээл эхлэх",
+  "vocabAndGrammar": "Үгийн сан ба дүрэм",
+  "lessonDetailHint": "Энэ хичээлийн үгийн сан, дүрмийг үзэхийн тулд Хичээл эхлэхийг дарна уу.",
+  "selectStudyDayTitle": "Хичээл {number} — Суралцах өдрөө сонго",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "Өдөр {number}",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "Суралцаж эхлэх",
+  "readPhase": "Унших",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "Асуулт",
+  "phaseProgress": "Үе {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "Unknown phase type: {type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 Дууслаа!",
+  "completionMessage": "Та {title}-г дуусгалаа",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "Буцах",
+  "previous": "Өмнөх",
+  "continueAction": "Үргэлжлүүлэх",
+  "noContent": "Агуулга алга",
+  "noQuestions": "Асуулт алга",
+  "mindGameTitle": "Оюуны тоглоом",
+  "mindGameInstruction": "💡 Сануулгын хэсгийг дар → Pāḷi-г чангаар хэл → Хариуг үзэхийн тулд дахин дар",
+  "revealAll": "Бүгдийг харуулах",
+  "importantVocabulary": "📖 Чухал үгийн сан",
+  "importantStructures": "💡 Гол бүтэц",
+  "quizResultsTitle": "📊 Үр дүн",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "Гайхалтай! 🎉",
+  "goodFeedback": "Сайн байна! 👍",
+  "tryHarderFeedback": "Дадлагаа үргэлжлүүлээрэй! 💪",
+  "listeningQuizTitle": "Сонсголын асуулт",
+  "questionProgress": "Асуулт {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "Транскрипт",
+  "correctAnswer": "Зөв!",
+  "explanation": "Тайлбар",
+  "answersAndExplanation": "📝 Хариулт ба тайлбар",
+  "viewResults": "Үр дүнг үзэх",
+  "nextQuestion": "Дараагийн асуулт",
+  "fullDeclensionTable": "📚 Бүрэн хувиллын хүснэгт",
+  "examplesSection": "📖 Жишээ",
+  "declensionTableTitle": "Хувиллын хүснэгт:",
+  "declensionCase": "Тийн ялгал",
+  "singular": "Ганц тоо",
+  "plural": "Олон тоо",
+  "notMastered": "Эзэмшээгүй",
+  "mastered": "Эзэмшсэн",
+  "currentLesson": "Одоогийн хичээл",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "sg",
+  "pluralAbbr": "pl",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

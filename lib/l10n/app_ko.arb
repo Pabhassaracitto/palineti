@@ -1,0 +1,179 @@
+{
+  "@@locale": "ko",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "Pāḷi 코스 — {count}개 레슨",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "초급 Pāḷi 코스",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "프레임워크: VipLang Mind Game 방법",
+  "lessonLabel": "레슨 {number}",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "레슨 {number}",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "데이터 준비됨",
+  "otherLessons": "다른 레슨",
+  "comingSoonDataReady": "곧 제공 — 데이터 구조 준비됨",
+  "startLesson": "레슨 시작",
+  "vocabAndGrammar": "어휘 및 문법",
+  "lessonDetailHint": "이 레슨의 어휘와 문법을 보려면 레슨 시작을 탭하세요.",
+  "selectStudyDayTitle": "레슨 {number} — 학습일 선택",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "Day {number}",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "학습 시작",
+  "readPhase": "읽기",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "퀴즈",
+  "phaseProgress": "단계 {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "Unknown phase type: {type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 완료!",
+  "completionMessage": "{title}을(를) 완료했습니다",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "뒤로",
+  "previous": "이전",
+  "continueAction": "계속",
+  "noContent": "콘텐츠 없음",
+  "noQuestions": "질문 없음",
+  "mindGameTitle": "마인드 게임",
+  "mindGameInstruction": "💡 힌트 조각 탭 → Pāḷi를 소리 내어 말하기 → 다시 탭해 답 보기",
+  "revealAll": "모두 보기",
+  "importantVocabulary": "📖 중요 어휘",
+  "importantStructures": "💡 핵심 구조",
+  "quizResultsTitle": "📊 결과",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "훌륭해요! 🎉",
+  "goodFeedback": "잘했어요! 👍",
+  "tryHarderFeedback": "계속 연습하세요! 💪",
+  "listeningQuizTitle": "듣기 퀴즈",
+  "questionProgress": "문제 {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "스크립트",
+  "correctAnswer": "정답!",
+  "explanation": "설명",
+  "answersAndExplanation": "📝 답과 설명",
+  "viewResults": "결과 보기",
+  "nextQuestion": "다음 문제",
+  "fullDeclensionTable": "📚 전체 격변화 표",
+  "examplesSection": "📖 예문",
+  "declensionTableTitle": "격변화 표:",
+  "declensionCase": "격",
+  "singular": "단수",
+  "plural": "복수",
+  "notMastered": "미숙달",
+  "mastered": "숙달",
+  "currentLesson": "현재 레슨",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "sg",
+  "pluralAbbr": "pl",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

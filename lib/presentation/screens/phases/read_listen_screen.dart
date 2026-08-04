@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
+
+import '../../localization/learning_content_localizations.dart';
 
 class ReadListenScreen extends StatelessWidget {
   final LessonPhase phase;
@@ -13,6 +16,10 @@ class ReadListenScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final title = phase.localizedTitle(context);
+    final content = phase.localizedContent(context);
+
     return SafeArea(
         child: Column(
       children: [
@@ -21,9 +28,9 @@ class ReadListenScreen extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             children: [
               // Title
-              if (phase.titleVi != null) ...[
+              if (title != null) ...[
                 Text(
-                  phase.titleVi!,
+                  title,
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -33,8 +40,8 @@ class ReadListenScreen extends StatelessWidget {
                 const SizedBox(height: 16),
               ],
 
-              // Content VI
-              if (phase.contentVi != null) ...[
+              // Localized learning content
+              if (content != null) ...[
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
@@ -45,7 +52,7 @@ class ReadListenScreen extends StatelessWidget {
                     ),
                   ),
                   child: SelectableText(
-                    phase.contentVi!,
+                    content,
                     style: const TextStyle(
                       fontSize: 14,
                       height: 1.6,
@@ -59,7 +66,7 @@ class ReadListenScreen extends StatelessWidget {
               // FAB Vocab
               if (phase.fabVocab != null && phase.fabVocab!.isNotEmpty) ...[
                 _buildFabSection(
-                  '📖 Từ Vựng Quan Trọng',
+                  l10n.importantVocabulary,
                   phase.fabVocab!.map((item) => _buildVocabItem(item)).toList(),
                 ),
                 const SizedBox(height: 16),
@@ -68,7 +75,7 @@ class ReadListenScreen extends StatelessWidget {
               // FAB Phrases
               if (phase.fabPhrases != null && phase.fabPhrases!.isNotEmpty) ...[
                 _buildFabSection(
-                  '💡 Cấu Trúc Cần Nhớ',
+                  l10n.importantStructures,
                   phase.fabPhrases!
                       .map((item) => _buildPhraseItem(item))
                       .toList(),
@@ -129,7 +136,7 @@ class ReadListenScreen extends StatelessWidget {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: item.wordEn,
+                        text: item.localizedWord(context),
                         style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
@@ -149,7 +156,7 @@ class ReadListenScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  item.wordVi,
+                  item.localizedSecondaryWord(context),
                   style: const TextStyle(
                     fontSize: 13,
                     color: AppColors.paliSaffron,
@@ -235,15 +242,18 @@ class ReadListenScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
           ),
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Tiếp tục',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                AppLocalizations.of(context).continueAction,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              SizedBox(width: 8),
-              Icon(Icons.arrow_forward, size: 20),
+              const SizedBox(width: 8),
+              const Icon(Icons.arrow_forward, size: 20),
             ],
           ),
         ),

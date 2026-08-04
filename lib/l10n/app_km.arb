@@ -1,0 +1,179 @@
+{
+  "@@locale": "km",
+  "appTitle": "Pāḷi Course",
+  "appTitleExample": "Pāḷi Course — Example",
+  "courseTitleWithLessonCount": "វគ្គ Pāḷi — មេរៀន {count}",
+  "@courseTitleWithLessonCount": {
+    "description": "Home app bar title with lesson count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brandName": "PALINETI",
+  "courseSubtitle": "វគ្គ Pāḷi កម្រិតដំបូង",
+  "courseAuthor": "Nārada Mahāthera",
+  "frameworkLabel": "ក្របខណ្ឌ៖ វិធី VipLang Mind Game",
+  "lessonLabel": "មេរៀន {number}",
+  "@lessonLabel": {
+    "description": "Lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lessonUppercase": "មេរៀន {number}",
+  "@lessonUppercase": {
+    "description": "Uppercase lesson label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dataReady": "ទិន្នន័យរួចរាល់",
+  "otherLessons": "មេរៀនផ្សេងទៀត",
+  "comingSoonDataReady": "នឹងមកដល់ឆាប់ៗ — រចនាសម្ព័ន្ធទិន្នន័យរួចរាល់",
+  "startLesson": "ចាប់ផ្តើមមេរៀន",
+  "vocabAndGrammar": "វាក្យសព្ទ និង វេយ្យាករណ៍",
+  "lessonDetailHint": "ចុច ចាប់ផ្តើមមេរៀន ដើម្បីមើលវាក្យសព្ទ និងវេយ្យាករណ៍នៃមេរៀននេះ។",
+  "selectStudyDayTitle": "មេរៀន {number} — ជ្រើសថ្ងៃសិក្សា",
+  "@selectStudyDayTitle": {
+    "description": "App bar title for selecting a study day.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "dayLabel": "ថ្ងៃ {number}",
+  "@dayLabel": {
+    "description": "Day label with number.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "startStudying": "ចាប់ផ្តើមសិក្សា",
+  "readPhase": "អាន",
+  "mindGamePhase": "Mind Game",
+  "quizPhase": "សំណួរ",
+  "phaseProgress": "ដំណាក់កាល {current}/{total}",
+  "@phaseProgress": {
+    "description": "Current phase progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "unknownPhaseType": "Unknown phase type: {type}",
+  "@unknownPhaseType": {
+    "description": "Fallback message for an unknown phase type.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "completionTitle": "🎉 បានបញ្ចប់!",
+  "completionMessage": "អ្នកបានបញ្ចប់ {title}",
+  "@completionMessage": {
+    "description": "Completion message with lesson/day title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "ត្រឡប់",
+  "previous": "មុន",
+  "continueAction": "បន្ត",
+  "noContent": "គ្មានមាតិកា",
+  "noQuestions": "គ្មានសំណួរ",
+  "mindGameTitle": "ហ្គេមគំនិត",
+  "mindGameInstruction": "💡 ចុចផ្នែកជំនួយ → និយាយ Pāḷi ឲ្យឮ → ចុចម្តងទៀតដើម្បីបង្ហាញចម្លើយ",
+  "revealAll": "បង្ហាញទាំងអស់",
+  "importantVocabulary": "📖 វាក្យសព្ទសំខាន់",
+  "importantStructures": "💡 រចនាសម្ព័ន្ធសំខាន់",
+  "quizResultsTitle": "📊 លទ្ធផល",
+  "scoreLabel": "{correct}/{total}",
+  "@scoreLabel": {
+    "description": "Quiz score label.",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "excellentFeedback": "ល្អឥតខ្ចោះ! 🎉",
+  "goodFeedback": "ល្អណាស់! 👍",
+  "tryHarderFeedback": "បន្តហាត់! 💪",
+  "listeningQuizTitle": "សំណួរស្តាប់",
+  "questionProgress": "សំណួរ {current}/{total}",
+  "@questionProgress": {
+    "description": "Current quiz question progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "transcript": "អត្ថបទ",
+  "correctAnswer": "ត្រឹមត្រូវ!",
+  "explanation": "ការពន្យល់",
+  "answersAndExplanation": "📝 ចម្លើយ និងការពន្យល់",
+  "viewResults": "មើលលទ្ធផល",
+  "nextQuestion": "សំណួរបន្ទាប់",
+  "fullDeclensionTable": "📚 តារាងបំប្លែងពេញលេញ",
+  "examplesSection": "📖 ឧទាហរណ៍",
+  "declensionTableTitle": "តារាងបំប្លែង:",
+  "declensionCase": "ករណី",
+  "singular": "ឯកវចនៈ",
+  "plural": "ពហុវចនៈ",
+  "notMastered": "មិនទាន់ចេះ",
+  "mastered": "ចេះហើយ",
+  "currentLesson": "មេរៀនបច្ចុប្បន្ន",
+  "caseNomAbbr": "Nom",
+  "caseAccAbbr": "Acc",
+  "caseInsAbbr": "Ins",
+  "caseDatAbbr": "Dat",
+  "caseAblAbbr": "Abl",
+  "caseGenAbbr": "Gen",
+  "caseLocAbbr": "Loc",
+  "caseVocAbbr": "Voc",
+  "caseNomName": "Nominative",
+  "caseAccName": "Accusative",
+  "caseInsName": "Instrumental",
+  "caseDatName": "Dative",
+  "caseAblName": "Ablative",
+  "caseGenName": "Genitive",
+  "caseLocName": "Locative",
+  "caseVocName": "Vocative",
+  "singularAbbr": "sg",
+  "pluralAbbr": "pl",
+  "quickFormLabel": "{caseAbbr} {numberAbbr}",
+  "@quickFormLabel": {
+    "description": "Short grammar form label.",
+    "placeholders": {
+      "caseAbbr": {
+        "type": "String"
+      },
+      "numberAbbr": {
+        "type": "String"
+      }
+    }
+  }
+}

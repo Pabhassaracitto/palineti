@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
 
+import '../localization/app_locale_controller.dart';
+import '../localization/learning_content_localizations.dart';
 import 'lesson_detail_screen.dart';
+import 'settings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final AppLocaleController localeController;
+
+  const HomeScreen({
+    required this.localeController,
+    super.key,
+  });
 
   // Load all metadata from actual lessons
   static final _lessons = <LessonMeta>[
@@ -49,36 +58,52 @@ class HomeScreen extends StatelessWidget {
     // Sort just to be safe
     final sortedLessons = List<LessonMeta>.from(_lessons)
       ..sort((a, b) => a.lessonNumber.compareTo(b.lessonNumber));
+    final l10n = AppLocalizations.of(context);
 
     return Scaffold(
       backgroundColor: AppColors.paliBg,
       appBar: AppBar(
         backgroundColor: AppColors.paliGold,
         foregroundColor: Colors.white,
-        title: const Text(
-          'Pāḷi Course — 26 Lessons',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        title: Text(
+          l10n.courseTitleWithLessonCount(26),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
+        actions: [
+          IconButton(
+            tooltip: 'Settings / Cài đặt',
+            icon: const Icon(Icons.settings),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => SettingsScreen(
+                  localeController: localeController,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           // Header
-          _buildHeader(),
+          _buildHeader(context),
           const SizedBox(height: 16),
 
           // Lesson cards
           ...sortedLessons.map((lesson) => _buildLessonCard(context, lesson)),
 
           // Placeholder cho lessons chưa có data
-          _buildComingSoonCard(),
+          _buildComingSoonCard(context),
         ],
       ),
     );
   }
 
-  Widget _buildHeader() {
+  Widget _buildHeader(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -118,25 +143,25 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'PALINETI',
-                      style: TextStyle(
+                    Text(
+                      l10n.brandName,
+                      style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w800,
                         letterSpacing: 3,
                         color: AppColors.paliInk,
                       ),
                     ),
-                    const Text(
-                      'An Elementary Pāḷi Course',
-                      style: TextStyle(
+                    Text(
+                      l10n.courseSubtitle,
+                      style: const TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                         color: AppColors.paliInk,
                       ),
                     ),
                     Text(
-                      'Nārada Mahāthera',
+                      l10n.courseAuthor,
                       style: TextStyle(fontSize: 12, color: Colors.grey[700]),
                     ),
                   ],
@@ -146,7 +171,7 @@ class HomeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            'Framework: VipLang Mind Game Method',
+            l10n.frameworkLabel,
             style: TextStyle(
               fontSize: 12,
               color: Colors.grey[600],
@@ -159,6 +184,7 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildLessonCard(BuildContext context, LessonMeta lesson) {
+    final l10n = AppLocalizations.of(context);
     // Treat all lessons initialized here as having data
     final hasData = true;
     final color = Color(lesson.colorValue);
@@ -218,7 +244,7 @@ class HomeScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Text(
-                            'Lesson ${lesson.lessonNumber}',
+                            l10n.lessonLabel(lesson.lessonNumber),
                             style: const TextStyle(
                               fontSize: 11,
                               color: Colors.white,
@@ -238,9 +264,9 @@ class HomeScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(4),
                               border: Border.all(color: AppColors.paliSaffron),
                             ),
-                            child: const Text(
-                              'DATA READY',
-                              style: TextStyle(
+                            child: Text(
+                              l10n.dataReady,
+                              style: const TextStyle(
                                 fontSize: 9,
                                 color: AppColors.paliSaffron,
                                 fontWeight: FontWeight.bold,
@@ -251,7 +277,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      lesson.titleVi,
+                      lesson.localizedTitle(context),
                       style: const TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
@@ -259,12 +285,12 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      lesson.titleEn,
+                      lesson.localizedSecondaryTitle(context),
                       style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      lesson.description,
+                      lesson.localizedDescription(context),
                       style: TextStyle(fontSize: 11, color: Colors.grey[500]),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -286,7 +312,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildComingSoonCard() {
+  Widget _buildComingSoonCard(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
       padding: const EdgeInsets.all(16),
@@ -304,7 +331,7 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Other Lessons',
+                  l10n.otherLessons,
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -312,7 +339,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Coming soon — data structure ready',
+                  l10n.comingSoonDataReady,
                   style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                 ),
               ],

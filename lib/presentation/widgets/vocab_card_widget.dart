@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
+
+import '../localization/learning_content_localizations.dart';
+import '../localization/pali_grammar_localizations.dart';
 
 class VocabCardWidget extends StatelessWidget {
   final PaliVocabModel vocab;
@@ -58,7 +62,7 @@ class VocabCardWidget extends StatelessWidget {
 
               // Dòng 2: Nghĩa
               Text(
-                vocab.wordVi,
+                vocab.localizedWord(context),
                 style: const TextStyle(
                   fontSize: 15,
                   color: AppColors.paliSaffron,
@@ -66,7 +70,7 @@ class VocabCardWidget extends StatelessWidget {
                 ),
               ),
               Text(
-                vocab.wordEn,
+                vocab.localizedSecondaryWord(context),
                 style: TextStyle(
                   fontSize: 13,
                   color: Colors.grey[500],
@@ -86,9 +90,9 @@ class VocabCardWidget extends StatelessWidget {
                     fontStyle: FontStyle.italic,
                   ),
                 ),
-                if (vocab.exampleVi != null)
+                if (vocab.localizedExample(context) != null)
                   Text(
-                    vocab.exampleVi!,
+                    vocab.localizedExample(context)!,
                     style: TextStyle(
                       fontSize: 12,
                       color: Colors.grey[600],
@@ -99,7 +103,7 @@ class VocabCardWidget extends StatelessWidget {
               // Quick forms (Nom/Acc)
               if (vocab.paradigmId == 'masc_a') ...[
                 const SizedBox(height: 8),
-                _buildQuickForms(vocab),
+                _buildQuickForms(context, vocab),
               ],
             ],
           ),
@@ -127,12 +131,37 @@ class VocabCardWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildQuickForms(PaliVocabModel vocab) {
+  Widget _buildQuickForms(BuildContext context, PaliVocabModel vocab) {
+    final l10n = AppLocalizations.of(context);
     final forms = [
-      ('CC sg', vocab.getForm(PaliCase.nom, PaliNumber.singular)),
-      ('CC pl', vocab.getForm(PaliCase.nom, PaliNumber.plural)),
-      ('ĐC sg', vocab.getForm(PaliCase.acc, PaliNumber.singular)),
-      ('ĐC pl', vocab.getForm(PaliCase.acc, PaliNumber.plural)),
+      (
+        l10n.quickFormLabel(
+          PaliCase.nom.localizedAbbreviation(l10n),
+          PaliNumber.singular.localizedAbbreviation(l10n),
+        ),
+        vocab.getForm(PaliCase.nom, PaliNumber.singular),
+      ),
+      (
+        l10n.quickFormLabel(
+          PaliCase.nom.localizedAbbreviation(l10n),
+          PaliNumber.plural.localizedAbbreviation(l10n),
+        ),
+        vocab.getForm(PaliCase.nom, PaliNumber.plural),
+      ),
+      (
+        l10n.quickFormLabel(
+          PaliCase.acc.localizedAbbreviation(l10n),
+          PaliNumber.singular.localizedAbbreviation(l10n),
+        ),
+        vocab.getForm(PaliCase.acc, PaliNumber.singular),
+      ),
+      (
+        l10n.quickFormLabel(
+          PaliCase.acc.localizedAbbreviation(l10n),
+          PaliNumber.plural.localizedAbbreviation(l10n),
+        ),
+        vocab.getForm(PaliCase.acc, PaliNumber.plural),
+      ),
     ];
 
     return Wrap(
