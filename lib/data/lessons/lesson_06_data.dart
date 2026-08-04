@@ -16,6 +16,8 @@ LessonMeta getLesson06Meta() => const LessonMeta(
   iconEmoji: '👩',
   colorValue: 0xFF6B8E23,
   description: 'Học về danh từ nữ tánh kết thúc bằng -ā và động từ nguyên thể',
+      complexity: LessonComplexity.low,
+      estimatedMinutes: 35,
 );
 
 
@@ -641,7 +643,7 @@ LessonDay getLesson06Day1() {
     id: 'lesson06_day1',
     dayNumber: 1,
     themeId: 'theme_06_fem_a_infinitive',
-    titleVi: 'Ngày 1: Nữ tánh "-ā" & Nguyên thể — Lý thuyết & Từ vựng',
+    titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Nữ tánh "-ā" & Nguyên thể',
     phases: [
       _buildDay1Phase1(),
       _buildDay1Phase2(),
@@ -654,7 +656,7 @@ LessonPhase _buildDay1Phase1() {
   return LessonPhase(
     id: 'lesson06_phase1',
     phaseTypeStr: 'read_listen',
-    titleVi: 'Bài đọc: Nữ tánh "-ā" & Nguyên thể',
+    titleVi: '📘 Lý thuyết: Nữ tánh "-ā" & Nguyên thể',
     contentVi: '''
 BÀI 6 — DANH TỪ NỮ TÁNH "-ā" & ĐỘNG TỪ NGUYÊN THỂ
 
@@ -801,7 +803,7 @@ LessonPhase _buildDay1Phase2() {
   return LessonPhase(
     id: 'lesson06_phase2',
     phaseTypeStr: 'read_listen',
-    titleVi: 'Từ vựng Bài 6 — Danh từ Nữ tánh "-ā" & Động từ Nguyên thể',
+    titleVi: '📖 Từ vựng: Nữ tánh "-ā" & Nguyên thể',
     contentVi: 'Học thuộc các danh từ Nữ tánh tận cùng "-ā" (ngoại trừ "sā" = con chó là Nam tánh) và các dạng nguyên thể (inf.) trong Bảng Động từ.',
     fabVocab: _buildVocabFabList(),
   );
@@ -1151,7 +1153,7 @@ LessonDay getLesson06Day2() {
     id: 'lesson06_day2',
     dayNumber: 2,
     themeId: 'theme_06_fem_a_infinitive',
-    titleVi: 'Ngày 2: Thực hành Mind Game & Quiz — Nữ tánh "-ā" & Nguyên thể',
+    titleVi: 'Ngày 2 — Luyện tập: Nữ tánh "-ā" & Nguyên thể',
     phases: [
       _buildDay2MindGame(),
       _buildDay2Quiz(),
@@ -1164,7 +1166,7 @@ LessonPhase _buildDay2MindGame() {
   return LessonPhase(
     id: 'lesson06_phase3',
     phaseTypeStr: 'mind_game',
-    titleVi: 'Trò Chơi Tư Duy — Bài Tập 6',
+    titleVi: '🧠 Ghép câu: Nữ tánh "-ā" & Nguyên thể',
     contentVi: 'Nhấn vào cụm tiếng Việt để nói to cụm Pāḷi tương ứng; nhấn lại để xem đáp án. Chú ý dạng NỮ TÁNH "-ā" và các động từ NGUYÊN THỂ (đuôi -tuṃ).',
     mixedSegments: kLesson06MindGameSegments,
   );
@@ -1338,7 +1340,7 @@ LessonPhase _buildDay2Quiz() {
   return LessonPhase(
     id: 'lesson06_phase4',
     phaseTypeStr: 'listening_quiz',
-    titleVi: 'Quiz — Kiểm tra kiến thức Bài 6',
+    titleVi: '🎧 Quiz: Nữ tánh "-ā" & Nguyên thể',
     questions: _buildQuiz(),
     fabAnswers: _buildQuizAnswers(),
   );

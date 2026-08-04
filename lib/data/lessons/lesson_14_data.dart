@@ -26,6 +26,8 @@ LessonMeta getLesson14Meta() => const LessonMeta(
       colorValue: 0xFF8B4513,
       description:
           'Hiện tại Phân từ anta/māna, Quá khứ ta/na, Khả năng tabba/anīya/ya',
+      complexity: LessonComplexity.medium,
+      estimatedMinutes: 45,
     );
 
 // ──────────────────────────────────────────────────────────────
@@ -199,7 +201,7 @@ LessonDay getLesson14Day1() => LessonDay(
       id: 'lesson_14_day_1',
       dayNumber: 1,
       themeId: 'theme_14_participles',
-      titleVi: 'Day 1 – Hiện tại / Quá khứ / Khả năng Phân từ',
+      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Các loại Phân từ',
       phases: [
         _buildDay1Phase1(),
         _buildDay1Phase2(),
@@ -214,7 +216,7 @@ LessonPhase _buildDay1Phase1() {
   return LessonPhase(
     id: 'lesson14_phase1',
     phaseTypeStr: 'read_listen',
-    titleVi: '1. Hiện tại Chủ động Phân từ – anta / māna',
+    titleVi: '📘 Lý thuyết: Các loại Phân từ',
     contentVi: '''
 Hiện tại Chủ động Phân từ (Present Active Participle) được thành lập bằng cách thêm tiếp vĩ ngữ “anta” và “māna” sau gốc động từ.
 
@@ -345,7 +347,7 @@ LessonPhase _buildDay1Phase2() {
   return LessonPhase(
     id: 'lesson14_phase2',
     phaseTypeStr: 'read_listen',
-    titleVi: '2. Hiện tại Bị động Phân từ – īyamāna',
+    titleVi: '📖 Từ vựng: Các loại Phân từ',
     contentVi: '''
 Hiện tại Bị động Phân từ được thành lập bằng cách thêm tiếp vĩ ngữ Bị động “ya” giữa gốc động từ và “māna”.
 
@@ -419,7 +421,7 @@ LessonPhase _buildDay1Phase3() {
   return LessonPhase(
     id: 'lesson14_phase3',
     phaseTypeStr: 'read_listen',
-    titleVi: '3. Quá khứ Phân từ – ta / na',
+    titleVi: '📘 Lý thuyết: Các loại Phân từ',
     contentVi: '''
 Quá khứ Chủ động và Bị động Phân từ được thành lập bằng tiếp vĩ ngữ “ta” hoặc “na” sau gốc / thân động từ.
 
@@ -506,7 +508,7 @@ LessonPhase _buildDay1Phase4() {
   return LessonPhase(
     id: 'lesson14_phase4',
     phaseTypeStr: 'read_listen',
-    titleVi: '4. Khả năng Phân từ – tabba / anīya / ya',
+    titleVi: '📘 Lý thuyết: Các loại Phân từ',
     contentVi: '''
 Khả năng Phân từ (Potential Participle) mang nghĩa “nên, cần phải, phải được”.
 
@@ -622,7 +624,7 @@ LessonPhase _buildDay1Phase5() {
   return LessonPhase(
     id: 'lesson14_phase5',
     phaseTypeStr: 'read_listen',
-    titleVi: '5. Bảng Động từ tổng hợp – tr.134-136',
+    titleVi: '📘 Lý thuyết: Các loại Phân từ',
     contentVi: '''
 BẢNG TỔNG HỢP CÁC PHÂN TỪ QUAN TRỌNG:
 
@@ -730,7 +732,7 @@ LessonPhase _buildDay1Phase6() {
   return LessonPhase(
     id: 'lesson14_phase6',
     phaseTypeStr: 'listening_quiz',
-    titleVi: 'Quiz – Phân biệt 6 loại Phân từ',
+    titleVi: '🎧 Quiz: Các loại Phân từ',
     contentVi:
         'Chọn đáp án đúng để phân biệt Hiện tại Chủ động / Bị động, Quá khứ, Khả năng Phân từ.',
     contentEn:
@@ -856,7 +858,7 @@ LessonDay getLesson14Day2() => LessonDay(
       id: 'lesson_14_day_2',
       dayNumber: 2,
       themeId: 'theme_14_participles',
-      titleVi: 'Day 2 – Luyện dịch Exercise 14 & Tuyệt đối Định Sở cách',
+      titleVi: 'Ngày 2 — Luyện tập: Các loại Phân từ',
       phases: [
         _buildDay2MindGame(),
         _buildDay2Quiz(),
@@ -867,7 +869,7 @@ LessonPhase _buildDay2MindGame() {
   return LessonPhase(
     id: 'lesson14_phase7',
     phaseTypeStr: 'mind_game',
-    titleVi: 'Mind Game – Exercise 14 (Pāḷi ↔ Việt)',
+    titleVi: '🧠 Ghép câu: Các loại Phân từ',
     contentVi:
         'Nhấn câu tiếng Việt → nói to tiếng Pāḷi → kiểm tra đáp án. Chú ý các câu Tuyệt đối Định Sở Cách.',
     mixedSegments: const [
@@ -1167,7 +1169,7 @@ LessonPhase _buildDay2Quiz() {
   return LessonPhase(
     id: 'lesson14_phase8',
     phaseTypeStr: 'listening_quiz',
-    titleVi: 'Quiz – Tuyệt đối Định Sở Cách & KNPT',
+    titleVi: '🎧 Quiz: Các loại Phân từ',
     contentVi:
         'Nhận diện Locative Absolute và Khả năng Phân từ trong Exercise 14.',
     contentEn:

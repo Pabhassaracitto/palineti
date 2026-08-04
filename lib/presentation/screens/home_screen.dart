@@ -6,7 +6,7 @@ import 'lesson_detail_screen.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  // Load all metadata from actual lessons
+  // Load all metadata from actual lessons - 26 lessons, 2-day standard
   static final _lessons = <LessonMeta>[
     getLesson05Meta(),
     getLesson06Meta(),
@@ -17,6 +17,7 @@ class HomeScreen extends StatelessWidget {
     getLesson20Meta(),
     getLesson21Meta(),
     getLesson22Meta(),
+    getLesson23Meta(),
     getLesson24Meta(),
     getLesson25Meta(),
     getLesson26Meta(),
@@ -29,6 +30,8 @@ class HomeScreen extends StatelessWidget {
       iconEmoji: '📗',
       colorValue: 0xFFB8860B,
       description: 'Học 2 biến cách đầu tiên + Thì Hiện tại Ngôi 3',
+      complexity: LessonComplexity.low,
+      estimatedMinutes: 35,
     ),
     getLesson02Meta(),
     getLesson03Meta(),
@@ -332,6 +335,8 @@ LessonMeta getLesson21Meta() => const LessonMeta(
   iconEmoji: '🔤',
   colorValue: 0xFF2E8B57,
   description: 'Học 20 tiền tố Pāḷi và quy tắc nhân đôi, biến đổi âm',
+  complexity: LessonComplexity.high,
+  estimatedMinutes: 50,
 );
 
 LessonMeta getLesson22Meta() => const LessonMeta(
@@ -342,6 +347,8 @@ LessonMeta getLesson22Meta() => const LessonMeta(
   iconEmoji: '➕',
   colorValue: 0xFF8A2BE2,
   description: 'Học 11 hậu tố Taddhita và quy tắc Vuddhi',
+  complexity: LessonComplexity.high,
+  estimatedMinutes: 50,
 );
 
 LessonMeta getLesson24Meta() => const LessonMeta(
@@ -352,6 +359,8 @@ LessonMeta getLesson24Meta() => const LessonMeta(
   iconEmoji: '🧩',
   colorValue: 0xFFFF4500,
   description: 'Học 24 quy tắc Sandhi: Sara, Vyañjana, Niggahita',
+  complexity: LessonComplexity.high,
+  estimatedMinutes: 55,
 );
 
 LessonMeta getLesson25Meta() => const LessonMeta(
@@ -362,6 +371,20 @@ LessonMeta getLesson25Meta() => const LessonMeta(
   iconEmoji: '📝',
   colorValue: 0xFF20B2AA,
   description: 'Luyện tập dịch các câu Pāḷi phức hợp',
+  complexity: LessonComplexity.medium,
+  estimatedMinutes: 45,
+);
+
+LessonMeta getLesson23Meta() => const LessonMeta(
+  id: 'theme_23_kitaka',
+  lessonNumber: 23,
+  titleVi: 'Kitaka — Hậu tố Động Danh Từ',
+  titleEn: 'Verbal Derivatives (Kitaka)',
+  iconEmoji: '🔧',
+  colorValue: 0xFF4682B4,
+  description: 'Học 8 hậu tố Kitaka: a, aka/tu, ana/ti, anīya/ya, ī/ana, tuṃ+kāma',
+  complexity: LessonComplexity.high,
+  estimatedMinutes: 50,
 );
 
 LessonMeta getLesson26Meta() => const LessonMeta(
@@ -372,4 +395,6 @@ LessonMeta getLesson26Meta() => const LessonMeta(
   iconEmoji: '✒️',
   colorValue: 0xFFDC143C,
   description: 'Tổng ôn tập bài học cuối khóa',
+  complexity: LessonComplexity.medium,
+  estimatedMinutes: 45,
 );

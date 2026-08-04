@@ -18,6 +18,8 @@ LessonMeta getLesson17Meta() => const LessonMeta(
       colorValue: 0xFFB45309,
       description:
           'Biến cách bất quy tắc của atta (tự ngã) và rāja (đức vua); 7 loại động từ tướng (conjugations) với các dấu hiệu -a, -ya, -ṇā/-nā, -o/-e; các động từ mới saṃkiḷissati/vihaññati/visujjhati; trích dẫn Kinh Pháp Cú về atta.',
+      complexity: LessonComplexity.medium,
+      estimatedMinutes: 45,
     );
 
 // ──────────────────────────────────────────────────────────────
@@ -89,7 +91,7 @@ LessonDay getLesson17Day1() => LessonDay(
       id: 'lesson17_day1',
       dayNumber: 1,
       themeId: 'theme_17_lesson',
-      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng',
+      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: DT Nam bất quy tắc & 7 Loại Động từ Tướng',
       phases: [
         _buildDay1Phase1(),
         _buildDay1Phase2(),
@@ -100,7 +102,7 @@ LessonDay getLesson17Day1() => LessonDay(
 LessonPhase _buildDay1Phase1() => LessonPhase(
       id: 'lesson17_phase1',
       phaseTypeStr: 'read_listen',
-      titleVi: '📘 DT Nam bất quy tắc + 7 Loại Động từ Tướng',
+      titleVi: '📘 Lý thuyết: DT Nam bất quy tắc & 7 Loại Động từ Tướng',
       contentVi: '''
 🎯 MỤC TIÊU BÀI 17
 ───────────────────
@@ -255,7 +257,7 @@ B. BẢY LOẠI ĐỘNG TỪ TƯỚNG (Conjugations)
 LessonPhase _buildDay1Phase2() => LessonPhase(
       id: 'lesson17_phase2',
       phaseTypeStr: 'mind_game',
-      titleVi: '🧠 Ghép từ: 7 DT + 3 ĐT + 3 BBT + 7 Loại ĐT tướng',
+      titleVi: '🧠 Ghép từ: DT Nam bất quy tắc & 7 Loại Động từ Tướng',
       contentVi:
           'Nhấn vào từng ô tiếng Việt → đọc to từ Pāḷi → nhấn lại để xem đáp án.',
       mixedSegments: const [
@@ -331,7 +333,7 @@ LessonPhase _buildDay1Phase2() => LessonPhase(
 LessonPhase _buildDay1Phase3() => LessonPhase(
       id: 'lesson17_phase3',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: DT bất quy tắc & 7 Loại Động từ Tướng',
+      titleVi: '🎧 Quiz: DT Nam bất quy tắc & 7 Loại Động từ Tướng',
       contentVi:
           'Trả lời 7 câu trắc nghiệm về paradigm bất quy tắc của atta/rāja và nhận diện 7 loại động từ tướng.',
       questions: const [
@@ -433,7 +435,7 @@ LessonDay getLesson17Day2() => LessonDay(
       id: 'lesson17_day2',
       dayNumber: 2,
       themeId: 'theme_17_lesson',
-      titleVi: 'Ngày 2 — Bài tập & Quiz dịch thuật',
+      titleVi: 'Ngày 2 — Luyện tập: DT Nam bất quy tắc & 7 Loại Động từ Tướng',
       phases: [
         _buildDay2Phase1(),
         _buildDay2Phase2(),
@@ -444,7 +446,7 @@ LessonDay getLesson17Day2() => LessonDay(
 LessonPhase _buildDay2Phase1() => LessonPhase(
       id: 'lesson17_phase4',
       phaseTypeStr: 'read_listen',
-      titleVi: '📖 Đọc hiểu: Gợi ý dịch Exercise 17',
+      titleVi: '📖 Đọc hiểu: Exercise 17',
       contentVi: '''
 ══════════════════════════════════════════════════════
 📖 BÀI TẬP 17 — Dịch 29 câu Pāḷi sang tiếng Việt
@@ -601,7 +603,7 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
 LessonPhase _buildDay2Phase3() => LessonPhase(
       id: 'lesson17_phase6',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: Dịch câu Pāḷi (Exercise 17)',
+      titleVi: '🎧 Quiz: Dịch câu Exercise 17',
       contentVi:
           'Chọn bản dịch tiếng Việt đúng cho mỗi câu Pāḷi từ Exercise 17.',
       questions: const [

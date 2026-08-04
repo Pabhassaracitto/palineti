@@ -19,6 +19,8 @@ LessonMeta getLesson03Meta() => const LessonMeta(
       colorValue: 0xFF238636,
       description:
           'Xuất Xứ (-ā/-amhā/-asmā / -ehi), Sở Thuộc (-assa / -ānaṃ) và đuôi -āmi/-āma ngôi 1',
+      complexity: LessonComplexity.medium,
+      estimatedMinutes: 40,
     );
 
 // ──────────────────────────────────────────────────────────────
@@ -99,7 +101,7 @@ LessonDay getLesson03Day1() => LessonDay(
       id: 'lesson03_day1',
       dayNumber: 1,
       themeId: 'theme_03_lesson',
-      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng',
+      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: XXC & STC (Nam -a) + Động từ Ngôi 1',
       phases: [
         _buildDay1Phase1(),
         _buildDay1Phase2(),
@@ -110,7 +112,7 @@ LessonDay getLesson03Day1() => LessonDay(
 LessonPhase _buildDay1Phase1() => LessonPhase(
       id: 'lesson03_phase1',
       phaseTypeStr: 'read_listen',
-      titleVi: '📘 Biến cách XXC & STC + Động từ Ngôi 1',
+      titleVi: '📘 Lý thuyết: XXC & STC (Nam -a) + Động từ Ngôi 1',
       contentVi: '''
 🎯 MỤC TIÊU BÀI 3
 ───────────────────
@@ -258,7 +260,7 @@ Nguyên âm đứng trước "-āmi" và "-āma" LUÔN được kéo dài (trư�
 LessonPhase _buildDay1Phase2() => LessonPhase(
       id: 'lesson03_phase2',
       phaseTypeStr: 'mind_game',
-      titleVi: '🧠 Ghép từ: 12 danh từ + 11 động từ mới',
+      titleVi: '🧠 Ghép từ: 12 từ mới',
       contentVi:
           'Nhấn vào từng ô tiếng Việt → đọc to từ Pāḷi tương ứng → nhấn lại để xem đáp án.',
       mixedSegments: const [
@@ -338,7 +340,7 @@ LessonPhase _buildDay1Phase2() => LessonPhase(
 LessonPhase _buildDay1Phase3() => LessonPhase(
       id: 'lesson03_phase3',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: Biến cách XXC, STC & Ngôi 1',
+      titleVi: '🎧 Quiz: XXC & STC (Nam -a) + Động từ Ngôi 1',
       contentVi:
           'Trả lời 7 câu hỏi trắc nghiệm về biến cách Xuất Xứ (XXC), Sở Thuộc (STC) và chia động từ Ngôi thứ nhất.',
       questions: const [
@@ -438,7 +440,7 @@ LessonDay getLesson03Day2() => LessonDay(
       id: 'lesson03_day2',
       dayNumber: 2,
       themeId: 'theme_03_lesson',
-      titleVi: 'Ngày 2 — Bài tập & Quiz dịch thuật',
+      titleVi: 'Ngày 2 — Luyện tập: XXC & STC (Nam -a) + Động từ Ngôi 1',
       phases: [
         _buildDay2Phase1(),
         _buildDay2Phase2(),
@@ -449,7 +451,7 @@ LessonDay getLesson03Day2() => LessonDay(
 LessonPhase _buildDay2Phase1() => LessonPhase(
       id: 'lesson03_phase4',
       phaseTypeStr: 'read_listen',
-      titleVi: '📖 Đọc hiểu: 6 câu ví dụ minh họa',
+      titleVi: '📖 Đọc hiểu: 6 câu ví dụ',
       contentVi: '''
 ══════════════════════════════════════════════════════
 📖 CÂU VÍ DỤ MINH HỌA (Illustrations từ sách)
@@ -635,7 +637,7 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
 LessonPhase _buildDay2Phase3() => LessonPhase(
       id: 'lesson03_phase6',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: Dịch câu Pāḷi (Exercise 3)',
+      titleVi: '🎧 Quiz: Dịch câu Exercise 3',
       contentVi:
           'Chọn bản dịch tiếng Việt đúng cho mỗi câu Pāḷi từ Exercise 3.',
       questions: const [

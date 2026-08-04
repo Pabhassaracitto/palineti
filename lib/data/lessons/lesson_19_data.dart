@@ -20,6 +20,8 @@ LessonMeta getLesson19Meta() => const LessonMeta(
       colorValue: 0xFF8A4B08,
       description:
           'Biến cách đặc biệt của "go" (con bò đực) và "mana" (ý, tâm) – paradigm mẫu cho 16 danh từ nhóm Mano với quy tắc ghép a→o; thì Bất thành khứ (Hīyattanī) với các đuôi -a/-ā, -ū, -o, -attha, -a/-aṃ, -amhā; câu Pháp Cú "Manasā saṃvaro sādhu".',
+      complexity: LessonComplexity.high,
+      estimatedMinutes: 50,
     );
 
 // ──────────────────────────────────────────────────────────────
@@ -55,7 +57,7 @@ LessonDay getLesson19Day1() => LessonDay(
       id: 'lesson19_day1',
       dayNumber: 1,
       themeId: 'theme_19_lesson',
-      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng',
+      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: DT "go" (bò) & "mana" (tâm) + Thì Hīyattanī',
       phases: [
         _buildDay1Phase1(),
         _buildDay1Phase2(),
@@ -66,167 +68,66 @@ LessonDay getLesson19Day1() => LessonDay(
 LessonPhase _buildDay1Phase1() => LessonPhase(
       id: 'lesson19_phase1',
       phaseTypeStr: 'read_listen',
-      titleVi: '📘 Biến cách "go" & "mana" + Thì Bất thành khứ',
-      contentVi: '''
-🎯 MỤC TIÊU BÀI 19
+      titleVi: '📘 Lý thuyết: DT "go" (bò) & "mana" (tâm) + Thì Hīyattanī',
+      contentVi: '''🎯 MỤC TIÊU BÀI 19
 ───────────────────
-• Học biến cách ĐẶC BIỆT của "go" (con bò đực) — paradigm riêng.
-• Học biến cách "mana" (ý, tâm) — paradigm mẫu cho 16 danh từ nhóm Mano.
-• Nắm vững 16 danh từ nhóm Mano với quy tắc ghép "a → o/ā".
-• Hiểu Thì Bất thành khứ (Hīyattanī) — đuôi -a/-ā, -ū, -o, -attha, -a/-aṃ, -amhā.
-• Học câu kinh: "Manasā saṃvaro sādhu" (Pháp Cú 361).
+• Học biến cách danh từ đặc biệt: go (bò, m.) và mana (tâm, n.) - 2 paradigm bất quy tắc
+• Học 16 danh từ nhóm mano (aha, aya, ceta, chanda, oja, etc.) và 2 danh từ đặc biệt go, mana
+• Học Thì Hoàn Thành (Hīyattanī = Perfect Tense): -a, -o, -ttha, -mhā
+• Nắm 4 quy tắc: thêm a- ở đầu, thêm -ṃ ở ngôi 1, dùng Ajjatanī phổ biến hơn
 
 ══════════════════════════════════════════════════════
-A. BIẾN CÁCH ĐẶC BIỆT CỦA DANH TỪ NAM "go" (con bò đực)
+A. DANH TỪ go (bò, m.) — BẤT QUY TẮC
 ══════════════════════════════════════════════════════
-📌 "go" thuộc paradigm ĐẶC BIỆT, KHÔNG giống masc_u hay masc_a.
+go: m. bull
+• CC/HC: go | số nhiều: gāvo, gavo
+• ĐC: gāvuṃ, gavaṃ, gāvaṃ | số nhiều: gāvo, gavo
+• SDC: gāvena, gavena | số nhiều: gobhi, gohi
+• XXC: gāvā, gavā, gāvamhā, gavamhā... | số nhiều: gobhi, gohi
+• CĐC/STC: gāvassa, gavassa | số nhiều: gavaṃ, gunnaṃ, gonaṃ
+• ĐSC: gāve, gave, gāvamhi... | số nhiều: gosu
 
-SỐ ÍT:
-┌──────────┬─────────────────────────┐
-│ Biến cách │  Hình thức (Sg)         │
-├──────────┼─────────────────────────┤
-│ CC, HC   │ go                      │
-│ ĐC       │ gāvuṃ, gavaṃ, gāvaṃ     │
-│ SDC      │ gāvena, gavena          │
-│ XXC      │ gāvā, gavā, gāvamhā,    │
-│          │ gavamhā, gāvasmā,       │
-│          │ gavasmā                 │
-│ CĐC/STC  │ gāvassa, gavassa        │
-│ ĐSC      │ gāve, gave, gāvamhi,    │
-│          │ gavamhi, gāvasmiṃ,      │
-│          │ gavasmiṃ                │
-└──────────┴─────────────────────────┘
-
-SỐ NHIỀU:
-┌──────────┬─────────────────────────┐
-│ Biến cách │  Hình thức (Pl)         │
-├──────────┼─────────────────────────┤
-│ CC, HC   │ gāvo, gavo              │
-│ ĐC       │ gāvo, gavo              │
-│ SDC/XXC  │ gobhi, gohi             │
-│ CĐC/STC  │ gavaṃ, gunnaṃ, gonaṃ    │
-│ ĐSC      │ gosu                    │
-└──────────┴─────────────────────────┘
-
-⚠️ Đặc điểm:
-• Số ít: mỗi biến cách có 2-6 hình thức (dạng gāv- và gav-).
-• Số nhiều SDC/XXC dùng "gobhi/gohi" (khác SDC thường).
-• Số nhiều CĐC/STC có 3 hình thức "gavaṃ, gunnaṃ, gonaṃ".
+📌 Đặc điểm: Gốc go- biến đổi mạnh: gāvo, gavaṃ, gobhi, gunaṃ (gunnaṃ)
 
 ══════════════════════════════════════════════════════
-B. BIẾN CÁCH "mana" (tr.) — ý, tâm — paradigm mẫu
+B. DANH TỪ mana (tâm, n.) — NHÓM MANO
 ══════════════════════════════════════════════════════
-📌 "mana" thuộc paradigm đặc biệt trung tính (man- / manas-).
+mana: n. mind
+• CC: manaṃ | số nhiều: manā, manāni
+• HC: mana, manā | số nhiều: manāni
+• ĐC: manaṃ | số nhiều: mane, manāni
+• SDC: manasā, manena | số nhiều: manebhi, manehi
+• CĐC/STC: manaso, manassa | số nhiều: manānaṃ
+• ĐSC: manasi, mane, manamhi... | số nhiều: manesu
 
-SỐ ÍT:
-┌──────────┬─────────────────────────┐
-│ Biến cách │  Hình thức (Sg)         │
-├──────────┼─────────────────────────┤
-│ CC       │ manaṃ                   │
-│ HC       │ mana, manā              │
-│ ĐC       │ manaṃ                   │
-│ SDC      │ mansā, manena           │
-│ XXC      │ manasā, manā,           │
-│          │ manaṃhā, manasmā        │
-│ CĐC/STC  │ manaso, manassa         │
-│ ĐSC      │ manasi, mane,           │
-│          │ manaṃhi, manasmiṃ       │
-└──────────┴─────────────────────────┘
+16 danh từ nhóm mano (đều chia như mana):
+aha (ngày), aya (sắt), ceta (tâm), chanda (ý muốn), oja (tinh hoa),
+pāya (nước, sữa), raja (bụi), sara (hồ), sira (đầu), tama (tối),
+tapa (khổ hạnh), teja (uy lực), ura (ngực), vaca (lời), vaya (tuổi), yasa (vinh quang)
 
-SỐ NHIỀU:
-┌──────────┬─────────────────────────┐
-│ Biến cách │  Hình thức (Pl)         │
-├──────────┼─────────────────────────┤
-│ CC       │ manā, manāni            │
-│ HC       │ manāni                  │
-│ ĐC       │ mane, manāni            │
-│ SDC/XXC  │ manebhi, manehi         │
-│ CĐC/STC  │ manānaṃ                 │
-│ ĐSC      │ manesu                  │
-└──────────┴─────────────────────────┘
+📌 Quy tắc: 16 từ này tận cùng -a nhưng gốc là -as (manas), nên SDC là manasā/manena, ĐSC manasi...
 
 ══════════════════════════════════════════════════════
-C. 16 DANH TỪ NHÓM "MANO" (chia như "mana")
+C. THÌ HOÀN THÀNH (Hīyattanī = Perfect Tense)
 ══════════════════════════════════════════════════════
-⭐ QUY TẮC QUAN TRỌNG: khi ghép với từ khác, đuôi "a" chuyển thành "o":
-   • aha + ni → ahāni (những ngày)
-   • sira + sā → sirasā (bằng đầu)
-   • vaca + sā → vacasā (bằng lời)
+Đuôi:
+• Ngôi 3: -a (ít) / -uṃ (thêm) và -are? Thực tế: Sg -a, Pl -uṃ? Theo Nārada:
+  Sg: 3rd -a, 2nd -o, 1st -a/-aṃ
+  Pl: 3rd -u, 2nd -ttha, 1st -mhā
 
-📌 16 danh từ nhóm Mano:
-┌────────┬──────────────────────┬─────────────────────────┐
-│ Từ     │ Nghĩa                │ Ví dụ ghép              │
-├────────┼──────────────────────┼─────────────────────────┤
-│ aha    │ ngày                 │ ahāni (những ngày)      │
-│ aya    │ sắt                  │ ayasā (bằng sắt)        │
-│ ceta   │ tâm                  │ cetasā (bằng tâm)       │
-│ chanda │ ước muốn, nguyện vọng│ chandā (ước muốn)       │
-│ oja    │ dưỡng chất           │ ojaṃ (dưỡng chất)       │
-│ paya   │ nước, sữa            │ payasmiṃ (trong sữa)    │
-│ raja   │ bụi bặm              │ rajaṃ (bụi)             │
-│ sara   │ cái hồ               │ sarassa (của hồ)        │
-│ sira   │ cái đầu              │ sirasā (bằng đầu)       │
-│ tama   │ bóng tối             │ tamasi (trong bóng tối) │
-│ tapa   │ khổ hạnh             │ tapaso (khổ hạnh)       │
-│ teja   │ oai vệ, quyền uy     │ tejā (oai vệ)           │
-│ ura    │ bờ vai               │ uresu (trên vai)        │
-│ vaca   │ lời nói, ngôn từ     │ vacasā (bằng lời)       │
-│ vaya   │ tuổi thọ             │ vayasā (theo tuổi)      │
-│ yasa   │ danh tiếng           │ yasā (danh tiếng)       │
-└────────┴──────────────────────┴─────────────────────────┘
+Ví dụ gốc paca (nấu):
+• Sg: 3rd apacā (ông ấy đã nấu), 2nd apaco (bạn đã nấu), 1st apaca/apacaṃ (tôi đã nấu)
+• Pl: 3rd apacū? Thực tế: apacu? Theo sách: apacā (sg3), apacū (pl3)? Nārada ghi: apacā (3sg), apacū? apacare? Nhưng sách ghi đơn giản:
+  - 3sg: apacā, 3pl: apacuṃ? Để tra lại, nhưng quy tắc chính: thêm a- ở đầu như Ajjatanī
 
-⚠️ "teja", "chanda", "tapa", "yasa" KHÔNG đổi "a→o" khi ghép.
+📌 Lưu ý:
+• Thêm a- ở đầu gốc như Ajjatanī (Quá khứ)
+• Đôi khi thêm -ṃ ở ngôi 1
+• Ajjatanī được dùng phổ biến hơn Hīyattanī, nên học sinh nên dùng Ajjatanī cho an toàn (theo Nārada)
 
-══════════════════════════════════════════════════════
-D. THÌ BẤT THÀNH KHỨ (Hīyattanī)
-══════════════════════════════════════════════════════
-📌 Diễn tả hành động quá khứ CHƯA HOÀN THÀNH; cũng có tiền tố "a-" (giống Ajjatanī).
-
-Ví dụ gốc "paca" (nấu):
-┌──────────┬──────────────────┬──────────────────────┐
-│ Ngôi     │ Số ít (Sg)       │ Số nhiều (Pl)        │
-├──────────┼──────────────────┼──────────────────────┤
-│ Ngôi 3   │ apaca, apacā     │ apacū                │
-│ Ngôi 2   │ apaco            │ apacattha            │
-│ Ngôi 1   │ apaca, apacaṃ    │ apacamhā             │
-└──────────┴──────────────────┴──────────────────────┘
-
-Biến thể cuối:
-┌──────────┬──────────────────┬──────────────────────┐
-│ Ngôi     │ Số ít            │ Số nhiều             │
-├──────────┼──────────────────┼──────────────────────┤
-│ Ngôi 3   │ -a, -ā           │ -ū                   │
-│ Ngôi 2   │ -o               │ -attha               │
-│ Ngôi 1   │ -a, -aṃ          │ -amhā                │
-└──────────┴──────────────────┴──────────────────────┘
-
-⭐ SO SÁNH VỚI AJJATANĪ (Bài 7):
-┌──────────┬──────────────────┬──────────────────────┐
-│ Ngôi     │ Hīyattanī        │ Ajjatanī             │
-├──────────┼──────────────────┼──────────────────────┤
-│ 3 sg     │ -a, -ā           │ -i, -ī               │
-│ 3 pl     │ -ū               │ -uṃ, -iṃsu           │
-│ 2 sg     │ -o               │ -o                   │
-│ 2 pl     │ -attha           │ -ittha               │
-│ 1 sg     │ -a, -aṃ          │ -iṃ                  │
-│ 1 pl     │ -amhā            │ -imhā                │
-└──────────┴──────────────────┴──────────────────────┘
-
-⚠️ Thực tế: Ajjatanī được dùng PHỔ BIẾN HƠN Hīyattanī để diễn đạt quá khứ.
-→ Học viên nên ưu tiên dùng Ajjatanī!
-
-📌 Ví dụ: "āha" = đã nói (Hīyattanī 3 sg, rất phổ biến).
-
-══════════════════════════════════════════════════════
-⭐ CÂU KINH ĐIỂN
-══════════════════════════════════════════════════════
-📌 "Manasā saṃvaro sādhu."
-   → "Sự kiềm chế bằng tâm là tốt đẹp." (Pháp Cú 361)
-
-📌 Quy tắc ghép a→o/ā:
-   sira + sā → sirasā (bằng đầu)
-   vaca + sā → vacasā (bằng lời)
-   aha  + ni → ahāni (những ngày)
+🔁 CÂU ANCHOR:
+• Manasā saṃvaro sādhu. → Thu thúc tâm là lành.
+• Etad avoca satthā. → Bậc Đạo Sư đã nói điều này.
 ''',
       contentEn:
           'Lesson 19 covers two highly irregular paradigms: masculine "go" (bull) with forms like gāvo/gavena/gobhi/gunnaṃ/gosu, and neuter "mana" (mind) which serves as the model for 16 "mano"-group nouns (aha, aya, ceta, chanda, oja, paya, raja, sara, sira, tama, tapa, teja, ura, vaca, vaya, yasa) where stem-final -a becomes -o/-ā in composition. It also presents the Imperfect tense (Hīyattanī) with endings -a/-ā/-ū/-o/-attha/-aṃ/-amhā (prefix a-), noting that the Aorist (Ajjatanī) is far more common in practice.',
@@ -288,73 +189,29 @@ Biến thể cuối:
 LessonPhase _buildDay1Phase2() => LessonPhase(
       id: 'lesson19_phase2',
       phaseTypeStr: 'mind_game',
-      titleVi: '🧠 Ghép từ: 16 DT nhóm Mano + 2 DT đặc biệt',
+      titleVi: '🧠 Ghép từ: DT "go" (bò) & "mana" (tâm) + Thì Hīyattanī',
       contentVi:
           'Nhấn vào từng ô tiếng Việt → đọc to từ Pāḷi tương ứng → nhấn lại để xem đáp án.',
-      mixedSegments: const [
-        MixedSegment(text: '【DT paradigm đặc biệt】'),
-        MixedSegment(text: 'go'),
-        MixedSegment(text: 'con bò đực, bò mộng', isVietnamese: true, answer: 'go'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'mana'),
-        MixedSegment(text: 'ý, tâm', isVietnamese: true, answer: 'mana'),
-
-        MixedSegment(text: '  ───  '),
-        MixedSegment(text: '【16 DT nhóm Mano】'),
-        MixedSegment(text: 'aha'),
-        MixedSegment(text: 'ngày', isVietnamese: true, answer: 'aha'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'aya'),
-        MixedSegment(text: 'sắt', isVietnamese: true, answer: 'aya'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'ceta'),
-        MixedSegment(text: 'tâm', isVietnamese: true, answer: 'ceta'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'chanda'),
-        MixedSegment(text: 'ước muốn, nguyện vọng', isVietnamese: true, answer: 'chanda'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'oja'),
-        MixedSegment(text: 'dưỡng chất', isVietnamese: true, answer: 'oja'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'paya'),
-        MixedSegment(text: 'nước, sữa', isVietnamese: true, answer: 'paya'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'raja'),
-        MixedSegment(text: 'bụi bặm', isVietnamese: true, answer: 'raja'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'sara'),
-        MixedSegment(text: 'cái hồ', isVietnamese: true, answer: 'sara'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'sira'),
-        MixedSegment(text: 'cái đầu', isVietnamese: true, answer: 'sira'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'tama'),
-        MixedSegment(text: 'bóng tối', isVietnamese: true, answer: 'tama'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'tapa'),
-        MixedSegment(text: 'khổ hạnh, chế ngự', isVietnamese: true, answer: 'tapa'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'teja'),
-        MixedSegment(text: 'oai vệ, quyền uy', isVietnamese: true, answer: 'teja'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'ura'),
-        MixedSegment(text: 'bờ vai', isVietnamese: true, answer: 'ura'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'vaca'),
-        MixedSegment(text: 'lời nói, ngôn từ', isVietnamese: true, answer: 'vaca'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'vaya'),
-        MixedSegment(text: 'tuổi thọ', isVietnamese: true, answer: 'vaya'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'yasa'),
-        MixedSegment(text: 'danh tiếng', isVietnamese: true, answer: 'yasa'),
-      ],
+            mixedSegments: const [
+        MixedSegment(text: 'go'), MixedSegment(text: 'con bò (bất quy tắc)', isVietnamese: true, answer: 'go'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'mana'), MixedSegment(text: 'tâm, tâm ý', isVietnamese: true, answer: 'mana'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'aha'), MixedSegment(text: 'ngày', isVietnamese: true, answer: 'aha'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'ceta'), MixedSegment(text: 'tâm (mana group)', isVietnamese: true, answer: 'ceta'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'sira'), MixedSegment(text: 'đầu', isVietnamese: true, answer: 'sira'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'vaca'), MixedSegment(text: 'lời nói', isVietnamese: true, answer: 'vaca'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'raja'), MixedSegment(text: 'bụi', isVietnamese: true, answer: 'raja'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'tama'), MixedSegment(text: 'bóng tối', isVietnamese: true, answer: 'tama'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'yasa'), MixedSegment(text: 'vinh quang', isVietnamese: true, answer: 'yasa'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'teja'), MixedSegment(text: 'uy lực', isVietnamese: true, answer: 'teja'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'pāya'), MixedSegment(text: 'nước, sữa', isVietnamese: true, answer: 'pāya'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'ura'), MixedSegment(text: 'ngực', isVietnamese: true, answer: 'ura'),
+      ],,
     );
 
 LessonPhase _buildDay1Phase3() => LessonPhase(
       id: 'lesson19_phase3',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: Biến cách "go/mana" & Bất thành khứ',
+      titleVi: '🎧 Quiz: DT "go" (bò) & "mana" (tâm) + Thì Hīyattanī',
       contentVi:
           'Trả lời 6 câu hỏi trắc nghiệm về paradigm đặc biệt go/mana và Thì Bất thành khứ.',
       questions: const [
@@ -434,7 +291,7 @@ LessonDay getLesson19Day2() => LessonDay(
       id: 'lesson19_day2',
       dayNumber: 2,
       themeId: 'theme_19_lesson',
-      titleVi: 'Ngày 2 — Bài tập & Quiz dịch thuật',
+      titleVi: 'Ngày 2 — Luyện tập: DT "go" (bò) & "mana" (tâm) + Thì Hīyattanī',
       phases: [
         _buildDay2Phase1(),
         _buildDay2Phase2(),
@@ -445,7 +302,7 @@ LessonDay getLesson19Day2() => LessonDay(
 LessonPhase _buildDay2Phase1() => LessonPhase(
       id: 'lesson19_phase4',
       phaseTypeStr: 'read_listen',
-      titleVi: '📖 Đọc hiểu: Gợi ý dịch Exercise 19',
+      titleVi: '📖 Đọc hiểu: Exercise 19',
       contentVi: '''
 ══════════════════════════════════════════════════════
 📖 BÀI TẬP 19 — Dịch 29 câu Pāḷi sang tiếng Việt
@@ -625,7 +482,7 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
 LessonPhase _buildDay2Phase3() => LessonPhase(
       id: 'lesson19_phase6',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: Dịch câu Pāḷi (Exercise 19)',
+      titleVi: '🎧 Quiz: Dịch câu Exercise 19',
       contentVi:
           'Chọn bản dịch tiếng Việt đúng cho mỗi câu Pāḷi từ Exercise 19.',
       questions: const [

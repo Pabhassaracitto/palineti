@@ -175,7 +175,7 @@ LessonDay getLesson26Day1() {
     id: 'lesson26_day1',
     dayNumber: 1,
     themeId: 'theme_26_passive_voice',
-    titleVi: 'Ngày 1: Thể Bị Động + Động từ "hū"/"asa"',
+    titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Thực Hành Dịch Thuật (B) — Bị Động & hū/asa',
     phases: [
       // ─────────────────────────────────────────────────────────────────
       // PHASE 1: READ & LISTEN — Thể Bị Động
@@ -183,7 +183,7 @@ LessonDay getLesson26Day1() {
       LessonPhase(
         id: 'lesson26_phase1',
         phaseTypeStr: 'read_listen',
-        titleVi: '📘 Thể Bị Động (Passive Voice)',
+        titleVi: '📘 Lý thuyết: Thực Hành Dịch Thuật (B) — Bị Động & hū/asa',
         contentVi: '''
 🎯 MỤC TIÊU BÀI 26
 ───────────────────
@@ -338,7 +338,7 @@ ACTIVE vs PASSIVE:
       LessonPhase(
         id: 'lesson26_phase2',
         phaseTypeStr: 'read_listen',
-        titleVi: '📘 Động từ "hū" & "asa" (thì, là, trở thành)',
+        titleVi: '📖 Từ vựng: Thực Hành Dịch Thuật (B) — Bị Động & hū/asa',
         contentVi: '''
 ══════════════════════════════════════════════════════
 D. ĐỘNG TỪ "hū" — THÌ, LÀ, TRỞ THÀNH
@@ -502,7 +502,7 @@ DIFFERENCE:
       LessonPhase(
         id: 'lesson26_phase3',
         phaseTypeStr: 'listening_quiz',
-        titleVi: '🎧 Quiz: Thể Bị Động + hū/asa',
+        titleVi: '🎧 Quiz: Thực Hành Dịch Thuật (B) — Bị Động & hū/asa',
         questions: const [
           QuizQuestion(
             id: 'lesson26_q01',
@@ -633,7 +633,7 @@ LessonDay getLesson26Day2() {
     id: 'lesson26_day2',
     dayNumber: 2,
     themeId: 'theme_26_passive_voice',
-    titleVi: 'Ngày 2: Luyện Tập Thể Bị Động + hū/asa',
+    titleVi: 'Ngày 2 — Luyện tập: Thực Hành Dịch Thuật (B) — Bị Động & hū/asa',
     phases: [
       // ─────────────────────────────────────────────────────────────────
       // PHASE 4: MIND GAME — Thể Bị Động
@@ -641,7 +641,7 @@ LessonDay getLesson26Day2() {
       LessonPhase(
         id: 'lesson26_phase4',
         phaseTypeStr: 'mind_game',
-        titleVi: '🧠 Trò Chơi Tư Duy: Thể Bị Động',
+        titleVi: '🧠 Ghép câu: Thực Hành Dịch Thuật (B) — Bị Động & hū/asa',
         mixedSegments: const [
           // paccate
           MixedSegment(text: '① '),
@@ -714,7 +714,7 @@ LessonDay getLesson26Day2() {
       LessonPhase(
         id: 'lesson26_phase5',
         phaseTypeStr: 'mind_game',
-        titleVi: '🧠 Trò Chơi Tư Duy: Động từ "hū" & "asa"',
+        titleVi: '🧠 Ghép câu: Thực Hành Dịch Thuật (B) — Bị Động & hū/asa',
         mixedSegments: const [
           // hū - present
           MixedSegment(text: '⑧ [hū] '),
@@ -778,7 +778,7 @@ LessonDay getLesson26Day2() {
       LessonPhase(
         id: 'lesson26_phase6',
         phaseTypeStr: 'listening_quiz',
-        titleVi: '🎧 Quiz Tổng Hợp: Bị Động + hū/asa + Ứng Dụng',
+        titleVi: '🎧 Quiz: Dịch câu Pāḷi',
         questions: const [
           QuizQuestion(
             id: 'lesson26_q08',

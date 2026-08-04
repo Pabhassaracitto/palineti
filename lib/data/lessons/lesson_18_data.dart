@@ -24,6 +24,8 @@ LessonMeta getLesson18Meta() => const LessonMeta(
       colorValue: 0xFF6A0DAD,
       description:
           'Biến cách satthu/pitu/mātu; thức bị khiến Vuddhi với -e/-aya/-āpe/-āpaya',
+      complexity: LessonComplexity.medium,
+      estimatedMinutes: 40,
     );
 
 // ──────────────────────────────────────────────────────────────
@@ -207,7 +209,7 @@ LessonDay getLesson18Day1() => LessonDay(
       id: 'lesson_18_day_1',
       dayNumber: 1,
       themeId: 'theme_18_satthu_causal',
-      titleVi: 'Day 1 – Danh từ -tar & Thức Bị Khiến',
+      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Danh từ -tar & Thức Bị Khiến',
       phases: [
         _buildDay1Phase1(),
         _buildDay1Phase2(),
@@ -217,7 +219,7 @@ LessonDay getLesson18Day1() => LessonDay(
 LessonPhase _buildDay1Phase1() => LessonPhase(
       id: 'lesson_18_d1_p1',
       phaseTypeStr: 'read_listen',
-      titleVi: '1. Danh từ đuôi -tar (satthu, pitu, mātu)',
+      titleVi: '📘 Lý thuyết: Danh từ -tar & Thức Bị Khiến',
       contentVi: '''
 NHÓM DANH TỪ CHỈ TÁC NHÂN (-tar)
 
@@ -267,7 +269,7 @@ Examples: pitā (father), mātā (mother), bhātā (brother), bhartā (husband),
 LessonPhase _buildDay1Phase2() => LessonPhase(
       id: 'lesson_18_d1_p2',
       phaseTypeStr: 'read_listen',
-      titleVi: '2. Thức Bị Khiến (Causal / Kārita) – Vuddhi & 4 hậu tố',
+      titleVi: '📖 Từ vựng: Danh từ -tar & Thức Bị Khiến',
       contentVi: '''
 THỨC BỊ KHIẾN (KĀRITA / CAUSAL)
 
@@ -344,7 +346,7 @@ LessonDay getLesson18Day2() => LessonDay(
       id: 'lesson_18_day_2',
       dayNumber: 2,
       themeId: 'theme_18_satthu_causal',
-      titleVi: 'Day 2 – Thực hành Mind Game & Bài tập',
+      titleVi: 'Ngày 2 — Luyện tập: Danh từ -tar & Thức Bị Khiến',
       phases: [
         _buildDay2Phase1(),
         _buildDay2Phase2(),
@@ -354,7 +356,7 @@ LessonDay getLesson18Day2() => LessonDay(
 LessonPhase _buildDay2Phase1() => LessonPhase(
       id: 'lesson_18_d2_p1',
       phaseTypeStr: 'mind_game',
-      titleVi: 'Mind Game – 28 câu dịch/từ vựng',
+      titleVi: '🧠 Ghép câu: 28 câu',
       contentVi:
           'Đọc từng câu Pāḷi, xác định (a) danh từ -tar ở cách nào, (b) động từ Kārita thuộc dạng nào (-e/-aya/-āpe/-āpaya) và gốc nguyên thủy; sau đó dịch sang tiếng Việt.',
       contentEn:
@@ -426,7 +428,7 @@ LessonPhase _buildDay2Phase1() => LessonPhase(
 LessonPhase _buildDay2Phase2() => LessonPhase(
       id: 'lesson_18_d2_p2',
       phaseTypeStr: 'listening_quiz',
-      titleVi: 'Quiz – 8 câu trắc nghiệm Bài 18',
+      titleVi: '🎧 Quiz: Danh từ -tar & Thức Bị Khiến',
       contentVi:
           'Chọn đáp án đúng dựa trên kiến thức biến cách satthu/pitu/mātu và thức bị khiến Kārita (Vuddhi + 4 hậu tố).',
       contentEn:

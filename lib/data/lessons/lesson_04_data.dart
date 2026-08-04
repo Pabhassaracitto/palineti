@@ -18,7 +18,9 @@ LessonMeta getLesson04Meta() => const LessonMeta(
       iconEmoji: '📙',
       colorValue: 0xFFBC4C00,
       description:
-          'Định Sở (-e/-amhi/-asmiṃ / -esu), Hô Cách (-a/-ā / -ā); bất biến từ saddhiṃ; sandhi so\'pi, aham\'pi',
+          'Định Sở (-e/-amhi/-asmiṃ / -esu), Hô Cách (-a/-ā / -ā); bất biến từ saddhiṃ; sandhi so\',
+      complexity: LessonComplexity.medium,
+      estimatedMinutes: 40pi, aham\'pi',
     );
 
 // ──────────────────────────────────────────────────────────────
@@ -122,7 +124,7 @@ LessonDay getLesson04Day1() => LessonDay(
       id: 'lesson04_day1',
       dayNumber: 1,
       themeId: 'theme_04_lesson',
-      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng',
+      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: ĐSC & HC (Nam -a) + Saddhiṃ & Sandhi',
       phases: [
         _buildDay1Phase1(),
         _buildDay1Phase2(),
@@ -133,7 +135,7 @@ LessonDay getLesson04Day1() => LessonDay(
 LessonPhase _buildDay1Phase1() => LessonPhase(
       id: 'lesson04_phase1',
       phaseTypeStr: 'read_listen',
-      titleVi: '📘 Biến cách ĐSC & HC + Bất biến từ',
+      titleVi: '📘 Lý thuyết: ĐSC & HC (Nam -a) + Saddhiṃ & Sandhi',
       contentVi: '''
 🎯 MỤC TIÊU BÀI 4
 ───────────────────
@@ -287,7 +289,7 @@ sabbadā, sadā, saddhiṃ.
 LessonPhase _buildDay1Phase2() => LessonPhase(
       id: 'lesson04_phase2',
       phaseTypeStr: 'mind_game',
-      titleVi: '🧠 Ghép từ: 12 danh từ + 6 động từ + 15 bất biến từ',
+      titleVi: '🧠 Ghép từ: 12 từ mới',
       contentVi:
           'Nhấn vào từng ô tiếng Việt → đọc to từ Pāḷi tương ứng → nhấn lại để xem đáp án.',
       mixedSegments: const [
@@ -383,7 +385,7 @@ LessonPhase _buildDay1Phase2() => LessonPhase(
 LessonPhase _buildDay1Phase3() => LessonPhase(
       id: 'lesson04_phase3',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: ĐSC, HC, Saddhiṃ & Sandhi',
+      titleVi: '🎧 Quiz: ĐSC & HC (Nam -a) + Saddhiṃ & Sandhi',
       contentVi:
           'Trả lời 7 câu hỏi trắc nghiệm về biến cách Định Sở, Hô Cách, cách dùng Saddhiṃ và luật Sandhi cơ bản.',
       questions: const [
@@ -471,7 +473,7 @@ LessonDay getLesson04Day2() => LessonDay(
       id: 'lesson04_day2',
       dayNumber: 2,
       themeId: 'theme_04_lesson',
-      titleVi: 'Ngày 2 — Bài tập & Quiz dịch thuật',
+      titleVi: 'Ngày 2 — Luyện tập: ĐSC & HC (Nam -a) + Saddhiṃ & Sandhi',
       phases: [
         _buildDay2Phase1(),
         _buildDay2Phase2(),
@@ -482,7 +484,7 @@ LessonDay getLesson04Day2() => LessonDay(
 LessonPhase _buildDay2Phase1() => LessonPhase(
       id: 'lesson04_phase4',
       phaseTypeStr: 'read_listen',
-      titleVi: '📖 Đọc hiểu: 4 câu ví dụ minh họa',
+      titleVi: '📖 Đọc hiểu: 4 câu ví dụ',
       contentVi: '''
 ══════════════════════════════════════════════════════
 📖 CÂU VÍ DỤ MINH HỌA (Illustrations)
@@ -653,7 +655,7 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
 LessonPhase _buildDay2Phase3() => LessonPhase(
       id: 'lesson04_phase6',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: Dịch câu Pāḷi (Exercise 4)',
+      titleVi: '🎧 Quiz: Dịch câu Exercise 4',
       contentVi:
           'Chọn bản dịch tiếng Việt đúng cho mỗi câu Pāḷi từ Exercise 4.',
       questions: const [

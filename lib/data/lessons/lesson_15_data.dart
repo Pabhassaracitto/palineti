@@ -18,6 +18,8 @@ LessonMeta getLesson15Meta() => const LessonMeta(
       colorValue: 0xFF2E8B57,
       description:
           'ima (này), amu (kia), tính từ hòa hợp Tánh-Số-Cách, hậu tố vantu/mantu',
+      complexity: LessonComplexity.low,
+      estimatedMinutes: 30,
     );
 
 // ──────────────────────────────────────────────────────────────
@@ -211,7 +213,7 @@ LessonDay getLesson15Day1() => LessonDay(
       id: 'lesson_15_day_1',
       dayNumber: 1,
       themeId: 'theme_15_ima_amu_adjectives',
-      titleVi: 'Day 1 – ima / amu & Tính từ – FabVocab',
+      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Đại từ Chỉ định ima, amu & Tính từ',
       phases: [
         _buildDay1Phase1(),
       ],
@@ -221,7 +223,7 @@ LessonPhase _buildDay1Phase1() {
   return LessonPhase(
     id: 'lesson15_phase1',
     phaseTypeStr: 'read_listen',
-    titleVi: 'Đại từ ima – amu & Tính từ hòa hợp',
+    titleVi: '📘 Lý thuyết: Đại từ Chỉ định ima, amu & Tính từ',
     contentVi: '''
 A. ĐẠI TỪ CHỈ ĐỊNH – ima (này)
 
@@ -651,7 +653,7 @@ LessonDay getLesson15Day2() => LessonDay(
       id: 'lesson_15_day_2',
       dayNumber: 2,
       themeId: 'theme_15_ima_amu_adjectives',
-      titleVi: 'Day 2 – Exercise 15 (50 câu) & Quiz tính từ',
+      titleVi: 'Ngày 2 — Luyện tập: Đại từ Chỉ định ima, amu & Tính từ',
       phases: [
         _buildDay2Phase1(),
         _buildDay2Phase2(),
@@ -663,7 +665,7 @@ LessonPhase _buildDay2Phase1() {
   return LessonPhase(
     id: 'lesson15_phase2',
     phaseTypeStr: 'mind_game',
-    titleVi: 'Exercise 15 – 1…25 (Pāḷi → Việt)',
+    titleVi: '🧠 Ghép câu: Đại từ Chỉ định ima, amu & Tính từ',
     contentVi:
         'Bài tập 15 – tr.148-149 – ima / amu + tính từ.',
     mixedSegments: const [
@@ -763,7 +765,7 @@ LessonPhase _buildDay2Phase2() {
   return LessonPhase(
     id: 'lesson15_phase3',
     phaseTypeStr: 'mind_game',
-    titleVi: 'Exercise 15 – 26…50 (Việt → Pāḷi)',
+    titleVi: '🧠 Ghép câu: Đại từ Chỉ định ima, amu & Tính từ',
     contentVi:
         'Dịch Anh/Việt → Pāḷi – bám sát nguyên văn Bài tập 15, tr.150-151.',
     mixedSegments: const [
@@ -1033,7 +1035,7 @@ LessonPhase _buildDay2Phase3() {
   return LessonPhase(
     id: 'lesson15_phase4',
     phaseTypeStr: 'listening_quiz',
-    titleVi: 'Quiz – Hòa hợp Tính từ với Danh từ',
+    titleVi: '🎧 Quiz: Đại từ Chỉ định ima, amu & Tính từ',
     contentVi:
         'Chọn dạng tính từ đúng Tánh–Số–Cách – trọng tâm Bài 15.',
     contentEn: 'Choose the correct adjective form agreeing in gender, number and case.',

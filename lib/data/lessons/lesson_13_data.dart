@@ -18,6 +18,8 @@ LessonMeta getLesson13Meta() => const LessonMeta(
       colorValue: 0xFF0969DA,
       description:
           'Biến cách đại từ quan hệ "ya" (người nào), đại từ chỉ định "ta/eta" (người đó/cái này), đại từ nghi vấn "ka" (ai? cái gì?); cấu trúc tương quan Yo…so…; hậu tố bất định "-ci"; 14 tính từ chỉ định.',
+      complexity: LessonComplexity.high,
+      estimatedMinutes: 55,
     );
 
 // ──────────────────────────────────────────────────────────────
@@ -53,7 +55,7 @@ LessonDay getLesson13Day1() => LessonDay(
       id: 'lesson13_day1',
       dayNumber: 1,
       themeId: 'theme_13_lesson',
-      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng',
+      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Đại từ Quan hệ, Chỉ định & Nghi vấn',
       phases: [
         _buildDay1Phase1(),
         _buildDay1Phase2(),
@@ -64,143 +66,79 @@ LessonDay getLesson13Day1() => LessonDay(
 LessonPhase _buildDay1Phase1() => LessonPhase(
       id: 'lesson13_phase1',
       phaseTypeStr: 'read_listen',
-      titleVi: '📘 Đại từ Quan hệ, Chỉ định & Nghi vấn',
-      contentVi: '''
-🎯 MỤC TIÊU BÀI 13
+      titleVi: '📘 Lý thuyết: Đại từ Quan hệ, Chỉ định & Nghi vấn',
+      contentVi: '''🎯 MỤC TIÊU BÀI 13
 ───────────────────
-• Học biến cách Đại từ Quan hệ "ya" (người nào, cái mà) ở 3 tánh.
-• Học cách dùng Đại từ Chỉ định "ta, eta" (người đó, cái này).
-• Học Đại từ Nghi vấn "ka" (ai, cái gì) và hậu tố "-ci" (bất định).
-• Hiểu cấu trúc tương quan "Yo... so..." (Ai... người đó...).
-• Nắm vững 14 tính từ chỉ định + 6 bất biến từ mới.
+• Học biến cách Đại từ Quan hệ ya (người nào, cái mà) ở 3 tánh
+• Học Đại từ Chỉ định ta (người đó) và eta (cái này) - 2 hình thức t- và n-
+• Học Đại từ Nghi vấn ka (ai? cái gì?) và hậu tố -ci (bất định: koci, kāci, kiñci)
+• Hiểu cấu trúc tương quan Yo... so... (Ai... người đó...)
+• Nắm 14 tính từ chỉ định (añña, sabba, eka, para...) + 6 bất biến từ
 
 ══════════════════════════════════════════════════════
-A. ĐẠI TỪ QUAN HỆ "ya" (người nào, cái mà, điều nào)
+A. ĐẠI TỪ QUAN HỆ ya (người nào, cái mà)
 ══════════════════════════════════════════════════════
-📌 "ya" dùng để chỉ người/vật chưa xác định (trong mệnh đề quan hệ).
+📌 ya dùng cho mệnh đề quan hệ, chưa xác định.
 
-SỐ ÍT:
-┌──────────┬──────────────────┬──────────────────┬──────────────────┐
-│ Biến cách │   Nam (m.)       │   Trung (n.)     │   Nữ (f.)        │
-├──────────┼──────────────────┼──────────────────┼──────────────────┤
-│   CC     │      yo          │     yaṃ          │      yā          │
-│   ĐC     │     yaṃ          │     yaṃ          │     yaṃ          │
-│   SDC    │     yena         │     yāya         │     yāya         │
-│   XXC    │ yamhā, yasmā     │     yāya         │     yāya         │
-│ CĐC/STC  │     yassa        │ yassā, yāya      │ yassā, yāya      │
-│   ĐSC    │ yamhi, yasmiṃ    │ yassaṃ, yāyaṃ    │ yassaṃ, yāyaṃ    │
-└──────────┴──────────────────┴──────────────────┴──────────────────┘
-
-SỐ NHIỀU:
-┌──────────┬──────────────────┬──────────────────┬──────────────────┐
-│ Biến cách │   Nam (m.)       │   Trung (n.)     │   Nữ (f.)        │
-├──────────┼──────────────────┼──────────────────┼──────────────────┤
-│   CC     │      ye          │  ye, yāni        │  yā, yāyo        │
-│   ĐC     │      ye          │  ye, yāni        │  yā, yāyo        │
-│ SDC/XXC  │  yebhi, yehi     │  yābhi, yāhi     │  yābhi, yāhi     │
-│ CĐC/STC  │ yesaṃ, yesānaṃ   │ yāsaṃ, yāsānaṃ   │ yāsaṃ, yāsānaṃ   │
-│   ĐSC    │      yesu        │     yāsu         │     yāsu         │
-└──────────┴──────────────────┴──────────────────┴──────────────────┘
+SỐ ÍT: CC yo (nam), yaṃ (trung), yā (nữ) | ĐC yaṃ | SDC yena, yāya | XXC yamhā/yasmā | CĐC/STC yassa | ĐSC yamhi/yasmiṃ
+SỐ NHIỀU: CC ye (nam), ye/yāni (trung), yā/yāyo (nữ) | SDC yebhi | CĐC yesaṃ/yesānaṃ | ĐSC yesu
 
 ══════════════════════════════════════════════════════
-B. ĐẠI TỪ CHỈ ĐỊNH "ta, eta" (người đó/ấy, cái này)
+B. ĐẠI TỪ CHỈ ĐỊNH ta và eta
 ══════════════════════════════════════════════════════
-📌 "ta" có 2 hình thức: bắt đầu bằng "t-" (so, sā, taṃ...) và bằng "n-" (naṃ, nena...).
-"eta" (điều này/cái này) tương tự "ta" nhưng KHÔNG có hình thức "n-".
+📌 ta có 2 hình thức:
+• t- : so (nam CC), sā (nữ CC), taṃ (trung CC/ĐC nam)
+• n- : naṃ, nena, nassa, tasmā... (thường dùng hơn)
 
-SỐ ÍT:
-┌──────────┬──────────────────┬──────────────────┬──────────────────┐
-│ Biến cách │   Nam (m.)       │   Trung (n.)     │   Nữ (f.)        │
-├──────────┼──────────────────┼──────────────────┼──────────────────┤
-│   CC     │ so / eso         │ taṃ / etaṃ       │ sā / esā         │
-│   ĐC     │ naṃ, taṃ / etaṃ │ naṃ, taṃ / etaṃ │ naṃ, taṃ / etaṃ │
-│   SDC    │ nena, tena       │ nāya, tāya       │ nāya, tāya       │
-│   XXC    │ namhā, tamhā,    │ nāya, tāya       │ nāya, tāya       │
-│          │ nasmā, tasmā     │                  │                  │
-│ CĐC/STC  │ nassa, tassa     │ nāya, tāya       │ tissāya, tissā,  │
-│          │                  │                  │ tassā, tāya      │
-│   ĐSC    │ namhi, tamhi,    │ tissaṃ, tassaṃ,  │ tissaṃ, tassaṃ,  │
-│          │ nasmiṃ, tasmiṃ   │ tāyaṃ            │ tāyaṃ            │
-└──────────┴──────────────────┴──────────────────┴──────────────────┘
+📌 eta (cái này, gần người nói): giống ta nhưng KHÔNG có hình thức n-, và thêm e- ở đầu: eso (nam CC), esā (nữ), etaṃ (trung)
+
+SỐ ÍT ta: CC so/naṃ/taṃ/sā | SDC nena/tena | XXC namhā/tamhā | CĐC nassa/tassa | ĐSC namhi/tamhi
+SỐ NHIỀU ta: CC ne/te, nēni/tāni, nā/nāyo | SDC nebhi/tebhi | CĐC nesaṃ/tesānaṃ | ĐSC nesu/tesu
 
 ══════════════════════════════════════════════════════
-⭐ CẤU TRÚC TƯƠNG QUAN "Yo... so..." (Ai... người đó...)
+C. TƯƠNG QUAN Yo... so...
 ══════════════════════════════════════════════════════
-📌 Đại từ "ya" (quan hệ) và "ta" (chỉ định) thường đi CÙNG NHAU.
-   Quy tắc: Mệnh đề 1 dùng "ya...", mệnh đề 2 dùng "ta...".
+📌 ya (quan hệ) và ta (chỉ định) thường đi cùng nhau:
 
-📌 Ví dụ kinh điển:
 ① "Yo Dhammaṃ passati so Buddhaṃ passati."
-   → "Người nào thấy Pháp, người đó thấy Đức Phật."
+   → Người nào thấy Pháp, người đó thấy Phật.
+
 ② "Yo gilānaṃ upaṭṭhāti so maṃ upaṭṭhāti."
-   → "Người nào chăm sóc người bệnh, người đó chăm sóc ta."
+   → Người nào chăm sóc người bệnh, người đó chăm sóc ta.
+
 ③ "Yaṃ icchasi taṃ vadehi."
-   → "Bạn muốn gì, hãy nói cái đó."
+   → Bạn muốn gì, hãy nói cái đó.
+
 ④ "Yaṃ hoti taṃ hotu."
-   → "Nó sao, hãy để nó vậy."
+   → Nó sao, hãy để nó vậy.
 
 ══════════════════════════════════════════════════════
-C. ĐẠI TỪ NGHI VẤN "ka" (ai? cái gì?)
+D. ĐẠI TỪ NGHI VẤN ka (ai? cái gì?)
 ══════════════════════════════════════════════════════
-SỐ ÍT:
-┌──────────┬──────────────────┬──────────────────┬──────────────────┐
-│ Biến cách │   Nam (m.)       │   Trung (n.)     │   Nữ (f.)        │
-├──────────┼──────────────────┼──────────────────┼──────────────────┤
-│   CC     │ ko               │ kaṃ, kiṃ         │ kā               │
-│   ĐC     │ kaṃ              │ kaṃ, kiṃ         │ kaṃ              │
-│   SDC    │ kena             │ kāya             │ kāya             │
-│   XXC    │ kamhā, kasmā     │ kāya             │ kāya             │
-│ CĐC/STC  │ kassa, kissa     │ kāya, kassā      │ kassā, kāya      │
-│   ĐSC    │ kamhi, kasmiṃ,   │ kassaṃ, kāyaṃ    │ kassaṃ, kāyaṃ    │
-│          │ kimhi, kismiṃ    │                  │                  │
-└──────────┴──────────────────┴──────────────────┴──────────────────┘
+📌 ka biến cách như ya, nhưng CC: ko (nam), kaṃ/kiṃ (trung), kā (nữ)
 
-📌 Cách dùng thực tế:
-  • "Ko nāma tvaṃ?" = "Tên bạn là gì?"
-  • "Kiṃ karoti?" = "Anh ta làm gì?"
-  • "Kissa hetu?" = "Vì lý do gì?"
-  • "Kasmā āgato?" = "Tại sao đến?"
+• Ko nāma tvaṃ? = Tên bạn là gì?
+• Kiṃ karoti? = Anh ta làm gì?
+• Kassa dhammaṃ? = Pháp của ai?
+• Kasmā āgato? = Tại sao đến? / Từ đâu đến?
+
+📌 Hậu tố -ci → bất định:
+• koci (bất kỳ ai, nam), kāci (nữ), kiñci (cái gì), kenaci (bởi ai), kasmāci (từ đâu)
+• Thường dùng trong phủ định: "Kiñci'pi kātuṃ so na jānāti." = Anh ta không biết làm gì cả.
 
 ══════════════════════════════════════════════════════
-D. HẬU TỐ "-ci" — ĐẠI TỪ BẤT ĐỊNH
+E. 14 TÍNH TỪ CHỈ ĐỊNH (chia như ya)
 ══════════════════════════════════════════════════════
-📌 Thêm "-ci" vào TẤT CẢ các biến cách của "ka" ở mọi tánh
-   → đại từ không xác định.
-📌 Ví dụ: koci, kāci, kiñci, kenaci, kasmāci.
-📌 Thường dùng trong câu phủ định:
-  • "Kiñci'pi kātuṃ so na jānāti." = "Anh ta không biết làm bất cứ điều gì."
+añña (khác), aññatara (cái nào đó), apara (khác, Tây), dhakkhiṇa (Nam), eka (một, một vài), itara (khác, còn lại), katara (cái nào? cho 2), katama (cái nào? cho nhiều), pacchima (Tây, cuối), para (khác), pubba (đầu tiên, Đông), puratthima (Đông), sabba (tất cả), uttara (cao hơn, Bắc)
+
+📌 Lưu ý: añña, eka, itara đôi khi CĐC nữ sg là aññissā, ekissā... ĐSC nữ sg: aññissaṃ...
 
 ══════════════════════════════════════════════════════
-E. 14 TÍNH TỪ CHỈ ĐỊNH (chia như "ya")
+🔤 6 BẤT BIẾN TỪ
 ══════════════════════════════════════════════════════
-┌──────────────┬─────────────────────────────┐
-│ Tính từ      │ Nghĩa                       │
-├──────────────┼─────────────────────────────┤
-│ añña         │ cái khác, vật khác          │
-│ aññatara     │ cái nào đó, cái nọ          │
-│ apara        │ khác, phía Tây, tiếp theo   │
-│ dhakkhiṇa    │ phía Nam                    │
-│ eka          │ một, chắc, một vài          │
-│ itara        │ khác, còn lại               │
-│ katara       │ cái nào? (cho 2)            │
-│ katama       │ cái nào? (cho nhiều)        │
-│ pacchima     │ phía Tây, cuối cùng         │
-│ para         │ khác, xa hơn                │
-│ pubba        │ đầu tiên, phía Đông         │
-│ puratthima   │ phía Đông                   │
-│ sabba        │ tất cả, mọi                 │
-│ uttara       │ cao hơn, phía Bắc           │
-└──────────────┴─────────────────────────────┘
+• ādāya (sau khi lấy) • kiṃ (tại sao? cái gì?) • nāma (nhân danh, thật vậy) • nu (hả? tự hỏi) • payojana (lợi ích) • vā (hay, hoặc)
 
-══════════════════════════════════════════════════════
-🔤 6 BẤT BIẾN TỪ MỚI
-══════════════════════════════════════════════════════
-• ādāya       — sau khi nhận/lấy đi (gerund của ādāya)
-• kiṃ         — tại sao? cái gì? (trạng từ nghi vấn)
-• nāma        — nhân danh, thật vậy
-• nu          — câu hỏi, tôi tự hỏi (tiểu từ nghi vấn)
-• payojana    — việc sử dụng, điều cần thiết, lợi ích
-• vā          — hay, hoặc
+🔁 CÂU ANCHOR: Yo Dhammaṃ passati so Buddhaṃ passati.
 ''',
       contentEn:
           'Lesson 13 covers the relative pronoun "ya" (yo/yaṃ/yā), demonstratives "ta" (so/taṃ/sā) and "eta" (eso/etaṃ/esā), the interrogative "ka" (ko/kiṃ/kā), the correlative structure Yo…so… ("whoever…that…"), the indefinite suffix -ci (koci/kāci/kiñci), 14 demonstrative adjectives (añña, sabba, eka, para, etc.), and 6 new indeclinables.',
@@ -283,137 +221,23 @@ E. 14 TÍNH TỪ CHỈ ĐỊNH (chia như "ya")
 LessonPhase _buildDay1Phase2() => LessonPhase(
       id: 'lesson13_phase2',
       phaseTypeStr: 'mind_game',
-      titleVi: '🧠 Ghép từ: Đại từ + Tính từ chỉ định',
+      titleVi: '🧠 Ghép từ: Đại từ Quan hệ, Chỉ định & Nghi vấn',
       contentVi:
           'Nhấn vào từng ô tiếng Việt → đọc to từ Pāḷi tương ứng → nhấn lại để xem đáp án.',
       mixedSegments: const [
-        MixedSegment(text: '【Đại từ Quan hệ — ya】'),
-        MixedSegment(text: 'yo'),
-        MixedSegment(text: 'người nào (CC nam)', isVietnamese: true, answer: 'yo'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'yaṃ'),
-        MixedSegment(text: 'cái mà / điều nào', isVietnamese: true, answer: 'yaṃ'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'yā'),
-        MixedSegment(text: 'người nào (CC nữ)', isVietnamese: true, answer: 'yā'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'yena'),
-        MixedSegment(text: 'bởi người nào (SDC)', isVietnamese: true, answer: 'yena'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'yassa'),
-        MixedSegment(text: 'của người nào (STC)', isVietnamese: true, answer: 'yassa'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'ye'),
-        MixedSegment(text: 'những người nào (CC pl)', isVietnamese: true, answer: 'ye'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'yesaṃ'),
-        MixedSegment(text: 'của những người nào (STC pl)', isVietnamese: true, answer: 'yesaṃ'),
-
-        MixedSegment(text: '  ───  '),
-        MixedSegment(text: '【Đại từ Chỉ định — ta】'),
-        MixedSegment(text: 'so'),
-        MixedSegment(text: 'anh ấy, người đó', isVietnamese: true, answer: 'so'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'sā'),
-        MixedSegment(text: 'cô ấy, người đó (nữ)', isVietnamese: true, answer: 'sā'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'taṃ'),
-        MixedSegment(text: 'cái đó, người đó (ĐC)', isVietnamese: true, answer: 'taṃ'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'tena'),
-        MixedSegment(text: 'bởi anh ấy (SDC)', isVietnamese: true, answer: 'tena'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'tassa'),
-        MixedSegment(text: 'của anh ấy (STC)', isVietnamese: true, answer: 'tassa'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'tasmā'),
-        MixedSegment(text: 'từ anh ấy / vì thế (XXC)', isVietnamese: true, answer: 'tasmā'),
-
-        MixedSegment(text: '  ───  '),
-        MixedSegment(text: '【Đại từ Chỉ định — eta】'),
-        MixedSegment(text: 'eso'),
-        MixedSegment(text: 'người này (CC nam)', isVietnamese: true, answer: 'eso'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'esā'),
-        MixedSegment(text: 'người nữ này', isVietnamese: true, answer: 'esā'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'etaṃ'),
-        MixedSegment(text: 'cái này', isVietnamese: true, answer: 'etaṃ'),
-
-        MixedSegment(text: '  ───  '),
-        MixedSegment(text: '【Đại từ Nghi vấn — ka】'),
-        MixedSegment(text: 'ko'),
-        MixedSegment(text: 'ai? (CC nam)', isVietnamese: true, answer: 'ko'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'kā'),
-        MixedSegment(text: 'ai (nữ)? cái gì (nữ)?', isVietnamese: true, answer: 'kā'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'kiṃ'),
-        MixedSegment(text: 'cái gì? (CC trung)', isVietnamese: true, answer: 'kiṃ'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'kena'),
-        MixedSegment(text: 'bởi ai (SDC)', isVietnamese: true, answer: 'kena'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'kissa'),
-        MixedSegment(text: 'của ai? (STC)', isVietnamese: true, answer: 'kissa'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'kasmā'),
-        MixedSegment(text: 'tại sao? (XXC)', isVietnamese: true, answer: 'kasmā'),
-
-        MixedSegment(text: '  ───  '),
-        MixedSegment(text: '【Đại từ Bất định (-ci)】'),
-        MixedSegment(text: 'koci'),
-        MixedSegment(text: 'bất kỳ ai (CC nam)', isVietnamese: true, answer: 'koci'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'kāci'),
-        MixedSegment(text: 'bất kỳ ai (CC nữ)', isVietnamese: true, answer: 'kāci'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'kiñci'),
-        MixedSegment(text: 'bất cứ cái gì', isVietnamese: true, answer: 'kiñci'),
-
-        MixedSegment(text: '  ───  '),
-        MixedSegment(text: '【14 Tính từ chỉ định】'),
-        MixedSegment(text: 'sabba'),
-        MixedSegment(text: 'tất cả, mọi', isVietnamese: true, answer: 'sabba'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'añña'),
-        MixedSegment(text: 'cái khác, vật khác', isVietnamese: true, answer: 'añña'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'pubba'),
-        MixedSegment(text: 'đầu tiên, phía Đông', isVietnamese: true, answer: 'pubba'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'apara'),
-        MixedSegment(text: 'khác, phía Tây', isVietnamese: true, answer: 'apara'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'uttara'),
-        MixedSegment(text: 'cao hơn, phía Bắc', isVietnamese: true, answer: 'uttara'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'dhakkhiṇa'),
-        MixedSegment(text: 'phía Nam', isVietnamese: true, answer: 'dhakkhiṇa'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'puratthima'),
-        MixedSegment(text: 'phía Đông', isVietnamese: true, answer: 'puratthima'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'pacchima'),
-        MixedSegment(text: 'phía Tây, cuối cùng', isVietnamese: true, answer: 'pacchima'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'eka'),
-        MixedSegment(text: 'một, chắc, một vài', isVietnamese: true, answer: 'eka'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'para'),
-        MixedSegment(text: 'khác, xa hơn', isVietnamese: true, answer: 'para'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'itara'),
-        MixedSegment(text: 'khác, còn lại', isVietnamese: true, answer: 'itara'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'katara'),
-        MixedSegment(text: 'cái nào? (cho 2)', isVietnamese: true, answer: 'katara'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'katama'),
-        MixedSegment(text: 'cái nào? (cho nhiều)', isVietnamese: true, answer: 'katama'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'aññatara'),
-        MixedSegment(text: 'cái nào đó, cái nọ', isVietnamese: true, answer: 'aññatara'),
+        MixedSegment(text: 'yo'), MixedSegment(text: 'người nào (CC nam)', isVietnamese: true, answer: 'yo'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'yā'), MixedSegment(text: 'người nào (CC nữ)', isVietnamese: true, answer: 'yā'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'yaṃ'), MixedSegment(text: 'cái mà (CC trung)', isVietnamese: true, answer: 'yaṃ'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'so'), MixedSegment(text: 'người đó (CC nam)', isVietnamese: true, answer: 'so'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'sā'), MixedSegment(text: 'người đó (CC nữ)', isVietnamese: true, answer: 'sā'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'taṃ'), MixedSegment(text: 'cái đó', isVietnamese: true, answer: 'taṃ'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'eso'), MixedSegment(text: 'người này (nam)', isVietnamese: true, answer: 'eso'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'esā'), MixedSegment(text: 'người này (nữ)', isVietnamese: true, answer: 'esā'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'ko'), MixedSegment(text: 'ai? (nam)', isVietnamese: true, answer: 'ko'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'kā'), MixedSegment(text: 'ai? (nữ)', isVietnamese: true, answer: 'kā'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'kiṃ'), MixedSegment(text: 'cái gì?', isVietnamese: true, answer: 'kiṃ'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'koci'), MixedSegment(text: 'bất kỳ ai', isVietnamese: true, answer: 'koci'),
+      
       ],
     );
 
@@ -522,7 +346,7 @@ LessonDay getLesson13Day2() => LessonDay(
       id: 'lesson13_day2',
       dayNumber: 2,
       themeId: 'theme_13_lesson',
-      titleVi: 'Ngày 2 — Bài tập & Quiz dịch thuật',
+      titleVi: 'Ngày 2 — Luyện tập: Đại từ Quan hệ, Chỉ định & Nghi vấn',
       phases: [
         _buildDay2Phase1(),
         _buildDay2Phase2(),
@@ -533,7 +357,7 @@ LessonDay getLesson13Day2() => LessonDay(
 LessonPhase _buildDay2Phase1() => LessonPhase(
       id: 'lesson13_phase4',
       phaseTypeStr: 'read_listen',
-      titleVi: '📖 Đọc hiểu: Gợi ý dịch Exercise 13',
+      titleVi: '📖 Đọc hiểu: Exercise 13',
       contentVi: '''
 ══════════════════════════════════════════════════════
 📖 BÀI TẬP 13 — Dịch 42 câu Pāḷi sang tiếng Việt
@@ -733,7 +557,7 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
 LessonPhase _buildDay2Phase3() => LessonPhase(
       id: 'lesson13_phase6',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: Dịch câu Pāḷi (Exercise 13)',
+      titleVi: '🎧 Quiz: Dịch câu Exercise 13',
       contentVi:
           'Chọn bản dịch tiếng Việt đúng cho mỗi câu Pāḷi từ Exercise 13.',
       questions: const [

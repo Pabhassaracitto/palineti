@@ -18,6 +18,8 @@ LessonMeta getLesson11Meta() => const LessonMeta(
       colorValue: 0xFF5B2C6F,
       description:
           'Biến cách danh từ đuôi -u/-ū (bhikkhu/āyu/dhenu/vadhū); danh từ -tar (pitu/mātu/bhātu/satthu); Mệnh Lệnh Cách Pañcamī với đuôi -atu/-antu/-a/-āhi/-atha/-āmi/-āma; hạt từ cấm mā; cấu trúc yāva…tāva.',
+      complexity: LessonComplexity.high,
+      estimatedMinutes: 50,
     );
 
 // ──────────────────────────────────────────────────────────────
@@ -141,7 +143,7 @@ LessonDay getLesson11Day1() => LessonDay(
       id: 'lesson11_day1',
       dayNumber: 1,
       themeId: 'theme_11_lesson',
-      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng',
+      titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: DT Nam/Trung/Nữ "-u/-ū" & Mệnh Lệnh Cách',
       phases: [
         _buildDay1Phase1(),
         _buildDay1Phase2(),
@@ -152,176 +154,67 @@ LessonDay getLesson11Day1() => LessonDay(
 LessonPhase _buildDay1Phase1() => LessonPhase(
       id: 'lesson11_phase1',
       phaseTypeStr: 'read_listen',
-      titleVi: '📘 Biến cách "-u/-ū" + Mệnh Lệnh Cách',
-      contentVi: '''
-🎯 MỤC TIÊU BÀI 11
+      titleVi: '📘 Lý thuyết: DT Nam/Trung/Nữ "-u/-ū" & Mệnh Lệnh Cách',
+      paradigmId: 'masc_u',
+      paradigmRoot: 'bhikkhu',
+      highlightedCases: const ['nom', 'acc', 'ins'],
+      contentVi: '''🎯 MỤC TIÊU BÀI 11
 ───────────────────
-• Học biến cách danh từ đuôi "-u" và "-ū" cho cả 3 tánh:
-    ✦ bhikkhu (m.) — vị tỳ-khưu
-    ✦ āyu (n.) — tuổi thọ
-    ✦ dhenu (f.) — con bò cái
-    ✦ vadhū (f.) — cô dâu
-• Học danh từ đuôi "-tar" (bhātu, satthu, pitu, mātu).
-• Học chia động từ Mệnh Lệnh Cách (Pañcamī) — thể chủ động.
-• Nắm vững 22 danh từ mới + 5 động từ mới + 6 bất biến từ.
+• Học biến cách danh từ đuôi "-u" và "-ū" cho 3 tánh: Nam (bhikkhu), Trung (āyu), Nữ (dhenu, vadhū)
+• Học danh từ đuôi "-tar" (bhātu, satthu, pitu, mātu) và 3 danh từ đặc biệt (bhagavantu, vidū)
+• Học Mệnh Lệnh Cách (Pañcamī): -atu/-antu, -a/-āhi/-atha, -āmi/-āma + hạt cấm chế mā
+• Nắm 22 danh từ mới + 5 động từ + 6 bất biến từ
 
 ══════════════════════════════════════════════════════
-A. BIẾN CÁCH DANH TỪ TẬN CÙNG "-u" VÀ "-ū" (3 TÁNH)
+A. DANH TỪ -u / -ū (3 TÁNH)
 ══════════════════════════════════════════════════════
-📌 Đặc điểm: Có 3 paradigm riêng biệt tùy theo tánh:
-   • Nam "-u" (như bhikkhu)
-   • Trung "-u" (như āyu)
-   • Nữ "-u/-ū" (như dhenu, vadhū)
+📌 Nam -u (bhikkhu - vị tỳ-khưu): CC bhikkhu, ĐC bhikkhuṃ, SDC bhikkhunā, CĐC/STC bhikkhuno/bhikkhussa, ĐSC bhikkhumhi. Số nhiều: CC bhikkhū/bhikkhavo, ĐC bhikkhū, SDC bhikkhūbhi, CĐC/STC bhikkhūnaṃ, ĐSC bhikkhūsu.
 
-────────────────────────────────────────────────────
-① BHIKKHU (m.) — paradigm masc_u
-────────────────────────────────────────────────────
-┌──────────┬──────────────────┬───────────────────────┐
-│ Biến cách │  Số ít (Sg)      │   Số nhiều (Pl)       │
-├──────────┼──────────────────┼───────────────────────┤
-│ CC       │ bhikkhu          │ bhikkhū, bhikkhavo    │
-│ HC       │ bhikkhu          │ bhikkhū, bhikkhavo,   │
-│          │                  │ bhikkhave             │
-│ ĐC       │ bhikkhuṃ         │ bhikkhū, bhikkhavo    │
-│ SDC      │ bhikkhunā        │ bhikkhūbhi, bhikkhūhi │
-│ XXC      │ bhikkhunā,       │ bhikkhūbhi, bhikkhūhi │
-│          │ bhikkhumhā,      │                       │
-│          │ bhikkhusmā       │                       │
-│ CĐC/STC  │ bhikkhuno,       │ bhikkhūnaṃ            │
-│          │ bhikkhussa       │                       │
-│ ĐSC      │ bhikkhumhi,      │ bhikkhūsu             │
-│          │ bhikkhusmiṃ      │                       │
-└──────────┴──────────────────┴───────────────────────┘
+📌 Trung -u (āyu - tuổi thọ): Giống bhikkhu trừ CC/HC/ĐC số ít: āyu, số nhiều: āyū/āyūni. Các cách còn lại giống bhikkhu.
 
-────────────────────────────────────────────────────
-② ĀYU (n.) — paradigm neut_u (giống bhikkhu trừ CC/HC/ĐC)
-────────────────────────────────────────────────────
-• CC, HC sg: āyu | pl: āyū, āyūni
-• ĐC sg: āyuṃ | pl: āyū, āyūni
-• Các cách còn lại giống bhikkhu.
+📌 Nữ -u (dhenu - bò cái): CC/ HC dhenu, ĐC dhenuṃ, SDC/XXC dhenuyā, CĐC/STC dhenuyā, ĐSC dhenuyā/dhenuyaṃ. Số nhiều: dhenū/dhenuyo, dhenūbhi, dhenūnaṃ, dhenūsu.
+📌 Nữ -ū (vadhū - cô dâu): Tương tự dhenu, CC vadhū, ĐC vadhūṃ.
 
-────────────────────────────────────────────────────
-③ DHENU (f.) — paradigm fem_u
-────────────────────────────────────────────────────
-┌──────────┬──────────────────┬───────────────────────┐
-│ Biến cách │  Số ít (Sg)      │   Số nhiều (Pl)       │
-├──────────┼──────────────────┼───────────────────────┤
-│ CC, HC   │ dhenu            │ dhenū, dhenuyo        │
-│ ĐC       │ dhenuṃ           │ dhenū, dhenuyo        │
-│ SDC, XXC │ dhenuyā          │ dhenūbhi, dhenūhi     │
-│ CĐC, STC │ dhenuyā          │ dhenūnaṃ              │
-│ ĐSC      │ dhenuyā,         │ dhenūsu               │
-│          │ dhenuyaṃ         │                       │
-└──────────┴──────────────────┴───────────────────────┘
-
-────────────────────────────────────────────────────
-④ VADHŪ (f.) — paradigm fem_ū (giống dhenu trừ CC/HC/ĐC)
-────────────────────────────────────────────────────
-• CC, HC sg: vadhū | pl: vadhū, vadhuyo
-• ĐC sg: vadhūṃ | pl: vadhū, vadhuyo
-• Các cách còn lại giống dhenu (dùng đuôi -uyā / -ūbhi).
+[Bảng chi tiết sẽ hiện bằng widget tương tác bên dưới, highlight SDC & CĐC]
 
 ══════════════════════════════════════════════════════
-B. DANH TỪ ĐUÔI "-tar" — các từ quan hệ
+B. DANH TỪ -tar (chỉ quan hệ)
 ══════════════════════════════════════════════════════
-📌 Paradigm đặc biệt cho các từ tận cùng "-tu":
-   bhātu (anh trai), satthu (Đạo Sư), pitu (cha), mātu (mẹ)...
+bhātu (anh trai): CC bhātā, ĐC bhātaraṃ, SDC bhātarā/bhātunā, CĐC bhātu/bhātuno/bhātussa, ĐSC bhātari. Số nhiều: bhātaro, bhātare, bhātarehi, bhātarānaṃ/bhātūnaṃ, bhātaresu.
 
-Ví dụ BHĀTU (m.):
-┌──────────┬──────────────────┬───────────────────────┐
-│ Biến cách │  Số ít (Sg)      │   Số nhiều (Pl)       │
-├──────────┼──────────────────┼───────────────────────┤
-│ CC       │ bhātā            │ bhātaro               │
-│ HC       │ bhāta, bhātā     │ bhātaro               │
-│ ĐC       │ bhātaraṃ         │ bhātare, bhātaro      │
-│ SDC, XXC │ bhātarā, bhātunā │ bhātarehi, bhātarebhi,│
-│          │                  │ bhātūhi, bhātūbhi     │
-│ CĐC, STC │ bhātu, bhātuno,  │ bhātarānaṃ, bhātūnaṃ  │
-│          │ bhātussa         │                       │
-│ ĐSC      │ bhātari          │ bhātaresu, bhātūsu    │
-└──────────┴──────────────────┴───────────────────────┘
-
-📌 Các danh từ đặc biệt:
-• bhagavantu (Đức Thế Tôn): bhagavā (CC), bhagavato (STC), bhagavantaṃ (ĐC), bhagavati (ĐSC)
-• vidū (bậc trí): vidū (CC), viduno (STC), viduṃ (ĐC)
-• mātu (mẹ): mātā (CC), mātaraṃ (ĐC), mātuyā (SDC)
+Các từ đặc biệt:
+• bhagavantu (Thế Tôn): CC bhagavā, STC bhagavato, ĐC bhagavantaṃ
+• vidū (bậc trí): CC vidū, STC viduno, ĐC viduṃ
+• mātu (mẹ): CC mātā, ĐC mātaraṃ, SDC mātuyā
 
 ══════════════════════════════════════════════════════
-C. MỆNH LỆNH CÁCH (Pañcamī) — Thể chủ động
+C. MỆNH LỆNH CÁCH (Pañcamī)
 ══════════════════════════════════════════════════════
-📌 Cách này diễn tả Mệnh Lệnh (Imperative) hoặc Mong Ước (Benedictive).
+Diễn tả Mệnh Lệnh (hãy...) hoặc Mong Ước (mong...).
 
-Biến thể cuối (Terminations):
-┌──────────┬──────────────────┬──────────────────────┐
-│  Ngôi    │  Số ít (Sg)      │  Số nhiều (Pl)       │
-├──────────┼──────────────────┼──────────────────────┤
-│  Ngôi 3  │  -atu            │  -antu               │
-│  Ngôi 2  │  -a / -āhi       │  -atha               │
-│  Ngôi 1  │  -āmi            │  -āma                │
-└──────────┴──────────────────┴──────────────────────┘
+Đuôi:
+• Ngôi 3: -atu (ít) / -antu (nhiều) → pacatu (hãy để anh ta nấu), pacantu (họ nấu)
+• Ngôi 2: -a / -āhi (ít) / -atha (nhiều) → paca/pacāhi (bạn hãy nấu), pacatha (các bạn hãy nấu)
+• Ngôi 1: -āmi (ít) / -āma (nhiều) → pacāmi (để tôi nấu), pacāma (để chúng ta nấu)
 
-Ví dụ với gốc "paca" (nấu):
-┌──────────┬──────────────────┬─────────────────────────┐
-│  Ngôi    │  Số ít (Sg)      │  Số nhiều (Pl)          │
-├──────────┼──────────────────┼─────────────────────────┤
-│  Ngôi 3  │ pacatu           │ pacantu                 │
-│          │ "hãy để anh ta nấu"│ "hãy để họ nấu"        │
-│  Ngôi 2  │ paca / pacāhi    │ pacatha                 │
-│          │ "bạn hãy nấu"    │ "các bạn hãy nấu"       │
-│  Ngôi 1  │ pacāmi           │ pacāma                  │
-│          │ "hãy để tôi nấu" │ "hãy để chúng tôi nấu"  │
-└──────────┴──────────────────┴─────────────────────────┘
+⭐ Quy tắc: Nguyên âm trước -hi, -mi, -ma LUÔN dài. Ngôi 2 ít có thêm -a.
 
-⭐ QUY TẮC VÀNG — Trường âm:
-• Nguyên âm đứng trước "-hi", "-mi", "-ma" LUÔN dài.
-• Ngôi 2 số ít CÓ THÊM đuôi "-a" (vd: paca, pacāhi — đều dùng được).
+Hạt cấm chế mā + Mệnh Lệnh = đừng:
+• mā gaccha = đừng đi
+• Thường dùng với Quá khứ Ngôi 3: mā agamāsi = đừng đi
 
-📌 HẠN CHẾ (Prohibitive):
-• Hạt từ "mā" + động từ Mệnh Lệnh Cách = "đừng làm gì đó".
-   Ví dụ:
-      • mā gaccha = "đừng đi"
-      • mā bhuñji = "đừng ăn"
-   ⚠️ Lưu ý: Hạt từ "mā" thường dùng với thì Quá khứ (Ajjatanī) Ngôi 3:
-      • mā agamāsi = "đừng đi"
-      • mā aṭṭhāsi = "đừng đứng"
-
-📌 Ví dụ minh họa:
-MỆNH LỆNH:
+Ví dụ:
 • Idha āgaccha, (Bạn) hãy lại đây!
-• Tvaṃ gharasmā nikkhamāhi, bạn hãy đi ra khỏi nhà!
 • Tumhe idha tiṭṭhatha, các bạn hãy đứng ở đây!
-MONG ƯỚC:
 • Ahaṃ Buddho bhavāmi, mong tôi trở thành Phật.
 • Buddho dhammaṃ desetu, mong Đức Phật hãy thuyết Pháp.
 
 ══════════════════════════════════════════════════════
-📚 22 DANH TỪ MỚI
+📚 22 DANH TỪ + 5 ĐỘNG TỪ + 6 BẤT BIẾN TỪ
 ══════════════════════════════════════════════════════
-NAM "-u" / "-ū" / "-tar" / "-a":
-bhikkhu, bhagavantu, vidū, satthu, pitu, bhātu, kataññū, kuñjara, maccu, pañha, yāgu, madhu.
-NỮ "-u" / "-ū" / "-tar" / "-ā":
-dhenu, vadhū, mātu, senā.
-TRUNG "-u" / "-a":
-āyu, cakkhu, dāru, khīra, tiṇa, dīpa.
+Xem FAB bên dưới. Chú ý: āvuso/bhante dùng xưng hô, yāva/tāva là cặp quan hệ (cho đến khi... đến khi đó), mā là cấm chế.
 
-══════════════════════════════════════════════════════
-🔥 5 ĐỘNG TỪ MỚI
-══════════════════════════════════════════════════════
-• Bujjhati  (budha)   — hiểu, giác ngộ
-• Dhunāti   (dhu)     — phá hủy, loại bỏ
-• Kujjhati  (kudha)   — tức giận
-• Jīvati    (jīva)    — sống
-• Pucchati  (puccha)  — hỏi
-
-══════════════════════════════════════════════════════
-🔤 6 BẤT BIẾN TỪ
-══════════════════════════════════════════════════════
-• āvuso       — bạn hữu, hiền đệ
-• bhante      — ngài, hiền huynh (xưng hô lễ phép)
-• sādhukaṃ    — tốt đẹp, một cách tốt đẹp
-• yāva        — cho đến khi nào (đại từ quan hệ)
-• tāva        — đến khi đó (đại từ chỉ định)
-• mā          — đừng (hạt từ phủ định mệnh lệnh)
+🔁 CÂU ANCHOR: Buddho dhammaṃ desetu (Mong Phật thuyết Pháp)
 ''',
       contentEn:
           'Lesson 11 covers masculine/neuter/feminine -u and -ū declensions (bhikkhu, āyu, dhenu, vadhū), -tar stems (pitu/mātu/bhātu/satthu), the Imperative/Benedictive mood (Pañcamī) with endings -atu/-antu/-a/-āhi/-atha/-āmi/-āma, the prohibitive particle "mā", and the correlative pair yāva…tāva (as long as…so long).',
@@ -382,118 +275,28 @@ TRUNG "-u" / "-a":
 LessonPhase _buildDay1Phase2() => LessonPhase(
       id: 'lesson11_phase2',
       phaseTypeStr: 'mind_game',
-      titleVi: '🧠 Ghép từ: 33 từ vựng mới (DT + ĐT + BBT)',
-      contentVi:
-          'Nhấn vào từng ô tiếng Việt → đọc to từ Pāḷi tương ứng → nhấn lại để xem đáp án.',
+      titleVi: '🧠 Ghép từ: 12 từ mới',
+      contentVi: 'Nhấn ô tiếng Việt → đọc to Pāḷi → kiểm tra đáp án. 12 từ quan trọng nhất (bhikkhu, āyu, dhenu, pitu, mātu, bhagavantu...)',
       mixedSegments: const [
-        MixedSegment(text: '【22 Danh từ mới】'),
-        MixedSegment(text: 'bhikkhu'),
-        MixedSegment(text: 'vị tỳ-khưu', isVietnamese: true, answer: 'bhikkhu'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'bhagavantu'),
-        MixedSegment(text: 'Đức Thế Tôn', isVietnamese: true, answer: 'bhagavantu'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'vidū'),
-        MixedSegment(text: 'bậc trí, người thông suốt', isVietnamese: true, answer: 'vidū'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'satthu'),
-        MixedSegment(text: 'Đạo Sư, vị thầy', isVietnamese: true, answer: 'satthu'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'pitu'),
-        MixedSegment(text: 'cha', isVietnamese: true, answer: 'pitu'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'bhātu'),
-        MixedSegment(text: 'anh trai', isVietnamese: true, answer: 'bhātu'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'dhenu'),
-        MixedSegment(text: 'con bò cái', isVietnamese: true, answer: 'dhenu'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'vadhū'),
-        MixedSegment(text: 'cô dâu, người vợ trẻ', isVietnamese: true, answer: 'vadhū'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'mātu'),
-        MixedSegment(text: 'mẹ', isVietnamese: true, answer: 'mātu'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'āyu'),
-        MixedSegment(text: 'tuổi thọ', isVietnamese: true, answer: 'āyu'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'cakkhu'),
-        MixedSegment(text: 'con mắt', isVietnamese: true, answer: 'cakkhu'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'dāru'),
-        MixedSegment(text: 'củi, gỗ', isVietnamese: true, answer: 'dāru'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'khīra'),
-        MixedSegment(text: 'sữa', isVietnamese: true, answer: 'khīra'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'tiṇa'),
-        MixedSegment(text: 'cỏ', isVietnamese: true, answer: 'tiṇa'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'dīpa'),
-        MixedSegment(text: 'ngọn đèn', isVietnamese: true, answer: 'dīpa'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'kataññū'),
-        MixedSegment(text: 'người biết ơn', isVietnamese: true, answer: 'kataññū'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'kuñjara'),
-        MixedSegment(text: 'con voi đực', isVietnamese: true, answer: 'kuñjara'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'maccu'),
-        MixedSegment(text: 'sự chết, thần chết', isVietnamese: true, answer: 'maccu'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'pañha'),
-        MixedSegment(text: 'câu hỏi', isVietnamese: true, answer: 'pañha'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'yāgu'),
-        MixedSegment(text: 'cháo', isVietnamese: true, answer: 'yāgu'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'madhu'),
-        MixedSegment(text: 'mật ong', isVietnamese: true, answer: 'madhu'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'senā'),
-        MixedSegment(text: 'đội quân', isVietnamese: true, answer: 'senā'),
-        MixedSegment(text: '  ───  '),
-        MixedSegment(text: '【5 Động từ mới】'),
-        MixedSegment(text: 'bujjhati'),
-        MixedSegment(text: 'hiểu, giác ngộ', isVietnamese: true, answer: 'bujjhati'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'dhunāti'),
-        MixedSegment(text: 'phá hủy, loại bỏ', isVietnamese: true, answer: 'dhunāti'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'kujjhati'),
-        MixedSegment(text: 'tức giận', isVietnamese: true, answer: 'kujjhati'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'jīvati'),
-        MixedSegment(text: 'sống', isVietnamese: true, answer: 'jīvati'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'pucchati'),
-        MixedSegment(text: 'hỏi', isVietnamese: true, answer: 'pucchati'),
-        MixedSegment(text: '  ───  '),
-        MixedSegment(text: '【6 Bất biến từ quan trọng】'),
-        MixedSegment(text: 'āvuso'),
-        MixedSegment(text: 'bạn hữu, hiền đệ', isVietnamese: true, answer: 'āvuso'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'bhante'),
-        MixedSegment(text: 'ngài, hiền huynh', isVietnamese: true, answer: 'bhante'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'sādhukaṃ'),
-        MixedSegment(text: 'tốt đẹp', isVietnamese: true, answer: 'sādhukaṃ'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'yāva'),
-        MixedSegment(text: 'cho đến khi nào', isVietnamese: true, answer: 'yāva'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'tāva'),
-        MixedSegment(text: 'đến khi đó', isVietnamese: true, answer: 'tāva'),
-        MixedSegment(text: '   │   '),
-        MixedSegment(text: 'mā'),
-        MixedSegment(text: 'đừng (hạn chế)', isVietnamese: true, answer: 'mā'),
+        MixedSegment(text: 'bhikkhu'), MixedSegment(text: 'vị tỳ-khưu', isVietnamese: true, answer: 'bhikkhu'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'āyu'), MixedSegment(text: 'tuổi thọ', isVietnamese: true, answer: 'āyu'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'dhenu'), MixedSegment(text: 'bò cái', isVietnamese: true, answer: 'dhenu'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'vadhū'), MixedSegment(text: 'cô dâu', isVietnamese: true, answer: 'vadhū'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'pitu'), MixedSegment(text: 'cha', isVietnamese: true, answer: 'pitu'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'mātu'), MixedSegment(text: 'mẹ', isVietnamese: true, answer: 'mātu'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'bhātu'), MixedSegment(text: 'anh trai', isVietnamese: true, answer: 'bhātu'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'satthu'), MixedSegment(text: 'Đạo Sư', isVietnamese: true, answer: 'satthu'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'bhagavantu'), MixedSegment(text: 'Thế Tôn', isVietnamese: true, answer: 'bhagavantu'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'cakkhu'), MixedSegment(text: 'con mắt', isVietnamese: true, answer: 'cakkhu'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'dāru'), MixedSegment(text: 'củi, gỗ', isVietnamese: true, answer: 'dāru'), MixedSegment(text: ' │ '),
+        MixedSegment(text: 'senā'), MixedSegment(text: 'đội quân', isVietnamese: true, answer: 'senā'),
       ],
     );
 
 LessonPhase _buildDay1Phase3() => LessonPhase(
       id: 'lesson11_phase3',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: Mệnh Lệnh Cách & Từ xưng hô',
+      titleVi: '🎧 Quiz: DT Nam/Trung/Nữ "-u/-ū" & Mệnh Lệnh Cách',
       contentVi:
           'Trả lời 7 câu hỏi trắc nghiệm về cách chia Mệnh Lệnh Cách và cách dùng các từ xưng hô Bhante, Āvuso.',
       questions: const [
@@ -596,7 +399,7 @@ LessonDay getLesson11Day2() => LessonDay(
       id: 'lesson11_day2',
       dayNumber: 2,
       themeId: 'theme_11_lesson',
-      titleVi: 'Ngày 2 — Bài tập & Quiz dịch thuật',
+      titleVi: 'Ngày 2 — Luyện tập: DT Nam/Trung/Nữ "-u/-ū" & Mệnh Lệnh Cách',
       phases: [
         _buildDay2Phase1(),
         _buildDay2Phase2(),
@@ -607,7 +410,7 @@ LessonDay getLesson11Day2() => LessonDay(
 LessonPhase _buildDay2Phase1() => LessonPhase(
       id: 'lesson11_phase4',
       phaseTypeStr: 'read_listen',
-      titleVi: '📖 Đọc hiểu: 32 câu Exercise 11',
+      titleVi: '📖 Đọc hiểu: 32 câu ví dụ',
       contentVi: '''
 ══════════════════════════════════════════════════════
 📖 BÀI TẬP 11 — Dịch 32 câu Pāḷi sang tiếng Việt
@@ -781,7 +584,7 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
 LessonPhase _buildDay2Phase3() => LessonPhase(
       id: 'lesson11_phase6',
       phaseTypeStr: 'listening_quiz',
-      titleVi: '🎧 Quiz: Dịch câu Pāḷi (Exercise 11)',
+      titleVi: '🎧 Quiz: Dịch câu Exercise 11',
       contentVi:
           'Trả lời 6 câu hỏi trắc nghiệm bằng cách CHỌN BẢN DỊCH TIẾNG VIỆT ĐÚNG cho mỗi câu Pāḷi từ Exercise 11.',
       questions: const [

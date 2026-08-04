@@ -56,6 +56,43 @@ class ReadListenScreen extends StatelessWidget {
                 const SizedBox(height: 16),
               ],
 
+              // Paradigm Table (V0.2) - Render bảng biến cách tương tác nếu có paradigmId
+              if (phase.paradigmId != null && phase.paradigmRoot != null) ...[
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFFF8E1),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                      color: AppColors.paliGold.withOpacity(0.5),
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          const Icon(Icons.table_chart, size: 16, color: AppColors.paliGold),
+                          const SizedBox(width: 6),
+                          Text(
+                            'Bảng biến cách: ${phase.paradigmRoot} (${phase.paradigmId})',
+                            style: const TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.paliInk,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      _buildParadigmTable(phase),
+
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 16),
+              ],
+
               // FAB Vocab
               if (phase.fabVocab != null && phase.fabVocab!.isNotEmpty) ...[
                 _buildFabSection(
@@ -174,6 +211,73 @@ class ReadListenScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildParadigmTable(LessonPhase phase) {
+    // Convert List<String> highlightedCases (vd: ['ins','dat']) sang Set<PaliCase>
+    final Set<PaliCase> highlighted = {};
+    if (phase.highlightedCases != null) {
+      for (final c in phase.highlightedCases!) {
+        final lower = c.toLowerCase();
+        // Map các tên thông dụng về enum
+        switch (lower) {
+          case 'nom':
+          case 'nominative':
+          case 'cc':
+          case 'chủ cách':
+            highlighted.add(PaliCase.nom);
+            break;
+          case 'acc':
+          case 'accusative':
+          case 'đc':
+          case 'đối cách':
+            highlighted.add(PaliCase.acc);
+            break;
+          case 'ins':
+          case 'instrumental':
+          case 'sdc':
+          case 'sử dụng cách':
+            highlighted.add(PaliCase.ins);
+            break;
+          case 'dat':
+          case 'dative':
+          case 'cđc':
+          case 'cách dữ':
+            highlighted.add(PaliCase.dat);
+            break;
+          case 'abl':
+          case 'ablative':
+          case 'xxc':
+          case 'xuất xứ cách':
+            highlighted.add(PaliCase.abl);
+            break;
+          case 'gen':
+          case 'genitive':
+          case 'stc':
+          case 'sở thuộc cách':
+            highlighted.add(PaliCase.gen);
+            break;
+          case 'loc':
+          case 'locative':
+          case 'đsc':
+          case 'định sở cách':
+            highlighted.add(PaliCase.loc);
+            break;
+          case 'voc':
+          case 'vocative':
+          case 'hc':
+          case 'hô cách':
+            highlighted.add(PaliCase.voc);
+            break;
+        }
+      }
+    }
+
+    return DeclensionTableWidget(
+      root: phase.paradigmRoot!,
+      paradigmId: phase.paradigmId!,
+      highlightedCases: highlighted,
     );
   }
 

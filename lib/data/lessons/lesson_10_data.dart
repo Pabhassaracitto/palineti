@@ -16,6 +16,8 @@ LessonMeta getLesson10Meta() => const LessonMeta(
   iconEmoji: '👑',
   colorValue: 0xFF00CED1,
   description: 'Khám phá từ vựng kết thúc bằng -ī và quy tắc tạo từ nữ tánh',
+      complexity: LessonComplexity.low,
+      estimatedMinutes: 35,
 );
 
 
@@ -597,7 +599,7 @@ LessonDay getLesson10Day1() {
     id: 'lesson10_day1',
     dayNumber: 1,
     themeId: 'theme_10_masc_i_fem_i_feminine_formation',
-    titleVi: 'Ngày 1: Nam/Nữ "-ī" & Lập Nữ tánh — Lý thuyết & Từ vựng',
+    titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Nam/Nữ "-ī" & Lập Nữ tánh',
     phases: [
       _buildDay1Phase1(),
       _buildDay1Phase2(),
@@ -610,7 +612,7 @@ LessonPhase _buildDay1Phase1() {
   return LessonPhase(
     id: 'lesson10_phase1',
     phaseTypeStr: 'read_listen',
-    titleVi: 'Bài đọc: Nam/Nữ "-ī" & Lập Nữ tánh',
+    titleVi: '📘 Lý thuyết: Nam/Nữ "-ī" & Lập Nữ tánh',
     contentVi: '''
 BÀI 10 — DANH TỪ NAM TÁNH "-ī" & NỮ TÁNH "-ī" — CÁCH LẬP DANH TỪ NỮ TÁNH
 
@@ -786,7 +788,7 @@ LessonPhase _buildDay1Phase2() {
   return LessonPhase(
     id: 'lesson10_phase2',
     phaseTypeStr: 'read_listen',
-    titleVi: 'Từ vựng Bài 10',
+    titleVi: '📖 Từ vựng: Nam/Nữ "-ī" & Lập Nữ tánh',
     contentVi: 'Học thuộc các từ mới sau (danh từ Nam/Nữ tánh "-ī", Trung tánh, tính từ, bất biến từ) và các cặp Nam/Nữ minh hoạ cho quy tắc thành lập nữ tánh.',
     fabVocab: _buildVocabFabList(),
   );
@@ -1112,7 +1114,7 @@ LessonDay getLesson10Day2() {
     id: 'lesson10_day2',
     dayNumber: 2,
     themeId: 'theme_10_masc_i_fem_i_feminine_formation',
-    titleVi: 'Ngày 2: Thực hành Mind Game & Quiz — Nam/Nữ "-ī" & Lập Nữ tánh',
+    titleVi: 'Ngày 2 — Luyện tập: Nam/Nữ "-ī" & Lập Nữ tánh',
     phases: [
       _buildDay2MindGame(),
       _buildDay2Quiz(),
@@ -1125,7 +1127,7 @@ LessonPhase _buildDay2MindGame() {
   return LessonPhase(
     id: 'lesson10_phase3',
     phaseTypeStr: 'mind_game',
-    titleVi: 'Trò Chơi Tư Duy — Bài Tập 10',
+    titleVi: '🧠 Ghép câu: Nam/Nữ "-ī" & Lập Nữ tánh',
     contentVi: 'Nhấn vào cụm tiếng Việt để nói to cụm Pāḷi rồi xem đáp án. Chú ý các dạng Nam "-ī" / Nữ "-ī" và luật niggahita với nhóm phụ âm (saṅgaho, ahañca, bhikkhunīnañca).',
     mixedSegments: kLesson10MindGameSegments,
   );
@@ -1280,7 +1282,7 @@ LessonPhase _buildDay2Quiz() {
   return LessonPhase(
     id: 'lesson10_phase4',
     phaseTypeStr: 'listening_quiz',
-    titleVi: 'Quiz — Kiểm tra kiến thức Bài 10',
+    titleVi: '🎧 Quiz: Nam/Nữ "-ī" & Lập Nữ tánh',
     questions: _buildQuiz(),
     fabAnswers: _buildQuizAnswers(),
   );

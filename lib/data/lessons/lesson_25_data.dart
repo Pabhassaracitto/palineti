@@ -177,7 +177,7 @@ LessonDay getLesson25Day1() {
     id: 'lesson25_day1',
     dayNumber: 1,
     themeId: 'theme_25_uses_of_cases',
-    titleVi: 'Ngày 1: Cách Sử Dụng Các Biến Cách',
+    titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Thực Hành Dịch Thuật (A) — Các Biến Cách',
     phases: [
       // ─────────────────────────────────────────────────────────────────
       // PHASE 1: READ & LISTEN — Chủ Cách + Hô Cách + Đối Cách
@@ -185,7 +185,7 @@ LessonDay getLesson25Day1() {
       LessonPhase(
         id: 'lesson25_phase1',
         phaseTypeStr: 'read_listen',
-        titleVi: '📘 Chủ Cách + Hô Cách + Đối Cách',
+        titleVi: '📘 Lý thuyết: Thực Hành Dịch Thuật (A) — Các Biến Cách',
         contentVi: '''
 🎯 MỤC TIÊU BÀI 25
 ───────────────────
@@ -329,7 +329,7 @@ ACCUSATIVE (Dutiyā):
       LessonPhase(
         id: 'lesson25_phase2',
         phaseTypeStr: 'read_listen',
-        titleVi: '📘 Bổ Trợ Cách + Sử Dụng Cách (Karaṇa)',
+        titleVi: '📖 Từ vựng: Thực Hành Dịch Thuật (A) — Các Biến Cách',
         contentVi: '''
 ══════════════════════════════════════════════════════
 D. BỔ TRỢ CÁCH (Tatiyā) — Auxiliary Case
@@ -470,7 +470,7 @@ INSTRUMENTAL (Karaṇa):
       LessonPhase(
         id: 'lesson25_phase3',
         phaseTypeStr: 'listening_quiz',
-        titleVi: '🎧 Quiz: Nhận Diện Biến Cách',
+        titleVi: '🎧 Quiz: Thực Hành Dịch Thuật (A) — Các Biến Cách',
         questions: const [
           QuizQuestion(
             id: 'lesson25_q01',
@@ -601,7 +601,7 @@ LessonDay getLesson25Day2() {
     id: 'lesson25_day2',
     dayNumber: 2,
     themeId: 'theme_25_uses_of_cases',
-    titleVi: 'Ngày 2: Luyện Tập Nhận Diện Biến Cách',
+    titleVi: 'Ngày 2 — Luyện tập: Thực Hành Dịch Thuật (A) — Các Biến Cách',
     phases: [
       // ─────────────────────────────────────────────────────────────────
       // PHASE 4: MIND GAME — CC, Hô Cách, ĐC
@@ -609,7 +609,7 @@ LessonDay getLesson25Day2() {
       LessonPhase(
         id: 'lesson25_phase4',
         phaseTypeStr: 'mind_game',
-        titleVi: '🧠 Trò Chơi Tư Duy: CC + Hô Cách + ĐC',
+        titleVi: '🧠 Ghép câu: Thực Hành Dịch Thuật (A) — Các Biến Cách',
         mixedSegments: const [
           // CC - chủ ngữ
           MixedSegment(text: '① [CC] '),
@@ -691,7 +691,7 @@ LessonDay getLesson25Day2() {
       LessonPhase(
         id: 'lesson25_phase5',
         phaseTypeStr: 'mind_game',
-        titleVi: '🧠 Trò Chơi Tư Duy: BTC + SDC (Karaṇa)',
+        titleVi: '🧠 Ghép câu: Thực Hành Dịch Thuật (A) — Các Biến Cách',
         mixedSegments: const [
           // BTC
           MixedSegment(text: '⑨ [BTC] '),
@@ -781,7 +781,7 @@ LessonDay getLesson25Day2() {
       LessonPhase(
         id: 'lesson25_phase6',
         phaseTypeStr: 'listening_quiz',
-        titleVi: '🎧 Quiz Tổng Hợp: Xác Định Biến Cách',
+        titleVi: '🎧 Quiz: Dịch câu Pāḷi',
         questions: const [
           QuizQuestion(
             id: 'lesson25_q08',

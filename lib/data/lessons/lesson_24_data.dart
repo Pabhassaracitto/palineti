@@ -200,7 +200,7 @@ LessonDay getLesson24Day1() {
     id: 'lesson24_day1',
     dayNumber: 1,
     themeId: 'theme_24_sandhi',
-    titleVi: 'Ngày 1: Luật Hài Âm (Sandhi) — 3 Loại, 24 Quy Tắc',
+    titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Luật Hài Âm (Sandhi)',
     phases: [
       // ─────────────────────────────────────────────────────────────────
       // PHASE 1: READ & LISTEN — Sara Sandhi
@@ -208,104 +208,51 @@ LessonDay getLesson24Day1() {
       LessonPhase(
         id: 'lesson24_phase1',
         phaseTypeStr: 'read_listen',
-        titleVi: '📘 Sandhi — Luật Hài Âm (Tổng quan + Sara Sandhi)',
-        contentVi: '''
-🎯 MỤC TIÊU BÀI 24
+        titleVi: '📘 Lý thuyết: Luật Hài Âm (Sandhi)',
+        contentVi: '''🎯 MỤC TIÊU BÀI 24
 ───────────────────
-• Hiểu khái niệm Sandhi: sự kết hợp của hai chữ cái tiếp xúc trực tiếp
-• Học 3 loại Sandhi: Sara (nguyên âm), Vyañjana (phụ âm), Niggahita (ṃ)
-• Nắm vững 24 quy tắc kết hợp âm
-• Áp dụng Sandhi để phân tích các từ ghép trong các bài trước
+• Hiểu Sandhi: kết hợp 2 chữ cái liền nhau (saṃ+dhā=cùng nối)
+• Học 3 loại: Sara (nguyên âm), Vyañjana (phụ âm), Niggahita (ṃ)
+• Nắm 11 quy tắc Sara + 5 Vyañjana + 8 Niggahita
+• Áp dụng phân tích từ ghép
 
 ══════════════════════════════════════════════════════
-A. SANDHI — LUẬT HÀI ÂM
+A. SARA SANDHI - NGUYÊN ÂM + NGUYÊN ÂM (11 quy tắc)
 ══════════════════════════════════════════════════════
-
-Sandhi = sự kết hợp của hai chữ cái khi chúng sắp nhập lại với nhau.
-(Từ "saṃ" = cùng + "dhā" = nối → "cùng nối lại")
-
-Hình thành bằng cách: lược bỏ, thay thế, bổ sung, v.v.
-
-3 LOẠI SANDHI:
-┌─────────────────────────┬────────────────────────────┐
-│ Loại                    │ Mô tả                      │
-├─────────────────────────┼────────────────────────────┤
-│ 1. Sara Sandhi          │ Nguyên âm + Nguyên âm     │
-│ 2. Vyañjana Sandhi      │ Nguyên âm + Phụ âm        │
-│ 3. Niggahita (ṃ) Sandhi │ ṃ + Nguyên âm/Phụ âm      │
-└─────────────────────────┴────────────────────────────┘
+① Lược trước: loka+agga=lok'agga, paññā+indriya=paññ'indriya
+② Lược sau: chāyā+iva=chāyā'va, iti+api=iti'pi
+③ i/u→e/o: suriya+udaya=suriyodaya, upa+eto=up'eto
+④ Kéo dài sau: Buddha+anussati=Buddh'ānussati, gacchāmi+iti=gacchām'īti
+⑤ Kéo dài trước: lokassa+iti=lokassā'ti, sādhu+iti=sādhū'ti
+⑥ te/me/ye+e→y: me+ayaṃ=myāyaṃ, te+ahaṃ=tyāhaṃ
+⑦ i→y, u→v: vi+ākato=vyākato, su+āgataṃ=svāgataṃ
+⑧ ti→cc: ati+antaṃ=accantaṃ, pati+āharati=paccāharati
+⑨ abhi→abbha: abhi+uggato=abbhuggato
+⑩ adhi→ajjha: adhi+āgama=ajjhāgama
+⑪ Chèn t/d/n/m/y/r/ḷ/v: ajja+agge=ajjatagge, so+eva=soyeva
 
 ══════════════════════════════════════════════════════
-B. SARA SANDHI — HÀI ÂM NGUYÊN ÂM (11 quy tắc)
+B. VYAÑJANA SANDHI - NGUYÊN ÂM + PHỤ ÂM (5 quy tắc)
 ══════════════════════════════════════════════════════
+① Kéo dài trước: te+assa=tyāssa
+② Rút ngắn: taṇhā+khayo=taṇhakkhayo
+③ o→a (eta/ta): eso dhammo=esa dhammo
+④ Nhân đôi: a+pamādo=appamādo, vi+ñāṇaṃ=viññāṇaṃ
+⑤ Hơi→không hơi: ni+bhayaṃ=nibbhayaṃ, sa+dhammo=saddhammo
 
-① LƯỢC BỎ NGUYÊN ÂM TRƯỚC:
-   Khi hai nguyên âm kết hợp, nguyên âm đứng trước thường bị lược.
-   • loka + agga       = lok'agga      (đấng Tối Cao)
-   • paññā + indriya   = paññ'indriya  (tuệ căn)
-   • tīni + imāni      = tīn'imāni     (ba cái này)
-   • sabbo + eva       = sabb'eva      (thật vậy, tất cả)
+══════════════════════════════════════════════════════
+C. NIGGAHITA SANDHI - ṃ + NGUYÊN ÂM/PHỤ ÂM (8 quy tắc)
+══════════════════════════════════════════════════════
+① ṃ→mũi cùng nhóm: taṃ khaṇaṃ=taṅkhaṇaṃ, saṃ jāta=sañjāta, ahaṃ te=ahante
+② ṃ→ñ trước e/h, nhân đôi trước e: taṃ eva=taññeva, taṃ hi=tañhi
+③ ṃ→ñ trước y, bỏ y: saṃ+yamo=saññamo
+④ ṃ→m, ta/eta+nguyên âm→d: taṃ+ahaṃ=tamahaṃ, etaṃ+avoca=etadavoca
+⑤ ṃ bị lược, nguyên âm sau kéo dài: adāsiṃ ahaṃ→adās'āhaṃ
+⑥ ṃ trước phụ âm bị lược: Buddhānaṃ+sāsanaṃ=Buddhānasāsanaṃ
+⑦ Chèn ṃ: cakkhu+udapādi=cakkhuṃ udapādi, ava+siro=avaṃsiro
+⑧ Lược nguyên âm sau ṃ, mũi hoá: idaṃ api=idam'pi, kiṃ iti=kiṃ'ti
 
-② LƯỢC BỎ NGUYÊN ÂM SAU:
-   Đôi khi nguyên âm sau bị lược nếu đứng trước nguyên âm khác loại.
-   • chāyā + iva       = chāyā'va      (như cái bóng)
-   • iti + api         = iti'pi        (thật vậy)
-   • pāto + eva        = pāto'va       (vào buổi sáng sớm)
-
-③ THAY THẾ "i/u" BẰNG "e/o":
-   Khi nguyên âm trước bị lược, i/u (ngắn/dài) sau → e/o.
-   • upa + eto         = up'eto        (được thành lập)
-   • suriya + udaya    = suriy'udaya → suriyodaya (mặt trời mọc)
-
-④ KÉO DÀI NGUYÊN ÂM SAU:
-   Khi nguyên âm trước bị lược, nguyên âm sau đôi khi kéo dài.
-   • Buddha + anussati = Buddh'ānussati (quán niệm Phật)
-   • gacchāmi + iti    = gacchām'īti   (rằng: "tôi đi")
-   • bahu + upakāro    = bahūpakāro    (rất hữu ích)
-   • sace + ayaṃ       = sacāyaṃ       (nếu cái này)
-   • idāni + ahaṃ      = idān'āhaṃ     (bây giờ tôi)
-
-⑤ KÉO DÀI NGUYÊN ÂM TRƯỚC:
-   Đôi khi nguyên âm trước kéo dài khi nguyên âm sau bị lược.
-   • lokassa + iti     = lokassā'ti    ("cho thế giới")
-   • vi + atikkama     = vī'tikkama    (sự vi phạm)
-   • sādhu + iti       = sādhū'ti      ("Lành thay!")
-   • jīvitahetu + api  = jīvitahetū'pi (ngay cả vì mạng sống)
-
-⑥ TE/ME/YE + NGUYÊN ÂM → "y":
-   Khi te, me, ye được theo sau bởi nguyên âm, e cuối → y.
-   • me + ayaṃ         = myayaṃ / myāyaṃ  (cái này do tôi)
-   • te + ahaṃ         = tyahaṃ / tyāhaṃ  (tôi với bạn)
-   • ye + assa         = yyassa / yyāssa   (những cái đó cho anh ấy)
-
-⑦ I/Ī → Y, U/O → V (trước nguyên âm khác loại):
-   • vi + ākato        = vyākato        (đã tuyên bố)
-   • su + āgataṃ       = svāgataṃ       (chào đón)
-   • anu + eti         = anveti         (theo sau)
-   • ko + attho        = kvattho        (lợi ích gì?)
-   • so + ayaṃ         = svayaṃ / svāyaṃ (cái này)
-
-⑧ TI của ATI/ITI/PATI → CC:
-   • ati + antaṃ       = accantaṃ       (tuyệt đối)
-   • ati + eti         = acceti         (vượt qua)
-   • iti + etaṃ        = iccetaṃ        (rằng: "cái này")
-   • pati + āharati    = paccāharati    (mang lại)
-
-⑨ ABHI + NGUYÊN ÂM → ABBHA:
-   • abhi + uggato     = abbhuggato     (đã mọc lên)
-
-⑩ ADHI + NGUYÊN ÂM → AJJHA:
-   • adhi + āgama      = ajjhāgama      (đã chứng đắc)
-
-⑪ CHÈN t/d/n/m/y/r/ḷ/v TRƯỚC NGUYÊN ÂM:
-   • ajja + agge       = ajjatagge      (từ hôm nay)
-   • atta + attha      = attadattha     (lợi ích chính mình)
-   • ito + āyati       = itonāyati      (đến từ đây)
-   • idha + āhu        = idhamāhu       (ở đây họ nói)
-   • so + eva          = soyeva         (chính vị ấy)
-   • ni + antaraṃ      = nirantaraṃ    (không gián đoạn)
-   • cha + abhiññā     = chaḷabhiññā   (sáu thắng trí)
-   • ti + aṅgikaṃ      = tivaṅgikaṃ    (ba chi phần)
+🔁 ANCHOR: taṃ eva=taññeva (chính cái đó), so eva=soyeva (chính vị ấy)
 ''',
         contentEn: '''
 LESSON 24 — SANDHI (Rules of Combinations)
@@ -382,7 +329,7 @@ SARA SANDHI — 11 Rules:
       LessonPhase(
         id: 'lesson24_phase2',
         phaseTypeStr: 'read_listen',
-        titleVi: '📘 Vyañjana Sandhi + Niggahita Sandhi',
+        titleVi: '📖 Từ vựng: Luật Hài Âm (Sandhi)',
         contentVi: '''
 ══════════════════════════════════════════════════════
 C. VYAÑJANA SANDHI — HÀI ÂM PHỤ ÂM (5 quy tắc)
@@ -533,7 +480,7 @@ NIGGAHITA (Ṃ) SANDHI — 8 Rules:
       LessonPhase(
         id: 'lesson24_phase3',
         phaseTypeStr: 'listening_quiz',
-        titleVi: '🎧 Quiz: Nhận Diện Quy Tắc Sandhi',
+        titleVi: '🎧 Quiz: Luật Hài Âm (Sandhi)',
         questions: const [
           QuizQuestion(
             id: 'lesson24_q01',
@@ -664,7 +611,7 @@ LessonDay getLesson24Day2() {
     id: 'lesson24_day2',
     dayNumber: 2,
     themeId: 'theme_24_sandhi',
-    titleVi: 'Ngày 2: Luyện Tập Sandhi — Mind Game + Quiz',
+    titleVi: 'Ngày 2 — Luyện tập: Luật Hài Âm (Sandhi)',
     phases: [
       // ─────────────────────────────────────────────────────────────────
       // PHASE 4: MIND GAME — Sara Sandhi
@@ -672,7 +619,7 @@ LessonDay getLesson24Day2() {
       LessonPhase(
         id: 'lesson24_phase4',
         phaseTypeStr: 'mind_game',
-        titleVi: '🧠 Trò Chơi Tư Duy: Sara Sandhi (11 Quy Tắc)',
+        titleVi: '🧠 Ghép câu: Luật Hài Âm (Sandhi)',
         mixedSegments: const [
           // #1
           MixedSegment(text: '① '),
@@ -763,7 +710,7 @@ LessonDay getLesson24Day2() {
       LessonPhase(
         id: 'lesson24_phase5',
         phaseTypeStr: 'mind_game',
-        titleVi: '🧠 Trò Chơi Tư Duy: Vyañjana + Niggahita Sandhi',
+        titleVi: '🧠 Ghép câu: Luật Hài Âm (Sandhi)',
         mixedSegments: const [
           // Vyañjana #3
           MixedSegment(text: '⓿ '),
@@ -844,7 +791,7 @@ LessonDay getLesson24Day2() {
       LessonPhase(
         id: 'lesson24_phase6',
         phaseTypeStr: 'listening_quiz',
-        titleVi: '🎧 Quiz Tổng Hợp: Phân Tích Sandhi',
+        titleVi: '🎧 Quiz: Luật Hài Âm (Sandhi)',
         questions: const [
           QuizQuestion(
             id: 'lesson24_q08',

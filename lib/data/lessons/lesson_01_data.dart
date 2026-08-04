@@ -199,7 +199,7 @@ LessonDay getLesson01Day1() {
     id: 'lesson01_day1',
     dayNumber: 1,
     themeId: 'theme_01_masc_a_nom_acc',
-    titleVi: 'Ngày 1: Danh từ Nam tánh "-a" — CC & ĐC + Thì Hiện tại',
+    titleVi: 'Ngày 1 — Lý thuyết & Từ vựng: Danh từ Nam "-a": CC & ĐC',
     phases: [
       _buildDay1Phase1(),
       _buildDay1Phase2(),
@@ -212,7 +212,7 @@ LessonPhase _buildDay1Phase1() {
   return LessonPhase(
     id: 'lesson01_phase1',
     phaseTypeStr: 'read_listen',
-    titleVi: 'Bài đọc: Biến cách Nam tánh "-a" và Thì Hiện tại',
+    titleVi: '📘 Lý thuyết: Danh từ Nam "-a": CC & ĐC',
     contentVi: '''
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BÀI HỌC 1 — NGỮ PHÁP CỐT LÕI
@@ -377,7 +377,7 @@ LessonPhase _buildDay1Phase2() {
   return LessonPhase(
     id: 'lesson01_phase2',
     phaseTypeStr: 'mind_game',
-    titleVi: 'Trò Chơi Tư Duy: Nhớ Hình Thái Biến Cách',
+    titleVi: '🧠 Ghép từ: Danh từ Nam "-a": CC & ĐC',
     mixedSegments: kLesson01MindGameSegments,
     fabVocab: [
       FabVocabItem(
@@ -410,7 +410,7 @@ LessonDay getLesson01Day2() {
     id: 'lesson01_day2',
     dayNumber: 2,
     themeId: 'theme_01_masc_a_nom_acc',
-    titleVi: 'Ngày 2: Luyện tập dịch Bài tập 1 (40 câu)',
+    titleVi: 'Ngày 2 — Luyện tập: Danh từ Nam "-a": CC & ĐC',
     phases: [
       _buildDay2Practice1(),
       _buildDay2MindGame1(),
@@ -427,7 +427,7 @@ LessonPhase _buildDay2Practice1() {
   return LessonPhase(
     id: 'lesson01_phase3',
     phaseTypeStr: 'listening_quiz',
-    titleVi: 'Luyện Tập 1: Nhận Dạng CC & ĐC (Câu 1-13)',
+    titleVi: '🎧 Quiz: Danh từ Nam "-a": CC & ĐC',
     contentVi: '''
 📖 NHÓM CÂU LUYỆN TẬP 1 (Câu 1–13)
 Phân tích và dịch sang tiếng Việt:
@@ -552,7 +552,7 @@ LessonPhase _buildDay2MindGame1() {
   return LessonPhase(
     id: 'lesson01_phase4',
     phaseTypeStr: 'mind_game',
-    titleVi: 'Trò Chơi Tư Duy: Ôn Practice 1',
+    titleVi: '🧠 Ghép câu: Danh từ Nam "-a": CC & ĐC',
     mixedSegments: _kMindGame1Segments,
   );
 }
@@ -562,7 +562,7 @@ LessonPhase _buildDay2Practice2() {
   return LessonPhase(
     id: 'lesson01_phase5',
     phaseTypeStr: 'listening_quiz',
-    titleVi: 'Luyện Tập 2: Phân Tích Câu Đầy Đủ S-O-V (Câu 14-27)',
+    titleVi: '🎧 Quiz: Danh từ Nam "-a": CC & ĐC',
     contentVi: '''
 📖 NHÓM CÂU LUYỆN TẬP 2 (Câu 14–27)
 Phân tích cú pháp và dịch:
@@ -679,7 +679,7 @@ LessonPhase _buildDay2MindGame2() {
   return LessonPhase(
     id: 'lesson01_phase6',
     phaseTypeStr: 'mind_game',
-    titleVi: 'Trò Chơi Tư Duy: Ôn Practice 2',
+    titleVi: '🧠 Ghép câu: Danh từ Nam "-a": CC & ĐC',
     mixedSegments: _kMindGame2Segments,
   );
 }
@@ -689,7 +689,7 @@ LessonPhase _buildDay2Practice3() {
   return LessonPhase(
     id: 'lesson01_phase7',
     phaseTypeStr: 'listening_quiz',
-    titleVi: 'Luyện Tập 3: Câu Đầy Đủ & Củng Cố (Câu 28-40)',
+    titleVi: '🎧 Quiz: Danh từ Nam "-a": CC & ĐC',
     contentVi: '''
 📖 NHÓM CÂU LUYỆN TẬP 3 (Câu 28–40)
 Tổng hợp và dịch:
@@ -812,7 +812,7 @@ LessonPhase _buildDay2MindGame3() {
   return LessonPhase(
     id: 'lesson01_phase8',
     phaseTypeStr: 'mind_game',
-    titleVi: 'Trò Chơi Tư Duy: Ôn Practice 3',
+    titleVi: '🧠 Ghép câu: Danh từ Nam "-a": CC & ĐC',
     mixedSegments: _kMindGame3Segments,
   );
 }

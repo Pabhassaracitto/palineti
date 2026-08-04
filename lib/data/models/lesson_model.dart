@@ -45,22 +45,41 @@ class FabVocabItem {
   final String pronunciation;
   final String partOfSpeech;
 
+  // V0.2: Hỗ trợ đa ngữ - Map locale -> translation
+  // vd: {'en': 'man', 'vi': 'người đàn ông', 'si': 'මිනිසා'}
+  // Giữ wordEn/wordVi để backward compatible, nhưng translations mới là source of truth
+  final Map<String, String>? translations;
+  final String? paradigmId; // Để render bảng biến cách cho vocab này
+
   const FabVocabItem({
     required this.wordEn,
     required this.wordVi,
     required this.pronunciation,
     required this.partOfSpeech,
+    this.translations,
+    this.paradigmId,
   });
+
+  String getLocalizedWord(String locale) {
+    if (translations != null && translations!.containsKey(locale)) {
+      return translations![locale]!;
+    }
+    if (locale == 'vi') return wordVi;
+    if (locale == 'en') return wordEn;
+    return wordVi; // fallback
+  }
 }
 
 /// Item trong FAB Phrase sheet
 class FabPhraseItem {
   final String phrase;
   final String meaning;
+  final Map<String, String>? translations; // {'si': '...'} cho tương lai
 
   const FabPhraseItem({
     required this.phrase,
     required this.meaning,
+    this.translations,
   });
 }
 
@@ -68,10 +87,12 @@ class FabPhraseItem {
 class FabAnswerItem {
   final String en; // 'Q1 → B: ...'
   final String vi; // Giải thích tiếng Việt
+  final Map<String, String>? translations;
 
   const FabAnswerItem({
     required this.en,
     required this.vi,
+    this.translations,
   });
 }
 
@@ -88,6 +109,16 @@ class LessonPhase {
   final List<FabPhraseItem>? fabPhrases;
   final List<FabAnswerItem>? fabAnswers;
 
+  // ── V0.2: Hỗ trợ đa ngữ & bảng biến cách ──
+  // Đa ngữ: Map locale -> translation, vd: {'vi': '...', 'en': '...', 'si': '...'}
+  final Map<String, String>? titleTranslations;
+  final Map<String, String>? contentTranslations;
+
+  // Bảng biến cách: nếu có paradigmId thì render DeclensionTableWidget thay vì ASCII
+  final String? paradigmId; // vd: 'masc_a', 'neut_a', 'fem_aa'
+  final String? paradigmRoot; // vd: 'nara' để sinh bảng
+  final List<String>? highlightedCases; // vd: ['nominative', 'accusative'] để highlight case đang học
+
   // Runtime state — không persist ở package level
   bool isCompleted;
 
@@ -102,8 +133,33 @@ class LessonPhase {
     this.fabVocab,
     this.fabPhrases,
     this.fabAnswers,
+    this.titleTranslations,
+    this.contentTranslations,
+    this.paradigmId,
+    this.paradigmRoot,
+    this.highlightedCases,
     this.isCompleted = false,
   });
+
+  // Helper lấy title theo locale, fallback về titleVi
+  String getLocalizedTitle(String locale) {
+    if (titleTranslations != null && titleTranslations!.containsKey(locale)) {
+      return titleTranslations![locale]!;
+    }
+    // Fallback chain: vi -> en -> first available
+    if (titleVi != null) return titleVi!;
+    if (titleTranslations != null && titleTranslations!.isNotEmpty) {
+      return titleTranslations!.values.first;
+    }
+    return 'Untitled';
+  }
+
+  String getLocalizedContent(String locale) {
+    if (contentTranslations != null && contentTranslations!.containsKey(locale)) {
+      return contentTranslations![locale]!;
+    }
+    return contentVi ?? contentEn ?? '';
+  }
 
   PhaseType get phaseType {
     switch (phaseTypeStr) {
@@ -153,6 +209,8 @@ class LessonMeta {
   final String iconEmoji;
   final int colorValue;    // Color hex value
   final String description;
+  final LessonComplexity complexity; // V0.2: low/medium/high để đánh dấu bài nặng
+  final int estimatedMinutes; // V0.2: thời gian ước tính hoàn thành 2 ngày
 
   const LessonMeta({
     required this.id,
@@ -162,5 +220,9 @@ class LessonMeta {
     required this.iconEmoji,
     required this.colorValue,
     required this.description,
+    this.complexity = LessonComplexity.medium,
+    this.estimatedMinutes = 40,
   });
 }
+
+enum LessonComplexity { low, medium, high }

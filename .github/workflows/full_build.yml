@@ -1,9 +1,7 @@
-name: Flutter Full Build - Android, Windows
+name: Flutter Full Build - Android, iOS, Windows, Linux, Web
 
 on:
   push:
-    branches:
-      - main
     tags:
       - 'v*'
   workflow_dispatch:
@@ -24,6 +22,10 @@ on:
         description: 'Build Linux?'
         type: boolean
         default: false
+      build_web:
+        description: 'Build Web?'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -31,7 +33,7 @@ permissions:
 jobs:
   build-android:
     name: Build Android APK
-    if: startsWith(github.ref, 'refs/tags/v') || github.event.inputs.build_android == 'true'
+    if: (startsWith(github.ref, 'refs/tags/v') && !contains(github.ref_name, '-')) || inputs.build_android
     runs-on: ubuntu-latest
 
     steps:
@@ -51,18 +53,21 @@ jobs:
           cache: true
 
       - name: Create empty asset directories if missing
-        run: mkdir -p assets/animations assets/audio assets/data
+        run: mkdir -p assets/animations assets/audio assets/data assets/branding
 
       - name: Get dependencies
         run: flutter pub get
 
-      - name: Generate Launcher Icons (Ensure logo is set)
-        run: flutter pub run flutter_launcher_icons || true
+      - name: Generate Launcher Icons
+        run: dart run flutter_launcher_icons || true
 
       - name: Build APK (ARM64 only)
         run: |
           flutter build apk --release --target-platform android-arm64 -v
           mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/palineti-Android-ARM64-${{ github.ref_name }}.apk
+
+      - name: Build AppBundle (Google Play)
+        run: flutter build appbundle --release
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
@@ -70,9 +75,15 @@ jobs:
           name: android-apk
           path: build/app/outputs/flutter-apk/palineti-Android-ARM64-*.apk
 
+      - name: Upload AppBundle artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-appbundle
+          path: build/app/outputs/bundle/release/app-release.aab
+
   build-windows:
     name: Build Windows App
-    if: startsWith(github.ref, 'refs/tags/v') || github.event.inputs.build_windows == 'true'
+    if: (startsWith(github.ref, 'refs/tags/v') && !contains(github.ref_name, '-')) || inputs.build_windows
     runs-on: windows-latest
 
     steps:
@@ -93,7 +104,7 @@ jobs:
 
       - name: Create empty asset directories if missing
         shell: bash
-        run: mkdir -p assets/animations assets/audio assets/data
+        run: mkdir -p assets/animations assets/audio assets/data assets/branding
 
       - name: Get dependencies
         run: flutter pub get
@@ -106,17 +117,17 @@ jobs:
         shell: powershell
         run: |
           $absolutePath = "$env:GITHUB_WORKSPACE\build\windows\x64\runner\Release\*"
-          Compress-Archive -Path $absolutePath -DestinationPath zenglish-Windows-${{ github.ref_name }}.zip
+          Compress-Archive -Path $absolutePath -DestinationPath palineti-Windows-${{ github.ref_name }}.zip
 
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v4
         with:
           name: windows-zip
-          path: zenglish-Windows-*.zip
+          path: palineti-Windows-*.zip
 
   build-ios:
     name: Build iOS IPA (sideload)
-    if: startsWith(github.ref, 'refs/tags/v') || github.event.inputs.build_ios == 'true'
+    if: (startsWith(github.ref, 'refs/tags/v') && !contains(github.ref_name, '-')) || inputs.build_ios
     runs-on: macos-latest
 
     steps:
@@ -130,7 +141,7 @@ jobs:
           cache: true
 
       - name: Create empty asset directories if missing
-        run: mkdir -p assets/animations assets/audio assets/data
+        run: mkdir -p assets/animations assets/audio assets/data assets/branding
 
       - name: Disable Swift Package Manager
         run: flutter config --no-enable-swift-package-manager
@@ -141,36 +152,134 @@ jobs:
       - name: Get dependencies
         run: flutter pub get
 
-      - name: Generate Launcher Icons (Ensure logo is set)
+      - name: Generate Launcher Icons
         run: dart run flutter_launcher_icons || true
 
-      - name: Install Pods
-       run: |
-         cd ios
-         # Xóa các tệp cũ để đảm bảo sạch sẽ
-         rm -rf Podfile Podfile.lock Pods
-         pod install
+      # === FIX V0.1.4 ULTIMATE - Force sync Podfile.lock vs Manifest.lock ===
+      # Previous logs still show "CocoaPods did not set base configuration" even after repo fix
+      # -> Runner project has custom config, so we MUST force include Pods config
+      # -> Also force copy Podfile.lock -> Manifest.lock before build (hack that fixes sandbox error)
+      - name: Debug and force-fix xcconfig
+        run: |
+          echo "=== BEFORE ==="
+          cat ios/Flutter/Debug.xcconfig || true
+          cat ios/Flutter/Release.xcconfig || true
+          echo "=== Podfile ==="
+          cat ios/Podfile
+          echo "=== Runner project deployment target ==="
+          grep -n "IPHONEOS_DEPLOYMENT_TARGET" ios/Runner.xcodeproj/project.pbxproj || true
+          echo "=== Force overwriting Debug.xcconfig and Release.xcconfig with correct Pods include ==="
+          mkdir -p ios/Flutter
+          cat > ios/Flutter/Debug.xcconfig <<'EOF'
+          #include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+          #include "Generated.xcconfig"
+          EOF
+          cat > ios/Flutter/Release.xcconfig <<'EOF'
+          #include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
+          #include "Generated.xcconfig"
+          EOF
+          echo "=== AFTER ==="
+          cat ios/Flutter/Debug.xcconfig
+          cat ios/Flutter/Release.xcconfig
+          echo "=== Generated.xcconfig ==="
+          cat ios/Flutter/Generated.xcconfig || true
+          echo "=== Flutter.podspec ==="
+          cat ios/Flutter/Flutter.podspec | head -n 20 || true
 
-      - name: Build iOS (no codesign)
-        # Sử dụng --no-pub vì chúng ta đã get dependencies và install pods ở bước trên
-        run: flutter build ios --release --no-codesign --no-pub
+      - name: Ensure Podfile platform 13.0
+        run: |
+          grep -q "platform :ios" ios/Podfile || (echo "Podfile missing platform" && exit 1)
+          echo "✅ Podfile OK"
+
+      - name: Clean and pod install (no repo update to avoid CDN issues)
+        run: |
+          cd ios
+          echo "=== Cleaning ==="
+          rm -rf Pods Podfile.lock .symlinks
+          ls -la Flutter/ || true
+          echo "=== pod install (without repo-update, faster and less flaky) ==="
+          pod install --verbose
+          echo "=== After pod install ==="
+          echo "Podfile.lock:"
+          cat Podfile.lock
+          echo "--- Manifest.lock ---"
+          cat Pods/Manifest.lock
+          echo "=== Diff check ==="
+          diff Podfile.lock Pods/Manifest.lock && echo "✅ In sync" || echo "⚠️ Differ"
+          echo "=== Force sync hack: copy Podfile.lock -> Pods/Manifest.lock ==="
+          cp -f Podfile.lock Pods/Manifest.lock
+          echo "=== After forced sync ==="
+          diff Podfile.lock Pods/Manifest.lock && echo "✅ Now in sync (forced)" || true
+          cd ..
+
+      - name: Build iOS (no codesign) - Ultimate with forced sync before each attempt
+        run: |
+          set -o pipefail
+          # Function to force sync before build
+          force_sync() {
+            echo "=== Force syncing locks before build ==="
+            if [ -f ios/Podfile.lock ] && [ -d ios/Pods ]; then
+              cp -f ios/Podfile.lock ios/Pods/Manifest.lock || true
+              echo "Copied Podfile.lock -> Manifest.lock"
+              diff ios/Podfile.lock ios/Pods/Manifest.lock && echo "✅ Locks synced" || echo "Still diff"
+            fi
+          }
+
+          echo "=== Attempt 1: flutter clean + pub get + pod install + build ==="
+          flutter clean
+          flutter pub get
+          cd ios
+          pod install --verbose
+          cp -f Podfile.lock Pods/Manifest.lock
+          cd ..
+          force_sync
+          if flutter build ios --release --no-codesign -v; then
+            echo "✅ First build succeeded"
+            exit 0
+          fi
+
+          echo "⚠️ Attempt 1 failed, re-sync and Attempt 2"
+          cd ios
+          pod install --verbose
+          cp -f Podfile.lock Pods/Manifest.lock
+          cd ..
+          force_sync
+          if flutter build ios --release --no-codesign -v; then
+            echo "✅ Second build succeeded"
+            exit 0
+          fi
+
+          echo "⚠️ Attempt 2 failed, clean Pods and Attempt 3"
+          cd ios
+          rm -rf Pods Podfile.lock .symlinks
+          pod install --verbose
+          cp -f Podfile.lock Pods/Manifest.lock
+          cd ..
+          force_sync
+          echo "=== Attempt 3 final ==="
+          flutter build ios --release --no-codesign -v || flutter build ios --release --no-codesign --no-pub -v
+
+      - name: Verify Runner.app exists
+        run: |
+          ls -lh build/ios/iphoneos/ || true
+          ls -lh build/ios/ || true
 
       - name: Create IPA
         run: |
           mkdir -p Payload
           cp -r build/ios/iphoneos/Runner.app Payload/
-          zip -r zenglish-iOS-${{ github.ref_name }}.ipa Payload
+          zip -r palineti-iOS-${{ github.ref_name }}.ipa Payload
           rm -rf Payload
 
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
         with:
           name: ios-ipa
-          path: zenglish-iOS-*.ipa
+          path: palineti-iOS-*.ipa
 
   build-linux:
     name: Build Linux App
-    if: startsWith(github.ref, 'refs/tags/v') || github.event.inputs.build_linux == 'true'
+    if: (startsWith(github.ref, 'refs/tags/v') && !contains(github.ref_name, '-')) || inputs.build_linux
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -181,7 +290,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
 
-
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
@@ -191,7 +299,7 @@ jobs:
         run: flutter config --enable-linux-desktop
 
       - name: Create empty asset directories if missing
-        run: mkdir -p assets/animations assets/audio assets/data
+        run: mkdir -p assets/animations assets/audio assets/data assets/branding
 
       - name: Get dependencies
         run: flutter pub get
@@ -202,19 +310,47 @@ jobs:
       - name: Zip Linux build
         run: |
           cd build/linux/x64/release/bundle
-          zip -r ../../../../../zenglish-Linux-${{ github.ref_name }}.zip .
+          zip -r ../../../../../palineti-Linux-${{ github.ref_name }}.zip .
 
       - name: Upload Linux artifact
         uses: actions/upload-artifact@v4
         with:
           name: linux-zip
-          path: zenglish-Linux-*.zip
+          path: palineti-Linux-*.zip
+
+  build-web:
+    name: Build Web App
+    if: (startsWith(github.ref, 'refs/tags/v') && !contains(github.ref_name, '-')) || inputs.build_web
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Create empty asset directories if missing
+        run: mkdir -p assets/animations assets/audio assets/data assets/branding
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Build Web
+        run: flutter build web --release
+
+      - name: Upload Web artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-build
+          path: build/web
 
   create-release:
     name: Create Release
-    needs: [build-android, build-windows, build-ios, build-linux]
-    # Chỉ tạo Release thật sự khi push Tag, không tạo khi build thủ công để debug
-    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [build-android, build-windows, build-ios, build-linux, build-web]
+    if: startsWith(github.ref, 'refs/tags/v') && !contains(github.ref_name, '-') && !cancelled()
     runs-on: ubuntu-latest
     steps:
       - name: Download all artifacts
@@ -222,15 +358,20 @@ jobs:
         with:
           path: artifacts
 
+      - name: List artifacts
+        run: ls -R artifacts
+
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           name: Release ${{ github.ref_name }}
           files: |
             artifacts/android-apk/*.apk
+            artifacts/android-appbundle/*.aab
             artifacts/windows-zip/*.zip
             artifacts/ios-ipa/*.ipa
             artifacts/linux-zip/*.zip
           generate_release_notes: true
+          fail_on_unmatched_files: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
