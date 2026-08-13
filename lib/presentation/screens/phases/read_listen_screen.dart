@@ -21,74 +21,78 @@ class ReadListenScreen extends StatelessWidget {
     final content = phase.localizedContent(context);
 
     return SafeArea(
-        child: Column(
-      children: [
-        Expanded(
-          child: ListView(
-            padding: const EdgeInsets.all(16),
-            children: [
-              // Title
-              if (title != null) ...[
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.paliInk,
-                  ),
-                ),
-                const SizedBox(height: 16),
-              ],
-
-              // Localized learning content
-              if (content != null) ...[
-                Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: AppColors.paliGold.withOpacity(0.3),
-                    ),
-                  ),
-                  child: SelectableText(
-                    content,
+      child: Column(
+        children: [
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.all(16),
+              children: [
+                // Title
+                if (title != null) ...[
+                  Text(
+                    title,
                     style: const TextStyle(
-                      fontSize: 14,
-                      height: 1.6,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
                       color: AppColors.paliInk,
                     ),
                   ),
-                ),
-                const SizedBox(height: 16),
-              ],
+                  const SizedBox(height: 16),
+                ],
 
-              // FAB Vocab
-              if (phase.fabVocab != null && phase.fabVocab!.isNotEmpty) ...[
-                _buildFabSection(
-                  l10n.importantVocabulary,
-                  phase.fabVocab!.map((item) => _buildVocabItem(item)).toList(),
-                ),
-                const SizedBox(height: 16),
-              ],
+                // Localized learning content
+                if (content != null) ...[
+                  Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: AppColors.paliGold.withOpacity(0.3),
+                      ),
+                    ),
+                    child: SelectableText(
+                      content,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        height: 1.6,
+                        color: AppColors.paliInk,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                ],
 
-              // FAB Phrases
-              if (phase.fabPhrases != null && phase.fabPhrases!.isNotEmpty) ...[
-                _buildFabSection(
-                  l10n.importantStructures,
-                  phase.fabPhrases!
-                      .map((item) => _buildPhraseItem(item))
-                      .toList(),
-                ),
+                // FAB Vocab
+                if (phase.fabVocab != null && phase.fabVocab!.isNotEmpty) ...[
+                  _buildFabSection(
+                    l10n.importantVocabulary,
+                    phase.fabVocab!
+                        .map((item) => _buildVocabItem(context, item))
+                        .toList(),
+                  ),
+                  const SizedBox(height: 16),
+                ],
+
+                // FAB Phrases
+                if (phase.fabPhrases != null &&
+                    phase.fabPhrases!.isNotEmpty) ...[
+                  _buildFabSection(
+                    l10n.importantStructures,
+                    phase.fabPhrases!
+                        .map((item) => _buildPhraseItem(item))
+                        .toList(),
+                  ),
+                ],
               ],
-            ],
+            ),
           ),
-        ),
 
-        // Bottom button
-        _buildBottomButton(context),
-      ],
-    ));
+          // Bottom button
+          _buildBottomButton(context),
+        ],
+      ),
+    );
   }
 
   Widget _buildFabSection(String title, List<Widget> children) {
@@ -116,7 +120,7 @@ class ReadListenScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildVocabItem(FabVocabItem item) {
+  Widget _buildVocabItem(BuildContext context, FabVocabItem item) {
     return Container(
       margin: const EdgeInsets.only(bottom: 6),
       padding: const EdgeInsets.all(10),
@@ -173,10 +177,7 @@ class ReadListenScreen extends StatelessWidget {
             ),
             child: Text(
               item.partOfSpeech,
-              style: const TextStyle(
-                fontSize: 10,
-                color: AppColors.paliGold,
-              ),
+              style: const TextStyle(fontSize: 10, color: AppColors.paliGold),
             ),
           ),
         ],
@@ -207,10 +208,7 @@ class ReadListenScreen extends StatelessWidget {
           const SizedBox(height: 2),
           Text(
             item.meaning,
-            style: TextStyle(
-              fontSize: 12,
-              color: Colors.grey[700],
-            ),
+            style: TextStyle(fontSize: 12, color: Colors.grey[700]),
           ),
         ],
       ),
