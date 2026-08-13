@@ -1,0 +1,381 @@
+name: "* Flutter Full Build Pro - Multi-Platform (v0.1.6)"
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Nhập version release (vd: 1.0.0, 1.0.0-rc1). Để trống = dùng ref_name'
+        required: false
+        default: ''
+        type: string
+      force_package:
+        description: 'Tick để ép đóng gói/upload artifact kể cả khi không phải stable release'
+        required: false
+        default: false
+        type: boolean
+      build_android:
+        description: 'Build Android?'
+        type: boolean
+        default: false
+      build_ios:
+        description: 'Build iOS?'
+        type: boolean
+        default: false
+      build_windows:
+        description: 'Build Windows?'
+        type: boolean
+        default: false
+      build_linux:
+        description: 'Build Linux?'
+        type: boolean
+        default: false
+      build_web:
+        description: 'Build Web?'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    name: Prepare version conditions
+    runs-on: ubuntu-latest
+    outputs:
+      is_stable_release: ${{ steps.check.outputs.is_stable_release }}
+      should_package: ${{ steps.check.outputs.should_package }}
+      version: ${{ steps.check.outputs.version }}
+      version_tag: ${{ steps.check.outputs.version_tag }}
+      # Ép kiểu boolean an toàn cho các job sau
+      run_android: ${{ steps.check.outputs.run_android }}
+      run_ios: ${{ steps.check.outputs.run_ios }}
+      run_windows: ${{ steps.check.outputs.run_windows }}
+      run_linux: ${{ steps.check.outputs.run_linux }}
+      run_web: ${{ steps.check.outputs.run_web }}
+    steps:
+      - id: check
+        run: |
+          # 1. Xác định effective version
+          INPUT_VER="${{ inputs.version }}"
+          TAG_VER="${{ github.ref_name }}"
+          EFFECTIVE_VER=""
+
+          if [[ -n "$INPUT_VER" ]]; then
+            EFFECTIVE_VER="${INPUT_VER#v}"
+          elif [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            EFFECTIVE_VER="${TAG_VER#v}"
+          else
+            EFFECTIVE_VER=""
+          fi
+
+          # 2. is_stable_release: true khi version có giá trị VÀ không chứa "-"
+          IS_STABLE="false"
+          if [[ -n "$EFFECTIVE_VER" && "$EFFECTIVE_VER" != *"-"* ]]; then
+            IS_STABLE="true"
+          fi
+
+          # 3. should_package: true khi is_stable_release=true OR force_package=true
+          FORCE="${{ inputs.force_package || 'false' }}"
+          SHOULD_PACKAGE="false"
+          if [[ "$IS_STABLE" == "true" || "$FORCE" == "true" ]]; then
+            SHOULD_PACKAGE="true"
+          fi
+
+          # 4. Quyết định nền tảng nào sẽ được build (An toàn với cả push tag lẫn workflow_dispatch)
+          IN_AND="${{ inputs.build_android || 'false' }}"
+          IN_IOS="${{ inputs.build_ios || 'false' }}"
+          IN_WIN="${{ inputs.build_windows || 'false' }}"
+          IN_LNX="${{ inputs.build_linux || 'false' }}"
+          IN_WEB="${{ inputs.build_web || 'false' }}"
+
+          RUN_AND="false"
+          RUN_IOS="false"
+          RUN_WIN="false"
+          RUN_LNX="false"
+          RUN_WEB="false"
+
+          # Nếu là push Tag hoặc force_package -> Build tất cả nền tảng. Ngược lại build theo input checkbox.
+          if [[ "${{ github.ref }}" == refs/tags/* || "$FORCE" == "true" ]]; then
+            RUN_AND="true"; RUN_IOS="true"; RUN_WIN="true"; RUN_LNX="true"; RUN_WEB="true"
+          else
+            [[ "$IN_AND" == "true" ]] && RUN_AND="true"
+            [[ "$IN_IOS" == "true" ]] && RUN_IOS="true"
+            [[ "$IN_WIN" == "true" ]] && RUN_WIN="true"
+            [[ "$IN_LNX" == "true" ]] && RUN_LNX="true"
+            [[ "$IN_WEB" == "true" ]] && RUN_WEB="true"
+          fi
+
+          echo "is_stable_release=$IS_STABLE" >> $GITHUB_OUTPUT
+          echo "should_package=$SHOULD_PACKAGE" >> $GITHUB_OUTPUT
+          echo "version=$EFFECTIVE_VER" >> $GITHUB_OUTPUT
+          
+          if [[ -n "$EFFECTIVE_VER" ]]; then
+            echo "version_tag=v$EFFECTIVE_VER" >> $GITHUB_OUTPUT
+          else
+            echo "version_tag=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          fi
+
+          echo "run_android=$RUN_AND" >> $GITHUB_OUTPUT
+          echo "run_ios=$RUN_IOS" >> $GITHUB_OUTPUT
+          echo "run_windows=$RUN_WIN" >> $GITHUB_OUTPUT
+          echo "run_linux=$RUN_LNX" >> $GITHUB_OUTPUT
+          echo "run_web=$RUN_WEB" >> $GITHUB_OUTPUT
+
+  build-android:
+    name: Build Android APK
+    needs: prepare
+    if: needs.prepare.outputs.run_android == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Create empty asset directories if missing
+        run: mkdir -p assets/animations assets/audio assets/data assets/branding
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Build APK (ARM64)
+        run: |
+          VER="${{ needs.prepare.outputs.version }}"
+          [ -z "$VER" ] && VER="dev-${{ github.run_number }}"
+          flutter build apk --release --target-platform android-arm64 -v --build-name=$VER
+          mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/palineti-Android-ARM64-${VER}.apk
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: build/app/outputs/flutter-apk/palineti-Android-ARM64-*.apk
+
+      - name: Build AppBundle (Google Play)
+        if: needs.prepare.outputs.should_package == 'true'
+        run: |
+          VER="${{ needs.prepare.outputs.version }}"
+          [ -z "$VER" ] && VER="0.0.0-dev"
+          flutter build appbundle --release --build-name=$VER
+
+      - name: Upload AppBundle Artifact
+        if: needs.prepare.outputs.should_package == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-appbundle
+          path: build/app/outputs/bundle/release/app-release.aab
+
+  build-windows:
+    name: Build Windows App
+    needs: prepare
+    if: needs.prepare.outputs.run_windows == 'true'
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup MSVC
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: false
+
+      - name: Enable Windows Desktop
+        run: flutter config --enable-windows-desktop
+
+      - name: Create empty asset directories if missing
+        shell: bash
+        run: mkdir -p assets/animations assets/audio assets/data assets/branding
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Build Windows
+        shell: bash
+        run: flutter build windows --release
+
+      - name: Zip Windows build
+        shell: powershell
+        run: |
+          $ver="${{ needs.prepare.outputs.version }}"
+          if ([string]::IsNullOrEmpty($ver)) { $ver = "dev-${{ github.run_number }}" }
+          $absolutePath = "$env:GITHUB_WORKSPACE\build\windows\x64\runner\Release\*"
+          Compress-Archive -Path $absolutePath -DestinationPath palineti-Windows-${ver}.zip
+
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-zip
+          path: palineti-Windows-*.zip
+
+  build-ios:
+    name: Build iOS IPA (sideload)
+    needs: prepare
+    if: needs.prepare.outputs.run_ios == 'true'
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Create empty asset directories if missing
+        run: mkdir -p assets/animations assets/audio assets/data assets/branding
+
+      - name: Disable Swift Package Manager
+        run: flutter config --no-enable-swift-package-manager
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Force Fix xcconfig & Pods
+        run: |
+          mkdir -p ios/Flutter
+          cat > ios/Flutter/Debug.xcconfig <<'EOF'
+          #include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+          #include "Generated.xcconfig"
+          EOF
+          cat > ios/Flutter/Release.xcconfig <<'EOF'
+          #include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
+          #include "Generated.xcconfig"
+          EOF
+          cd ios
+          rm -rf Pods Podfile.lock .symlinks
+          pod install --verbose
+          cp -f Podfile.lock Pods/Manifest.lock
+
+      - name: Build iOS (no codesign)
+        run: |
+          VER="${{ needs.prepare.outputs.version }}"
+          [ -z "$VER" ] && VER="0.0.0-dev"
+          flutter build ios --release --no-codesign --build-name=$VER -v
+
+      - name: Create IPA
+        run: |
+          VER="${{ needs.prepare.outputs.version }}"
+          [ -z "$VER" ] && VER="dev-${{ github.run_number }}"
+          mkdir -p Payload
+          cp -r build/ios/iphoneos/Runner.app Payload/
+          zip -r palineti-iOS-${VER}.ipa Payload
+          rm -rf Payload
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-ipa
+          path: palineti-iOS-*.ipa
+
+  build-linux:
+    name: Build Linux App
+    needs: prepare
+    if: needs.prepare.outputs.run_linux == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Linux dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Enable Linux Desktop
+        run: flutter config --enable-linux-desktop
+
+      - name: Create empty asset directories if missing
+        run: mkdir -p assets/animations assets/audio assets/data assets/branding
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Build Linux
+        run: flutter build linux --release
+
+      - name: Zip Linux build
+        run: |
+          VER="${{ needs.prepare.outputs.version }}"
+          [ -z "$VER" ] && VER="dev-${{ github.run_number }}"
+          cd build/linux/x64/release/bundle
+          zip -r ../../../../../palineti-Linux-${VER}.zip .
+
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-zip
+          path: palineti-Linux-*.zip
+
+  build-web:
+    name: Build Web App
+    needs: prepare
+    if: needs.prepare.outputs.run_web == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Build Web
+        run: flutter build web --release
+
+      - name: Upload Web artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-build
+          path: build/web
+
+  create-release:
+    name: Create GitHub Release
+    needs: [prepare, build-android, build-windows, build-ios, build-linux, build-web]
+    if: always() && needs.prepare.outputs.is_stable_release == 'true' && !cancelled()
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.prepare.outputs.version_tag }}
+          name: Release ${{ needs.prepare.outputs.version_tag }}
+          files: |
+            artifacts/android-apk/*.apk
+            artifacts/android-appbundle/*.aab
+            artifacts/windows-zip/*.zip
+            artifacts/ios-ipa/*.ipa
+            artifacts/linux-zip/*.zip
+          generate_release_notes: true
+          fail_on_unmatched_files: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
