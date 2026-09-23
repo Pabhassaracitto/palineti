@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import '../../data/localization/learning_content_translations.dart';
 import '../../data/localization/learning_content_translations_content.dart';
 import '../../data/localization/learning_content_translations_vocab.dart';
+import '../../data/localization/mind_game_translations.dart';
 import '../../data/models/lesson_model.dart';
 import '../../data/models/pali_vocab_model.dart';
 
@@ -153,6 +154,21 @@ extension QuizQuestionLearningLocalization on QuizQuestion {
       _sidecar(context)?.options ?? options;
 }
 
+extension MixedSegmentLearningLocalization on MixedSegment {
+  /// Text shown on the chip. Pāḷi segments are returned as-is; the tappable
+  /// gloss segments are translated via the sidecar (keyed by the Pāḷi answer
+  /// word), falling back to the inline Vietnamese gloss.
+  String localizedText(BuildContext context) {
+    if (!isVietnamese) return text;
+    final key = answer;
+    if (key != null && key.isNotEmpty) {
+      final sidecar = _lookupSidecar(context, mindGameSegmentTranslations, key);
+      if (_hasText(sidecar)) return sidecar!;
+    }
+    return text;
+  }
+}
+
 extension FabVocabItemLearningLocalization on FabVocabItem {
   String localizedWord(BuildContext context) => localizedLearningText(
         context,
@@ -162,6 +178,15 @@ extension FabVocabItemLearningLocalization on FabVocabItem {
 
   String localizedSecondaryWord(BuildContext context) =>
       prefersVietnameseLearningContent(context) ? wordEn : wordVi;
+
+  /// Grammar label (e.g. "noun, Nom. sg."). Translated via the sidecar when an
+  /// entry exists for the inline label; otherwise the inline value is kept.
+  String localizedPartOfSpeech(BuildContext context) {
+    final sidecar =
+        _lookupSidecar(context, vocabPosTranslations, partOfSpeech);
+    if (_hasText(sidecar)) return sidecar!;
+    return partOfSpeech;
+  }
 }
 
 extension FabAnswerItemLearningLocalization on FabAnswerItem {
