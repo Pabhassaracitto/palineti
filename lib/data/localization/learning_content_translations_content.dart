@@ -12,7 +12,35 @@ import 'learning_content_translations.dart';
 /// locale -> phase id -> LocalizedLearningText
 const Map<String, Map<String, LocalizedLearningText>> phaseContentTranslations = {
   'en': {
-    // Filled in as the English content is completed (L5, L6, L9, L10,
-    // L12, L16, L20 Day-2 read_listen phases).
+    // Day-2 read_listen phases (vocabulary review) for the seven
+    // lessons that had no inline contentEn.
+    'lesson05_phase2': LocalizedLearningText(
+      content:
+          'All the neuter "-a" nouns and the new verbs of Lesson 5. Note: the two words "mitta" (friend) and "pāda" (foot) can be declined as masculine OR neuter (m./n.).',
+    ),
+    'lesson06_phase2': LocalizedLearningText(
+      content:
+          'Memorize the feminine nouns ending in "-ā" (except "sā" = dog, which is masculine) and the infinitive forms in the Verb Table.',
+    ),
+    'lesson09_phase2': LocalizedLearningText(
+      content:
+          'Memorize the new words below. Note: FEMININE "-i" nouns decline according to the "bhūmi" table; MASCULINE nouns ending in "-i" (e.g. agni — fire, learned in Lesson 8) decline according to a DIFFERENT table (singular endings -i / -iṃ but oblique -inā, -ino…).',
+    ),
+    'lesson10_phase2': LocalizedLearningText(
+      content:
+          'Memorize the following new words (masculine/feminine "-ī" nouns, neuter nouns, adjectives, indeclinable words) and the masculine/feminine pairs illustrating the feminine-formation rule.',
+    ),
+    'lesson12_phase2': LocalizedLearningText(
+      content:
+          'All the new words according to the book (pp. 108-110) and the forms of the personal pronouns. Study the enclitics "me/te/vo/no" and their meanings in a sentence carefully.',
+    ),
+    'lesson16_phase2': LocalizedLearningText(
+      content:
+          'Memorize the list of numbers from 1 → 1 billion and the new vocabulary (divasa, ito, māsa…). Numbers from 19 onwards are annotated with gender / declension.',
+    ),
+    'lesson20_phase2': LocalizedLearningText(
+      content:
+          'Below are the classic examples for all 5 compound types (including the Digu sub-type and mixed compounds). Memorize them in order to recognize them when reading a sentence.',
+    ),
   },
 };
