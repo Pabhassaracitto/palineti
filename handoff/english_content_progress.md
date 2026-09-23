@@ -27,7 +27,8 @@ file lesson data:
 | `lib/data/localization/quiz_translations/quiz_en_lesson17_20.dart` | Quiz EN Lesson 17–20 (42 câu) |
 | `lib/data/localization/quiz_translations/quiz_en_lesson21_23.dart` | Quiz EN Lesson 21–23 (57 câu) |
 | `lib/data/localization/quiz_translations/quiz_en_lesson24_26.dart` | Quiz EN Lesson 24–26 (42 câu) |
-| `lib/data/localization/learning_content_translations_vocab.dart` | `vocabWordTranslations` (415/415) + `vocabExampleTranslations` (417/417) — ĐỦ |
+| `lib/data/localization/learning_content_translations_vocab.dart` | `vocabWordTranslations` (415/415) + `vocabExampleTranslations` (417/417) + `vocabPosTranslations` (68 labels VI→EN) — ĐỦ |
+| `lib/data/localization/mind_game_translations.dart` | `mindGameSegmentTranslations` (447 Pāḷi `answer` → gloss EN) — ĐỦ |
 | `lib/data/localization/learning_content_translations_content.dart` | `phaseContentTranslations` — Đủ (7 read_listen Day-2: L5, L6, L9, L10, L12, L16, L20) |
 | `lib/presentation/localization/learning_content_localizations.dart` | Thêm lookup sidecar cho vocab word/example + phase content; fallback chain đã hỗ trợ si/hi/zh/my sẵn (`_contentLocaleCandidates`) |
 
@@ -41,24 +42,42 @@ file lesson data:
 - [x] EN: Vocab word fixes — 415/415
 - [x] EN: Vocab examples — 417/417
 - [x] EN: Phase content — 7/7 read_listen Day-2 (L5, L6, L9, L10, L12, L16, L20)
+- [x] EN: Mind Game segment glosses — 447/447 (L5, L6, L9, L10, L12, L16, L20)
+- [x] EN: partOfSpeech labels — 68/68 labels tiếng Việt (giá trị EN/Pāḷi passthrough)
 
 **Kiểm chứng:** mọi câu Pāḷi trong sidecar đã được validate byte-level
 (khớp verbatim với lesson data source); audit 297 quiz IDs không thiếu,
 không thừa, không trùng; mỗi entry có đúng questionText + 4 options;
 toàn bộ file qua syntax scan.
 
+## Đã hoàn thành thêm (2026-09-24)
+
+- [x] **Bug Lesson 23 trên HomeScreen** — ĐÃ SỬA: thêm `getLesson23Meta()`
+  + đưa vào `_lessons` trong `home_screen.dart` + meta EN
+  `theme_23_kitaka` trong `learning_content_translations.dart`.
+  (commit `2d1ff27`)
+- [x] **Mind Game (`MixedSegment`) EN** — sidecar `mind_game_translations.dart`
+  (447 entries, keyed by Pāḷi `answer`). Chip trong `mind_game_screen.dart`
+  gọi `segment.localizedText(context)`. Kiểm chứng: mọi key khớp byte-level
+  với runtime text của lesson (gồm cả 1 case có `\'` escape). (commit `4770042`)
+- [x] **`FabVocabItem.partOfSpeech` EN** — 68 entries trong
+  `vocabPosTranslations` (cuối `learning_content_translations_vocab.dart`).
+  Label tiếng Việt (cách ngữ, suffix, sandhi rule, abbrev như
+  `danh_tu`/`dong_tu`/`qkpt`/`htpt`) được dịch; giá trị đã là EN/Pāḷi
+  không liệt kê → fallback về value inline. Chip vocab FAB trong
+  `read_listen_screen.dart` gọi `item.localizedPartOfSpeech(context)`.
+  (commit `4770042`)
+
 ## Còn lại
 
-1. **Bug Lesson 23 trên HomeScreen** (chưa sửa — chờ xác nhận): Lesson 23
-   không có `getLesson23Meta()` và không nằm trong `_lessons` của
-   `home_screen.dart` → người dùng không thấy Lesson 23 ở màn hình chính.
-2. **4 ngôn ngữ nội dung còn lại** (Sinhala, Hindi, Chinese, Myanmar):
+1. **4 ngôn ngữ nội dung còn lại** (Sinhala, Hindi, Chinese, Myanmar):
    0% — dùng cùng kiến trúc sidecar (thêm `'si'/'hi'/'zh'/'my'` vào các
    map tương ứng); không cần sửa model.
-3. Mind Game (`MixedSegment`) hardcode `isVietnamese` — chưa localize
-   được, cần refactor riêng (phạm vi ngoài "hoàn thiện EN").
-4. `FabVocabItem.partOfSpeech` inline tiếng Việt — cần sidecar nếu muốn
-   localize.
+   - Với Mind Game: thêm map keyed bằng Pāḷi `answer` (giống `'en'`).
+   - Với partOfSpeech: thêm map keyed bằng value inline (giống `'en'`).
+2. `MixedSegment.isVietnamese` vẫn là cờ logic (chọn chip tap-to-reveal vs
+   Pāḷi text cố định) — đây là cấu trúc data, không phải localization;
+   giữ nguyên.
 
 ## LƯU Ý QUAN TRỌNG
 
@@ -73,8 +92,11 @@ toàn bộ file qua syntax scan.
   ord() từng chữ sau khi ghi file.
 - **Quiz sidecar**: số options phải bằng đúng số options trong data
   (`QuizQuestion.options.length`), đúng thứ tự — index correct không đổi.
-- **Lesson 23 bị thiếu khỏi HomeScreen** (bug cũ): không có
-  `getLesson23Meta()` và không có trong danh sách `_lessons` của
-  `home_screen.dart`. Chưa sửa — cần xác nhận trước khi thêm meta mới.
-- Mind Game (`MixedSegment`) hardcode `isVietnamese` — chưa localize được,
-  cần refactor riêng (phạm vi ngoài "hoàn thiện EN" hiện tại).
+- **Sidecar keyed bằng text inline (Mind Game / partOfSpeech)**: key phải
+  là VALUE RUNTIME của Dart string (đã unescape `\'`, `\\`...), KHÔNG phải
+  chuỗi raw trong file nguồn. Bẫy đã gặp: `_Seg('"Buddho\'pi', ...)` —
+  runtime value là `"Buddho'pi` (không có backslash). Verify bằng cách
+  unescape cả 2 phía rồi so tập hợp.
+- `isVietnamese` của `MixedSegment` là cờ cấu trúc data (segment là Pāḷi
+  cố định hay là gloss tap-to-reveal) — không phải ngôn ngữ; không thay
+  bằng locale check.
