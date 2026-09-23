@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 
 import '../../data/localization/learning_content_translations.dart';
+import '../../data/localization/learning_content_translations_content.dart';
+import '../../data/localization/learning_content_translations_vocab.dart';
 import '../../data/models/lesson_model.dart';
 import '../../data/models/pali_vocab_model.dart';
 
@@ -127,6 +129,7 @@ extension LessonPhaseLearningLocalization on LessonPhase {
 
   String? localizedContent(BuildContext context) =>
       _sidecar(context)?.content ??
+      _lookupSidecar(context, phaseContentTranslations, id)?.content ??
       localizedOptionalLearningText(
         context,
         vi: contentVi,
@@ -170,14 +173,27 @@ extension FabAnswerItemLearningLocalization on FabAnswerItem {
 }
 
 extension PaliVocabLearningLocalization on PaliVocabModel {
-  String localizedWord(BuildContext context) => localizedLearningText(
-        context,
-        vi: wordVi,
-        en: wordEn,
-      );
+  /// Meaning in the active content language.
+  /// Prefers the locale sidecar (covers lessons whose inline wordEn is a
+  /// bare root, e.g. L5/L6) and falls back to the inline vi/en fields.
+  String localizedWord(BuildContext context) {
+    final sidecar = _lookupSidecar(context, vocabWordTranslations, id);
+    if (_hasText(sidecar)) return sidecar!;
+    return localizedLearningText(
+      context,
+      vi: wordVi,
+      en: wordEn,
+    );
+  }
 
   String localizedSecondaryWord(BuildContext context) =>
       prefersVietnameseLearningContent(context) ? wordEn : wordVi;
 
-  String? localizedExample(BuildContext _) => exampleVi;
+  /// Example sentence in the active content language (English sidecar when
+  /// available, Vietnamese fallback).
+  String? localizedExample(BuildContext context) {
+    final sidecar = _lookupSidecar(context, vocabExampleTranslations, id);
+    if (_hasText(sidecar)) return sidecar!;
+    return exampleVi;
+  }
 }
