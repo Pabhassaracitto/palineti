@@ -9,6 +9,7 @@
 /// group) and are merged into [quizQuestionTranslations] below.
 import 'quiz_translations/quiz_en_lesson01.dart';
 import 'quiz_translations/quiz_en_lesson02_04.dart';
+import 'quiz_translations/quiz_en_lesson05_08.dart';
 
 class LocalizedLearningText {
   final String? title;
@@ -982,8 +983,8 @@ const Map<String, Map<String, LocalizedLearningText>> lessonPhaseTranslations = 
 const Map<String, Map<String, LocalizedQuizQuestionText>> quizQuestionTranslations = {
   ...quizQuestionEnL01,
   ...quizQuestionEnL02_04,
+  ...quizQuestionEnL05_08,
   // Future groups (added as English is completed):
-  // ...quizQuestionEnL05_08,
   // ...quizQuestionEnL09_12,
   // ...quizQuestionEnL13_16,
   // ...quizQuestionEnL17_20,
