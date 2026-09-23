@@ -170,6 +170,12 @@ const Map<String, Map<String, LocalizedLearningText>> lessonMetaTranslations = {
           'Learn the 11 Taddhita noun-formation suffixes and the Vuddhi rule',
     ),
   },
+  'theme_23_kitaka': {
+    'en': LocalizedLearningText(
+      description:
+          'Learn the 8 Kitaka suffixes and how verbal derivatives are formed',
+    ),
+  },
   'theme_24_sandhi': {
     'en': LocalizedLearningText(
       description:
