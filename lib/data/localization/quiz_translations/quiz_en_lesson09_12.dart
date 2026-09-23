@@ -119,6 +119,151 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> quizQuestionEnL09_12 =
       ],
     ),
   },
+  // ── Lesson 11 ─────────────────────────────────────────────────────
+  'lesson11_q01': {
+    'en': LocalizedQuizQuestionText(
+      questionText:
+          'Question 1. What is the ending of the verb in the Imperative, 3rd person singular?',
+      options: ['-āmi', '-atu', '-a', '-atha'],
+    ),
+  },
+  'lesson11_q02': {
+    'en': LocalizedQuizQuestionText(
+      questionText:
+          'Question 2. What is the ending of the verb in the Imperative, 2nd person plural?',
+      options: ['-antu', '-atha', '-āma', '-āhi'],
+    ),
+  },
+  'lesson11_q03': {
+    'en': LocalizedQuizQuestionText(
+      questionText: '"Dhenu tiṇaṃ khādatu!" is translated as:',
+      options: [
+        'The cow is eating grass.',
+        'The cow ate grass.',
+        'Cow, eat grass!',
+        'The cow will eat grass.',
+      ],
+    ),
+  },
+  'lesson11_q04': {
+    'en': LocalizedQuizQuestionText(
+      questionText:
+          '"Bhante" is the form of address used to call whom?',
+      options: [
+        'A fellow of the same rank (a comrade)',
+        'An elder, one of higher status (respectful)',
+        'A younger person',
+        'A stranger',
+      ],
+    ),
+  },
+  'lesson11_q05': {
+    'en': LocalizedQuizQuestionText(
+      questionText:
+          'In the Imperative, the vowel before which ending is ALWAYS lengthened?',
+      options: [
+        '-tu and -antu',
+        '-a and -atha',
+        '-āhi, -āmi, -āma',
+        '-i and -ī',
+      ],
+    ),
+  },
+  'lesson11_q06': {
+    'en': LocalizedQuizQuestionText(
+      questionText: '"Mā + [verb in the Imperative]" means what?',
+      options: [
+        'Do something.',
+        'May (one) do something.',
+        'Do not do something.',
+        '(One) will do something.',
+      ],
+    ),
+  },
+  'lesson11_q07': {
+    'en': LocalizedQuizQuestionText(
+      questionText:
+          '"Yāvā\'haṃ gacchāmi tāva idha tiṭṭhatha." has the structure:',
+      options: [
+        '"I have already gone, you stay here."',
+        '"Until I go, you stay here."',
+        '"Because I go, you stay here."',
+        '"After I go, you stay here."',
+      ],
+    ),
+  },
+  'lesson11_q08': {
+    'en': LocalizedQuizQuestionText(
+      questionText:
+          'Question 1. "Dhenu tiṇa khādatu!" means:',
+      options: [
+        'The cow is eating grass.',
+        'Cow, eat grass!',
+        'The cow ate grass.',
+        'The cow will eat grass.',
+      ],
+    ),
+  },
+  'lesson11_q09': {
+    'en': LocalizedQuizQuestionText(
+      questionText:
+          'Question 2. "Sabbaññū bhikkhūnaṃ dhammaṃ desetu!" means:',
+      options: [
+        'The All-Enlightened One will preach the Dhamma to the monks.',
+        'The All-Enlightened One is preaching the Dhamma to the monks.',
+        'All-Enlightened One, please preach the Dhamma to the monks!',
+        'The All-Enlightened One preached the Dhamma to the monks.',
+      ],
+    ),
+  },
+  'lesson11_q10': {
+    'en': LocalizedQuizQuestionText(
+      questionText:
+          '"Yāvā\'haṃ gacchāmi tāva idha tiṭṭhatha." means:',
+      options: [
+        'Because I go, you stay here.',
+        'After I go, you stay here.',
+        'Until I go, you stay here.',
+        'I have gone, you stay here.',
+      ],
+    ),
+  },
+  'lesson11_q11': {
+    'en': LocalizedQuizQuestionText(
+      questionText:
+          'Question 4. "Mayhaṃ cakkhūhi pāpaṃ na passāmi, Bhante." means:',
+      options: [
+        'Venerable sir, with my eyes I do not see evil.',
+        'Venerable sir, my eyes see evil.',
+        'Venerable sir, I have no eyes.',
+        'Venerable sir, do not see evil with the eyes.',
+      ],
+    ),
+  },
+  'lesson11_q12': {
+    'en': LocalizedQuizQuestionText(
+      questionText:
+          'Question 5. "Mā kuñjarassa purato tiṭṭhāhi." means:',
+      options: [
+        'Stand in front of the elephant.',
+        'Do not stand in front of the elephant.',
+        'The elephant stands in front.',
+        'You have already stood in front of the elephant.',
+      ],
+    ),
+  },
+  'lesson11_q13': {
+    'en': LocalizedQuizQuestionText(
+      questionText:
+          'Question 6. "Kataññuno, tumhe āyuṃ labhitvā ciraṃ jīvatha!" means:',
+      options: [
+        'You have lived long.',
+        'Grateful one, may you live long after gaining lifespan!',
+        'You will gain lifespan.',
+        'You are living long.',
+      ],
+    ),
+  },
   // ── Lesson 12 ─────────────────────────────────────────────────────
   'lesson12_q01_01': {
     'en': LocalizedQuizQuestionText(

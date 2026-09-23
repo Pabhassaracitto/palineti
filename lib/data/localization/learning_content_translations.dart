@@ -12,6 +12,9 @@ import 'quiz_translations/quiz_en_lesson02_04.dart';
 import 'quiz_translations/quiz_en_lesson05_08.dart';
 import 'quiz_translations/quiz_en_lesson09_12.dart';
 import 'quiz_translations/quiz_en_lesson13_16.dart';
+import 'quiz_translations/quiz_en_lesson17_20.dart';
+import 'quiz_translations/quiz_en_lesson21_23.dart';
+import 'quiz_translations/quiz_en_lesson24_26.dart';
 
 class LocalizedLearningText {
   final String? title;
@@ -988,7 +991,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> quizQuestionTranslatio
   ...quizQuestionEnL05_08,
   ...quizQuestionEnL09_12,
   ...quizQuestionEnL13_16,
-  // ...quizQuestionEnL17_20,
-  // ...quizQuestionEnL21_23,
-  // ...quizQuestionEnL24_26,
+  ...quizQuestionEnL17_20,
+  ...quizQuestionEnL21_23,
+  ...quizQuestionEnL24_26,
 };
