@@ -170,9 +170,9 @@ class _MindGameScreenState extends State<MindGameScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Vietnamese text (always visible)
+            // Localized gloss (Vietnamese inline or sidecar English)
             Text(
-              segment.text,
+              segment.localizedText(context),
               style: TextStyle(
                 fontSize: 13,
                 color: Colors.grey[700],

@@ -176,7 +176,7 @@ class ReadListenScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(4),
             ),
             child: Text(
-              item.partOfSpeech,
+              item.localizedPartOfSpeech(context),
               style: const TextStyle(fontSize: 10, color: AppColors.paliGold),
             ),
           ),

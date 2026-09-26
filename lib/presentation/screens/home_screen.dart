@@ -26,6 +26,7 @@ class HomeScreen extends StatelessWidget {
     getLesson20Meta(),
     getLesson21Meta(),
     getLesson22Meta(),
+    getLesson23Meta(),
     getLesson24Meta(),
     getLesson25Meta(),
     getLesson26Meta(),
@@ -369,6 +370,16 @@ LessonMeta getLesson22Meta() => const LessonMeta(
   iconEmoji: '➕',
   colorValue: 0xFF8A2BE2,
   description: 'Học 11 hậu tố Taddhita và quy tắc Vuddhi',
+);
+
+LessonMeta getLesson23Meta() => const LessonMeta(
+  id: 'theme_23_kitaka',
+  lessonNumber: 23,
+  titleVi: 'Động Danh Từ — 8 Hậu tố Kitaka',
+  titleEn: 'Verbal Derivatives (Kitaka)',
+  iconEmoji: '🔗',
+  colorValue: 0xFF1E90FF,
+  description: 'Học 8 hậu tố Kitaka và quy tắc thành lập động danh từ',
 );
 
 LessonMeta getLesson24Meta() => const LessonMeta(

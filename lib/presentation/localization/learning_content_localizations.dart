@@ -1,6 +1,9 @@
 import 'package:flutter/widgets.dart';
 
 import '../../data/localization/learning_content_translations.dart';
+import '../../data/localization/learning_content_translations_content.dart';
+import '../../data/localization/learning_content_translations_vocab.dart';
+import '../../data/localization/mind_game_translations.dart';
 import '../../data/models/lesson_model.dart';
 import '../../data/models/pali_vocab_model.dart';
 
@@ -127,6 +130,7 @@ extension LessonPhaseLearningLocalization on LessonPhase {
 
   String? localizedContent(BuildContext context) =>
       _sidecar(context)?.content ??
+      _lookupSidecar(context, phaseContentTranslations, id)?.content ??
       localizedOptionalLearningText(
         context,
         vi: contentVi,
@@ -150,6 +154,21 @@ extension QuizQuestionLearningLocalization on QuizQuestion {
       _sidecar(context)?.options ?? options;
 }
 
+extension MixedSegmentLearningLocalization on MixedSegment {
+  /// Text shown on the chip. Pāḷi segments are returned as-is; the tappable
+  /// gloss segments are translated via the sidecar (keyed by the Pāḷi answer
+  /// word), falling back to the inline Vietnamese gloss.
+  String localizedText(BuildContext context) {
+    if (!isVietnamese) return text;
+    final key = answer;
+    if (key != null && key.isNotEmpty) {
+      final sidecar = _lookupSidecar(context, mindGameSegmentTranslations, key);
+      if (_hasText(sidecar)) return sidecar!;
+    }
+    return text;
+  }
+}
+
 extension FabVocabItemLearningLocalization on FabVocabItem {
   String localizedWord(BuildContext context) => localizedLearningText(
         context,
@@ -159,6 +178,15 @@ extension FabVocabItemLearningLocalization on FabVocabItem {
 
   String localizedSecondaryWord(BuildContext context) =>
       prefersVietnameseLearningContent(context) ? wordEn : wordVi;
+
+  /// Grammar label (e.g. "noun, Nom. sg."). Translated via the sidecar when an
+  /// entry exists for the inline label; otherwise the inline value is kept.
+  String localizedPartOfSpeech(BuildContext context) {
+    final sidecar =
+        _lookupSidecar(context, vocabPosTranslations, partOfSpeech);
+    if (_hasText(sidecar)) return sidecar!;
+    return partOfSpeech;
+  }
 }
 
 extension FabAnswerItemLearningLocalization on FabAnswerItem {
@@ -170,14 +198,27 @@ extension FabAnswerItemLearningLocalization on FabAnswerItem {
 }
 
 extension PaliVocabLearningLocalization on PaliVocabModel {
-  String localizedWord(BuildContext context) => localizedLearningText(
-        context,
-        vi: wordVi,
-        en: wordEn,
-      );
+  /// Meaning in the active content language.
+  /// Prefers the locale sidecar (covers lessons whose inline wordEn is a
+  /// bare root, e.g. L5/L6) and falls back to the inline vi/en fields.
+  String localizedWord(BuildContext context) {
+    final sidecar = _lookupSidecar(context, vocabWordTranslations, id);
+    if (_hasText(sidecar)) return sidecar!;
+    return localizedLearningText(
+      context,
+      vi: wordVi,
+      en: wordEn,
+    );
+  }
 
   String localizedSecondaryWord(BuildContext context) =>
       prefersVietnameseLearningContent(context) ? wordEn : wordVi;
 
-  String? localizedExample(BuildContext _) => exampleVi;
+  /// Example sentence in the active content language (English sidecar when
+  /// available, Vietnamese fallback).
+  String? localizedExample(BuildContext context) {
+    final sidecar = _lookupSidecar(context, vocabExampleTranslations, id);
+    if (_hasText(sidecar)) return sidecar!;
+    return exampleVi;
+  }
 }
