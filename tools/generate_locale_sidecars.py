@@ -300,7 +300,9 @@ def protect_pali(source: str) -> tuple[str, dict[str, str]]:
         # Quoted English prose is not protected; only quoted Pāḷi/grammar words.
         if match.re is QUOTED_TERM_RE and not PALI_WORD_RE.search(value):
             return value
-        marker = f"ZZPALITERM{n:04d}ZZ"
+        # Short alpha-numeric markers survive Google Translate intact (unlike
+        # repeated-letter pseudo words such as ZZ...ZZ, which it normalizes).
+        marker = f"PALI{n:04d}X"
         n += 1
         saved[marker] = value
         return marker
