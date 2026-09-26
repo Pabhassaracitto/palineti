@@ -313,12 +313,12 @@ def protect_pali(source: str) -> tuple[str, dict[str, str]]:
 
 
 def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[str, str]:
+    # Google normalizes pseudo-word placeholders in long grammar explanations
+    # (and can even reorder repeated placeholders), so feed source terms
+    # directly.  Canonical Pāḷi *keys* are copied separately, byte-for-byte,
+    # from the English sidecars and are never sent to the translator.
     protected: dict[str, dict[str, str]] = {}
-    spans: list[str] = []
-    for item in batch:
-        source, saved = protect_pali(item.source)
-        protected[item.token] = saved
-        spans.append(f'<span id="{item.token}">{source}</span>')
+    spans = [f'<span id="{item.token}">{item.source}</span>' for item in batch]
     query = "\n".join(spans)
     params = urllib.parse.urlencode({"client": "gtx", "sl": "en", "tl": GOOGLE_LOCALES[locale], "dt": "t", "q": query})
     url = "https://translate.googleapis.com/translate_a/single?" + params
