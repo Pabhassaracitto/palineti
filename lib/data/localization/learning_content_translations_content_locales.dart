@@ -101,5 +101,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalPhaseContentTra
   },
 };
 
-final Map<String, Map<String, LocalizedLearningText>> phaseContentTranslations =
-    _mergeLocaleTranslations(_englishPhaseContentTranslations, _additionalPhaseContentTranslations);
+final Map<String, Map<String, LocalizedLearningText>> phaseContentTranslations = {
+  for (final entry in _englishPhaseContentTranslations.entries)
+    entry.key: { ...entry.value, ...?_additionalPhaseContentTranslations[entry.key] },
+};

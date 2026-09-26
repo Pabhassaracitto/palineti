@@ -131,6 +131,12 @@ def dart_quote(value: str) -> str:
 def variable_body(text: str, name: str) -> str:
     marker = re.search(rf"(?:const|final)\s+Map<[^;=]+>\s+{re.escape(name)}\s*=\s*\{{", text)
     if not marker:
+        # After generation the public registry is supplied by a Dart part and
+        # the source template is intentionally renamed to a private English
+        # map.  Read that same canonical template on validation reruns.
+        english_name = "_english" + name[0].upper() + name[1:]
+        marker = re.search(rf"(?:const|final)\s+Map<[^;=]+>\s+{re.escape(english_name)}\s*=\s*\{{", text)
+    if not marker:
         die(f"map variable {name} not found")
     start = text.find("{", marker.start())
     return text[start + 1:scan_balanced(text, start) - 1]
@@ -494,7 +500,14 @@ def generate(items: list[Item], strings_by_locale: dict[str, dict[str, str]]) ->
 
     content = ["part of 'learning_content_translations_content.dart';", ""]
     content.append(emit_learning_map("_additionalPhaseContentTranslations", regroup_learning(items, strings_by_locale, "content")))
-    content += ["", "final Map<String, Map<String, LocalizedLearningText>> phaseContentTranslations =", "    _mergeLocaleTranslations(_englishPhaseContentTranslations, _additionalPhaseContentTranslations);", ""]
+    content += [
+        "",
+        "final Map<String, Map<String, LocalizedLearningText>> phaseContentTranslations = {",
+        "  for (final entry in _englishPhaseContentTranslations.entries)",
+        "    entry.key: { ...entry.value, ...?_additionalPhaseContentTranslations[entry.key] },",
+        "};",
+        "",
+    ]
     (LOC / "learning_content_translations_content_locales.dart").write_text("\n".join(content))
 
     mind = ["part of 'mind_game_translations.dart';", ""]
@@ -565,7 +578,88 @@ def check_balanced(path: Path) -> None:
         die(f"{path}: unclosed delimiter at {stack[-1][1]}")
 
 
+def _expect_equal(actual: set[str], expected: set[str], label: str) -> None:
+    if actual != expected:
+        missing, extra = expected - actual, actual - expected
+        die(f"{label}: keys differ; missing={sorted(missing)[:3]} extra={sorted(extra)[:3]}")
+
+
+def _localized_overlay_check(
+    generated_path: Path,
+    generated_variable: str,
+    source_path: Path,
+    source_variable: str,
+    fields: tuple[str, ...],
+) -> None:
+    """Check id/locale/field alignment for a LocalizedLearningText overlay."""
+    generated = dict(top_entries(variable_body(generated_path.read_text(), generated_variable)))
+    source = dict(top_entries(variable_body(source_path.read_text(), source_variable)))
+    _expect_equal(set(generated), set(source), generated_variable)
+    for key, source_locale_map in source.items():
+        source_en = dict(top_entries(source_locale_map))["en"]
+        expected_fields = {field for field in fields if string_after(source_en, field) is not None}
+        locales = dict(top_entries(generated[key]))
+        _expect_equal(set(locales), set(LOCALES), f"{generated_variable}/{key}")
+        for locale, translated in locales.items():
+            actual_fields = {field for field in fields if string_after(translated, field) is not None}
+            if actual_fields != expected_fields:
+                die(f"{generated_variable}/{key}/{locale}: field set {actual_fields} != {expected_fields}")
+
+
+def _outer_learning_overlay_check(
+    generated_path: Path,
+    generated_variable: str,
+    source_path: Path,
+    source_variable: str,
+    fields: tuple[str, ...],
+) -> None:
+    """Check an EN locale -> id map rendered as an id -> locale overlay."""
+    generated = dict(top_entries(variable_body(generated_path.read_text(), generated_variable)))
+    source_outer = dict(top_entries(variable_body(source_path.read_text(), source_variable)))
+    source = dict(top_entries(source_outer["en"]))
+    _expect_equal(set(generated), set(source), generated_variable)
+    for key, source_value in source.items():
+        expected_fields = {field for field in fields if string_after(source_value, field) is not None}
+        locales = dict(top_entries(generated[key]))
+        _expect_equal(set(locales), set(LOCALES), f"{generated_variable}/{key}")
+        for locale, translated in locales.items():
+            actual_fields = {field for field in fields if string_after(translated, field) is not None}
+            if actual_fields != expected_fields:
+                die(f"{generated_variable}/{key}/{locale}: field set {actual_fields} != {expected_fields}")
+
+
+def _outer_string_overlay_check(
+    generated_path: Path,
+    generated_variable: str,
+    source_path: Path,
+    source_variable: str,
+) -> None:
+    generated = dict(top_entries(variable_body(generated_path.read_text(), generated_variable)))
+    source_outer = dict(top_entries(variable_body(source_path.read_text(), source_variable)))
+    source = dict(top_entries(source_outer["en"]))
+    _expect_equal(set(generated), set(LOCALES), generated_variable)
+    for locale, translated_outer in generated.items():
+        translated = dict(top_entries(translated_outer))
+        _expect_equal(set(translated), set(source), f"{generated_variable}/{locale}")
+        if any(raw.lstrip()[:1] not in "'\"" for raw in translated.values()):
+            die(f"{generated_variable}/{locale}: non-string value")
+
+
+def _quiz_overlay_check(generated_path: Path, items: list[Item]) -> None:
+    generated = dict(top_entries(variable_body(generated_path.read_text(), "_additionalQuizQuestionTranslations")))
+    expected = {item.key for item in items if item.bucket == "quiz"}
+    _expect_equal(set(generated), expected, "quiz locale overlay")
+    for question_id, locale_map in generated.items():
+        locales = dict(top_entries(locale_map))
+        _expect_equal(set(locales), set(LOCALES), f"quiz/{question_id}")
+        for locale, value in locales.items():
+            if string_after(value, "questionText") is None or len(strings_in_list(value, "options")) != 4:
+                die(f"quiz/{question_id}/{locale}: expected questionText + four options")
+
+
 def validate(items: list[Item]) -> None:
+    # Lesson 23 was added after the original handoff table was written, so the
+    # canonical English sidecar correctly contains 26 metadata records.
     expected = {
         "meta": 26, "day": 52, "phase": 151, "quiz": 297,
         "word": 415, "example": 417, "pos": 68, "content": 7, "mind": 447,
@@ -577,23 +671,49 @@ def validate(items: list[Item]) -> None:
     }
     if actual != expected:
         die(f"English catalog counts wrong: {actual} != {expected}")
-    generated = [
-        LOC / "learning_content_translations_locales.dart",
-        LOC / "learning_content_translations_vocab_locales.dart",
-        LOC / "learning_content_translations_content_locales.dart",
-        LOC / "mind_game_translations_locales.dart",
-    ]
-    for path in [LOC / "learning_content_translations.dart", LOC / "learning_content_translations_vocab.dart", LOC / "learning_content_translations_content.dart", LOC / "mind_game_translations.dart", *generated]:
-        if path.exists():
-            check_balanced(path)
-    for path in generated:
+
+    main = LOC / "learning_content_translations.dart"
+    vocab = LOC / "learning_content_translations_vocab.dart"
+    content = LOC / "learning_content_translations_content.dart"
+    mind = LOC / "mind_game_translations.dart"
+    generated_main = LOC / "learning_content_translations_locales.dart"
+    generated_vocab = LOC / "learning_content_translations_vocab_locales.dart"
+    generated_content = LOC / "learning_content_translations_content_locales.dart"
+    generated_mind = LOC / "mind_game_translations_locales.dart"
+    generated = [generated_main, generated_vocab, generated_content, generated_mind]
+    for path in [main, vocab, content, mind, *generated]:
         if not path.exists():
             die(f"missing generated sidecar {path}")
-        text = path.read_text()
+        check_balanced(path)
+
+    _localized_overlay_check(generated_main, "_additionalLessonMetaTranslations", main, "lessonMetaTranslations", ("title", "description", "content"))
+    _localized_overlay_check(generated_main, "_additionalLessonDayTranslations", main, "lessonDayTranslations", ("title", "description", "content"))
+    _localized_overlay_check(generated_main, "_additionalLessonPhaseTranslations", main, "lessonPhaseTranslations", ("title", "description", "content"))
+    _outer_learning_overlay_check(generated_content, "_additionalPhaseContentTranslations", content, "phaseContentTranslations", ("title", "description", "content"))
+    _outer_string_overlay_check(generated_vocab, "_additionalVocabWordTranslations", vocab, "vocabWordTranslations")
+    _outer_string_overlay_check(generated_vocab, "_additionalVocabExampleTranslations", vocab, "vocabExampleTranslations")
+    _outer_string_overlay_check(generated_vocab, "_additionalVocabPosTranslations", vocab, "vocabPosTranslations")
+    _outer_string_overlay_check(generated_mind, "_additionalMindGameSegmentTranslations", mind, "mindGameSegmentTranslations")
+    _quiz_overlay_check(generated_main, items)
+
+    # This exact-set comparison is byte-level for Python strings. It confirms
+    # that runtime Mind Game Pāḷi keys and inline POS labels were copied from
+    # EN/source rather than retyped; NFC also catches accidental decomposed
+    # diacritics in all generated key maps.
+    for label, generated_path, generated_variable, source_path, source_variable in (
+        ("mind-game Pāḷi", generated_mind, "_additionalMindGameSegmentTranslations", mind, "mindGameSegmentTranslations"),
+        ("part-of-speech", generated_vocab, "_additionalVocabPosTranslations", vocab, "vocabPosTranslations"),
+    ):
+        generated_outer = dict(top_entries(variable_body(generated_path.read_text(), generated_variable)))
+        source_outer = dict(top_entries(variable_body(source_path.read_text(), source_variable)))
+        source_keys = set(dict(top_entries(source_outer["en"])))
         for locale in LOCALES:
-            if text.count(f"'{locale}':") < 1:
-                die(f"{path}: absent {locale}")
-    print("Catalog and string-aware syntax validation passed.")
+            locale_keys = set(dict(top_entries(generated_outer[locale])))
+            _expect_equal(locale_keys, source_keys, f"{label}/{locale}")
+            if any(__import__("unicodedata").normalize("NFC", key) != key for key in locale_keys):
+                die(f"{label}/{locale}: decomposed Unicode key")
+
+    print("Catalog, key-set, quiz-shape, and string-aware syntax validation passed.")
     print("Canonical English counts:", ", ".join(f"{k}={v}" for k, v in expected.items()))
 
 

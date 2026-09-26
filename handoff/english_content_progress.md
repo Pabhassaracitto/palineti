@@ -1,102 +1,82 @@
-# English Learning-Content Completion — Progress
+# Learning-Content Localization — Progress
 
-Ngày cập nhật: 2026-09-24
+Ngày cập nhật: 2026-09-26
 
 ## Bối cảnh
 
-Kế hoạch mở rộng nội dung học cho 5 ngôn ngữ: **English, Sinhala, Hindi,
-Chinese, Myanmar**. Bước 1 (đã chọn): **hoàn thiện tiếng Anh trước**.
-
-Giao diện (UI) đã có sẵn 26 ngôn ngữ (26 file ARB × 76 keys trong
-`lib/l10n/`) — không cần làm thêm. Nội dung học trước đó chỉ có
-**Việt + Anh một phần**.
-
-## Kiến trúc (đã hoàn thành)
-
-Tất cả bản dịch EN (và sau này si/hi/zh/my) đặt vào **sidecar**, không sửa
-file lesson data:
+PaliNeti có giao diện cho 26 ngôn ngữ (`lib/l10n/`). Nội dung bài học dùng
+sidecar, không sửa lesson data hoặc model:
 
 | File | Nội dung |
 |---|---|
-| `lib/data/localization/learning_content_translations.dart` | Meta (25), Day (52), Phase (151) — đủ EN; quiz merge từ 8 file group (297 câu) |
-| `lib/data/localization/quiz_translations/quiz_en_lesson01.dart` | Quiz EN Lesson 01 (9 câu) |
-| `lib/data/localization/quiz_translations/quiz_en_lesson02_04.dart` | Quiz EN Lesson 02–04 (39 câu) |
-| `lib/data/localization/quiz_translations/quiz_en_lesson05_08.dart` | Quiz EN Lesson 05–08 (36 câu) |
-| `lib/data/localization/quiz_translations/quiz_en_lesson09_12.dart` | Quiz EN Lesson 09–12 (29 câu: L9:5, L10:5, L11:13, L12:6) |
-| `lib/data/localization/quiz_translations/quiz_en_lesson13_16.dart` | Quiz EN Lesson 13–16 (43 câu) |
-| `lib/data/localization/quiz_translations/quiz_en_lesson17_20.dart` | Quiz EN Lesson 17–20 (42 câu) |
-| `lib/data/localization/quiz_translations/quiz_en_lesson21_23.dart` | Quiz EN Lesson 21–23 (57 câu) |
-| `lib/data/localization/quiz_translations/quiz_en_lesson24_26.dart` | Quiz EN Lesson 24–26 (42 câu) |
-| `lib/data/localization/learning_content_translations_vocab.dart` | `vocabWordTranslations` (415/415) + `vocabExampleTranslations` (417/417) + `vocabPosTranslations` (68 labels VI→EN) — ĐỦ |
-| `lib/data/localization/mind_game_translations.dart` | `mindGameSegmentTranslations` (447 Pāḷi `answer` → gloss EN) — ĐỦ |
-| `lib/data/localization/learning_content_translations_content.dart` | `phaseContentTranslations` — Đủ (7 read_listen Day-2: L5, L6, L9, L10, L12, L16, L20) |
-| `lib/presentation/localization/learning_content_localizations.dart` | Thêm lookup sidecar cho vocab word/example + phase content; fallback chain đã hỗ trợ si/hi/zh/my sẵn (`_contentLocaleCandidates`) |
+| `lib/data/localization/learning_content_translations.dart` | Lesson meta, day, phase và quiz registry |
+| `lib/data/localization/quiz_translations/quiz_en_lesson*.dart` | Template quiz EN, 8 nhóm / 297 câu |
+| `lib/data/localization/learning_content_translations_vocab.dart` | Nghĩa từ, ví dụ và nhãn từ loại |
+| `lib/data/localization/learning_content_translations_content.dart` | Nội dung `read_listen` Day 2 thiếu inline EN |
+| `lib/data/localization/mind_game_translations.dart` | Gloss Mind Game, keyed bằng Pāḷi `answer` runtime |
+| `lib/data/localization/*_locales.dart` | Overlay SI / ZH / MY / HI được merge vào sidecar tương ứng |
 
-## Hoàn thành — TIẾNG ANH 100% (2026-09-24)
+Lookup hiện có chuỗi fallback an toàn: VI giữ nguyên inline tiếng Việt; các
+locale nội dung khác fallback qua EN khi không có sidecar.
 
-- [x] Architecture sidecar (vocab word/example, phase content, quiz)
-- [x] EN: LessonMeta description — 25/25
-- [x] EN: LessonDay titles — 52/52
-- [x] EN: LessonPhase titles — 151/151
-- [x] EN: Quiz — 297/297 câu (8 file group, audit khớp 1:1 với lesson data)
-- [x] EN: Vocab word fixes — 415/415
-- [x] EN: Vocab examples — 417/417
-- [x] EN: Phase content — 7/7 read_listen Day-2 (L5, L6, L9, L10, L12, L16, L20)
-- [x] EN: Mind Game segment glosses — 447/447 (L5, L6, L9, L10, L12, L16, L20)
-- [x] EN: partOfSpeech labels — 68/68 labels tiếng Việt (giá trị EN/Pāḷi passthrough)
+## Hoàn thành — English 100% (2026-09-24)
 
-**Kiểm chứng:** mọi câu Pāḷi trong sidecar đã được validate byte-level
-(khớp verbatim với lesson data source); audit 297 quiz IDs không thiếu,
-không thừa, không trùng; mỗi entry có đúng questionText + 4 options;
-toàn bộ file qua syntax scan.
+- [x] Lesson meta, day, phase
+- [x] Quiz: 297/297 câu, 8 group files
+- [x] Vocab: 415 nghĩa từ + 417 ví dụ
+- [x] Phase content: 7/7
+- [x] Mind Game: 447/447 glosses
+- [x] partOfSpeech: 68/68 nhãn inline tiếng Việt
 
-## Đã hoàn thành thêm (2026-09-24)
+## Hoàn thành — Sinhala, Chinese, Myanmar, Hindi 100% (2026-09-26)
 
-- [x] **Bug Lesson 23 trên HomeScreen** — ĐÃ SỬA: thêm `getLesson23Meta()`
-  + đưa vào `_lessons` trong `home_screen.dart` + meta EN
-  `theme_23_kitaka` trong `learning_content_translations.dart`.
-  (commit `2d1ff27`)
-- [x] **Mind Game (`MixedSegment`) EN** — sidecar `mind_game_translations.dart`
-  (447 entries, keyed by Pāḷi `answer`). Chip trong `mind_game_screen.dart`
-  gọi `segment.localizedText(context)`. Kiểm chứng: mọi key khớp byte-level
-  với runtime text của lesson (gồm cả 1 case có `\'` escape). (commit `4770042`)
-- [x] **`FabVocabItem.partOfSpeech` EN** — 68 entries trong
-  `vocabPosTranslations` (cuối `learning_content_translations_vocab.dart`).
-  Label tiếng Việt (cách ngữ, suffix, sandhi rule, abbrev như
-  `danh_tu`/`dong_tu`/`qkpt`/`htpt`) được dịch; giá trị đã là EN/Pāḷi
-  không liệt kê → fallback về value inline. Chip vocab FAB trong
-  `read_listen_screen.dart` gọi `item.localizedPartOfSpeech(context)`.
-  (commit `4770042`)
+Mỗi locale `si`, `zh` (giản thể), `my`, `hi` có overlay độc lập trong các
+sidecar. Lesson data (`lib/data/lessons/`) và model không bị sửa.
 
-## Còn lại
+| Nội dung | SI | ZH | MY | HI |
+|---|---:|---:|---:|---:|
+| Lesson meta | 26/26 | 26/26 | 26/26 | 26/26 |
+| Lesson day | 52/52 | 52/52 | 52/52 | 52/52 |
+| Lesson phase | 151/151 | 151/151 | 151/151 | 151/151 |
+| Quiz (`questionText` + đúng 4 options) | 297/297 | 297/297 | 297/297 | 297/297 |
+| Vocab word | 415/415 | 415/415 | 415/415 | 415/415 |
+| Vocab example | 417/417 | 417/417 | 417/417 | 417/417 |
+| `read_listen` phase content | 7/7 | 7/7 | 7/7 | 7/7 |
+| Mind Game segment gloss | 447/447 | 447/447 | 447/447 | 447/447 |
+| partOfSpeech | 68/68 | 68/68 | 68/68 | 68/68 |
 
-1. **4 ngôn ngữ nội dung còn lại** (Sinhala, Hindi, Chinese, Myanmar):
-   0% — dùng cùng kiến trúc sidecar (thêm `'si'/'hi'/'zh'/'my'` vào các
-   map tương ứng); không cần sửa model.
-   - Với Mind Game: thêm map keyed bằng Pāḷi `answer` (giống `'en'`).
-   - Với partOfSpeech: thêm map keyed bằng value inline (giống `'en'`).
-2. `MixedSegment.isVietnamese` vẫn là cờ logic (chọn chip tap-to-reveal vs
-   Pāḷi text cố định) — đây là cấu trúc data, không phải localization;
-   giữ nguyên.
+> **Lưu ý về meta:** bảng handoff cũ ghi 25. Nguồn EN hiện hành có 26 key
+> (`theme_01` đến `theme_26`, bao gồm Lesson 23 đã được bổ sung trong PR #2),
+> vì vậy locale overlays cố ý có **26/26** để không mất Lesson 23.
 
-## LƯU Ý QUAN TRỌNG
+### Kiểm chứng đã chạy
 
-- **Dấu Pāḷi**: repo dùng codepoint chuẩn: ṇ = U+1E47, ṃ = U+1E43,
-  ḍ = U+1E0D, ṭ = U+1E6D, ñ = U+00F1 (kiểu tilde, vd. taññeva, saññamo),
-  ā = U+0101, ī = U+012B, ū = U+016B,  = U+1E45, ḷ = U+1E37.
-  Khi thêm text Pāḷi mới phải kiểm tra byte-level khớp với file nguồn
-  (đặc biệt các chữ có dấu dưới — dễ mất khi gõ tay).
-- **Bẫy đã gặp khi gõ tay**: phụ âm đôi dễ bị mất một chữ
-  (saṭṭhi ≠ saṭhi, tiṭṭhatha ≠ tiṭhatha, guṇiṭṭha ≠ guṇiha,
-  paṇṇākāre, saṅgaṇho...); nên dùng script Python với `chr()` + verify
-  ord() từng chữ sau khi ghi file.
-- **Quiz sidecar**: số options phải bằng đúng số options trong data
-  (`QuizQuestion.options.length`), đúng thứ tự — index correct không đổi.
-- **Sidecar keyed bằng text inline (Mind Game / partOfSpeech)**: key phải
-  là VALUE RUNTIME của Dart string (đã unescape `\'`, `\\`...), KHÔNG phải
-  chuỗi raw trong file nguồn. Bẫy đã gặp: `_Seg('"Buddho\'pi', ...)` —
-  runtime value là `"Buddho'pi` (không có backslash). Verify bằng cách
-  unescape cả 2 phía rồi so tập hợp.
-- `isVietnamese` của `MixedSegment` là cờ cấu trúc data (segment là Pāḷi
-  cố định hay là gloss tap-to-reveal) — không phải ngôn ngữ; không thay
-  bằng locale check.
+`python3 tools/generate_locale_sidecars.py` chạy không cần Dart SDK và kiểm
+tra bằng scanner string-aware:
+
+- cấu trúc delimiter của tất cả sidecar gốc và overlay;
+- tập ID/field cho meta, day, phase và 7 phase content;
+- 297 quiz ID cho từng locale, mỗi ID có `questionText` và đúng 4 options;
+- tập key `vocabWord` 415, `vocabExample` 417, `vocabPos` 68 và Mind Game
+  447 cho từng locale;
+- key Mind Game Pāḷi và key partOfSpeech đối chiếu byte-level với template EN;
+- NFC cho key Unicode để chặn dấu Pāḷi bị decomposed.
+
+Kết quả hiện tại:
+
+```text
+Catalog, key-set, quiz-shape, and string-aware syntax validation passed.
+Canonical English counts: meta=26, day=52, phase=151, quiz=297,
+word=415, example=417, pos=68, content=7, mind=447
+```
+
+## Lưu ý kiến trúc quan trọng
+
+- Mind Game key là **runtime `answer` value** đã unescape (ví dụ
+  `"Buddho'pi`, không phải `Buddho\'pi`). Không gõ lại key bằng tay.
+- `partOfSpeech` key là value nhãn inline tiếng Việt verbatim. Nhãn EN/Pāḷi
+  không có entry tiếp tục passthrough như trước.
+- Không thay đổi `MixedSegment.isVietnamese`: đây là cờ cấu trúc chip, không
+  phải kiểm tra locale.
+- Khi thêm `zh_TW` sau này, dùng cùng key set với `zh`; hiện tại `zh` là chữ
+  giản thể theo yêu cầu.
