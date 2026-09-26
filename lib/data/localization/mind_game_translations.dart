@@ -1,9 +1,10 @@
 import '../learning_content_translations.dart';
+part 'mind_game_translations_locales.dart';
 
 /// English translations of the Mind Game glosses (the tappable chips
 /// that reveal a Pāḷi word). Keyed by the Pāḷi answer word — the
 /// `answer` field of each Vietnamese [MixedSegment].
-const Map<String, Map<String, String>> mindGameSegmentTranslations = {
+const Map<String, Map<String, String>> _englishMindGameSegmentTranslations = {
   'en': {
     'Sakuṇā': 'the birds',
     'phalāni': 'the fruits',

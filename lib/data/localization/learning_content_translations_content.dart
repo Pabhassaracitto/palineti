@@ -8,9 +8,10 @@
 ///   2. phaseContentTranslations (this file)
 ///   3. inline contentEn / contentVi
 import 'learning_content_translations.dart';
+part 'learning_content_translations_content_locales.dart';
 
 /// locale -> phase id -> LocalizedLearningText
-const Map<String, Map<String, LocalizedLearningText>> phaseContentTranslations = {
+const Map<String, Map<String, LocalizedLearningText>> _englishPhaseContentTranslations = {
   'en': {
     // Day-2 read_listen phases (vocabulary review) for the seven
     // lessons that had no inline contentEn.

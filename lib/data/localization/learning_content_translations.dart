@@ -15,6 +15,7 @@ import 'quiz_translations/quiz_en_lesson13_16.dart';
 import 'quiz_translations/quiz_en_lesson17_20.dart';
 import 'quiz_translations/quiz_en_lesson21_23.dart';
 import 'quiz_translations/quiz_en_lesson24_26.dart';
+part 'learning_content_translations_locales.dart';
 
 class LocalizedLearningText {
   final String? title;
@@ -38,7 +39,7 @@ class LocalizedQuizQuestionText {
   });
 }
 
-const Map<String, Map<String, LocalizedLearningText>> lessonMetaTranslations = {
+const Map<String, Map<String, LocalizedLearningText>> _englishLessonMetaTranslations = {
   'theme_01_masc_a_nom_acc': {
     'en': LocalizedLearningText(
       title: 'Masculine "-a": Nominative & Accusative',
@@ -194,7 +195,7 @@ const Map<String, Map<String, LocalizedLearningText>> lessonMetaTranslations = {
   },
 };
 
-const Map<String, Map<String, LocalizedLearningText>> lessonDayTranslations = {
+const Map<String, Map<String, LocalizedLearningText>> _englishLessonDayTranslations = {
   'lesson01_day1': {
     'en': LocalizedLearningText(
       title: 'Day 1: Masculine "-a" Nouns — Nominative & Accusative + Present Tense',
@@ -398,7 +399,7 @@ const Map<String, Map<String, LocalizedLearningText>> lessonDayTranslations = {
   },
 };
 
-const Map<String, Map<String, LocalizedLearningText>> lessonPhaseTranslations = {
+const Map<String, Map<String, LocalizedLearningText>> _englishLessonPhaseTranslations = {
   'lesson01_phase1': {
     'en': LocalizedLearningText(
         title: 'Reading: Masculine "-a" Declension and Present Tense'),
@@ -991,7 +992,7 @@ const Map<String, Map<String, LocalizedLearningText>> lessonPhaseTranslations = 
   },
 };
 
-const Map<String, Map<String, LocalizedQuizQuestionText>> quizQuestionTranslations = {
+const Map<String, Map<String, LocalizedQuizQuestionText>> _englishQuizQuestionTranslations = {
   ...quizQuestionEnL01,
   ...quizQuestionEnL02_04,
   ...quizQuestionEnL05_08,
