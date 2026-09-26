@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
 
+import '../../localization/learning_content_localizations.dart';
+
 class MindGameScreen extends StatefulWidget {
   final LessonPhase phase;
   final VoidCallback onNext;
