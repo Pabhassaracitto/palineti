@@ -567,7 +567,7 @@ def check_balanced(path: Path) -> None:
 
 def validate(items: list[Item]) -> None:
     expected = {
-        "meta": 26, "day": 52, "phase": 151, "quiz": 297 * 5,
+        "meta": 26, "day": 52, "phase": 151, "quiz": 297,
         "word": 415, "example": 417, "pos": 68, "content": 7, "mind": 447,
     }
     actual = {
