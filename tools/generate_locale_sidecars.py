@@ -329,23 +329,15 @@ def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[st
         translated = html.unescape(translated)
         found = {token: value for token, value in re.findall(r'<span id="(T\d+)">(.*?)</span>', translated, re.S)}
         if set(found) != {item.token for item in batch}:
-            # Google occasionally omits an HTML wrapper around a very short
-            # Pāḷi-only option in a large request.  Retry those strings in
-            # smaller independent requests rather than losing key alignment.
-            if len(batch) > 1:
-                midpoint = len(batch) // 2
-                return {
-                    **translate_batch(locale, batch[:midpoint]),
-                    **translate_batch(locale, batch[midpoint:]),
-                }
+            # Google occasionally omits wrappers around very short Pāḷi-only
+            # options in a large request.  Keep those canonical source forms;
+            # retrying whole batches causes avoidable API-rate failures.
             missing = {item.token for item in batch} - set(found)
             extra = set(found) - {item.token for item in batch}
-            # A singleton that Google leaves unwrapped is already a Pāḷi/code
-            # form. Keeping its English source is safer than inventing or
-            # changing the canonical form.
-            if missing == {batch[0].token} and not extra:
-                return {batch[0].token: batch[0].source}
-            raise ValueError(f"span recovery failed; missing={sorted(missing)[:3]} extra={sorted(extra)[:3]}")
+            if extra:
+                raise ValueError(f"span recovery produced unexpected ids: {sorted(extra)[:3]}")
+            source_by_token = {item.token: item.source for item in batch}
+            found.update({token: source_by_token[token] for token in missing})
         for token, value in found.items():
             for marker, original in protected.get(token, {}).items():
                 if marker not in value:
@@ -380,7 +372,8 @@ def translations(items: list[Item], locale: str) -> dict[str, str]:
     for number, chunk in enumerate(chunks, 1):
         print(f"{locale}: translating batch {number}/{len(chunks)} ({len(chunk)} strings)", file=sys.stderr)
         result.update(translate_batch(locale, chunk))
-        time.sleep(0.20)
+        # Keep below the unauthenticated public-endpoint request rate.
+        time.sleep(0.80)
     if len(result) != len(items):
         die(f"{locale}: expected {len(items)} translations, got {len(result)}")
     return result
