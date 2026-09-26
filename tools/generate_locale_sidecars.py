@@ -333,7 +333,7 @@ def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[st
             extra = set(found) - {item.token for item in batch}
             raise ValueError(f"span recovery failed; missing={sorted(missing)[:3]} extra={sorted(extra)[:3]}")
         for token, value in found.items():
-            for marker, original in protected[token].items():
+            for marker, original in protected.get(token, {}).items():
                 if marker not in value:
                     raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
                 value = value.replace(marker, original)
