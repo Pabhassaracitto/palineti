@@ -2,6 +2,12 @@ name: Generate learning-content locales
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - arena/01a0df48-palineti
+    paths:
+      - .github/workflows/generate_learning_locales.yml
+      - tools/generate_locale_sidecars.py
 
 permissions:
   contents: write
