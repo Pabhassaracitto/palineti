@@ -1,3 +1,4 @@
+part 'learning_content_translations_vocab_locales.dart';
 /// English (and later si/hi/zh/my) translations for PaliVocabModel items.
 ///
 /// Why a sidecar?
@@ -16,7 +17,7 @@
 ///   (English rendering of the exampleVi sentences)
 
 /// locale -> vocab id -> meaning
-const Map<String, Map<String, String>> vocabWordTranslations = {
+const Map<String, Map<String, String>> _englishVocabWordTranslations = {
   'en': {
     // ── Lesson 05 (inline wordEn was a bare root) ─────────────────────
     'pv_L05_001': 'seed, germ',
@@ -449,7 +450,7 @@ const Map<String, Map<String, String>> vocabWordTranslations = {
 };
 
 /// locale -> vocab id -> example sentence
-const Map<String, Map<String, String>> vocabExampleTranslations = {
+const Map<String, Map<String, String>> _englishVocabExampleTranslations = {
   'en': {
     // ── Lesson 01 ─────────────────────────────────────────────────────
     'pv_L01_buddha': 'The Buddha protects the Dhamma.',
@@ -898,7 +899,7 @@ const Map<String, Map<String, String>> vocabExampleTranslations = {
 /// English translations of the inline `partOfSpeech` labels that are
 /// written in Vietnamese. Values already in English/Pāḷi are not listed
 /// (the lookup falls back to the inline value).
-const Map<String, Map<String, String>> vocabPosTranslations = {
+const Map<String, Map<String, String>> _englishVocabPosTranslations = {
   'en': {
     'Bị động (a→ī)': 'Passive (a→ī)',
     'Bị động (ā→ī)': 'Passive (ā→ī)',
