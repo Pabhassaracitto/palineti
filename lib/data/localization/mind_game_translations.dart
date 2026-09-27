@@ -1,4 +1,4 @@
-import '../learning_content_translations.dart';
+import '../models/lesson_model.dart' show MixedSegment;
 part 'mind_game_translations_locales.dart';
 
 /// English translations of the Mind Game glosses (the tappable chips
