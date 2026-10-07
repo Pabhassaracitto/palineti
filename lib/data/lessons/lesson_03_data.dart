@@ -45,7 +45,7 @@ final kLesson03Vocab = <PaliVocabModel>[
       'Pabbatasmā oruhāma.', 'Chúng tôi đi xuống từ ngọn núi.'),
   _v(9, 'paṇṇākāra', 'masc_a', 'phần thưởng, món quà', 'reward, gift',
       'paṇ-ṇaa-kaa-ro', 'Paṇṇākāraṃ gaṇhāmi.', 'Tôi nhận phần thưởng.'),
-  _v(10, 'rukha', 'masc_a', 'cây', 'tree', 'ruk-kho',
+  _v(10, 'rukkha', 'masc_a', 'cây', 'tree', 'ruk-kha',
       'Rukkhā pabbatasmā patanti.', 'Các cây rơi từ ngọn núi.'),
   _v(11, 'sissa', 'masc_a', 'người học trò', 'pupil, student', 'sis-so',
       'Sissā ācariyehi uggaṇhanti.', 'Các học trò học từ các vị thầy giáo.'),
@@ -193,7 +193,7 @@ Nguyên âm đứng trước "-āmi" và "-āma" LUÔN được kéo dài (trư�
 • ovāda       — lời khuyên, huấn từ
 • pabbata     — hòn đá lớn, núi
 • paṇṇākāra   — phần thưởng, món quà
-• rukha       — cây
+• rukkha      — cây
 • sissa       — người học trò
 • taḷāka      — vũng, ao, hồ bơi, hồ
 
@@ -230,7 +230,7 @@ Nguyên âm đứng trước "-āmi" và "-āma" LUÔN được kéo dài (trư�
         FabVocabItem(wordEn: 'ovāda', pronunciation: 'o-vaa-do', wordVi: 'lời khuyên, huấn từ', partOfSpeech: 'danh_tu'),
         FabVocabItem(wordEn: 'pabbata', pronunciation: 'pab-ba-to', wordVi: 'hòn đá lớn, núi', partOfSpeech: 'danh_tu'),
         FabVocabItem(wordEn: 'paṇṇākāra', pronunciation: 'paṇ-ṇaa-kaa-ro', wordVi: 'phần thưởng, món quà', partOfSpeech: 'danh_tu'),
-        FabVocabItem(wordEn: 'rukha', pronunciation: 'ruk-kho', wordVi: 'cây', partOfSpeech: 'danh_tu'),
+        FabVocabItem(wordEn: 'rukkha', pronunciation: 'ruk-kha', wordVi: 'cây', partOfSpeech: 'danh_tu'),
         FabVocabItem(wordEn: 'sissa', pronunciation: 'sis-so', wordVi: 'người học trò', partOfSpeech: 'danh_tu'),
         FabVocabItem(wordEn: 'taḷāka', pronunciation: 'ta-ḷaa-ko', wordVi: 'vũng, ao, hồ', partOfSpeech: 'danh_tu'),
         FabVocabItem(wordEn: 'gaṇhāti', pronunciation: 'ga-ṇhaa-ti', wordVi: 'lấy, nhận, nắm, cầm (gaha)', partOfSpeech: 'dong_tu'),
@@ -290,8 +290,8 @@ LessonPhase _buildDay1Phase2() => LessonPhase(
         MixedSegment(text: 'paṇṇākāra'),
         MixedSegment(text: 'phần thưởng, món quà', isVietnamese: true, answer: 'paṇṇākāra'),
         MixedSegment(text: '   │   '),
-        MixedSegment(text: 'rukha'),
-        MixedSegment(text: 'cây', isVietnamese: true, answer: 'rukha'),
+        MixedSegment(text: 'rukkha'),
+        MixedSegment(text: 'cây', isVietnamese: true, answer: 'rukkha'),
         MixedSegment(text: '   │   '),
         MixedSegment(text: 'sissa'),
         MixedSegment(text: 'người học trò', isVietnamese: true, answer: 'sissa'),

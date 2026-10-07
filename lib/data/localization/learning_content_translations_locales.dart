@@ -5783,7 +5783,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"Acariyā tesaṃ sissānaṃ pubbaṇhe ovādaṃ adaṃsu." ဆိုလိုသည်မှာ-',
+      questionText: '"Ācariyā tesaṃ sissānaṃ pubbaṇhe ovādaṃ adaṃsu." ဆိုလိုသည်မှာ-',
       options: [
         'ဆရာမများက ကျောင်းသားများကို နံနက်ခင်းတွင် အကြံဉာဏ်ပေးခဲ့သည်။',
         'ဆရာမများသည် နံနက်ခင်းတွင် တပည့်များထံမှ အကြံဉာဏ်များ ရရှိခဲ့သည်။',
