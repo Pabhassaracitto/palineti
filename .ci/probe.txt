@@ -1,22 +1,30 @@
-batch of 15 items, 1031 chars, locale hi
-spans recovered: 3/15
-  T01586: SPAN MISSING
-  T01587: SPAN MISSING
-  T01588: SPAN MISSING
-  T01589: SPAN MISSING
-  T01591: SPAN MISSING
-  T01592: SPAN MISSING
-  T01593: SPAN MISSING
-  T01594: SPAN MISSING
-  T01596: SPAN MISSING
-  T01597: SPAN MISSING
-  T01598: SPAN MISSING
-  T01599: SPAN MISSING
+sweep for hi: 1485 quiz items available
+  size  2: spans  1/ 2, markers lost in 0,   156 chars  -> SPANS DROPPED
+  size  3: spans  1/ 3, markers lost in 0,   253 chars  -> SPANS DROPPED
+  size  4: spans  1/ 4, markers lost in 0,   336 chars  -> SPANS DROPPED
+  size  5: spans  1/ 5, markers lost in 0,   421 chars  -> SPANS DROPPED
+  size  6: spans  2/ 6, markers lost in 0,   483 chars  -> SPANS DROPPED
+  size  8: spans  2/ 8, markers lost in 0,   579 chars  -> SPANS DROPPED
+  size 10: spans  2/10, markers lost in 0,   679 chars  -> SPANS DROPPED
+  size 15: spans  3/15, markers lost in 0,  1031 chars  -> SPANS DROPPED
 
-lost 12/15 items in a 15-item batch
+sweep for si: 1485 quiz items available
+  size  2: spans  2/ 2, markers lost in 0,   156 chars  -> OK
+  size  3: spans  3/ 3, markers lost in 0,   253 chars  -> OK
+  size  4: spans  4/ 4, markers lost in 0,   336 chars  -> OK
+  size  5: spans  5/ 5, markers lost in 0,   421 chars  -> OK
+  size  6: spans  6/ 6, markers lost in 0,   483 chars  -> OK
+  size  8: spans  8/ 8, markers lost in 0,   579 chars  -> OK
+  size 10: spans 10/10, markers lost in 0,   679 chars  -> OK
+  size 15: spans 15/15, markers lost in 0,  1031 chars  -> OK
 
-batch of 15 items, 1031 chars, locale si
-spans recovered: 15/15
-
-lost 0/15 items in a 15-item batch
+sweep for my: 1485 quiz items available
+  size  2: spans  2/ 2, markers lost in 0,   156 chars  -> OK
+  size  3: spans  3/ 3, markers lost in 0,   253 chars  -> OK
+  size  4: spans  4/ 4, markers lost in 0,   336 chars  -> OK
+  size  5: spans  5/ 5, markers lost in 0,   421 chars  -> OK
+  size  6: spans  6/ 6, markers lost in 0,   483 chars  -> OK
+  size  8: spans  8/ 8, markers lost in 0,   579 chars  -> OK
+  size 10: spans 10/10, markers lost in 0,   679 chars  -> OK
+  size 15: spans 15/15, markers lost in 0,  1031 chars  -> OK
 
