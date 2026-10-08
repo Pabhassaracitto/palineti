@@ -30,6 +30,23 @@ final kLesson19Vocab = <PaliVocabModel>[
       'Gāvo khettaṃ agamiṃsu.', 'Những con bò đã đi đến cánh đồng.'),
   _v(2, 'mana', 'neut_mana', 'ý, tâm', 'mind', 'ma-naṃ',
       'Manasā saṃvaro sādhu.', 'Sự kiềm chế bằng tâm là tốt đẹp.'),
+  // ─── 16 danh từ nhóm Mano (bảng của bài — ghép a → o/ā) ─────
+  _v(3, 'aha', 'neut_mana', 'ngày', 'day', 'a-ha', 'ahāni', 'những ngày (số nhiều)'),
+  _v(4, 'aya', 'neut_mana', 'sắt', 'iron', 'a-ya', 'ayasā', 'bằng sắt'),
+  _v(5, 'ceta', 'neut_mana', 'tâm', 'mind, thought', 'ce-ta', 'cetasā', 'bằng tâm'),
+  _v(6, 'chanda', 'neut_mana', 'ước muốn, nguyện vọng', 'wish, desire', 'chan-da', 'chandā', 'ước muốn'),
+  _v(7, 'oja', 'neut_mana', 'dưỡng chất', 'nourishment, sap', 'o-ja', 'ojaṃ', 'dưỡng chất'),
+  _v(8, 'paya', 'neut_mana', 'nước, sữa', 'water, milk', 'pa-ya', 'payasmiṃ', 'trong sữa'),
+  _v(9, 'raja', 'neut_mana', 'bụi bặm', 'dust', 'ra-ja', 'rajaṃ', 'bụi'),
+  _v(10, 'sara', 'neut_mana', 'cái hồ', 'lake, pool', 'sa-ra', 'sarassa', 'của hồ'),
+  _v(11, 'sira', 'neut_mana', 'cái đầu', 'head', 'si-ra', 'sirasā', 'bằng đầu'),
+  _v(12, 'tama', 'neut_mana', 'bóng tối', 'darkness', 'ta-ma', 'tamasi', 'trong bóng tối'),
+  _v(13, 'tapa', 'neut_mana', 'khổ hạnh', 'austerity, penance', 'ta-pa', 'tapaso', 'khổ hạnh'),
+  _v(14, 'teja', 'neut_mana', 'oai vệ, quyền uy', 'radiance, power', 'te-ja', 'tejā', 'oai vệ'),
+  _v(15, 'ura', 'neut_mana', 'bờ vai', 'shoulder', 'u-ra', 'uresu', 'trên vai'),
+  _v(16, 'vaca', 'neut_mana', 'lời nói, ngôn từ', 'speech, word', 'va-ca', 'vacasā', 'bằng lời'),
+  _v(17, 'vaya', 'neut_mana', 'tuổi thọ', 'age', 'va-ya', 'vayasā', 'theo tuổi'),
+  _v(18, 'yasa', 'neut_mana', 'danh tiếng', 'fame, glory', 'ya-sa', 'yasā', 'danh tiếng'),
 ];
 
 PaliVocabModel _v(int id, String root, String paradigmId, String wordVi,

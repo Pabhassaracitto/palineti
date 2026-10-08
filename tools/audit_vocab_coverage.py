@@ -355,7 +355,14 @@ def analyse() -> list[dict]:
 
     report = []
     for row in per_lesson:
+        # A lesson's own vocabulary, teaching text and FAB sheet are all
+        # available to the learner before that lesson's exercises, so they
+        # must be folded in *before* checking, not after.  (They used to be
+        # OR-ed in at the end of the body, which made every word that a
+        # lesson teaches in its own FAB look like it was never taught.)
         cum_roots |= row["roots"]
+        cum_teaching |= row["teaching"]
+        cum_fab |= row["fab"]
         untraceable = {}
         only_fab = {}
         for tok, sources in sorted(row["exercise"].items()):
@@ -377,8 +384,6 @@ def analyse() -> list[dict]:
             "never_in_any_vocab_list": sorted(never_listed),
             "samples": {t: untraceable[t] for t in sorted(untraceable)[:8]},
         })
-        cum_teaching |= row["teaching"]
-        cum_fab |= row["fab"]
 
     return report
 
