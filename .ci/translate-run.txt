@@ -57,73 +57,1314 @@ si: translating batch 41/68 (47 strings)
 si: translating batch 42/68 (42 strings)
 si: translating batch 43/68 (44 strings)
 si: translating batch 44/68 (35 strings)
-  retry si attempt 1/6 (ValueError: protected Pāḷi marker PALI0003X was lost for T02027); sleeping 15s
-  retry si attempt 2/6 (ValueError: protected Pāḷi marker PALI0003X was lost for T02027); sleeping 30s
-  retry si attempt 3/6 (ValueError: protected Pāḷi marker PALI0003X was lost for T02027); sleeping 60s
-  retry si attempt 4/6 (ValueError: protected Pāḷi marker PALI0003X was lost for T02027); sleeping 120s
-  retry si attempt 5/6 (ValueError: protected Pāḷi marker PALI0003X was lost for T02027); sleeping 240s
-  retry si attempt 6/6 (ValueError: protected Pāḷi marker PALI0003X was lost for T02027); sleeping 240s
-Traceback (most recent call last):
-  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
-    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
-ValueError: protected Pāḷi marker PALI0003X was lost for T02027
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: keeping English for T02027 (quiz/lesson09_q01_05) - Pāḷi markers lost 7 times
+si: translating batch 45/68 (39 strings)
+si: translating batch 46/68 (43 strings)
+si: translating batch 47/68 (35 strings)
+si: translating batch 48/68 (47 strings)
+si: translating batch 49/68 (45 strings)
+si: translating batch 50/68 (44 strings)
+si: translating batch 51/68 (50 strings)
+si: translating batch 52/68 (32 strings)
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: keeping English for T02363 (quiz/lesson16_q01_06) - Pāḷi markers lost 7 times
+si: translating batch 53/68 (45 strings)
+si: translating batch 54/68 (46 strings)
+si: translating batch 55/68 (50 strings)
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: keeping English for T02470 (quiz/lesson18_q8) - Pāḷi markers lost 7 times
+si: translating batch 56/68 (42 strings)
+si: translating batch 57/68 (40 strings)
+si: translating batch 58/68 (43 strings)
+si: translating batch 59/68 (43 strings)
+si: translating batch 60/68 (47 strings)
+si: translating batch 61/68 (47 strings)
+si: translating batch 62/68 (47 strings)
+si: translating batch 63/68 (44 strings)
+si: translating batch 64/68 (43 strings)
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: 1 string(s) lost their Pāḷi markers; retrying them alone
+  si: keeping English for T02868 (quiz/lesson24_q02) - Pāḷi markers lost 7 times
+si: translating batch 65/68 (44 strings)
+si: translating batch 66/68 (47 strings)
+si: translating batch 67/68 (48 strings)
+si: translating batch 68/68 (27 strings)
+zh: translating batch 1/68 (24 strings)
+zh: translating batch 2/68 (39 strings)
+zh: translating batch 3/68 (39 strings)
+zh: translating batch 4/68 (41 strings)
+zh: translating batch 5/68 (39 strings)
+zh: translating batch 6/68 (42 strings)
+zh: translating batch 7/68 (54 strings)
+zh: translating batch 8/68 (53 strings)
+zh: translating batch 9/68 (45 strings)
+zh: translating batch 10/68 (45 strings)
+zh: translating batch 11/68 (45 strings)
+zh: translating batch 12/68 (49 strings)
+zh: translating batch 13/68 (41 strings)
+zh: translating batch 14/68 (36 strings)
+zh: translating batch 15/68 (42 strings)
+zh: translating batch 16/68 (47 strings)
+zh: translating batch 17/68 (49 strings)
+zh: translating batch 18/68 (44 strings)
+zh: translating batch 19/68 (44 strings)
+zh: translating batch 20/68 (42 strings)
+zh: translating batch 21/68 (48 strings)
+zh: translating batch 22/68 (45 strings)
+zh: translating batch 23/68 (41 strings)
+zh: translating batch 24/68 (45 strings)
+zh: translating batch 25/68 (50 strings)
+zh: translating batch 26/68 (46 strings)
+zh: translating batch 27/68 (56 strings)
+zh: translating batch 28/68 (60 strings)
+zh: translating batch 29/68 (60 strings)
+zh: translating batch 30/68 (59 strings)
+zh: translating batch 31/68 (59 strings)
+zh: translating batch 32/68 (64 strings)
+zh: translating batch 33/68 (57 strings)
+zh: translating batch 34/68 (48 strings)
+zh: translating batch 35/68 (46 strings)
+  zh: 2 string(s) lost their Pāḷi markers; retrying them alone
+zh: translating batch 36/68 (46 strings)
+zh: translating batch 37/68 (49 strings)
+zh: translating batch 38/68 (49 strings)
+zh: translating batch 39/68 (43 strings)
+zh: translating batch 40/68 (32 strings)
+zh: translating batch 41/68 (47 strings)
+zh: translating batch 42/68 (42 strings)
+zh: translating batch 43/68 (44 strings)
+zh: translating batch 44/68 (35 strings)
+zh: translating batch 45/68 (39 strings)
+zh: translating batch 46/68 (43 strings)
+zh: translating batch 47/68 (35 strings)
+zh: translating batch 48/68 (47 strings)
+zh: translating batch 49/68 (45 strings)
+zh: translating batch 50/68 (44 strings)
+zh: translating batch 51/68 (50 strings)
+  zh: 1 string(s) lost their Pāḷi markers; retrying them alone
+zh: translating batch 52/68 (32 strings)
+zh: translating batch 53/68 (45 strings)
+zh: translating batch 54/68 (46 strings)
+  zh: 1 string(s) lost their Pāḷi markers; retrying them alone
+zh: translating batch 55/68 (50 strings)
+zh: translating batch 56/68 (42 strings)
+zh: translating batch 57/68 (40 strings)
+zh: translating batch 58/68 (43 strings)
+  zh: 1 string(s) lost their Pāḷi markers; retrying them alone
+zh: translating batch 59/68 (43 strings)
+zh: translating batch 60/68 (47 strings)
+zh: translating batch 61/68 (47 strings)
+zh: translating batch 62/68 (47 strings)
+zh: translating batch 63/68 (44 strings)
+  zh: 5 string(s) lost their Pāḷi markers; retrying them alone
+zh: translating batch 64/68 (43 strings)
+zh: translating batch 65/68 (44 strings)
+  zh: 1 string(s) lost their Pāḷi markers; retrying them alone
+zh: translating batch 66/68 (47 strings)
+zh: translating batch 67/68 (48 strings)
+zh: translating batch 68/68 (27 strings)
+my: translating batch 1/68 (24 strings)
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+my: translating batch 2/68 (39 strings)
+my: translating batch 3/68 (39 strings)
+my: translating batch 4/68 (41 strings)
+my: translating batch 5/68 (39 strings)
+my: translating batch 6/68 (42 strings)
+my: translating batch 7/68 (54 strings)
+my: translating batch 8/68 (53 strings)
+my: translating batch 9/68 (45 strings)
+my: translating batch 10/68 (45 strings)
+my: translating batch 11/68 (45 strings)
+my: translating batch 12/68 (49 strings)
+my: translating batch 13/68 (41 strings)
+my: translating batch 14/68 (36 strings)
+my: translating batch 15/68 (42 strings)
+my: translating batch 16/68 (47 strings)
+my: translating batch 17/68 (49 strings)
+my: translating batch 18/68 (44 strings)
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+my: translating batch 19/68 (44 strings)
+my: translating batch 20/68 (42 strings)
+my: translating batch 21/68 (48 strings)
+my: translating batch 22/68 (45 strings)
+my: translating batch 23/68 (41 strings)
+my: translating batch 24/68 (45 strings)
+my: translating batch 25/68 (50 strings)
+my: translating batch 26/68 (46 strings)
+my: translating batch 27/68 (56 strings)
+my: translating batch 28/68 (60 strings)
+my: translating batch 29/68 (60 strings)
+my: translating batch 30/68 (59 strings)
+my: translating batch 31/68 (59 strings)
+my: translating batch 32/68 (64 strings)
+my: translating batch 33/68 (57 strings)
+my: translating batch 34/68 (48 strings)
+my: translating batch 35/68 (46 strings)
+my: translating batch 36/68 (46 strings)
+my: translating batch 37/68 (49 strings)
+my: translating batch 38/68 (49 strings)
+my: translating batch 39/68 (43 strings)
+my: translating batch 40/68 (32 strings)
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+my: translating batch 41/68 (47 strings)
+my: translating batch 42/68 (42 strings)
+my: translating batch 43/68 (44 strings)
+my: translating batch 44/68 (35 strings)
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: keeping English for T02027 (quiz/lesson09_q01_05) - Pāḷi markers lost 7 times
+my: translating batch 45/68 (39 strings)
+my: translating batch 46/68 (43 strings)
+my: translating batch 47/68 (35 strings)
+my: translating batch 48/68 (47 strings)
+  my: 2 string(s) lost their Pāḷi markers; retrying them alone
+  my: 2 string(s) lost their Pāḷi markers; retrying them alone
+  my: 2 string(s) lost their Pāḷi markers; retrying them alone
+  my: 2 string(s) lost their Pāḷi markers; retrying them alone
+  my: 2 string(s) lost their Pāḷi markers; retrying them alone
+  my: 2 string(s) lost their Pāḷi markers; retrying them alone
+  my: keeping English for T02150 (quiz/lesson13_q01) - Pāḷi markers lost 7 times
+  my: keeping English for T02180 (quiz/lesson13_q07) - Pāḷi markers lost 7 times
+my: translating batch 49/68 (45 strings)
+my: translating batch 50/68 (44 strings)
+my: translating batch 51/68 (50 strings)
+my: translating batch 52/68 (32 strings)
+  my: 2 string(s) lost their Pāḷi markers; retrying them alone
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: keeping English for T02363 (quiz/lesson16_q01_06) - Pāḷi markers lost 7 times
+my: translating batch 53/68 (45 strings)
+my: translating batch 54/68 (46 strings)
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+my: translating batch 55/68 (50 strings)
+my: translating batch 56/68 (42 strings)
+my: translating batch 57/68 (40 strings)
+my: translating batch 58/68 (43 strings)
+my: translating batch 59/68 (43 strings)
+my: translating batch 60/68 (47 strings)
+my: translating batch 61/68 (47 strings)
+my: translating batch 62/68 (47 strings)
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+my: translating batch 63/68 (44 strings)
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+my: translating batch 64/68 (43 strings)
+my: translating batch 65/68 (44 strings)
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+my: translating batch 66/68 (47 strings)
+my: translating batch 67/68 (48 strings)
+my: translating batch 68/68 (27 strings)
+hi: translating batch 1/68 (24 strings)
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T00007 (meta/theme_06_fem_a_infinitive) - Pāḷi markers lost 7 times
+  hi: keeping English for T00009 (meta/theme_08_lesson) - Pāḷi markers lost 7 times
+  hi: keeping English for T00012 (meta/theme_11_lesson) - Pāḷi markers lost 7 times
+  hi: keeping English for T00014 (meta/theme_13_lesson) - Pāḷi markers lost 7 times
+hi: translating batch 2/68 (39 strings)
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T00046 (day/lesson10_day1) - Pāḷi markers lost 7 times
+hi: translating batch 3/68 (39 strings)
+hi: translating batch 4/68 (41 strings)
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T00130 (phase/lesson10_phase1) - Pāḷi markers lost 7 times
+hi: translating batch 5/68 (39 strings)
+  hi: 7 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 7 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 7 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 7 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 7 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 7 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T00150 (phase/lesson14_phase1) - Pāḷi markers lost 7 times
+  hi: keeping English for T00151 (phase/lesson14_phase2) - Pāḷi markers lost 7 times
+  hi: keeping English for T00152 (phase/lesson14_phase3) - Pāḷi markers lost 7 times
+  hi: keeping English for T00153 (phase/lesson14_phase4) - Pāḷi markers lost 7 times
+  hi: keeping English for T00154 (phase/lesson14_phase5) - Pāḷi markers lost 7 times
+  hi: keeping English for T00172 (phase/lesson_18_d1_p1) - Pāḷi markers lost 7 times
+  hi: keeping English for T00173 (phase/lesson_18_d1_p2) - Pāḷi markers lost 7 times
+hi: translating batch 6/68 (42 strings)
+hi: translating batch 7/68 (54 strings)
+hi: translating batch 8/68 (53 strings)
+hi: translating batch 9/68 (45 strings)
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T00344 (word/pv_L09_028) - Pāḷi markers lost 7 times
+  hi: keeping English for T00345 (word/pv_L09_029) - Pāḷi markers lost 7 times
+  hi: keeping English for T00346 (word/pv_L09_030) - Pāḷi markers lost 7 times
+  hi: keeping English for T00349 (word/pv_L09_033) - Pāḷi markers lost 7 times
+  hi: keeping English for T00350 (word/pv_L09_034) - Pāḷi markers lost 7 times
+  hi: keeping English for T00352 (word/pv_L09_036) - Pāḷi markers lost 7 times
+hi: translating batch 10/68 (45 strings)
+  hi: 5 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 5 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 5 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 5 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 5 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 5 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T00389 (word/pv_L10_034) - Pāḷi markers lost 7 times
+  hi: keeping English for T00394 (word/pv_L10_039) - Pāḷi markers lost 7 times
+  hi: keeping English for T00396 (word/pv_L10_041) - Pāḷi markers lost 7 times
+  hi: keeping English for T00397 (word/pv_L10_042) - Pāḷi markers lost 7 times
+  hi: keeping English for T00409 (word/pv_L12_003) - Pāḷi markers lost 7 times
+hi: translating batch 11/68 (45 strings)
+hi: translating batch 12/68 (49 strings)
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T00481 (word/pv_L16_024) - Pāḷi markers lost 7 times
+  hi: keeping English for T00489 (word/pv_L16_032) - Pāḷi markers lost 7 times
+  hi: keeping English for T00491 (word/pv_L16_034) - Pāḷi markers lost 7 times
+  hi: keeping English for T00494 (word/pv_L16_037) - Pāḷi markers lost 7 times
+  hi: keeping English for T00496 (word/pv_L16_039) - Pāḷi markers lost 7 times
+  hi: keeping English for T00498 (word/pv_L16_041) - Pāḷi markers lost 7 times
+hi: translating batch 13/68 (41 strings)
+hi: translating batch 14/68 (36 strings)
+hi: translating batch 15/68 (42 strings)
+hi: translating batch 16/68 (47 strings)
+hi: translating batch 17/68 (49 strings)
+hi: translating batch 18/68 (44 strings)
+hi: translating batch 19/68 (44 strings)
+hi: translating batch 20/68 (42 strings)
+hi: translating batch 21/68 (48 strings)
+hi: translating batch 22/68 (45 strings)
+hi: translating batch 23/68 (41 strings)
+hi: translating batch 24/68 (45 strings)
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T01032 (example/pv_L24_accantam) - Pāḷi markers lost 7 times
+hi: translating batch 25/68 (50 strings)
+  hi: 3 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 3 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 3 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 3 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 3 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 3 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T01067 (pos/Bị động, Ngôi 3 số nhiều) - Pāḷi markers lost 7 times
+  hi: keeping English for T01078 (pos/Sử Dụng Cách (giá cả)) - Pāḷi markers lost 7 times
+  hi: keeping English for T01086 (pos/bbqkpt) - Pāḷi markers lost 7 times
+hi: translating batch 26/68 (46 strings)
+  hi: 14 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 14 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 14 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 14 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 14 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 14 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T01091 (pos/danh từ, CC số nhiều) - Pāḷi markers lost 7 times
+  hi: keeping English for T01092 (pos/danh từ, CC số ít) - Pāḷi markers lost 7 times
+  hi: keeping English for T01093 (pos/danh từ, ĐC số nhiều) - Pāḷi markers lost 7 times
+  hi: keeping English for T01094 (pos/danh từ, ĐC số ít) - Pāḷi markers lost 7 times
+  hi: keeping English for T01098 (pos/ht.bđ.pt) - Pāḷi markers lost 7 times
+  hi: keeping English for T01099 (pos/htpt) - Pāḷi markers lost 7 times
+  hi: keeping English for T01100 (pos/hū Ajjatanī, Ngôi 3 số ít) - Pāḷi markers lost 7 times
+  hi: keeping English for T01113 (pos/knpt) - Pāḷi markers lost 7 times
+  hi: keeping English for T01114 (pos/n.tr) - Pāḷi markers lost 7 times
+  hi: keeping English for T01121 (pos/ĐC số nhiều) - Pāḷi markers lost 7 times
+  hi: keeping English for T01122 (pos/ĐC số ít) - Pāḷi markers lost 7 times
+  hi: keeping English for T01123 (pos/ĐC số ít / số nhiều) - Pāḷi markers lost 7 times
+  hi: keeping English for T01125 (pos/Đối Cách (trạng từ)) - Pāḷi markers lost 7 times
+  hi: keeping English for T01130 (pos/động từ, ngôi 3 số ít) - Pāḷi markers lost 7 times
+hi: translating batch 27/68 (56 strings)
+hi: translating batch 28/68 (60 strings)
+hi: translating batch 29/68 (60 strings)
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T01263 (mind/passissati) - Pāḷi markers lost 7 times
+hi: translating batch 30/68 (59 strings)
+hi: translating batch 31/68 (59 strings)
+hi: translating batch 32/68 (64 strings)
+hi: translating batch 33/68 (57 strings)
+hi: translating batch 34/68 (48 strings)
+  hi: 11 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 11 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 11 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 11 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 11 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 11 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T01586 (quiz/lesson01_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01587 (quiz/lesson01_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01588 (quiz/lesson01_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01589 (quiz/lesson01_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01591 (quiz/lesson01_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01592 (quiz/lesson01_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01593 (quiz/lesson01_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01594 (quiz/lesson01_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01596 (quiz/lesson01_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01597 (quiz/lesson01_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01598 (quiz/lesson01_q03) - Pāḷi markers lost 7 times
+hi: translating batch 35/68 (46 strings)
+  hi: 28 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 28 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 28 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 28 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 28 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 28 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T01599 (quiz/lesson01_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01601 (quiz/lesson01_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01602 (quiz/lesson01_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01603 (quiz/lesson01_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01604 (quiz/lesson01_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01606 (quiz/lesson01_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01607 (quiz/lesson01_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01608 (quiz/lesson01_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01609 (quiz/lesson01_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01611 (quiz/lesson01_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T01612 (quiz/lesson01_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T01613 (quiz/lesson01_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T01614 (quiz/lesson01_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T01616 (quiz/lesson01_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T01617 (quiz/lesson01_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T01618 (quiz/lesson01_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T01619 (quiz/lesson01_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T01621 (quiz/lesson01_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T01622 (quiz/lesson01_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T01623 (quiz/lesson01_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T01624 (quiz/lesson01_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T01626 (quiz/lesson01_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T01627 (quiz/lesson01_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T01628 (quiz/lesson01_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T01629 (quiz/lesson01_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T01630 (quiz/lesson02_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01635 (quiz/lesson02_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01640 (quiz/lesson02_q03) - Pāḷi markers lost 7 times
+hi: translating batch 36/68 (46 strings)
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T01650 (quiz/lesson02_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01655 (quiz/lesson02_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T01660 (quiz/lesson02_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T01665 (quiz/lesson02_q08) - Pāḷi markers lost 7 times
+hi: translating batch 37/68 (49 strings)
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T01695 (quiz/lesson03_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01700 (quiz/lesson03_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01705 (quiz/lesson03_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01710 (quiz/lesson03_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01715 (quiz/lesson03_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01725 (quiz/lesson03_q07) - Pāḷi markers lost 7 times
+hi: translating batch 38/68 (49 strings)
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T01760 (quiz/lesson04_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01765 (quiz/lesson04_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01770 (quiz/lesson04_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01775 (quiz/lesson04_q04) - Pāḷi markers lost 7 times
+hi: translating batch 39/68 (43 strings)
+  hi: 8 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 8 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 8 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 8 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 8 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 8 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T01792 (quiz/lesson04_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T01825 (quiz/lesson05_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01826 (quiz/lesson05_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01827 (quiz/lesson05_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01828 (quiz/lesson05_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01829 (quiz/lesson05_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01830 (quiz/lesson05_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01831 (quiz/lesson05_q01_02) - Pāḷi markers lost 7 times
+hi: translating batch 40/68 (32 strings)
+  hi: 32 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 32 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 32 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 32 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 32 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 32 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T01832 (quiz/lesson05_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01833 (quiz/lesson05_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01834 (quiz/lesson05_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01835 (quiz/lesson05_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01836 (quiz/lesson05_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01837 (quiz/lesson05_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01838 (quiz/lesson05_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01839 (quiz/lesson05_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01840 (quiz/lesson05_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01841 (quiz/lesson05_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01842 (quiz/lesson05_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01843 (quiz/lesson05_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01844 (quiz/lesson05_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01845 (quiz/lesson05_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01846 (quiz/lesson05_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01847 (quiz/lesson05_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01848 (quiz/lesson05_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01849 (quiz/lesson05_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01850 (quiz/lesson06_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01851 (quiz/lesson06_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01852 (quiz/lesson06_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01853 (quiz/lesson06_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01854 (quiz/lesson06_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01855 (quiz/lesson06_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01856 (quiz/lesson06_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01857 (quiz/lesson06_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01858 (quiz/lesson06_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01859 (quiz/lesson06_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01860 (quiz/lesson06_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01861 (quiz/lesson06_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01862 (quiz/lesson06_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01863 (quiz/lesson06_q01_03) - Pāḷi markers lost 7 times
+hi: translating batch 41/68 (47 strings)
+  hi: 19 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 19 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 19 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 19 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 19 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 19 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T01864 (quiz/lesson06_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01865 (quiz/lesson06_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01866 (quiz/lesson06_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01867 (quiz/lesson06_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01868 (quiz/lesson06_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01869 (quiz/lesson06_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T01870 (quiz/lesson06_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01871 (quiz/lesson06_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01872 (quiz/lesson06_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01873 (quiz/lesson06_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01874 (quiz/lesson06_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T01875 (quiz/lesson07_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01878 (quiz/lesson07_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T01880 (quiz/lesson07_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T01885 (quiz/lesson07_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T01901 (quiz/lesson07_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T01902 (quiz/lesson07_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T01903 (quiz/lesson07_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T01904 (quiz/lesson07_q06) - Pāḷi markers lost 7 times
+hi: translating batch 42/68 (42 strings)
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T01951 (quiz/lesson08_q03) - Pāḷi markers lost 7 times
+hi: translating batch 43/68 (44 strings)
+hi: translating batch 44/68 (35 strings)
+  hi: 27 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 27 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 27 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 27 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 27 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 27 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02005 (quiz/lesson09_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02006 (quiz/lesson09_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02007 (quiz/lesson09_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02008 (quiz/lesson09_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02009 (quiz/lesson09_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02010 (quiz/lesson09_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02011 (quiz/lesson09_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02012 (quiz/lesson09_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02013 (quiz/lesson09_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02014 (quiz/lesson09_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02015 (quiz/lesson09_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02016 (quiz/lesson09_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02017 (quiz/lesson09_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02018 (quiz/lesson09_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02019 (quiz/lesson09_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02020 (quiz/lesson09_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02021 (quiz/lesson09_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02022 (quiz/lesson09_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02023 (quiz/lesson09_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02024 (quiz/lesson09_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02025 (quiz/lesson09_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02026 (quiz/lesson09_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02027 (quiz/lesson09_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02028 (quiz/lesson09_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02029 (quiz/lesson09_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02030 (quiz/lesson10_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02031 (quiz/lesson10_q01_01) - Pāḷi markers lost 7 times
+hi: translating batch 45/68 (39 strings)
+  hi: 24 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 24 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 24 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 24 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 24 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 24 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02032 (quiz/lesson10_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02033 (quiz/lesson10_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02034 (quiz/lesson10_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02035 (quiz/lesson10_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02036 (quiz/lesson10_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02037 (quiz/lesson10_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02038 (quiz/lesson10_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02039 (quiz/lesson10_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02040 (quiz/lesson10_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02041 (quiz/lesson10_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02042 (quiz/lesson10_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02043 (quiz/lesson10_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02044 (quiz/lesson10_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02045 (quiz/lesson10_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02046 (quiz/lesson10_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02047 (quiz/lesson10_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02048 (quiz/lesson10_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02049 (quiz/lesson10_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02050 (quiz/lesson10_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02051 (quiz/lesson10_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02052 (quiz/lesson10_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02053 (quiz/lesson10_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02054 (quiz/lesson10_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02058 (quiz/lesson11_q01) - Pāḷi markers lost 7 times
+hi: translating batch 46/68 (43 strings)
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 1 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02079 (quiz/lesson11_q05) - Pāḷi markers lost 7 times
+hi: translating batch 47/68 (35 strings)
+  hi: 29 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 29 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 29 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 29 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 29 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 29 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02120 (quiz/lesson12_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02121 (quiz/lesson12_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02122 (quiz/lesson12_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02123 (quiz/lesson12_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02124 (quiz/lesson12_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02125 (quiz/lesson12_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02126 (quiz/lesson12_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02127 (quiz/lesson12_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02128 (quiz/lesson12_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02129 (quiz/lesson12_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02130 (quiz/lesson12_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02131 (quiz/lesson12_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02132 (quiz/lesson12_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02133 (quiz/lesson12_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02134 (quiz/lesson12_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02135 (quiz/lesson12_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02136 (quiz/lesson12_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02137 (quiz/lesson12_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02138 (quiz/lesson12_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02139 (quiz/lesson12_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02140 (quiz/lesson12_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02141 (quiz/lesson12_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02142 (quiz/lesson12_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02143 (quiz/lesson12_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02144 (quiz/lesson12_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02145 (quiz/lesson12_q01_06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02146 (quiz/lesson12_q01_06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02147 (quiz/lesson12_q01_06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02148 (quiz/lesson12_q01_06) - Pāḷi markers lost 7 times
+hi: translating batch 48/68 (47 strings)
+  hi: 5 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 5 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 5 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 5 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 5 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 5 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02149 (quiz/lesson12_q01_06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02176 (quiz/lesson13_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02177 (quiz/lesson13_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02178 (quiz/lesson13_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02179 (quiz/lesson13_q06) - Pāḷi markers lost 7 times
+hi: translating batch 49/68 (45 strings)
+hi: translating batch 50/68 (44 strings)
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 6 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02252 (quiz/lesson14_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02257 (quiz/lesson14_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02263 (quiz/lesson14_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02276 (quiz/lesson14_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02281 (quiz/lesson14_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02282 (quiz/lesson14_q14) - Pāḷi markers lost 7 times
+hi: translating batch 51/68 (50 strings)
+  hi: 12 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 12 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 12 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 12 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 12 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 12 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02301 (quiz/lesson15_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02302 (quiz/lesson15_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02303 (quiz/lesson15_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02308 (quiz/lesson15_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02310 (quiz/lesson15_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02316 (quiz/lesson15_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02317 (quiz/lesson15_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02325 (quiz/lesson15_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02331 (quiz/lesson15_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02332 (quiz/lesson15_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02333 (quiz/lesson15_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02334 (quiz/lesson15_q10) - Pāḷi markers lost 7 times
+hi: translating batch 52/68 (32 strings)
+  hi: 30 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 30 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 30 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 30 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 30 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 30 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02335 (quiz/lesson16_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02336 (quiz/lesson16_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02337 (quiz/lesson16_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02338 (quiz/lesson16_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02339 (quiz/lesson16_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02340 (quiz/lesson16_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02341 (quiz/lesson16_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02342 (quiz/lesson16_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02343 (quiz/lesson16_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02344 (quiz/lesson16_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02345 (quiz/lesson16_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02346 (quiz/lesson16_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02347 (quiz/lesson16_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02348 (quiz/lesson16_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02349 (quiz/lesson16_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02350 (quiz/lesson16_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02351 (quiz/lesson16_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02352 (quiz/lesson16_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02353 (quiz/lesson16_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02354 (quiz/lesson16_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02355 (quiz/lesson16_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02356 (quiz/lesson16_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02357 (quiz/lesson16_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02358 (quiz/lesson16_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02359 (quiz/lesson16_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02360 (quiz/lesson16_q01_06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02361 (quiz/lesson16_q01_06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02362 (quiz/lesson16_q01_06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02363 (quiz/lesson16_q01_06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02364 (quiz/lesson16_q01_06) - Pāḷi markers lost 7 times
+hi: translating batch 53/68 (45 strings)
+hi: translating batch 54/68 (46 strings)
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02441 (quiz/lesson18_q2) - Pāḷi markers lost 7 times
+  hi: keeping English for T02442 (quiz/lesson18_q2) - Pāḷi markers lost 7 times
+  hi: keeping English for T02443 (quiz/lesson18_q2) - Pāḷi markers lost 7 times
+  hi: keeping English for T02444 (quiz/lesson18_q2) - Pāḷi markers lost 7 times
+hi: translating batch 55/68 (50 strings)
+  hi: 2 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 2 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 2 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 2 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 2 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 2 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02477 (quiz/lesson19_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02499 (quiz/lesson19_q05) - Pāḷi markers lost 7 times
+hi: translating batch 56/68 (42 strings)
+  hi: 15 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 15 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 15 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 15 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 15 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 15 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02535 (quiz/lesson20_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02536 (quiz/lesson20_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02537 (quiz/lesson20_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02538 (quiz/lesson20_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02539 (quiz/lesson20_q01_01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02540 (quiz/lesson20_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02541 (quiz/lesson20_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02542 (quiz/lesson20_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02543 (quiz/lesson20_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02544 (quiz/lesson20_q01_02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02545 (quiz/lesson20_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02546 (quiz/lesson20_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02547 (quiz/lesson20_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02548 (quiz/lesson20_q01_03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02549 (quiz/lesson20_q01_03) - Pāḷi markers lost 7 times
+hi: translating batch 57/68 (40 strings)
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02550 (quiz/lesson20_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02551 (quiz/lesson20_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02552 (quiz/lesson20_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02553 (quiz/lesson20_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02554 (quiz/lesson20_q01_04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02555 (quiz/lesson20_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02556 (quiz/lesson20_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02557 (quiz/lesson20_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02558 (quiz/lesson20_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02559 (quiz/lesson20_q01_05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02560 (quiz/lesson20_q01_06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02561 (quiz/lesson20_q01_06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02562 (quiz/lesson20_q01_06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02563 (quiz/lesson20_q01_06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02564 (quiz/lesson20_q01_06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02565 (quiz/lesson20_q01_07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02566 (quiz/lesson20_q01_07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02567 (quiz/lesson20_q01_07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02568 (quiz/lesson20_q01_07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02569 (quiz/lesson20_q01_07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02570 (quiz/lesson20_q01_08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02571 (quiz/lesson20_q01_08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02572 (quiz/lesson20_q01_08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02573 (quiz/lesson20_q01_08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02574 (quiz/lesson20_q01_08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02576 (quiz/lesson21_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02577 (quiz/lesson21_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02578 (quiz/lesson21_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02579 (quiz/lesson21_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02581 (quiz/lesson21_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02582 (quiz/lesson21_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02583 (quiz/lesson21_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02584 (quiz/lesson21_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02585 (quiz/lesson21_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02586 (quiz/lesson21_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02587 (quiz/lesson21_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02588 (quiz/lesson21_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02589 (quiz/lesson21_q03) - Pāḷi markers lost 7 times
+hi: translating batch 58/68 (43 strings)
+  hi: 35 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 35 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 35 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 35 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 35 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 35 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02591 (quiz/lesson21_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02592 (quiz/lesson21_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02593 (quiz/lesson21_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02594 (quiz/lesson21_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02596 (quiz/lesson21_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02597 (quiz/lesson21_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02598 (quiz/lesson21_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02599 (quiz/lesson21_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02600 (quiz/lesson21_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02601 (quiz/lesson21_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02602 (quiz/lesson21_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02603 (quiz/lesson21_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02604 (quiz/lesson21_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02606 (quiz/lesson21_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02607 (quiz/lesson21_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02608 (quiz/lesson21_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02609 (quiz/lesson21_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02611 (quiz/lesson21_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02612 (quiz/lesson21_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02613 (quiz/lesson21_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02614 (quiz/lesson21_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02616 (quiz/lesson21_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02617 (quiz/lesson21_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02618 (quiz/lesson21_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02619 (quiz/lesson21_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02621 (quiz/lesson21_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02622 (quiz/lesson21_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02623 (quiz/lesson21_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02624 (quiz/lesson21_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02626 (quiz/lesson21_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02627 (quiz/lesson21_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02628 (quiz/lesson21_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02629 (quiz/lesson21_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02631 (quiz/lesson21_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02632 (quiz/lesson21_q12) - Pāḷi markers lost 7 times
+hi: translating batch 59/68 (43 strings)
+  hi: 36 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 36 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 36 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 36 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 36 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 36 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02633 (quiz/lesson21_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02634 (quiz/lesson21_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02636 (quiz/lesson21_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02637 (quiz/lesson21_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02638 (quiz/lesson21_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02639 (quiz/lesson21_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02641 (quiz/lesson21_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02642 (quiz/lesson21_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02643 (quiz/lesson21_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02644 (quiz/lesson21_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02645 (quiz/lesson21_q15) - Pāḷi markers lost 7 times
+  hi: keeping English for T02646 (quiz/lesson21_q15) - Pāḷi markers lost 7 times
+  hi: keeping English for T02647 (quiz/lesson21_q15) - Pāḷi markers lost 7 times
+  hi: keeping English for T02648 (quiz/lesson21_q15) - Pāḷi markers lost 7 times
+  hi: keeping English for T02649 (quiz/lesson21_q15) - Pāḷi markers lost 7 times
+  hi: keeping English for T02651 (quiz/lesson21_q16) - Pāḷi markers lost 7 times
+  hi: keeping English for T02652 (quiz/lesson21_q16) - Pāḷi markers lost 7 times
+  hi: keeping English for T02653 (quiz/lesson21_q16) - Pāḷi markers lost 7 times
+  hi: keeping English for T02654 (quiz/lesson21_q16) - Pāḷi markers lost 7 times
+  hi: keeping English for T02656 (quiz/lesson21_q17) - Pāḷi markers lost 7 times
+  hi: keeping English for T02657 (quiz/lesson21_q17) - Pāḷi markers lost 7 times
+  hi: keeping English for T02658 (quiz/lesson21_q17) - Pāḷi markers lost 7 times
+  hi: keeping English for T02659 (quiz/lesson21_q17) - Pāḷi markers lost 7 times
+  hi: keeping English for T02661 (quiz/lesson21_q18) - Pāḷi markers lost 7 times
+  hi: keeping English for T02662 (quiz/lesson21_q18) - Pāḷi markers lost 7 times
+  hi: keeping English for T02663 (quiz/lesson21_q18) - Pāḷi markers lost 7 times
+  hi: keeping English for T02664 (quiz/lesson21_q18) - Pāḷi markers lost 7 times
+  hi: keeping English for T02666 (quiz/lesson21_q19) - Pāḷi markers lost 7 times
+  hi: keeping English for T02667 (quiz/lesson21_q19) - Pāḷi markers lost 7 times
+  hi: keeping English for T02668 (quiz/lesson21_q19) - Pāḷi markers lost 7 times
+  hi: keeping English for T02669 (quiz/lesson21_q19) - Pāḷi markers lost 7 times
+  hi: keeping English for T02670 (quiz/lesson22_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02671 (quiz/lesson22_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02672 (quiz/lesson22_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02673 (quiz/lesson22_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02674 (quiz/lesson22_q01) - Pāḷi markers lost 7 times
+hi: translating batch 60/68 (47 strings)
+  hi: 40 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 40 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 40 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 40 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 40 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 40 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02676 (quiz/lesson22_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02677 (quiz/lesson22_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02678 (quiz/lesson22_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02679 (quiz/lesson22_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02681 (quiz/lesson22_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02682 (quiz/lesson22_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02683 (quiz/lesson22_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02684 (quiz/lesson22_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02686 (quiz/lesson22_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02687 (quiz/lesson22_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02688 (quiz/lesson22_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02689 (quiz/lesson22_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02691 (quiz/lesson22_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02692 (quiz/lesson22_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02693 (quiz/lesson22_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02694 (quiz/lesson22_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02695 (quiz/lesson22_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02696 (quiz/lesson22_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02697 (quiz/lesson22_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02698 (quiz/lesson22_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02699 (quiz/lesson22_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02700 (quiz/lesson22_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02701 (quiz/lesson22_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02702 (quiz/lesson22_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02703 (quiz/lesson22_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02704 (quiz/lesson22_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02706 (quiz/lesson22_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02707 (quiz/lesson22_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02708 (quiz/lesson22_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02709 (quiz/lesson22_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02711 (quiz/lesson22_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02712 (quiz/lesson22_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02713 (quiz/lesson22_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02714 (quiz/lesson22_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02716 (quiz/lesson22_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02717 (quiz/lesson22_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02718 (quiz/lesson22_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02719 (quiz/lesson22_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02721 (quiz/lesson22_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02722 (quiz/lesson22_q11) - Pāḷi markers lost 7 times
+hi: translating batch 61/68 (47 strings)
+  hi: 39 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 39 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 39 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 39 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 39 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 39 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02723 (quiz/lesson22_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02724 (quiz/lesson22_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02726 (quiz/lesson22_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02727 (quiz/lesson22_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02728 (quiz/lesson22_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02729 (quiz/lesson22_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02731 (quiz/lesson22_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02732 (quiz/lesson22_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02733 (quiz/lesson22_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02734 (quiz/lesson22_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02736 (quiz/lesson22_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02737 (quiz/lesson22_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02738 (quiz/lesson22_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02739 (quiz/lesson22_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02741 (quiz/lesson22_q15) - Pāḷi markers lost 7 times
+  hi: keeping English for T02742 (quiz/lesson22_q15) - Pāḷi markers lost 7 times
+  hi: keeping English for T02743 (quiz/lesson22_q15) - Pāḷi markers lost 7 times
+  hi: keeping English for T02744 (quiz/lesson22_q15) - Pāḷi markers lost 7 times
+  hi: keeping English for T02746 (quiz/lesson22_q16) - Pāḷi markers lost 7 times
+  hi: keeping English for T02747 (quiz/lesson22_q16) - Pāḷi markers lost 7 times
+  hi: keeping English for T02748 (quiz/lesson22_q16) - Pāḷi markers lost 7 times
+  hi: keeping English for T02749 (quiz/lesson22_q16) - Pāḷi markers lost 7 times
+  hi: keeping English for T02751 (quiz/lesson22_q17) - Pāḷi markers lost 7 times
+  hi: keeping English for T02752 (quiz/lesson22_q17) - Pāḷi markers lost 7 times
+  hi: keeping English for T02753 (quiz/lesson22_q17) - Pāḷi markers lost 7 times
+  hi: keeping English for T02754 (quiz/lesson22_q17) - Pāḷi markers lost 7 times
+  hi: keeping English for T02756 (quiz/lesson22_q18) - Pāḷi markers lost 7 times
+  hi: keeping English for T02757 (quiz/lesson22_q18) - Pāḷi markers lost 7 times
+  hi: keeping English for T02758 (quiz/lesson22_q18) - Pāḷi markers lost 7 times
+  hi: keeping English for T02759 (quiz/lesson22_q18) - Pāḷi markers lost 7 times
+  hi: keeping English for T02761 (quiz/lesson22_q19) - Pāḷi markers lost 7 times
+  hi: keeping English for T02762 (quiz/lesson22_q19) - Pāḷi markers lost 7 times
+  hi: keeping English for T02763 (quiz/lesson22_q19) - Pāḷi markers lost 7 times
+  hi: keeping English for T02764 (quiz/lesson22_q19) - Pāḷi markers lost 7 times
+  hi: keeping English for T02765 (quiz/lesson23_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02766 (quiz/lesson23_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02767 (quiz/lesson23_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02768 (quiz/lesson23_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02769 (quiz/lesson23_q01) - Pāḷi markers lost 7 times
+hi: translating batch 62/68 (47 strings)
+  hi: 41 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 41 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 41 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 41 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 41 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 41 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02770 (quiz/lesson23_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02771 (quiz/lesson23_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02772 (quiz/lesson23_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02773 (quiz/lesson23_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02774 (quiz/lesson23_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02775 (quiz/lesson23_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02776 (quiz/lesson23_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02777 (quiz/lesson23_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02778 (quiz/lesson23_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02779 (quiz/lesson23_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02780 (quiz/lesson23_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02781 (quiz/lesson23_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02782 (quiz/lesson23_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02783 (quiz/lesson23_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02784 (quiz/lesson23_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02785 (quiz/lesson23_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02786 (quiz/lesson23_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02787 (quiz/lesson23_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02788 (quiz/lesson23_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02789 (quiz/lesson23_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02791 (quiz/lesson23_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02792 (quiz/lesson23_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02793 (quiz/lesson23_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02794 (quiz/lesson23_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02796 (quiz/lesson23_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02797 (quiz/lesson23_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02798 (quiz/lesson23_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02799 (quiz/lesson23_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02801 (quiz/lesson23_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02802 (quiz/lesson23_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02803 (quiz/lesson23_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02804 (quiz/lesson23_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02806 (quiz/lesson23_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02807 (quiz/lesson23_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02808 (quiz/lesson23_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02809 (quiz/lesson23_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02811 (quiz/lesson23_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02812 (quiz/lesson23_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02813 (quiz/lesson23_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02814 (quiz/lesson23_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02816 (quiz/lesson23_q11) - Pāḷi markers lost 7 times
+hi: translating batch 63/68 (44 strings)
+  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02817 (quiz/lesson23_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02818 (quiz/lesson23_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02819 (quiz/lesson23_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02821 (quiz/lesson23_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02822 (quiz/lesson23_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02823 (quiz/lesson23_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02824 (quiz/lesson23_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02826 (quiz/lesson23_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02827 (quiz/lesson23_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02828 (quiz/lesson23_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02829 (quiz/lesson23_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02831 (quiz/lesson23_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02832 (quiz/lesson23_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02833 (quiz/lesson23_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02834 (quiz/lesson23_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02836 (quiz/lesson23_q15) - Pāḷi markers lost 7 times
+  hi: keeping English for T02837 (quiz/lesson23_q15) - Pāḷi markers lost 7 times
+  hi: keeping English for T02838 (quiz/lesson23_q15) - Pāḷi markers lost 7 times
+  hi: keeping English for T02839 (quiz/lesson23_q15) - Pāḷi markers lost 7 times
+  hi: keeping English for T02841 (quiz/lesson23_q16) - Pāḷi markers lost 7 times
+  hi: keeping English for T02842 (quiz/lesson23_q16) - Pāḷi markers lost 7 times
+  hi: keeping English for T02843 (quiz/lesson23_q16) - Pāḷi markers lost 7 times
+  hi: keeping English for T02844 (quiz/lesson23_q16) - Pāḷi markers lost 7 times
+  hi: keeping English for T02845 (quiz/lesson23_q17) - Pāḷi markers lost 7 times
+  hi: keeping English for T02846 (quiz/lesson23_q17) - Pāḷi markers lost 7 times
+  hi: keeping English for T02847 (quiz/lesson23_q17) - Pāḷi markers lost 7 times
+  hi: keeping English for T02848 (quiz/lesson23_q17) - Pāḷi markers lost 7 times
+  hi: keeping English for T02849 (quiz/lesson23_q17) - Pāḷi markers lost 7 times
+  hi: keeping English for T02851 (quiz/lesson23_q18) - Pāḷi markers lost 7 times
+  hi: keeping English for T02852 (quiz/lesson23_q18) - Pāḷi markers lost 7 times
+  hi: keeping English for T02853 (quiz/lesson23_q18) - Pāḷi markers lost 7 times
+  hi: keeping English for T02854 (quiz/lesson23_q18) - Pāḷi markers lost 7 times
+  hi: keeping English for T02856 (quiz/lesson23_q19) - Pāḷi markers lost 7 times
+  hi: keeping English for T02857 (quiz/lesson23_q19) - Pāḷi markers lost 7 times
+  hi: keeping English for T02858 (quiz/lesson23_q19) - Pāḷi markers lost 7 times
+  hi: keeping English for T02859 (quiz/lesson23_q19) - Pāḷi markers lost 7 times
+  hi: keeping English for T02860 (quiz/lesson24_q01) - Pāḷi markers lost 7 times
+hi: translating batch 64/68 (43 strings)
+  hi: 42 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 42 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 42 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 42 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 42 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 42 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02861 (quiz/lesson24_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02862 (quiz/lesson24_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02863 (quiz/lesson24_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02864 (quiz/lesson24_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02865 (quiz/lesson24_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02866 (quiz/lesson24_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02867 (quiz/lesson24_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02868 (quiz/lesson24_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02869 (quiz/lesson24_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02870 (quiz/lesson24_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02871 (quiz/lesson24_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02872 (quiz/lesson24_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02873 (quiz/lesson24_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02874 (quiz/lesson24_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02875 (quiz/lesson24_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02876 (quiz/lesson24_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02877 (quiz/lesson24_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02878 (quiz/lesson24_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02879 (quiz/lesson24_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02880 (quiz/lesson24_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02881 (quiz/lesson24_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02882 (quiz/lesson24_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02883 (quiz/lesson24_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02884 (quiz/lesson24_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02886 (quiz/lesson24_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02887 (quiz/lesson24_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02888 (quiz/lesson24_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02889 (quiz/lesson24_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02890 (quiz/lesson24_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02891 (quiz/lesson24_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02892 (quiz/lesson24_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02893 (quiz/lesson24_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02894 (quiz/lesson24_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02895 (quiz/lesson24_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02896 (quiz/lesson24_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02897 (quiz/lesson24_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02898 (quiz/lesson24_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02899 (quiz/lesson24_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02900 (quiz/lesson24_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02901 (quiz/lesson24_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02902 (quiz/lesson24_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02903 (quiz/lesson24_q09) - Pāḷi markers lost 7 times
+hi: translating batch 65/68 (44 strings)
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02904 (quiz/lesson24_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02906 (quiz/lesson24_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02907 (quiz/lesson24_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02908 (quiz/lesson24_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02909 (quiz/lesson24_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02910 (quiz/lesson24_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02911 (quiz/lesson24_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02912 (quiz/lesson24_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02913 (quiz/lesson24_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02914 (quiz/lesson24_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02915 (quiz/lesson24_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02916 (quiz/lesson24_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02917 (quiz/lesson24_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02918 (quiz/lesson24_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02919 (quiz/lesson24_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02920 (quiz/lesson24_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02921 (quiz/lesson24_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02922 (quiz/lesson24_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02923 (quiz/lesson24_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02924 (quiz/lesson24_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02926 (quiz/lesson24_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02927 (quiz/lesson24_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02928 (quiz/lesson24_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02929 (quiz/lesson24_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02931 (quiz/lesson25_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02932 (quiz/lesson25_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02933 (quiz/lesson25_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02934 (quiz/lesson25_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T02936 (quiz/lesson25_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02937 (quiz/lesson25_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02938 (quiz/lesson25_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02939 (quiz/lesson25_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T02941 (quiz/lesson25_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02942 (quiz/lesson25_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02943 (quiz/lesson25_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02944 (quiz/lesson25_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T02946 (quiz/lesson25_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02947 (quiz/lesson25_q04) - Pāḷi markers lost 7 times
+hi: translating batch 66/68 (47 strings)
+  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02948 (quiz/lesson25_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02949 (quiz/lesson25_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T02951 (quiz/lesson25_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02952 (quiz/lesson25_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02953 (quiz/lesson25_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02954 (quiz/lesson25_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T02956 (quiz/lesson25_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02957 (quiz/lesson25_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02958 (quiz/lesson25_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02959 (quiz/lesson25_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T02961 (quiz/lesson25_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02962 (quiz/lesson25_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02963 (quiz/lesson25_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02964 (quiz/lesson25_q07) - Pāḷi markers lost 7 times
+  hi: keeping English for T02966 (quiz/lesson25_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02967 (quiz/lesson25_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02968 (quiz/lesson25_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02969 (quiz/lesson25_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T02971 (quiz/lesson25_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02972 (quiz/lesson25_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02973 (quiz/lesson25_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02974 (quiz/lesson25_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T02976 (quiz/lesson25_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02978 (quiz/lesson25_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02979 (quiz/lesson25_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T02981 (quiz/lesson25_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02982 (quiz/lesson25_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02983 (quiz/lesson25_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02984 (quiz/lesson25_q11) - Pāḷi markers lost 7 times
+  hi: keeping English for T02986 (quiz/lesson25_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02987 (quiz/lesson25_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02988 (quiz/lesson25_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02989 (quiz/lesson25_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T02991 (quiz/lesson25_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02992 (quiz/lesson25_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02993 (quiz/lesson25_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T02994 (quiz/lesson25_q13) - Pāḷi markers lost 7 times
+hi: translating batch 67/68 (48 strings)
+  hi: 35 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 35 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 35 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 35 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 35 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 35 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T02996 (quiz/lesson25_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02997 (quiz/lesson25_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02998 (quiz/lesson25_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T02999 (quiz/lesson25_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T03001 (quiz/lesson26_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T03002 (quiz/lesson26_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T03003 (quiz/lesson26_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T03004 (quiz/lesson26_q01) - Pāḷi markers lost 7 times
+  hi: keeping English for T03005 (quiz/lesson26_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T03006 (quiz/lesson26_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T03007 (quiz/lesson26_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T03008 (quiz/lesson26_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T03009 (quiz/lesson26_q02) - Pāḷi markers lost 7 times
+  hi: keeping English for T03011 (quiz/lesson26_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T03012 (quiz/lesson26_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T03013 (quiz/lesson26_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T03014 (quiz/lesson26_q03) - Pāḷi markers lost 7 times
+  hi: keeping English for T03016 (quiz/lesson26_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T03017 (quiz/lesson26_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T03018 (quiz/lesson26_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T03019 (quiz/lesson26_q04) - Pāḷi markers lost 7 times
+  hi: keeping English for T03021 (quiz/lesson26_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T03022 (quiz/lesson26_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T03023 (quiz/lesson26_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T03024 (quiz/lesson26_q05) - Pāḷi markers lost 7 times
+  hi: keeping English for T03026 (quiz/lesson26_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T03027 (quiz/lesson26_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T03028 (quiz/lesson26_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T03029 (quiz/lesson26_q06) - Pāḷi markers lost 7 times
+  hi: keeping English for T03036 (quiz/lesson26_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T03037 (quiz/lesson26_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T03038 (quiz/lesson26_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T03039 (quiz/lesson26_q08) - Pāḷi markers lost 7 times
+  hi: keeping English for T03041 (quiz/lesson26_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T03042 (quiz/lesson26_q09) - Pāḷi markers lost 7 times
+hi: translating batch 68/68 (27 strings)
+  hi: 18 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 18 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 18 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 18 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 18 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 18 string(s) lost their Pāḷi markers; retrying them alone
+  hi: keeping English for T03043 (quiz/lesson26_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T03044 (quiz/lesson26_q09) - Pāḷi markers lost 7 times
+  hi: keeping English for T03046 (quiz/lesson26_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T03047 (quiz/lesson26_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T03048 (quiz/lesson26_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T03049 (quiz/lesson26_q10) - Pāḷi markers lost 7 times
+  hi: keeping English for T03056 (quiz/lesson26_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T03057 (quiz/lesson26_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T03058 (quiz/lesson26_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T03059 (quiz/lesson26_q12) - Pāḷi markers lost 7 times
+  hi: keeping English for T03061 (quiz/lesson26_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T03062 (quiz/lesson26_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T03063 (quiz/lesson26_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T03064 (quiz/lesson26_q13) - Pāḷi markers lost 7 times
+  hi: keeping English for T03066 (quiz/lesson26_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T03067 (quiz/lesson26_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T03068 (quiz/lesson26_q14) - Pāḷi markers lost 7 times
+  hi: keeping English for T03069 (quiz/lesson26_q14) - Pāḷi markers lost 7 times
+Catalog, key-set, quiz-shape, and string-aware syntax validation passed.
+Canonical English counts: meta=26, day=52, phase=151, quiz=297, word=415, example=417, pos=68, content=7, mind=447
 
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
-    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
-ValueError: protected Pāḷi marker PALI0003X was lost for T02027
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
-    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
-ValueError: protected Pāḷi marker PALI0003X was lost for T02027
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
-    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
-ValueError: protected Pāḷi marker PALI0003X was lost for T02027
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
-    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
-ValueError: protected Pāḷi marker PALI0003X was lost for T02027
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
-    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
-ValueError: protected Pāḷi marker PALI0003X was lost for T02027
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 983, in <module>
-    main()
-  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 972, in main
-    strings_by_locale[locale] = translations(items, locale)
-                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 401, in translations
-    result.update(translate_batch(locale, chunk))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 381, in translate_batch
-    return translate_batch(locale, batch, attempt + 1)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 381, in translate_batch
-    return translate_batch(locale, batch, attempt + 1)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 381, in translate_batch
-    return translate_batch(locale, batch, attempt + 1)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  [Previous line repeated 3 more times]
-  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
-    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
-ValueError: protected Pāḷi marker PALI0003X was lost for T02027
+Translation quality (per target locale):
+  loc    strings  untranslated      %   pali lost      %
+  si        3069           195   6.4%           0   0.0%
+  zh        3069           159   5.2%           0   0.0%
+  my        3069           180   5.9%           0   0.0%
+  hi        3069           869  28.3%           0   0.0%
