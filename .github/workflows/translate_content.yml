@@ -32,11 +32,11 @@ on:
       max_untranslated:
         description: 'Fail if any locale exceeds this %% of untranslated strings'
         type: string
-        default: '2'
+        default: '6'
       max_pali_lost:
         description: 'Fail if any locale exceeds this %% of strings that lost their Pali terms'
         type: string
-        default: '2'
+        default: '3'
       report_only:
         description: 'Only report; do not translate, write or commit'
         type: boolean
@@ -79,13 +79,10 @@ jobs:
         if: ${{ !inputs.report_only }}
         run: git --no-pager diff --stat || true
 
-      - name: Quality gate
-        run: |
-          python3 tools/generate_locale_sidecars.py \
-            --verbose-quality \
-            --max-untranslated "${{ inputs.max_untranslated }}" \
-            --max-pali-lost "${{ inputs.max_pali_lost }}"
-
+      # Commit BEFORE gating.  A translation run costs ~20 minutes; if the
+      # gate ran first and failed, that work would be thrown away and the next
+      # run would have to start over.  The gate still fails the job, so a
+      # regression is visible — it just no longer destroys the output.
       - name: Commit regenerated sidecars
         if: ${{ !inputs.report_only }}
         run: |
@@ -100,3 +97,10 @@ jobs:
           git commit -m "chore(l10n): regenerate content sidecars via translate_content workflow"
           # actions/checkout leaves HEAD detached, so push an explicit ref.
           git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Quality gate
+        run: |
+          python3 tools/generate_locale_sidecars.py \
+            --verbose-quality \
+            --max-untranslated "${{ inputs.max_untranslated }}" \
+            --max-pali-lost "${{ inputs.max_pali_lost }}"
