@@ -43,15 +43,72 @@ def raw_translate(locale: str, text: str) -> str:
     return html.unescape(translated)
 
 
+def batch_probe(locale: str, size: int) -> int:
+    """Send a realistic batch and report how many markers survive.
+
+    A single string sent on its own kept every marker, yet the full run lost
+    748 Hindi strings, so the loss is not a property of the string.  The
+    production path sends up to ~3.6 KB of <span>-wrapped items in one
+    request; this reproduces exactly that shape.
+    """
+    items = [i for i in g.catalog() if i.bucket == "quiz"][:size]
+    protected: dict[str, dict[str, str]] = {}
+    safe_by_token: dict[str, str] = {}
+    spans = []
+    for item in items:
+        safe, saved = g.protect_pali(item.source)
+        protected[item.token] = saved
+        safe_by_token[item.token] = safe
+        spans.append(f'<span id="{item.token}">{safe}</span>')
+    query = "\n".join(spans)
+    print(f"batch of {len(items)} items, {len(query)} chars, locale {locale}")
+
+    params = urllib.parse.urlencode({
+        "client": "gtx", "sl": "en", "tl": g.GOOGLE_LOCALES[locale],
+        "dt": "t", "q": query,
+    })
+    url = "https://translate.googleapis.com/translate_a/single?" + params
+    with urllib.request.urlopen(url, timeout=60) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+    translated = html.unescape("".join(p[0] for p in payload[0] if p and p[0]))
+
+    found = dict(re.findall(r'<span id="(T\d+)">(.*?)</span>', translated, re.S))
+    print(f"spans recovered: {len(found)}/{len(items)}")
+    lost = 0
+    for item in items:
+        raw = found.get(item.token)
+        marks = protected[item.token]
+        if raw is None:
+            print(f"  {item.token}: SPAN MISSING")
+            lost += 1
+            continue
+        bad = [m for m in marks if g._find_marker(raw, m) is None]
+        if bad:
+            lost += 1
+            print(f"  {item.token}: {len(bad)}/{len(marks)} markers lost")
+            print(f"      source: {item.source[:100]!r}")
+            print(f"      google: {raw[:140]!r}")
+    print(f"\nlost {lost}/{len(items)} items in a {size}-item batch")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--token", action="append", help="catalog token, repeatable")
     ap.add_argument("--locale", action="append", help="locale, repeatable")
+    ap.add_argument("--batch", type=int, default=0,
+                    help="instead of single strings, send a real N-item batch")
     args = ap.parse_args()
 
     tokens = args.token or DEFAULT_TOKENS
     locales = args.locale or ["hi"]
     by_token = {i.token: i for i in g.catalog()}
+
+    if args.batch:
+        for locale in locales:
+            batch_probe(locale, args.batch)
+            print()
+        return 0
 
     for token in tokens:
         item = by_token.get(token)
