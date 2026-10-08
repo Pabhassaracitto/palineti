@@ -28,9 +28,12 @@ on:
   # scope), so a push is used to start this run instead.  Remove this block
   # once the re-translation has landed.
   #
-  # Run history: 1st died on a lost Pali marker (T02027) after 13m; the fix in
-  # 69a185f makes that string keep its English source instead of aborting, so
-  # this run should reach the commit step.
+  # Run history:
+  #   1st (37806355578) died at 13m on a lost Pali marker -> aborting the run.
+  #   2nd (37807501845) reached translate() but every Hindi quiz string with
+  #       several Pali terms lost a marker and fell back to English: Hindi
+  #       ended at 28.3% untranslated, 753 strings kept English.
+  #   This run adds numeric recovery for transliterated markers.
   push:
     branches: [arena/d31ad54d-palineti]
     paths: ['.github/workflows/translate_content.yml']
