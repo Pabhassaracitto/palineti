@@ -35,13 +35,13 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonMetaTrans
   },
   'theme_03_lesson': {
     'si': LocalizedLearningText(
-      description: 'Ablative (-ā/-amhā/-asmā / -ehi), ජානමය (-assa / -ānaṃ) සහ 1 වන පුද්ගල අවසානය -āmi/-āma',
+      description: 'අබ්ලේටිව් (-ā/-amhā/-asmā / -ehi), ජානමය (-assa / -ānaṃ) සහ 1 වන පුද්ගල අවසානය -āmi/-āma',
     ),
     'zh': LocalizedLearningText(
       description: '夺格 (-ā/-amhā/-asmā / -ehi)、属格 (-assa / -ānaṃ) 和第一人称词尾 -āmi/-āma',
     ),
     'my': LocalizedLearningText(
-      description: 'Ablative (-ā/-amhā/-asmā / -ehi), Genitive (-assa / -ānaṃ) နှင့် 1st-person ends -āmi/-āma',
+      description: 'Ablative (-ā/-amhā/-asmā / -ehi), Genitive (-assa / -ānaṃ) နှင့် 1st-person endings -āmi/-āma',
     ),
     'hi': LocalizedLearningText(
       description: 'एब्लेटिव (-ā/-amhā/-asmā / -ehi), जेनिटिव (-assa / -ānaṃ) और प्रथम-व्यक्ति अंत -āmi/-āma',
@@ -111,7 +111,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonMetaTrans
       description: '-i-stem 名词的变格 (muni/aggi/atithi)；动名词 (-tvā / -tvāna / -tūna) 表示之前执行的操作。',
     ),
     'my': LocalizedLearningText(
-      description: '-i-stem နာမ်များ (muni/aggi/atithi); အရင်က လုပ်ဆောင်ခဲ့တဲ့ လုပ်ဆောင်ချက်ကို ဖော်ပြတဲ့ gerund (-tvā / -tvāna / -tūna)။',
+      description: '-i-stem နာမ်များ (muni/aggi/atithi); gerund (-tvā / -tvāna / -tūna) သည် ယခင်က လုပ်ဆောင်ခဲ့သည့် လုပ်ဆောင်ချက်ကို ဖော်ပြနေသည်။',
     ),
     'hi': LocalizedLearningText(
       description: 'Declension of -i-stem nouns (muni/aggi/atithi); the gerund (-tvā / -tvāna / -tūna) expressing an action performed before.',
@@ -150,7 +150,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonMetaTrans
       description: '-u/-ū-stem nouns declension (භික්ඛු/āyu/dhenu/vadhū); -tar නාම පද (pitu/mātu/bhātu/satthu); අත්‍යවශ්‍ය (Pañcamī) -atu/-antu/-a/-āhi/-atha/-āmi/-āma යන අවසානයන් සහිත; තහනම් අංශුව mā; yāva…tāva ඉදිකිරීම්.',
     ),
     'zh': LocalizedLearningText(
-      description: '-u/-ū-词干名词的变格 (bhikkhu/āyu/dhenu/vadhū)； -tar 名词 (pitu/mātu/bhātu/satthu)；祈使句 (Pañcamī)，词尾为 -atu/-antu/-a/-āhi/-atha/-āmi/-āma；禁止粒子mā； yāva…tāva 结构。',
+      description: '-u/-ū-词干名词的变格 (bhikkhu/āyu/dhenu/vadhū)； -tar 名词 (pitu/mātu/bhātu/satthu)；命令式 (Pañcamī)，词尾为 -atu/-antu/-a/-āhi/-atha/-āmi/-āma；禁止粒子mā； yāva…tāva 结构。',
     ),
     'my': LocalizedLearningText(
       description: '-u/-ū-stem နာမ်များ (bhikkhu/āyu/dhenu/vadhū) ၏ ဆုတ်ယုတ်မှု။ -tar နာမ်များ (pitu/mātu/bhātu/ Satthu); နိယာမ (Pañcamī) -atu/-antu/-a/-āhi/-atha/-āmi/-āma; တားမြစ်အမှုန် mā; yāva…tāva တည်ဆောက်မှု။',
@@ -231,7 +231,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonMetaTrans
   },
   'theme_17_lesson': {
     'si': LocalizedLearningText(
-      description: 'අට්ටා (ස්වයං) සහ rāja (රජු) හි අක්‍රමවත් පරිහානිය; -a, -ya, -ṇā/-nā, -o/-e මගින් සලකුණු කරන ලද සංයෝජන 7; නව ක්‍රියාපද saṃkiḷissati/vihaññati/visujjhati; අත්ත පිළිබඳ ධම්මපද උපුටනයක්.',
+      description: 'අටා (ස්වයං) සහ rāja (රජු) හි අක්‍රමවත් පරිහානිය; -a, -ya, -ṇā/-nā, -o/-e මගින් සලකුණු කරන ලද සංයෝජන 7; නව ක්‍රියාපද saṃkiḷissati/vihaññati/visujjhati; අත්ත පිළිබඳ ධම්මපද උපුටනයක්.',
     ),
     'zh': LocalizedLearningText(
       description: 'atta（自己）和 rāja（国王）的不规则变格；由 -a、-ya、-ṇā/-nā、-o/-e 标记的 7 个词形变化；新动词 saṃkiḷissati/vihaññati/visujjhati；关于《atta》的《法句经》引述。',
@@ -259,16 +259,16 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonMetaTrans
   },
   'theme_19_lesson': {
     'si': LocalizedLearningText(
-      description: '"go" (ගොනා) සහ "මන" (මනස) හි විශේෂ පරිහානිය — a→o රීතිය සහිත මනෝ-සමූහ නාම පද 16 සඳහා ආදර්ශ ආදර්ශය; -a/-ā, -ū, -o, -attha, -a/-aṃ, -amhā යන අන්තයන් සහිත අසම්පූර්ණ (Hīyattanī); ධම්මපද පදය "Manasā saṃvaro sādhu".',
+      description: '"go" (ගොනා) සහ "මන" (මනස) හි විශේෂ පරිහානිය — a→o රීතිය සහිත මනෝ-සමූහ නාම පද 16 සඳහා ආදර්ශ ආදර්ශය; අසම්පූර්ණ (Hīyattanī) අවසන් -a/-ā, -ū, -o, -attha, -a/-aṃ, -amhā; ධම්මපද පදය "Manasā saṃvaro sādhu".',
     ),
     'zh': LocalizedLearningText(
       description: '“go”（公牛）和“mana”（头脑）的特殊变格 — 具有 a→o 规则的 16 个马诺族名词的模型范式；不完美 (Hīyattanī)，结尾为 -a/-ā、-ū、-o、-attha、-a/-aṃ、-amhā；法句经偈 "Manasā saṃvaro sādhu"。',
     ),
     'my': LocalizedLearningText(
-      description: '"သွား" (နွား) နှင့် "မနာ" (စိတ်) — a→o စည်းကမ်းဖြင့် နာမ်အုပ်စု ၁၆ ခုအတွက် စံပြပါရာဒိုင်း။ အဆုံးမရှိသော မစုံလင်သော (Hīyattanī) -a/-ā, -ū, -o, -attha, -a/-aṃ, -amhā; ဓမ္မပဒကျမ်း "Manasā saṃvaro sādhu"။',
+      description: '"သွား" (နွား) နှင့် "မနာ" (စိတ်) — a→o စည်းကမ်းဖြင့် နာမ်အုပ်စု ၁၆ ခုအတွက် စံပြပါရာဒိုင်း။ အဆုံးမရှိသော မစုံလင်သော (Hīyattanī) -a/-ā, -ū, -o, -attha, -a/-aṃ, -amhā; ဓမ္မပဒကျမ်း "Manasā saṃvaro sādhu".',
     ),
     'hi': LocalizedLearningText(
-      description: '"गो" (बैल) और "मन" (मन) की विशेष घोषणा - ए→ओ नियम के साथ 16 मनो-समूह संज्ञाओं के लिए मॉडल प्रतिमान; अपूर्ण (Hīyattanī) अंत के साथ -a/-ā, -ū, -o, -attha, -a/-aṃ, -amhā; धम्मपद छंद "Manasā saṃvaro sādhu".',
+      description: '"गो" (बैल) और "मन" (मन) की विशेष घोषणा - ए→ओ नियम के साथ 16 मनो-समूह संज्ञाओं के लिए मॉडल प्रतिमान; अपूर्ण (Hīyattanī) अंत के साथ -a/-ā, -ū, -o, -attha, -a/-aṃ, -amhā; धम्मपद श्लोक "Manasā saṃvaro sādhu".',
     ),
   },
   'theme_20_compounds': {
@@ -290,7 +290,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonMetaTrans
       description: 'Pāḷi උපසර්ග 20 සහ ප්‍රතිනිර්මාණය කිරීමේ සහ ශබ්දය වෙනස් කිරීමේ නීති ඉගෙන ගන්න',
     ),
     'zh': LocalizedLearningText(
-      description: '了解20个Pāḷi前缀以及重叠和变音规则',
+      description: '学习20个Pāḷi前缀以及重叠和变音规则',
     ),
     'my': LocalizedLearningText(
       description: '20 Pāḷi ရှေ့ဆက်များနှင့် ထပ်တူထပ်ခြင်းနှင့် အသံပြောင်းလဲခြင်းဆိုင်ရာ စည်းမျဉ်းများကို လေ့လာပါ',
@@ -905,7 +905,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonDayTransl
   },
   'lesson20_day1': {
     'si': LocalizedLearningText(
-      title: 'දින 1: සංයෝග (Samāsa) — න්‍යාය සහ වචන මාලාව',
+      title: 'දිනය 1: සංයෝග (Samāsa) — න්‍යාය සහ වචන මාලාව',
     ),
     'zh': LocalizedLearningText(
       title: '第 1 天：化合物 (Samāsa) — 理论与词汇',
@@ -922,7 +922,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonDayTransl
       title: 'දෙවන දිනය: මනස ක්‍රීඩාව සහ ප්‍රශ්නාවලිය පුහුණුවීම් — සංයෝග (Samāsa)',
     ),
     'zh': LocalizedLearningText(
-      title: '第 2 天：智力游戏和测验练习 - 化合物 (Samāsa)',
+      title: '第 2 天：智力游戏和测验练习 - 复合词 (Samāsa)',
     ),
     'my': LocalizedLearningText(
       title: 'နေ့ 2- Mind Game နှင့် Quiz Practice — Compounds (Samāsa)',
@@ -1073,7 +1073,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonDayTransl
   },
   'lesson26_day1': {
     'si': LocalizedLearningText(
-      title: 'දින 1: Passive Voice + ක්‍රියා පද "hū"/"asa"',
+      title: 'දින 1: Passive Voice + the Verbs "hū"/"asa"',
     ),
     'zh': LocalizedLearningText(
       title: '第一天：被动语态 + 动词 "hū"/"asa"',
@@ -1087,7 +1087,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonDayTransl
   },
   'lesson26_day2': {
     'si': LocalizedLearningText(
-      title: 'දින 2: Passive Voice + hū/asa පුහුණුවීම්',
+      title: 'දෙවන දිනය: Passive Voice + hū/asa පුහුණුවීම්',
     ),
     'zh': LocalizedLearningText(
       title: '第 2 天：被动语态 + hū/asa 练习',
@@ -1285,7 +1285,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
   },
   'lesson02_phase6': {
     'si': LocalizedLearningText(
-      title: '🎧 ප්‍රශ්නාවලිය: Pāḷi වාක්‍ය පරිවර්තනය (ව්‍යායාමය 2)',
+      title: '🎧 ප්‍රශ්නාවලිය: Pāḷi වාක්‍ය පරිවර්තනය (ව්‍යායාම 2)',
     ),
     'zh': LocalizedLearningText(
       title: '🎧 测验：翻译 Pāḷi 句子（练习 2）',
@@ -1411,13 +1411,13 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
   },
   'lesson04_phase3': {
     'si': LocalizedLearningText(
-      title: '🎧 ප්‍රශ්නාවලිය: ස්ථානය, වාචික, Saddhiṃ සහ Sandhi',
+      title: '🎧 ප්‍රශ්නාවලිය: ස්ථානීය, වාචික, Saddhiṃ සහ Sandhi',
     ),
     'zh': LocalizedLearningText(
       title: '🎧 测验：方格、呼格、Saddhiṃ 和连读',
     ),
     'my': LocalizedLearningText(
-      title: '🎧 စာမေးပွဲ- နေရာဒေသ၊ တက်ကြွမှု၊ Saddhiṃ နှင့် Sandhi',
+      title: '🎧 စာမေးပွဲ- နေရာဒေသ၊ တက်ကြွမှု၊ Saddhiṃ & Sandhi',
     ),
     'hi': LocalizedLearningText(
       title: '🎧 प्रश्नोत्तरी: स्थानिक, वाचिक, Saddhiṃ और संधि',
@@ -1453,13 +1453,13 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
   },
   'lesson04_phase6': {
     'si': LocalizedLearningText(
-      title: '🎧 ප්‍රශ්නාවලිය: Pāḷi වාක්‍ය පරිවර්තනය කිරීම (ව්‍යායාමය 4)',
+      title: '🎧 ප්‍රශ්නාවලිය: Pāḷi වාක්‍ය පරිවර්තනය (ව්‍යායාම 4)',
     ),
     'zh': LocalizedLearningText(
       title: '🎧 测验：翻译 Pāḷi 句子（练习 4）',
     ),
     'my': LocalizedLearningText(
-      title: '🎧 စာမေးပွဲ- Pāḷi ဝါကျများကို ဘာသာပြန်ခြင်း (လေ့ကျင့်ခန်း 4)',
+      title: '🎧 Quiz- Pāḷi ဝါကျများကို ဘာသာပြန်ခြင်း (လေ့ကျင့်ခန်း 4)',
     ),
     'hi': LocalizedLearningText(
       title: '🎧 प्रश्नोत्तरी: Pāḷi वाक्यों का अनुवाद (अभ्यास 4)',
@@ -1739,7 +1739,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
       title: '🎧 测验：翻译 Pāḷi 句子（练习 8）',
     ),
     'my': LocalizedLearningText(
-      title: '🎧 စာမေးပွဲ- Pāḷi ဝါကျများကို ဘာသာပြန်ခြင်း (လေ့ကျင့်ခန်း 8)',
+      title: '🎧 Quiz- Pāḷi ဝါကျများကို ဘာသာပြန်ခြင်း (လေ့ကျင့်ခန်း 8)',
     ),
     'hi': LocalizedLearningText(
       title: '🎧 प्रश्नोत्तरी: Pāḷi वाक्यों का अनुवाद (अभ्यास 8)',
@@ -1929,13 +1929,13 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
   },
   'lesson11_phase6': {
     'si': LocalizedLearningText(
-      title: '🎧 ප්‍රශ්නාවලිය: Pāḷi වාක්‍ය පරිවර්තනය කිරීම (ව්‍යායාමය 11)',
+      title: '🎧 ප්‍රශ්නාවලිය: Pāḷi වාක්‍ය පරිවර්තනය (ව්‍යායාම 11)',
     ),
     'zh': LocalizedLearningText(
       title: '🎧 测验：翻译 Pāḷi 句子（练习 11）',
     ),
     'my': LocalizedLearningText(
-      title: '🎧 Quiz- Pāḷi ဝါကျများကို ဘာသာပြန်ခြင်း (လေ့ကျင့်ခန်း 11)',
+      title: '🎧 စာမေးပွဲ- Pāḷi စာကြောင်းများကို ဘာသာပြန်ခြင်း (လေ့ကျင့်ခန်း 11)',
     ),
     'hi': LocalizedLearningText(
       title: '🎧 प्रश्नोत्तरी: Pāḷi वाक्यों का अनुवाद (अभ्यास 11)',
@@ -2265,13 +2265,13 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
   },
   'lesson16_phase2': {
     'si': LocalizedLearningText(
-      title: '1 සිට koṭi දක්වා ගණන් කිරීම + නව වචන මාලාව',
+      title: '1 සිට koṭi + නව වචන මාලාව දක්වා ගණන් කිරීම',
     ),
     'zh': LocalizedLearningText(
       title: '从 1 数到 koṭi + 新词汇',
     ),
     'my': LocalizedLearningText(
-      title: '1 မှ koṭi အထိ ရေတွက်ခြင်း + ဝေါဟာရအသစ်',
+      title: '1 မှ koṭi မှ ရေတွက်ခြင်း + ဝေါဟာရအသစ်',
     ),
     'hi': LocalizedLearningText(
       title: '1 से koṭi तक गिनती + नई शब्दावली',
@@ -2383,7 +2383,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
       title: '🎧 测验：翻译 Pāḷi 句子（练习 17）',
     ),
     'my': LocalizedLearningText(
-      title: '🎧 စာမေးပွဲ- Pāḷi ဝါကျများကို ဘာသာပြန်ခြင်း (လေ့ကျင့်ခန်း 17)',
+      title: '🎧 စာမေးပွဲ- Pāḷi စာကြောင်းများကို ဘာသာပြန်ခြင်း (လေ့ကျင့်ခန်း 17)',
     ),
     'hi': LocalizedLearningText(
       title: '🎧 प्रश्नोत्तरी: Pāḷi वाक्यों का अनुवाद (अभ्यास 17)',
@@ -2517,13 +2517,13 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
   },
   'lesson19_phase6': {
     'si': LocalizedLearningText(
-      title: '🎧 ප්‍රශ්නාවලිය: Pāḷi වාක්‍ය පරිවර්තනය (ව්‍යායාමය 19)',
+      title: '🎧 ප්‍රශ්නාවලිය: Pāḷi වාක්‍ය පරිවර්තනය (ව්‍යායාම 19)',
     ),
     'zh': LocalizedLearningText(
       title: '🎧 测验：翻译 Pāḷi 句子（练习 19）',
     ),
     'my': LocalizedLearningText(
-      title: '🎧 Quiz- Pāḷi ဝါကျများကို ဘာသာပြန်ခြင်း (လေ့ကျင့်ခန်း 19)',
+      title: '🎧 Quiz- Pāḷi စာကြောင်းများကို ဘာသာပြန်ခြင်း (လေ့ကျင့်ခန်း 19)',
     ),
     'hi': LocalizedLearningText(
       title: '🎧 प्रश्नोत्तरी: Pāḷi वाक्यों का अनुवाद (अभ्यास 19)',
@@ -3108,7 +3108,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
       title: '🧠 Mind Game: Instrumental & Karaṇa (නියෝජිත)',
     ),
     'zh': LocalizedLearningText(
-      title: '🧠智力游戏：器乐和 Karaṇa（特工）',
+      title: '🧠智力游戏：器乐和 Karaṇa（代理）',
     ),
     'my': LocalizedLearningText(
       title: '🧠 စိတ်ဂိမ်း- Instrumental & Karaṇa (Agent)',
@@ -3266,7 +3266,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '"Sūdā pacanti"应该如何翻译？',
+      questionText: '"Sūdā pacanti" 应该如何翻译？',
       options: [
         'A.厨师正在做饭',
         'B.厨师正在洗衣服',
@@ -3313,7 +3313,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"Dārakā Buddhaṃ vandanti" တွင်၊ "Buddhaṃ" ၏ အခန်းကဏ္ဍကား အဘယ်နည်း။',
+      questionText: '"Dārakā Buddhaṃ vandanti" တွင်၊ "Buddhaṃ" ၏အခန်းကဏ္ဍကား အဘယ်နည်း။',
       options: [
         'A Singular subject — မြတ်စွာဘုရားကို အလေးပြုသည်',
         'B။ အများကိန်း ဘာသာရပ် — ဗုဒ္ဓဘုရားများကို အလေးပြုကြသည်',
@@ -3436,7 +3436,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'hi': LocalizedQuizQuestionText(
-      questionText: 'Pāḷi का कौन सा रूप "gāma" (गांव) का नामवाचक बहुवचन है?',
+      questionText: 'कौन सा Pāḷi रूप "gāma" (गांव) का नामवाचक बहुवचन है?',
       options: [
         'A. gāmo',
         'B. gāmaṃ',
@@ -3488,7 +3488,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '"ghaṭaṃ" (වාක්‍ය 39) සහ "ghaṭe" (වාක්‍ය 36) වෙනස් වන්නේ කෙසේද?',
       options: [
         'ඒ. ghaṭaṃ = නාමික ඒකවචනය | ghaṭe = නාමික බහු වචන',
-        'බී. ghaṭaṃ = චෝදනාමය ඒකවචනය (එක් බඳුනක්) | ghaṭe = චෝදනා බහු වචන (බොහෝ භාජන)',
+        'බී. ghaṭaṃ = චෝදනා ඒකීය (එක් බඳුනක්) | ghaṭe = චෝදනා බහු වචන (බොහෝ භාජන)',
         'සී. ghaṭaṃ = චෝදනා බහු වචන | ghaṭe = චෝදනා ඒකීය',
         'ඩී. දෙකම චෝදනා ඒකීය; වෙනසක් නැත',
       ],
@@ -3506,7 +3506,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '"ghaṭaṃ" (စာကြောင်း 39) နှင့် "ghaṭe" (စာကြောင်း 36) မည်ကဲ့သို့ ကွာခြားသနည်း။',
       options: [
         'A ghaṭaṃ = အမည်ခံ အနည်းကိန်း | ghaṭe = အမည်ခံ အများကိန်း',
-        'B။ ghaṭaṃ = ဧကဝုစ်ကိန်း (အိုးတစ်လုံး) | ghaṭe = စွပ်စွဲသော အများကိန်း (များစွာသောအိုး)',
+        'B။ ghaṭaṃ = ကမ္မုကကိန်း (အိုးတစ်လုံး) | ghaṭe = စွပ်စွဲသော အများကိန်း (အိုးများစွာ)',
         'C။ ghaṭaṃ = စွပ်စွဲသော အများကိန်း | ghaṭe = စွပ်စွဲသော အနည်းကိန်း',
         'D။ နှစ်ခုစလုံးသည် accusative singular; ကွာခြားမှု မရှိပါ။',
       ],
@@ -3534,7 +3534,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'zh': LocalizedQuizQuestionText(
       questionText: '填空："Sūdo ___ pacati."（大米 — 宾格单数）',
       options: [
-        'A.小野\n<span id="T01627">B. PALI0000X',
+        'A.小野\n<span id="T01627">B. PALI01094X',
         'B. odanā',
         'C. odanaṃ',
         'D.奥丹\n<span id="T01630">第一季度。名词“nara”的器乐单数形式是什么？',
@@ -3693,7 +3693,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"Tvaṃ rathena gacchasi." သည်-',
+      questionText: '"Tvaṃ rathena gacchasi." ဘာသာပြန်သည်-',
       options: [
         'ရထားတစ်စီးပေးသည်။',
         'ရထားဖြင့်သွားပါ။',
@@ -3769,7 +3769,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'Q6။ ဝါကျတွင် "Sunakhassa āhāraṃ desi." တွင် မည်သည့်ကိစ္စတွင် "Sunakhassa" ဖြစ်ပါသနည်း။',
+      questionText: 'Q6။ ဝါကျတွင် "Sunakhassa āhāraṃ desi." တွင် မည်သည့်ကိစ္စမှာ "Sunakhassa" ဖြစ်ပါသနည်း။',
       options: [
         'Dative အနည်းကိန်း',
         'တူရိယာ အနည်းကိန်း',
@@ -4263,7 +4263,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"Ahaṃ pacāmi." သည်-',
+      questionText: '"Ahaṃ pacāmi." မှ ဘာသာပြန်သည်-',
       options: [
         'ကျွန်ုပ်တို့ချက်ပြုတ်သည်။',
         'ချက်ပြုတ်နေတယ်၊ ဟင်းချက်နေတယ်။',
@@ -4283,7 +4283,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson03_q07': {
     'si': LocalizedQuizQuestionText(
-      questionText: 'Q7. "Ahaṃ ācariyasmā Dhammaṃ suṇāmi." වාක්‍යයේ, "ācariyasmā" යනු කුමන අවස්ථාවෙහිද?',
+      questionText: 'Q7. "Ahaṃ ācariyasmā Dhammaṃ suṇāmi." වාක්‍යයේ, "ācariyasmā" කුමන අවස්ථාවෙහිද?',
       options: [
         'උපකරණ ඒකීය',
         'අබ්ලේටිව් ඒකවචනය',
@@ -4301,7 +4301,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'Q7။ ဝါကျတွင် "Ahaṃ ācariyasmā Dhammaṃ suṇāmi." တွင် မည်သည့်ကိစ္စတွင် "ācariyasmā" ဖြစ်သနည်း။',
+      questionText: 'Q7။ ဝါကျတွင် "Ahaṃ ācariyasmā Dhammaṃ suṇāmi." တွင် မည်သည့်ကိစ္စသည် "ācariyasmā" ဖြစ်သနည်း။',
       options: [
         'တူရိယာ အနည်းကိန်း',
         'Ablative singular',
@@ -4728,7 +4728,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'hi': LocalizedQuizQuestionText(
-      questionText: '"Saddhiṃ" (with) का उपयोग किस केस के साथ किया जाना चाहिए?',
+      questionText: '"Saddhiṃ" (के साथ) का उपयोग किस केस के साथ किया जाना चाहिए?',
       options: [
         'नामांक',
         'अभियोगात्मक',
@@ -5061,7 +5061,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၁။ Nominative (Nom.) / Vocative (Voc.) / Accusative (Acc.) for neuter "-a" နာမ် (ဥပမာ phala, bīja, puppha) ၏ အများကိန်းပုံစံကား အဘယ်နည်း။',
+      questionText: '၁။ Nominative (Nom.) / Vocative (Voc.) / Accusative (Acc.) for neuter "-a" noun (e.g. phala, bīja, puppha) ၏ အများကိန်းပုံစံကား အဘယ်နည်း။',
       options: [
         'A -ā / -ā / -e (ယောက်ျားနှင့် ထပ်တူ)',
         'B။ -e / -e / -āni',
@@ -5099,7 +5099,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၂။ Pāḷi ဝေါဟာရဇယားရှိ Sattamī (7 ခုမြောက်ကိစ္စ) သည် အောက်တွင် မည်သည့်ကိစ္စနှင့် ကိုက်ညီသနည်း။',
+      questionText: '၂။ Pāḷi ဝေါဟာရဇယားရှိ Sattamī (ခုမြောက်ကိစ္စ) သည် အောက်ဖော်ပြပါကိစ္စရပ်နှင့် သက်ဆိုင်ပါသည်။',
       options: [
         'A အသံထွက် — ခေါ်ဆိုရန်အတွက် အသုံးပြုသည်။',
         'B။ တည်နေရာ — တည်နေရာ/အချိန်ကို ညွှန်ပြသည် ("ဝင်၊ ဖွင့်၊ တွင်")။',
@@ -5166,7 +5166,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '4.为什么"mukhaṃ + ca"通过变位规则变成"mukhañca"？',
+      questionText: '4.为什么"mukhaṃ + ca"通过连写规则变成"mukhañca"？',
       options: [
         'A. Niggahita (ṃ) 总是在辅音之前变为“y”。',
         'B.在腭辅音组 (c, ch, j, jh) 之前，niggahita (ṃ) 变为“ñ”（腭鼻音），之后两个单词连为一体。',
@@ -5204,7 +5204,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '5. Karaṇa 是哪个机箱的 Pāḷi 名称？它的单数/复数结尾是什么？',
+      questionText: '5. Karaṇa是哪个机箱的Pāḷi名称？它的单数/复数结尾是什么？',
       options: [
         'A.主格 — 词尾 -o / -ā。',
         'B.器乐 — 词尾 -ena (sg.) / -ehi, -ebhi (pl.)；意思是“通过、通过”。',
@@ -5217,7 +5217,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A အမည်စာရင်း—အဆုံးသတ်-o/-ā။',
         'B။ အတီးအမှုတ် — အဆုံးများ -ena (sg.) / -ehi, -ebhi (pl.); "by, with, through" လို့ အဓိပ္ပာယ်ရပါတယ်။',
-        'C။ ရှေးဦးပုံပြင် — အဆုံး-āya / -ānaṃ.',
+        'C။ ရှေးဦးပုံပြင် — အဆုံးသတ်-āya / -ānaṃ။',
         'D။ အသံထွက် — အဆုံး-a, -ā/-ā.',
       ],
     ),
@@ -5233,7 +5233,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson06_q01_01': {
     'si': LocalizedQuizQuestionText(
-      questionText: '1. ස්ත්‍රී "-ā" නාම පදයක (උදා: kaññā) Vocative ඒකවචනය කුමන අවසානයක් ගනීද? ඇමතීමට භාවිතා කරන පෝරමය කුමක්ද: "අනේ කන්‍යාව!"?',
+      questionText: '1. ස්ත්‍රී "-ā" නාම පදයක (උදා. kaññā) Vocative ඒකවචනය කුමන අවසානයක් ගනීද? ඇමතීමට භාවිතා කරන පෝරමය කුමක්ද: "අනේ කන්‍යාව!"?',
       options: [
         'ඒ. kaññā (අවසන් -ā)',
         'බී. kaññe (අවසන් -e)',
@@ -5251,9 +5251,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၁။ ဣတ္ထိ "-ā" နာမ် (ဥပမာ kaññā) ၏ Vocative singular သည် အဘယ်အရာကို အဆုံးသတ်သနည်း။ လိပ်စာ- "အို အပျို!"\n<span id="T01851">A kaññā (အဆုံး-ā)',
+      questionText: '၁။ ဣတ္ထိ "-ā" နာမ် (ဥပမာ kaññā) ၏ Vocative singular သည် အဘယ်အရာကို အဆုံးသတ်သနည်း။ လိပ်စာ- "အို အပျို!"\n<span id="T01851">A PALI01973X (အဆုံး-ā)',
       options: [
-        'A kaññā (အဆုံး-ā)',
+        'A kaññā (အဆုံးသတ်-ā)',
         'B။ kaññe (အဆုံးသတ်-e)',
         'C။ kaññaṃ (အဆုံးသတ်-aṃ)',
         'D။ kaññāya (အဆုံး-āya)',
@@ -5322,16 +5322,16 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A. “我已经去学校了”——使用过去分词。',
         'B. “我明天要去学校”——使用将来时。',
-        'C. “我想去学校”——"icchāmi"（想要，第一人称）与不定式 "gantuṃ"（去）一起使用来表达愿望。',
+        'C. “I WANT to go to school”——"icchāmi"（想要，第一人称）与不定式 "gantuṃ"（去）一起使用来表达愿望。',
         'D. “我要去上学”——使用双连续现在时。',
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၃။ "Ahaṃ pāṭhasālaṃ gantuṃ icchāmi" ဝါကျက ဘာကို ဆိုလိုတာလဲ။ မည်သည့်သဒ္ဒါဖွဲ့စည်းပုံကို အသုံးပြုသနည်း။',
+      questionText: '၃။ "Ahaṃ pāṭhasālaṃ gantuṃ icchāmi" ဟူသောဝါကျက ဘာကိုဆိုလိုသနည်း။ မည်သည့်သဒ္ဒါဖွဲ့စည်းပုံကို အသုံးပြုသနည်း။',
       options: [
         'A "ကျွန်တော် ကျောင်းတက်ပြီးပြီ" — ယခင်ပါဝင်မှုကို အသုံးပြုသည်။',
         'B။ "မနက်ဖြန် ကျောင်းတက်မယ်" — အနာဂတ်ကာလကို အသုံးပြုသည်။',
-        'C။ "ကျောင်းသွားချင်တယ်" — "icchāmi" (လိုချင်သည်၊ 1st person sg.) အား ဆန္ဒထုတ်ဖော်ရန်အတွက် INFINITIVE "gantuṃ" (သွားရန်) နှင့် အသုံးပြုပါသည်။',
+        'C။ "ကျောင်းသွားချင်တယ်" — "icchāmi" (လိုချင်သည်၊ 1st person sg.) ကို ဆန္ဒထုတ်ဖော်ရန်အတွက် INFINITIVE "gantuṃ" (သွားရန်) နှင့် အသုံးပြုပါသည်။',
         'D။ "ကျောင်းသွားတော့မယ်" — နှစ်ထပ်လက်ဆောင်ကို အသုံးပြုသည်။',
       ],
     ),
@@ -5360,12 +5360,12 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A. "mātā"（母亲）是男性。',
         'B. "bhariyā"（妻子）是中性。',
-        'C. "sā" 是阳性（m.），意思是“狗（男）”。',
+        'C. "sā" 是阳性（m.），意思是“狗（雄性）”。',
         'D.所有“-ā”名词都是阴性名词，无一例外。',
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၄။ "-ā" ဖြင့်အဆုံးသတ်သော Pāḷi နာမ်များအားလုံးသည် ဣတ္ထိယ၊ ၎င်း၏ လိင်နှင့် အဓိပ္ပါယ်မှာ အဘယ်နည်း။',
+      questionText: '၄။ "-ā" ဖြင့်အဆုံးသတ်သော Pāḷi နာမ်အားလုံးသည် ဣတ္ထိယ၊ မည်သည့်နာမ်မှလွဲ၍ ၎င်း၏ လိင်နှင့် အဓိပ္ပါယ်မှာ အဘယ်နည်း။',
       options: [
         'A "mātā" (အမေ) သည် ယောက်ျားပီသသည်။',
         'B။ "bhariyā" (ဇနီး) သည် ထက်မြက်သည်။',
@@ -5403,7 +5403,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၅။ အဆုံးတွင် Locative (Sattamī) ဣတ္ထိ "-ā" နာမ်၏ အများကိန်းသည် အဘယ်နည်း။ ဥပမာ၊ "မြစ်များ" ဟူသည် အဘယ်နည်း။',
+      questionText: '၅။ အဆုံးတွင် Locative (Sattamī) သည် ဣတ္ထိ "-ā" နာမ်၏ အများကိန်းဖြစ်သည်။ ဥပမာ၊ "မြစ်များ" ဟူသည် အဘယ်နည်း။',
       options: [
         'A -esu (naresu၊ ယောက်ျားကဲ့သို့)',
         'B။ -āsu (gaṅgāsu)',
@@ -5470,7 +5470,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '第二季度。 Ajjatanī 时态中第一人称复数结尾的动词是什么？',
+      questionText: '第二季度。 Ajjatanī 时态中第一人称复数的动词结尾是什么？',
       options: [
         '-imhā',
         '-iṃ',
@@ -5555,7 +5555,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"Hīyo samaṇo dhammaṃ desesi." သည်-',
+      questionText: '"Hīyo samaṇo dhammaṃ desesi." ဟု ဘာသာပြန်သည်-',
       options: [
         'ယနေ့ ဆရာတော်သည် တရားဟောသည်။',
         'မနက်ဖြန် ဆရာတော်သည် တရားဟောပါမည်။',
@@ -5669,7 +5669,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'sandhi စည်းမျဉ်းအရ "pāto + eva" ကို အောက်ပါအတိုင်း ရေးထားသည်-',
+      questionText: 'Sandhi စည်းမျဉ်းအရ "pāto + eva" ကို အောက်ပါအတိုင်း ရေးထားသည်-',
       options: [
         'pātoeva',
         'pāteva',
@@ -6163,7 +6163,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"Kapayo rukkhaṃ āruhitvā phalāni khādiṃsu." သည်-',
+      questionText: '"Kapayo rukkhaṃ āruhitvā phalāni khādiṃsu." ဘာသာပြန်သည်-',
       options: [
         'မျောက်များသည် သစ်ပင်ပေါ်သို့တက်ကာ အသီးအနှံများကို စားကြသည်။',
         'မျောက်များသည် သစ်ပင်ပေါ်တက်ကာ အသီးအနှံများကို စားကြလိမ့်မည်။',
@@ -6429,7 +6429,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၁။ အဆုံးတွင် မည်သည့်အဆုံးတွင် Locative (Sattamī) သည် FEMININE "-i" နာမ်၏ အများကိန်း (ဥပမာ bhūmi၊ aṭavi၊ ratti) ရှိပါသလား။',
+      questionText: '၁။ Locative (Sattamī) သည် FEMININE "-i" နာမ်၏ အများကိန်း (ဥပမာ bhūmi၊ aṭavi၊ ratti) တွင် အဘယ်အရာရှိသနည်း။',
       options: [
         'A -īsu (bhūmīsu၊ aṭavīsu၊ rattīsu)',
         'B။ -esu (ယောက်ျား "-a" ကဲ့သို့)',
@@ -6575,7 +6575,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '5.关于阴性“-i”变格 (bhūmi) 和阳性“-i”（例如 muni、kapi、aggi）之间的主要差异，哪项陈述是正确的？',
       options: [
         'A.它们完全相同，仅性别不同。',
-        'B.女性“-i”有斜单数词尾 "-iyā" (bhūmiyā)，器乐/夺格/与格/属格共享，而男性“-i”有其自己的词尾：-inā (Inst.)、-issa (Gen./Dat.)、-ismā (Abl.)、-ismiṃ （地点）。',
+        'B.阴性“-i”具有斜单数词尾 "-iyā" (bhūmiyā)，器乐/夺格/与格/属格共享，而阳性“-i”具有其自己的词尾：-inā (Inst.)、-issa (Gen./Dat.)、-ismā (Abl.)、-ismiṃ （地点）。',
         'C.两者都有主格复数“-āyo”。',
         'D.阴性词“-i”没有宾格单数，而阳性词有一个。',
       ],
@@ -6639,21 +6639,21 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson10_q01_02': {
     'si': LocalizedQuizQuestionText(
-      questionText: '2. ස්ත්‍රී "-ī" නාම පදවල (උදා. nārī, bhaginī, mahesī) පරිහානිය පිළිබඳ නිවැරදි ප්‍රකාශය කුමක්ද?',
+      questionText: '2. ස්ත්‍රී "-ī" නාම පදවල පරිහානිය පිළිබඳ නිවැරදි ප්‍රකාශය කුමක්ද (උදා. nārī, bhaginī, mahesī)?',
       options: [
         'ඒ. එය සෑම අවස්ථාවකදීම ස්ත්‍රී "-i" (bhūmi) වෙතින් වෙනස් වේ.',
         'බී. එහි ඇත්තේ බහු වචන පමණි, ඒකවචන නැත.',
-        'සී. මූලික වශයෙන් ස්ත්‍රී "-i" (bhūmi) පද්ධතියට සමාන වේ, "-ī" (දිගු) භාවිතා කරන්නේ නාමික ඒකවචනයෙන් සහ සහායක අවසානයන් -i/-iṃ voc./ac. ඒකීය; ආනත "-iyā", බහු වචන "-iyo" / "-īhi" / "-īnaṃ" / "-īsu".',
+        'සී. මූලික වශයෙන් ස්ත්‍රී "-i" (bhūmi) පද්ධතියට සමාන වේ, "-ī" (දිගු) භාවිතා කරන්නේ නාමික ඒකවචනයෙන් සහ සහායක අවසානයන් -i/-iṃ සඳහා voc./ac. ඒකීය; ආනත "-iyā", බහු වචන "-iyo" / "-īhi" / "-īnaṃ" / "-īsu".',
         'ඩී. පිරිමි "-ī" (sāmī) ට සමාන වේ.',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '2.关于阴性“-ī”名词的词尾变化（例如 nārī、bhaginī、mahesī），哪种说法是正确的？',
+      questionText: '2. Which statement is CORRECT about the declension of FEMININE "-ī" nouns (e.g. nārī, bhaginī, mahesī)?',
       options: [
-        'A.在任何情况下，它都不同于阴性“-i”(bhūmi)。',
+        'A. It differs from feminine "-i" (bhūmi) in every case.',
         'B.它只有复数，没有单数。',
-        'C.基本上与阴性“-i”（bhūmi）系统相同，仅在主格单数中使用“-ī”（长），辅助词尾-i/-iṃ表示voc./acc。单一的；斜 "-iyā"，复数“-iyo”/“-īhi”/"-īnaṃ"/“-īsu”。',
-        'D.与阳性“-ī”相同 (sāmī)。',
+        'C.基本上与阴性“-i”（bhūmi）系统相同，仅在主格单数中使用“-ī”（长），辅助词尾-i/-iṃ表示voc./acc。单一的； oblique "-iyā", plural "-iyo" / "-īhi" / "-īnaṃ" / "-īsu".',
+        'D. Identical to masculine "-ī" (sāmī).',
       ],
     ),
     'my': LocalizedQuizQuestionText(
@@ -6661,7 +6661,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A ကိစ္စတိုင်းတွင် အမျိုးသမီး "-i" (bhūmi) နှင့် ကွဲပြားသည်။',
         'B။ ၎င်းတွင် အများကိန်းတစ်ခုသာရှိပြီး အနည်းကိန်းမရှိပါ။',
-        'C။ အခြေခံအားဖြင့် "-i" (bhūmi) စနစ်ကဲ့သို့ပင်၊ "-ī" (long) ကို အမည်ခံ အနည်းကိန်းနှင့် အရန်အဆုံးများ -i/-iṃ အတွက် voc./acc အတွက်သာ "-ī" (long) ကို အသုံးပြုထားသည်။ အနည်းကိန်း ထောင့်ချိုး "-iyā"၊ အများကိန်း "-iyo" / "-īhi" / "-īnaṃ" / "-īsu"။',
+        'C။ အခြေခံအားဖြင့် "-i" (bhūmi) စနစ်ဖြင့် "-ī" (ရှည်) ကို အမည်ခံ အနည်းကိန်းနှင့် အရန်အဆုံးများ -i/-iṃ အတွက် အမည်ခံ အနည်းကိန်းတွင်သာ "-ī" (long) ကို အသုံးပြု၍ အခြေခံအားဖြင့် တူသည်။ အနည်းကိန်း ထောင့်ချိုး "-iyā"၊ အများကိန်း "-iyo" / "-īhi" / "-īnaṃ" / "-īsu".',
         'D။ ယောက်ျား "-ī" (sāmī) နှင့် ဆင်တူသည်။',
       ],
     ),
@@ -6677,25 +6677,25 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson10_q01_03': {
     'si': LocalizedQuizQuestionText(
-      questionText: '3. පිරිමි "-aka" (උදා. upāsaka → ???, dāraka → dārikā) වෙතින් ස්ත්‍රී නාම පදයක් සාදන විට, කුමන රීතිය යෙදේ ද?',
+      questionText: '3. පුරුෂ "-aka" (උදා. upāsaka → ???, dāraka → dārikā) වෙතින් ස්ත්‍රී නාම පදයක් සාදන විට කුමන රීතිය යෙදේ ද?',
       options: [
         'ඒ. එය නොවෙනස්ව තබා "-ī" එකතු කරන්න: upāsaka→upāsakī.',
         'බී. -ka ට පෙර ස්වරය "-i" ලෙස වෙනස් වේ, පසුව "-ā" එකතු වේ: upāsaka→upāsikā, dāraka→dārikā.',
-        'සී. "-nī" එකතු කරන්න: upāsaka→upāsakanī.',
-        'ඩී. "-ānī" එකතු කරන්න: upāsaka→upāsakānī.',
+        'සී. "-nī": upāsaka→upāsakanī එක් කරන්න.',
+        'ඩී. "-ānī": upāsaka→upāsakānī එක් කරන්න.',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '3.当由阳性“-aka”形成阴性名词时（例如 upāsaka → ???、dāraka → dārikā），应用哪条规则？',
+      questionText: '3. When forming a FEMININE noun from a masculine "-aka" (e.g. upāsaka → ???, dāraka → dārikā), which rule is applied?',
       options: [
-        'A.保持不变，添加“-ī”：upāsaka→upāsakī。',
-        'B. -ka前的元音变为“-i”，然后添加“-ā”：upāsaka→upāsikā，dāraka→dārikā。',
+        'A. Keep it unchanged and add "-ī": upāsaka→upāsakī.',
+        'B. The vowel before -ka changes to "-i", then "-ā" is added: upāsaka→upāsikā, dāraka→dārikā.',
         'C.添加"-nī"：upāsaka→upāsakanī。',
         'D.添加"-ānī"：upāsaka→upāsakānī。',
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၃။ ယောက်ျား "-aka" (ဥပမာ upāsaka → ???၊ dāraka → dārikā) ၊ ယောက်ျား "-aka" မှ FEMININE နာမ်ကို ဖွဲ့စည်းသည့်အခါ မည်သည့်စည်းမျဉ်းကို အသုံးပြုသနည်း။',
+      questionText: '၃။ ယောက်ျား "-aka" (ဥပမာ upāsaka → ???၊ dāraka → dārikā) ၊ ယောက်ျား "-aka" မှ FEMININE နာမ်ကိုဖွဲ့စည်းသောအခါ မည်သည့်စည်းမျဉ်းကို ကျင့်သုံးသနည်း။',
       options: [
         'A ၎င်းကို မပြောင်းလဲဘဲ သိမ်းထားပြီး "-ī"- upāsaka→upāsakī။',
         'B။ -ka မတိုင်မီ သရကို "-i" သို့ပြောင်းပြီးနောက် "-ā" ကို ပေါင်းထည့်သည်- upāsaka→upāsikā၊ dāraka→dārikā။',
@@ -6717,14 +6717,14 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'si': LocalizedQuizQuestionText(
       questionText: '4. "-u" දිගු ස්වරයකින් අවසන් වන පුරුෂ ලිංගයකින් ස්ත්‍රී ස්වරූපයක් සෑදීමට "-nī/-inī" එකතු කිරීමේ රීතිය පහත දැක්වෙන කුමන යුගලය ද?',
       options: [
-        'ඒ. nara → nārī',
+        'ඒ. නාරා → nārī',
         'බී. deva → devī',
         'සී. aja → ajā',
         'ඩී. භික්ෂුව → bhikkhunī',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '4.下面哪一对显示了以长元音/“-u”结尾的阳性词加上 "-nī/-inī" 形成阴性词的规则？',
+      questionText: '4. Which pair below shows the rule of adding "-nī/-inī" to form a feminine from a masculine ending in a long vowel / "-u"?',
       options: [
         'A.奈良 → nārī',
         'B.德瓦 → devī',
@@ -6733,7 +6733,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၄။ အောက်ဖော်ပြပါ မည်သည့်အတွဲသည် "-nī/-inī" ကို သရအရှည်ကြီးဖြင့် အဆုံးသတ်ထားသော ယောက်ျားမှ မိန်းမပီသစွာ အသွင်သဏ္ဍာန်ပြသည် ။',
+      questionText: '၄။ အောက်ဖော်ပြပါ မည်သည့်အတွဲသည် "-nī/-inī" ကို ဣတ္ထိယသရသရရှည် / "-u" ဖြင့်အဆုံးသတ်သော ပုလ္လိင်တစ်ခုမှ ဣတ္ထိမဆန်သောအသွင်သဏ္ဌာန်ကို ပြသည် ။',
       options: [
         'A nara → nārī',
         'B။ deva → devī',
@@ -6876,7 +6876,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '"Dhenu tiṇaṃ khādatu!" 翻译为：',
+      questionText: '"Dhenu tiṇaṃ khādatu!" is translated as:',
       options: [
         '牛正在吃草。',
         '牛吃草。',
@@ -6885,7 +6885,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"Dhenu tiṇaṃ khādatu!" ကို အောက်ပါအတိုင်း ဘာသာပြန်ထားသည်-',
+      questionText: '"Dhenu tiṇaṃ khādatu!" ကို:',
       options: [
         'နွားသည် မြက်စားနေသည်။',
         'နွားက မြက်စားတယ်။',
@@ -7066,7 +7066,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '问题1."Dhenu tiṇa khādatu!"的含义：',
+      questionText: '问题1."Dhenu tiṇa khādatu!"的意思是：',
       options: [
         '牛正在吃草。',
         '牛，吃草吧！',
@@ -7075,7 +7075,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'မေးခွန်း ၁။ "Dhenu tiṇa khādatu!" ဆိုသည်မှာ-',
+      questionText: 'မေးခွန်း 1. "Dhenu tiṇa khādatu!" ဆိုသည်မှာ-',
       options: [
         'နွားသည် မြက်စားနေသည်။',
         'နွား၊ မြက်စား။',
@@ -7104,7 +7104,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '问题2. "Sabbaññū bhikkhūnaṃ dhammaṃ desetu!" 的含义：',
+      questionText: '问题 2. "Sabbaññū bhikkhūnaṃ dhammaṃ desetu!" 的意思是：',
       options: [
         '全觉者将为比丘说法。',
         '全觉者正在向比丘说法。',
@@ -7180,7 +7180,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '问题 4. "Mayhaṃ cakkhūhi pāpaṃ na passāmi, Bhante." 的含义：',
+      questionText: '问题 4. "Mayhaṃ cakkhūhi pāpaṃ na passāmi, Bhante." 的意思是：',
       options: [
         '尊者，我眼不见恶。',
         '尊者，我眼见恶。',
@@ -7189,7 +7189,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'မေးခွန်း ၄။ "Mayhaṃ cakkhūhi pāpaṃ na passāmi, Bhante." ဆိုသည်မှာ-',
+      questionText: 'မေးခွန်း 4. "Mayhaṃ cakkhūhi pāpaṃ na passāmi, Bhante." ဆိုသည်မှာ-',
       options: [
         'အသျှင်ဘုရား အကျွန်ုပ်သည် မျက်စိဖြင့် မကောင်းမှုကို မမြင်ပါ။',
         'အသျှင်ဘုရား အကျွန်ုပ်မျက်စိသည် မကောင်းမှုကို မြင်ပါ၏။',
@@ -7218,7 +7218,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '问题5."Mā kuñjarassa purato tiṭṭhāhi."的意思是：',
+      questionText: '问题 5. "Mā kuñjarassa purato tiṭṭhāhi." 的意思是：',
       options: [
         '站在大象面前。',
         '不要站在大象面前。',
@@ -7227,7 +7227,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'မေးခွန်း ၅။ "Mā kuñjarassa purato tiṭṭhāhi." ဆိုသည်မှာ-',
+      questionText: 'မေးခွန်း 5. "Mā kuñjarassa purato tiṭṭhāhi." ဆိုသည်မှာ-',
       options: [
         'ဆင်ရှေ့မှာ ရပ်ပါ။',
         'ဆင်ရှေ့မှာ ရပ်မနေပါနဲ့။',
@@ -7256,7 +7256,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '问题 6. "Kataññuno, tumhe āyuṃ labhitvā ciraṃ jīvatha!" 的含义：',
+      questionText: '问题 6. "Kataññuno, tumhe āyuṃ labhitvā ciraṃ jīvatha!" 的意思是：',
       options: [
         '你活得很长。',
         '感恩者，愿你得寿后长命百岁！',
@@ -7294,7 +7294,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '1. "Dhammaṃ vo desessāmi"这句话中的“vo”这个词是什么代词，它是什么意思？',
+      questionText: '1. "Dhammaṃ vo desessāmi"句子中的“vo”是什么代词，它是什么意思？',
       options: [
         'A.指示代词“that”（位于句子开头）。',
         'B.名词“演讲”。',
@@ -7303,7 +7303,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၁။ ဝါကျတွင် "vo" ဟူသော စကားလုံးသည် "Dhammaṃ vo desessāmi" သည် မည်သို့သောနာမ်စားဖြစ်ပြီး ၎င်းကို ဆိုလိုသနည်း။',
+      questionText: '၁။ ဝါကျရှိ "Dhammaṃ vo desessāmi" တွင် "vo" ဟူသော စကားလုံးသည် မည်သို့သော နာမ်စားဖြစ်ပြီး ၎င်းကို ဆိုလိုသနည်း။',
       options: [
         'A သရုပ်ပြနာမ်စား "that" (ဝါကျ၏အစတွင်)။',
         'B။ နာမ် "စကား"။',
@@ -7372,7 +7372,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'zh': LocalizedQuizQuestionText(
       questionText: '3.动词的第三人称祈愿词尾（单数/复数）是什么？',
       options: [
-        'A. -eyya（新加坡）、-eyyuṃ（新增）；第三人称单数也有缩写形式 -e。',
+        'A. -eyya（新加坡）、-eyyuṃ（PL）；第三人称单数也有缩写形式 -e。',
         'B. -ati / -anti（现在时）。',
         'C. -issati / -issati（将来时）。',
         'D. -tu / -antu（命令式）。',
@@ -7493,7 +7493,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၆။ ပုံစံ "paceyyāma" သည် ကြိယာ paca (ချက်ပြုတ်) ၏ တွဲဆက်ခြင်းဖြစ်ပါသည်။',
+      questionText: '၆။ ပုံစံ "paceyyāma" သည် ကြိယာ paca (cook) ၏ တွဲဆက်ခြင်း ဖြစ်သည်။',
       options: [
         'A 3rd person အများကိန်းပစ္စုပ္ပန်- "သူတို့ချက်ပြုတ်။"',
         'B။ 1st person အများကိန်း Optative- "we should cook/ let us cook"။',
@@ -7522,7 +7522,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '"Yo Dhammaṃ passati so Buddhaṃ passati" 句子中的“Yo” — 它是哪个代词，在什么情况下？',
+      questionText: '句子中的“Yo”"Yo Dhammaṃ passati so Buddhaṃ passati" — 它是哪个代词，在什么情况下？',
       options: [
         '指示代词，名词。',
         '关系代词，名词。',
@@ -7540,7 +7540,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'hi': LocalizedQuizQuestionText(
-      questionText: '"Yo Dhammaṃ passati so Buddhaṃ passati" वाक्य में "यो" - यह कौन सा सर्वनाम है, और किस स्थिति में?',
+      questionText: '"यो" वाक्य में "Yo Dhammaṃ passati so Buddhaṃ passati" - यह कौन सा सर्वनाम है, और किस स्थिति में?',
       options: [
         'प्रदर्शनवाचक सर्वनाम, नाम',
         'सापेक्ष सर्वनाम, नाम',
@@ -7683,7 +7683,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"Kiñci\'pi" သည် ဝါကျထဲတွင် "Kiñci\'pi kātuṃ so na jānāti." ဟူသည်-',
+      questionText: '"Kiñci\'pi" သည် ဝါကျတွင် "Kiñci\'pi kātuṃ so na jānāti." ကို ဆိုလိုသည်-',
       options: [
         'အရာအနည်းငယ်',
         'ဘာပဲဖြစ်ဖြစ်',
@@ -7721,7 +7721,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"Sā" သည် ဝါကျတွင် "Esā nārī te kiṃ hoti?" သည် သရုပ်ပြနာမ်စား၏ မည်သည့်ကိစ္စဖြစ်သနည်း။',
+      questionText: '"Sā" သည် ဝါကျရှိ "Esā nārī te kiṃ hoti?" သည် သရုပ်ပြနာမ်စား၏ မည်သည့်ကိစ္စဖြစ်သနည်း။',
       options: [
         'နံပါတ် masc။',
         'နံပါတ် fem။',
@@ -8025,7 +8025,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'pacanto၊ gacchanto၊ vadamāno သည် မည်သည့်ပါဝင်မှုအမျိုးအစားလဲ။',
+      questionText: 'pacanto၊ gacchanto၊ vadamāno သည် မည်သည့်ပါဝင်မှုအမျိုးအစားများဖြစ်သနည်း။',
       options: [
         'Present Active Participle – anta / māna',
         'Present Passive Participle – īyamāna',
@@ -8083,7 +8083,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson14_q03': {
     'si': LocalizedQuizQuestionText(
-      questionText: 'ñāta, suta, gata, ṭhita, kata — කුමන උපසර්ගයද?',
+      questionText: 'ñāta, සුත, ගත, ඨිත, කට — කුමන උපසර්ගයද?',
       options: [
         'anta / māna',
         'tabba / anīya',
@@ -8101,7 +8101,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'ñāta၊ suta, gata,ṭhita, kata — ဘယ်နောက်ဆက်လဲ။',
+      questionText: 'ñāta, suta, gata,ṭhita, kata — ဘယ်နောက်ဆက်လဲ။',
       options: [
         'anta / māna',
         'tabba / anīya',
@@ -8428,13 +8428,13 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '15 වාක්‍යයේ "Ajānantā" යනු කුමන ආකාරයේ කෘදන්තද?',
       options: [
         'සෘණ අතීත කෘදන්තය',
-        'A- උපසර්ගය සමඟ ñā හි වත්මන් ක්‍රියාකාරී කෘදන්තය: නොදැන සිටීම, නොදැන සිටීම',
+        'A- උපසර්ගය සමඟ ñā හි වර්තමාන ක්‍රියාකාරී කෘදන්තය: නොදැන සිටීම, නොදැන සිටීම',
         'Optative Participle',
         'නිෂ්ක්‍රීය',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '第 15 句中的 "Ajānantā" 是什么类型的分词？',
+      questionText: '第 15 句中的 "Ajānantā" 是哪种分词？',
       options: [
         '否定过去分词',
         '带 a- 前缀的 ñā 现在主动分词：不知道，不知道',
@@ -8519,7 +8519,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"Narā … pivante gilāne passiṃsu." — pivante ဆိုတာ ဘာလဲ?',
+      questionText: '"Narā … pivante gilāne passiṃsu." — အဓိပ္ပာယ်မှာ ဘာလဲ?',
       options: [
         'အကောင့် pl မျက်နှာဖုံး — Present Participle- သောက်နေသော လူနာများ',
         'နံပါတ် sg.',
@@ -8738,7 +8738,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: 'guṇavantu — 标称。 SG。马斯卡。是？\n<span id="T02311">guṇavantu',
+      questionText: 'guṇavantu — 标称。 SG。马斯卡。是？\n<span id="T02311">PALI01358X',
       options: [
         'guṇavantaṃ',
         'guṇavantā',
@@ -8928,7 +8928,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '1. Pāḷi中的“第七天（从现在开始七天后）”这句话是用什么形式表达的？',
+      questionText: '1. Pāḷi中的“第七天（从现在起七天）”这句话是用什么形式表达的？',
       options: [
         'A. satta divasā（仅基数）',
         'B. sattame divase（方格中的 sattama + 方格中的 divasa）',
@@ -8937,7 +8937,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၁။ Pāḷi တွင် "၇ ရက်မြောက်နေ့ (ယခုမှ ခုနစ်ရက်)" ဟူသော စကားစုကို မည်သည့်ပုံစံဖြင့် ဖော်ပြသနည်း။',
+      questionText: '၁။ Pāḷi တွင် "7 ရက်မြောက်နေ့ (ယခုမှစ၍ ခုနစ်ရက်)" ဟူသော စကားစုကို မည်သည့်ပုံစံဖြင့် ဖော်ပြသနည်း။',
       options: [
         'A satta divasā (ကာဒီနယ်နံပါတ်တစ်ခုသာ)',
         'B။ သတ္တမဒိဋ္ဌိ (ဌာတိသတ္တမ + ဒိဗ္ဗာစရိယ)',
@@ -8998,9 +8998,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '3. 4 වැනි (චතුත්ත) සිට 10 වැනි (දසම) දක්වා ඇති සාමාන්‍ය සංඛ්‍යාවල ස්ත්‍රී ස්වරූපයන් සෑදී ඇත්තේ කෙසේද සහ ඒවා ව්‍යාප්ත වන්නේ කෙසේද?',
       options: [
         'ඒ. "-ā" එකතු කරන්න, kaññā (fem. -ā).',
-        'බී. අවසාන "-a" "-ī" (catutthī, sattamī, dasamī…) ලෙස වෙනස් කරන්න, nārī (fem. -ī) වැනි ආවර්තනය කරන්න.',
+        'බී. අවසාන "-a" "-ī" (catutthī, sattamī, dasamī…) ලෙස වෙනස් කරන්න, nārī (fem. -ī).',
         'සී. ස්ත්‍රී පුරුෂ දෙපාර්ශවයටම පුරුෂ ස්වරූපය තබා ගන්න.',
-        'ඩී. "-nī" (medhāvinī වැනි) එකතු කරන්න.',
+        'ඩී. "-nī" (medhāvinī වැනි) එක් කරන්න.',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
@@ -9013,12 +9013,12 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၃။ စတုထ္ထ (ကတ္တု) မှ ၁၀ (ဒဿမ) အထိ ဣတ္ထိယရုပ်များ မည်သို့ ဖြစ်ပေါ်လာသနည်း၊\n<span id="T02346">A PALI0000X (fem. -ā) ကဲ့သို့ သက်ရောက်သော "-ā" ကို ထည့်ပါ။',
+      questionText: '၃။ စတုထ္ထ (ကတ္တု) မှ ၁၀ (ဒဿမ) အထိ ဣတ္ထိယရုပ်များ မည်သို့ ဖြစ်ပေါ်လာသနည်း၊\n<span id="T02346">A PALI02240X (fem. -ā) ကဲ့သို့ သက်ရောက်သော "-ā" ကို ထည့်ပါ။',
       options: [
         'A kaññā (fem. -ā) ကဲ့သို့ သက်ရောက်သော "-ā" ကို ထည့်ပါ။',
-        'B။ နောက်ဆုံး "-a" ကို "-ī" (catutthī၊ sattamī၊ dasamī…) ၊ nārī (fem. -ī) ကဲ့သို့ သက်ရောက်သည်။',
+        'B။ နောက်ဆုံး "-a" ကို "-ī" (catutthī၊ sattamī၊ dasamī…) ၊ nārī (fem. -ī) ကဲ့သို့ အကျိုးသက်ရောက်သော ပြောင်းပါ။',
         'C။ လိင်နှစ်မျိုးလုံးအတွက် ယောက်ျားပုံစံကို ထားပါ။',
-        'D။ "-nī" (medhāvinī ကဲ့သို့) ထည့်ပါ။',
+        'D။ "-nī" (medhāvinī ကဲ့သို့)။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -9033,7 +9033,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson16_q01_04': {
     'si': LocalizedQuizQuestionText(
-      questionText: '4. "tayo / tīni / tisso" යන ත්‍රිකෝණය අනුරූප වන්නේ "තුන" අංකයේ කුමන ස්ත්‍රී පුරුෂ භාවයට ද?',
+      questionText: '4. "tayo / tīni / tisso" යන ත්‍රිත්වය අනුරූප වන්නේ "තුන" අංකයේ කුමන ස්ත්‍රී පුරුෂ භාවයටද?',
       options: [
         'ඒ. ෆෙම්. / උදාසීන. / මාස්ක්. (tisso / tīni / tayo).',
         'බී. උදාසීන. / මාස්ක්. / Fem.',
@@ -9109,11 +9109,11 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson16_q01_06': {
     'si': LocalizedQuizQuestionText(
-      questionText: '6. 19 (19 → 89) සහ koṭi සිට සංඛ්‍යා වල ස්ත්‍රී පුරුෂ භාවය/විවර්තනය සම්බන්ධයෙන්, නිවැරදි ප්‍රකාශය කුමක්ද?',
+      questionText: '6. 19 (19 → 89) සහ koṭi සිට අංකවල ස්ත්‍රී පුරුෂ භාවය/ආවර්තය සම්බන්ධයෙන්, නිවැරදි ප්‍රකාශය කුමක්ද?',
       options: [
         'ඒ. ඒවා සියල්ලම නපුංසක වන අතර, ෆාලා (-a) ලෙස ප්‍රත්‍යාවර්තනය වේ.',
         'බී. ඔවුන් සියල්ලන්ම පිරිමි, නාරා (-අ) වැනි ආක්‍රමණය කරයි.',
-        'C. Numbers ending in -i/-ī/-ā (e.g. vīsati, saṭṭhi, asīti, koṭi, cattāḷīsā…) are FEMININE, singular only (inflecting like bhūmi or kaññā); the hundreds/thousands ending in -a (sataṃ, sahassaṃ) are neuter.',
+        'සී. Numbers ending in -i/-ī/-ā (e.g. vīsati, saṭṭhi, asīti, koṭi, cattāḷīsā…) are FEMININE, singular only (inflecting like bhūmi or kaññā); -a (sataṃ, sahassaṃ) වලින් අවසන් වන සිය ගණනක්/දහසක් නිසරු වේ.',
         'ඩී. අංක 19-99 ඒකවචන සහ බහු වචන දෙකම ඇති අතර, එය ස්ත්‍රී පුරුෂ භාවය තුනටම බලපායි.',
       ],
     ),
@@ -9127,7 +9127,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၆။ 19 မှစ၍ (19 → 89) နှင့် koṭi တို့မှ နံပါတ်များ၏ ကျား/မ ခွဲခြားမှုနှင့်ပတ်သက်၍၊ မည်သည့်ဖော်ပြချက်သည် မှန်သနည်း။',
+      questionText: '၆။ 19 မှစ၍ (19 → 89) နှင့် koṭi တို့မှ နံပါတ်များ၏ ကျား/မ ဖောက်ပြန်မှုနှင့်ပတ်သက်ပြီး မည်သည့်ဖော်ပြချက်သည် အမှန်ဖြစ်သနည်း။',
       options: [
         'A ၎င်းတို့အားလုံးသည် phala (-a) ကဲ့သို့ ဖြူစင်၍ သန့်ရှင်းကြသည်။',
         'B။ ၎င်းတို့အားလုံးသည် nara (-a) ကဲ့သို့ လွှမ်းမိုး၍ ယောက်ျားပီသကြသည်။',
@@ -9147,7 +9147,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson17_q01': {
     'si': LocalizedQuizQuestionText(
-      questionText: '"Attanā\'ve kataṃ pāpaṃ" වාක්‍යයේ "Attanā" යනු "atta" හි කුමන අවස්ථාවද?',
+      questionText: '"Attanā\'ve kataṃ pāpaṃ" වාක්‍යයේ "Attanā" යනු "අට්ටා" කුමන අවස්ථාවද?',
       options: [
         'නාමික (නාම.)',
         'උපකරණ (උපදේශකය)',
@@ -9165,7 +9165,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"Attanā" "Attanā\'ve kataṃ pāpaṃ" သည် "atta" ၏ မည်သည့်ကိစ္စဖြစ်သနည်း။',
+      questionText: '"Attanā" သည် "Attanā\'ve kataṃ pāpaṃ" သည် "atta" ၏ မည်သည့်ကိစ္စဖြစ်သနည်း။',
       options: [
         'အမည်စာရင်း (အမည်)',
         'တူရိယာ (Instrumental)',
@@ -9212,7 +9212,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'hi': LocalizedQuizQuestionText(
-      questionText: '"Raññā" वाक्य में "Raññā likhitaṃ", "rāja" का कौन सा मामला है?',
+      questionText: '"Raññā" वाक्य में "Raññā likhitaṃ" "rāja" का कौन सा मामला है?',
       options: [
         'नामांकित (Nom.)',
         'अभियोगात्मक (Acc.)',
@@ -9261,7 +9261,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson17_q04': {
     'si': LocalizedQuizQuestionText(
-      questionText: '"ji" (ජය ගන්න) ක්‍රියා පදය අයත් වන්නේ කුමන පන්තියටද? "Ji + nā + ti" ලබා දෙන ආකෘතිය කුමක්ද?',
+      questionText: '"ji" (ජය ගන්න) ක්‍රියා පදය අයත් වන්නේ කුමන පන්තියටද? "Ji + nā + ti" ලබා දෙන පෝරමය කුමක්ද?',
       options: [
         '5 පන්තිය — මාර්කර් "nā" → jināti',
         '6 පන්තිය — මාර්කර් "o" → jioti',
@@ -9275,7 +9275,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         '5 级 — 标记 "nā" → jināti',
         '第 6 类 — 标记“o”→ jioti',
         '第 7 类 — 标记“e”→ jieti',
-        '4 级 — 标记“ṇu”→ jiṇoti',
+        '4 类 — 标记“ṇu”→ jiṇoti',
       ],
     ),
     'my': LocalizedQuizQuestionText(
@@ -9358,7 +9358,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: 'ကြိယာ "ki" (ဝယ်သည်) သည် အတန်းအစား 5 နှင့် သက်ဆိုင်သော်လည်း အထူးစည်းမျဉ်းတစ်ခုရှိသည်။ "Ki + nā + ti" = ?',
       options: [
         'kināti',
-        'kiṇāti (nā→ṇā မတိုင်မီ)',
+        'kiṇāti (nā→ṇā မတိုင်ခင်)',
         'kinoti',
         'kīyati',
       ],
@@ -9726,7 +9726,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '"satthāraṃ" 这个词的形式和大小写是什么？',
+      questionText: '单词 "satthāraṃ" 是什么形式和大小写？',
       options: [
         '标称。 SG。',
         '根据。 SG。萨图的\n<span id="T02443">将军。 pl.',
@@ -9811,7 +9811,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'ကြိယာ pāceti၊ pācayati၊ pācāpeti၊ pācāpayati အားလုံးသည် Kārita ၏ အမြစ်ပုံစံများဖြစ်သည်။',
+      questionText: 'ကြိယာများ pāceti, pācayati, pācāpeti, pācāpayati အားလုံးသည် Kārita ၏ အမြစ်ပုံစံများဖြစ်သည်။',
       options: [
         'paca (ချက်ပြုတ်)',
         'pā (သောက်)',
@@ -9831,7 +9831,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson18_q5': {
     'si': LocalizedQuizQuestionText(
-      questionText: 'Kārita සාදන විට, a මූල ස්වරය VUDDHI (ශක්තිමත් කර ඇත) කුමක් සඳහාද?',
+      questionText: 'Kārita සාදන විට, a මූල ස්වරය VUDDHI (ශක්තිමත් කර ඇත) කුමකටද?',
       options: [
         'i',
         'u',
@@ -9840,7 +9840,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '构成 Kārita 时，根元音 a 是 VUDDHI（加强）到什么？',
+      questionText: '构成 Kārita 时，根元音 a 变为 VUDDHI（加强）为什么？',
       options: [
         '我',
         '你',
@@ -9849,7 +9849,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'Kārita ကို ဖွဲ့သောအခါ၊ အရင်းသရ a သည် VUDDHI (ခိုင်ခံ့သည်) သည် အဘယ်နည်း။',
+      questionText: 'Kārita ကို ဖွဲ့သောအခါ၊ အရင်းသရ သရ A သည် VUDDHI (ခိုင်ခံ့သည်) သည် အဘယ်နည်း။',
       options: [
         'i',
         'u',
@@ -9887,7 +9887,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'ဝါကျ "So dāsaṃ odanaṃ pāceti" — မည်သည့် စကားလုံးကို ဆောင်ရွက်ပေးသနည်း ။',
+      questionText: 'ဝါကျ "So dāsaṃ odanaṃ pāceti" — မည်သည့် စကားလုံးကို ဆောင်ရွက်ရန် ပုဂ္ဂိုလ်က ပြုလုပ်သနည်း။',
       options: [
         'ဒါဆို (သူ)',
         'dāsaṃ (ကျွန်၊ Acc.)',
@@ -9896,7 +9896,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'hi': LocalizedQuizQuestionText(
-      questionText: 'वाक्य "So dāsaṃ odanaṃ pāceti" - जिस व्यक्ति से कार्य कराया जा रहा है वह कौन सा शब्द है?',
+      questionText: 'वाक्य "So dāsaṃ odanaṃ pāceti" - जिस व्यक्ति से कार्य करवाया जा रहा है वह कौन सा शब्द है?',
       options: [
         'तो (वह)',
         'dāsaṃ (नौकर, Acc.)',
@@ -9907,7 +9907,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson18_q7': {
     'si': LocalizedQuizQuestionText(
-      questionText: '"වගා කිරීමට, දියුණු කිරීමට" යන ඉතා පොදු අර්ථය සහිත √bhū (be/become) හි Kārita යනු කුමන වචනයද?',
+      questionText: '"වගා කිරීම, දියුණු කිරීම" යන ඉතා පොදු අර්ථය සහිත √bhū (be/become) හි Kārita යනු කුමන වචනයද?',
       options: [
         'bhāveti',
         'භවති',
@@ -9916,7 +9916,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '√bhū (be/become) 中的 Kārita 是哪个单词，其最常见的含义是“培养、发展”？',
+      questionText: '哪个词是 √bhū (be/become) 中的 Kārita，其最常见的含义是“培养、发展”？',
       options: [
         'bhāveti',
         '巴瓦蒂',
@@ -9925,7 +9925,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '√bhū (be/become) ၏ Kārita ဟူသော စကားလုံးသည် "ပြုစုပျိုးထောင်ရန်၊ ဖွံ့ဖြိုးတိုးတက်ရန်" ဟု အများအားဖြင့် အဓိပ္ပာယ်ဖွင့်ဆိုထားခြင်းဖြစ်သည်။',
+      questionText: '√bhū ၏ Kārita (ဖြစ်/ဖြစ်) ဟူသော စကားလုံးသည် "ပြုစုပျိုးထောင်ရန်၊ ဖွံ့ဖြိုးတိုးတက်ရန်" ဟု အများအားဖြင့် အဓိပ္ပာယ်ဖွင့်ဆိုထားသည့် စကားလုံးဖြစ်သည်။',
       options: [
         'bhāveti',
         'bhavati',
@@ -9945,7 +9945,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson18_q8': {
     'si': LocalizedQuizQuestionText(
-      questionText: 'Which of the four Kārita suffixes (-e, -aya, -āpe, -āpaya) most often produces the "indirect causative / make a third person order" form?',
+      questionText: 'පළී Kārita උපසර්ග හතරෙන් (-e, -aya, -āpe, -āpaya) බොහෝ විට "වක්‍ර හේතුකාරක / තුන්වන පුද්ගල අනුපිළිවෙලක් සාදන්න" පෝරමය නිපදවන්නේ කුමක්ද?',
       options: [
         '-e',
         '-aya',
@@ -9963,7 +9963,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'Kārita ၏ နောက်ဆက်တွဲ လေးခုတွင် မည်သည့်အရာ (-e၊ -aya, -āpe, -āpaya) သည် "သွယ်ဝိုက်သော အကြောင်းအရင်း ဖြစ်စေသော/တတိယလူကို အမိန့်ပေးသည်" ပုံစံကို အများဆုံး ထုတ်ပေးပါသည်။',
+      questionText: 'Kārita ၏ နောက်ဆက်တွဲ လေးခုအနက်မှ မည်သည့်အရာ (-e၊ -aya, -āpe, -āpaya) သည် "သွယ်ဝိုက်သော အကြောင်းအရင်း ဖြစ်စေသော / တတိယလူကို အမိန့်ပေးသည်" ပုံစံကို အများဆုံး ထုတ်ပေးသည် ။',
       options: [
         '-e',
         '-aya',
@@ -10089,7 +10089,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '"मन" (मन, विचार) का वाद्य (इंस्ट्र.) एकवचन रूप क्या है?',
       options: [
         'manaṃ',
-        'mansā / मैनेना',
+        'mansā / मेनेना',
         'manasā',
         'मानसो',
       ],
@@ -10115,7 +10115,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"sira" ကို နောက်ဆက်တွဲ "-sā" ဖြင့် ပေါင်းလိုက်သောအခါ၊ ထွက်ပေါ်လာသည့်ပုံစံမှာ?',
+      questionText: '"sira" ကို နောက်ဆက်တွဲ "-sā" ဖြင့် ပေါင်းလိုက်သောအခါ၊ ရလဒ်သည် ပုံစံဖြစ်သည်။',
       options: [
         'sirasā',
         'sira + sā',
@@ -10135,7 +10135,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson19_q05': {
     'si': LocalizedQuizQuestionText(
-      questionText: '3වන පුද්ගල බහු වචන අසම්පූර්ණ (Hīyattanī) හි ක්‍රියා පදයේ අවසානය වන්නේ?',
+      questionText: '3වන පුද්ගල බහු වචන අසම්පූර්ණ (Hīyattanī) හි ක්‍රියාපදයේ අවසානයද?',
       options: [
         '-iṃsu',
         '-uṃ',
@@ -10153,7 +10153,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'တတိယလူ အများကိန်းမစုံလင်ခြင်း (Hīyattanī) ရှိကြိယာ၏အဆုံးသတ်သည် ဘာလဲ?',
+      questionText: 'တတိယလူ အများကိန်း မစုံလင်ခြင်း (Hīyattanī) ကြိယာ၏အဆုံးသတ်သည် ဘာလဲ?',
       options: [
         '-iṃsu',
         '-uṃ',
@@ -10490,7 +10490,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A. Kammadhāraya',
         'B. Bahubbīhi',
-        'C. Tappurisa — Genitive（Chaṭṭhī / 案例 6）',
+        'C. Tappurisa —属格（Chaṭṭhī / 案例 6）',
         'D.德万达',
       ],
     ),
@@ -10515,7 +10515,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson20_q01_03': {
     'si': LocalizedQuizQuestionText(
-      questionText: '3. "nāmarūpaṃ" සංයෝගය (නම සහ ස්වරූපය; මනස පදාර්ථය දැක්වීම, සමස්ථ 5 ක කට්ටලය) කුමන වර්ගයේද?',
+      questionText: '3. "nāmarūpaṃ" (නම සහ ස්වරූපය; මනස පදාර්ථය, සමස්ථ 5ක කට්ටලය) සංයෝගය කුමන වර්ගයට අයත්ද?',
       options: [
         'ඒ. Dvanda — කට්ටලයක් (නාම පද "ca" මගින් එකතු වී, නපුංසක-ඒකීය)',
         'බී. තප්පුරිස',
@@ -10533,7 +10533,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၃။ "nāmarūpaṃ" (အမည်နှင့်ပုံစံ၊ စိတ်-အရေးအသားကိုဖော်ပြခြင်း၊ စုစုပေါင်း 5 ခုအစု) သည် မည်သည့်အမျိုးအစားဖြစ်သနည်း။',
+      questionText: '၃။ ဒြပ်ပေါင်း "nāmarūpaṃ" (အမည်နှင့် ပုံစံ၊ စိတ်-အရေးအသားကို ဖော်ပြခြင်း၊ စုစည်းမှု 5 ခု) သည် မည်သည့်အမျိုးအစားလဲ။',
       options: [
         'A Dvanda — အစုတစ်ခု ("ca", neuter-singular ဖြင့် ပေါင်းထားသော နာမ်များ)',
         'B။ Tappurisa',
@@ -10553,7 +10553,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson20_q01_04': {
     'si': LocalizedQuizQuestionText(
-      questionText: '4. "diṭṭhadhammo" සංයෝගය (ධර්මය දුටු තැනැත්තා → "දක්නා ධර්මය" නොවේ, උතුම් කෙනෙක් දක්වයි) කුමන වර්ගයේද?',
+      questionText: '4. "diṭṭhadhammo" (ධර්මය දුටු තැනැත්තා → "දක්නා ධර්මය" නොව උත්තමයෙකු දක්වයි) සංයෝගය කුමන වර්ගයට අයත්ද?',
       options: [
         'ඒ. Kammadhāraya',
         'බී. තප්පුරිස',
@@ -10562,7 +10562,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '4.复合词 "diṭṭhadhammo"（见法者 → 表示圣者，而不是“所见之法”）属于哪一种类型？',
+      questionText: '4.复合词 "diṭṭhadhammo"（见法者 → 表示圣者，而不是“所见之法”）属于哪一类？',
       options: [
         'A. Kammadhāraya',
         'B.塔普里萨',
@@ -10571,12 +10571,12 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၄။ "diṭṭhadhammo" (ဓမ္မကို မြင်ဖူးသူ → အရိယာကို ရည်ညွှန်းသော "မြင်သော တရား") သည် အဘယ်အမျိုးအစား ဖြစ်ပါသနည်း။',
+      questionText: '၄။ "diṭṭhadhammo" (ဓမ္မကို မြင်ဖူးသူ → အရိယာကို ရည်ညွှန်းသော "မြင်သော တရား") သည် မည်သည့်အမျိုးအစား ဖြစ်ပါသနည်း။',
       options: [
         'A Kammadhāraya',
         'B။ Tappurisa',
         'C။ Avyayībhāva',
-        'D။ Bahubbīhi (တရားတစ်​ခုလုံးသည်​ ဓမ္မကိုမြင်​ဖူးသူဖြစ်​​သော အခြားအရာတစ်​ခုကို ရည်​ညွှန်းသည်​)',
+        'D။ Bahubbīhi (တရားတစ်​ခုလုံးသည်​ တရား​ဟောမြင်​ဖူးသူအား မတူညီသည့်​အရာများကို ရည်​ညွှန်းသည်​)',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -10591,7 +10591,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson20_q01_05': {
     'si': LocalizedQuizQuestionText(
-      questionText: '5. "anupubbaṃ" සංයෝගය (ක්‍රමානුකූලව, නියමිත වේලාවට; "anu-" උපසර්ගයෙන් ආරම්භ වී නපුංසක-ඒකීය ඇඩ්වර්බ් බවට පත් වීම) කුමන වර්ගයට අයත්ද?',
+      questionText: '5. "anupubbaṃ" (ක්‍රමානුකූලව, නියමිත වේලාවට; "අනු-" උපසර්ගයෙන් ආරම්භ වී නපුංසක-ඒක වචන ක්‍රියා පදයක් බවට පත්වීම) සංයෝගය කුමන වර්ගයට අයත්ද?',
       options: [
         'ඒ. ද්වන්ද',
         'බී. Avyayībhāva (adverbial සංයෝගය)',
@@ -10609,7 +10609,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၅။ "anupubbaṃ" ပေါင်းစပ်မှု (တဖြည်း ဖြည်း၊ အချိန်ကိုက်၊ ရှေ့ဆက် "anu-" ဖြင့် အစပြု၍ neuter-singular adverb ဖြစ်လာခြင်း) သည် မည်သည့်အမျိုးအစားလဲ။',
+      questionText: '၅။ "anupubbaṃ" (တဖြည်းဖြည်း၊ အချိန်ကိုက်၊ ရှေ့ဆက် "anu-" ဖြင့် အစပြု၍ neuter-singular adverb ဖြစ်လာခြင်း) သည် မည်သည့်အမျိုးအစားလဲ။',
       options: [
         'A Dvanda',
         'B။ Avyayībhāva (ကြိယာဝိသေသနဒြပ်ပေါင်း)',
@@ -10629,7 +10629,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson20_q01_06': {
     'si': LocalizedQuizQuestionText(
-      questionText: '6. "vanavāso" සංයෝගය (වනාන්තරයේ වාසය කිරීම; ස්ථානීය සම්බන්ධතාවය "වනාන්තරයේ") කුමන වර්ගයේද?',
+      questionText: '6. "vanavāso" සංයෝගය (වනාන්තරයේ වාසය කිරීම; ස්ථානීය සම්බන්ධතාවය "වනාන්තරයේ") කුමන ආකාරයේද?',
       options: [
         'ඒ. Kammadhāraya',
         'බී. තප්පුරිස — ස්ථානය (Sattamī / case 7)',
@@ -10667,7 +10667,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson20_q01_07': {
     'si': LocalizedQuizQuestionText(
-      questionText: '7. "sīladhanaṃ" සංයෝගය (ගුණය යනු ධනය, ගුණ-ධනය - නාම පද දෙකක්: ගුණය = ධනය) කුමන වර්ගයට අයත්ද?',
+      questionText: '7. "sīladhanaṃ" (ගුණය යනු ධනය, ගුණය-ධනය - නාම පද දෙකක්: ගුණය = ධනය) කුමන වර්ගයේද?',
       options: [
         'ඒ. Kammadhāraya (appositive / "A යනු B")',
         'බී. ද්වන්ද',
@@ -10676,7 +10676,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '7.复合词 "sīladhanaṃ"（美德就是财富，美德-财富 — 两个名词并置：美德 = 财富）属于哪一种类型？',
+      questionText: '7.复合词 "sīladhanaṃ"（美德就是财富，美德-财富 — 两个名词并置：美德 = 财富）属于哪种类型？',
       options: [
         'A. Kammadhāraya（同位语/“A 是 B”）',
         'B.德万达',
@@ -10705,7 +10705,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson20_q01_08': {
     'si': LocalizedQuizQuestionText(
-      questionText: '8. "catusaccaṃ" සංයෝගය (සත්‍ය හතර → චතුරාර්ය සත්‍ය; සංඛ්‍යා + නාම පදය, කුලකයක් දැක්වීම, නපුංසක-ඒකීය "catusaccaṃ") Kammadhāraya හි කුමන උප වර්ගයද?',
+      questionText: '8. "catusaccaṃ" (සත්‍ය හතර → චතුරාර්ය සත්‍ය; සංඛ්‍යා + නාම පදය, කුලකයක් හඟවන, නපුංසක-ඒකීය "catusaccaṃ") සංයෝගය Kammadhāraya හි කුමන උප වර්ගයද?',
       options: [
         'ඒ. ද්වන්ද',
         'බී. තප්පුරිස',
@@ -10723,7 +10723,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '၈။ "catusaccaṃ" (သစ္စာလေးပါး → အရိယာသစ္စာလေးပါး၊ ဂဏန်း + နာမ်၊ အစုတစ်ခုအား ရည်ညွှန်းခြင်း၊ neuter-singular "catusaccaṃ") သည် Kammadhāraya ၏ အမျိုးအစားခွဲဖြစ်သည်။',
+      questionText: '၈။ "catusaccaṃ" (အမှန်တရားလေးပါး → အရိယာသစ္စာလေးပါး၊ ဂဏန်း + နာမ်၊ အစုတစ်ခုအား အမှတ်အသားပြုခြင်း၊ neuter-singular "catusaccaṃ") သည် Kammadhāraya ၏ အမျိုးအစားခွဲဖြစ်သည်။',
       options: [
         'A Dvanda',
         'B။ Tappurisa',
@@ -10942,7 +10942,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '"Nirāhāra" = Ni + āhāra。正确的意思是？',
+      questionText: '"Nirāhāra" = 镍 + āhāra。正确的意思是？',
       options: [
         'A.很多食物',
         'B.不吃东西（禁食）',
@@ -11012,7 +11012,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: 'වාක්‍ය 4: "dujjanā" සහ "sujane" — du/su උපසර්ග වලින් අදහස් කරන්නේ කුමක්ද?',
       options: [
         'ඒ. du = to, su = from',
-        'බී. du = නරක / දැඩි, su = හොඳ / සම්පූර්ණ → dujjanā = දුෂ්ට පුද්ගලයා, සුජානේ = යහපත් පුද්ගලයා',
+        'බී. du = නරක/දැඩි, su = හොඳ/සතුටුදායක → dujjanā = දුෂ්ට පුද්ගලයා, සුජානේ = යහපත් පුද්ගලයා',
         'සී. du = පහළ, su = උඩ',
         'ඩී. du = වෙන්වීම, su = එකට',
       ],
@@ -11027,7 +11027,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'စာကြောင်း 4- "dujjanā" နှင့် "sujane" — ရှေ့စာ du/su ဆိုသည်မှာ အဘယ်နည်း။',
+      questionText: 'စာကြောင်း 4- "dujjanā" နှင့် "sujane" — ရှေ့ဆက်စကား du/su ဆိုသည်မှာ အဘယ်နည်း။',
       options: [
         'A du = to, su = from',
         'B။ du = မကောင်း/ခက်၊ su = ကောင်းမှု/ကုသိုလ် → dujjanā = လူဆိုး၊ sujane = သူတော်ကောင်း',
@@ -11134,7 +11134,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'zh': LocalizedQuizQuestionText(
       questionText: '句子 12："Uparājā" 和 "paṭirājānaṃ" — upa 和 paṭi 是什么意思？',
       options: [
-        'A. Uparājā = 大王，paṭirāja = 小王',
+        'A. Uparājā = 大国王，paṭirāja = 小国王',
         'B. Uparājā = 总督（upa = 副手），paṭirājā = 敌方国王（paṭi = 对立）',
         'C. Uparājā = 前国王，paṭirāja = 新国王',
         'D. Uparājā = 国内国王，paṭirāja = 外国国王',
@@ -11143,14 +11143,14 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'စာကြောင်း 12- "Uparājā" နှင့် "paṭirājānaṃ" — upa နှင့် paṭi ဆိုသည်မှာ ဘာကိုဆိုလိုသနည်း။',
       options: [
-        'A Uparājā = မဟာဘုရင်၊ paṭirāja = ဘုရင်ငယ်',
+        'A Uparājā = မဟာမင်းကြီး၊ paṭirāja = ဘုရင်ငယ်',
         'B။ Uparājā = viceroy (upa = လက်ထောက်), paṭirājā = ရန်သူဘုရင် (paṭi = ဆန့်ကျင်ဘက်)',
         'C။ Uparājā = ဘုရင်ဟောင်း၊ paṭirāja = ဘုရင်သစ်',
         'D။ Uparājā = တိုင်းပြည်အတွင်း ဘုရင်၊ paṭirāja = တိုင်းတစ်ပါး၏ ဘုရင်',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
-      questionText: 'वाक्य 12: "Uparājā" और "paṭirājānaṃ" — upa और paṭi का क्या मतलब है?',
+      questionText: 'वाक्य 12: "Uparājā" और "paṭirājānaṃ" - upa और paṭi का क्या मतलब है?',
       options: [
         'A. Uparājā = great king, paṭirāja = small king',
         'B. Uparājā = viceroy (upa = deputy), paṭirājā = enemy king (paṭi = opposite)',
@@ -11302,7 +11302,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'hi': LocalizedQuizQuestionText(
-      questionText: 'Sentence 27: "avamaññituṃ" = ava + maññati. The correct meaning?',
+      questionText: 'वाक्य 27: "avamaññituṃ" = ava + maññati। सही अर्थ?',
       options: [
         'A. to respect, to honor',
         'B. to look down on, to despise (ava = down)',
@@ -11474,7 +11474,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '"Nāgarika" = 长良 + ika。是否适用 Vuddhi 规则？',
+      questionText: '"Nāgarika" = 纳加拉 + 伊卡。是否适用 Vuddhi 规则？',
       options: [
         'A.不，因为“g”是单个辅音',
         'B.是的，a→ā 因为“g”是单个→ nāgarika',
@@ -11492,7 +11492,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'hi': LocalizedQuizQuestionText(
-      questionText: '"Nāgarika" = nagara + ika. Is the Vuddhi rule applied?',
+      questionText: '"Nāgarika" = नागारा + ika. क्या वुद्धि नियम लागू है?',
       options: [
         'A. No, because "g" is a single consonant',
         'B. Yes, a→ā because "g" is single → nāgarika',
@@ -11597,10 +11597,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"Seyya" နှင့် "seṭṭha" တို့သည် မည်သည့်စကားလုံး၏ နှိုင်းယှဥ်မှုပုံစံများဖြစ်သနည်း။',
+      questionText: '"Seyya" နှင့် "seṭṭha" တို့သည် မည်သည့်စကားလုံး၏ နှိုင်းယှဉ်မှုပုံစံများဖြစ်သနည်း။',
       options: [
         'A bāla (လူမိုက်)',
-        'B။ pāpa (မကောင်းမှု)',
+        'B။ pāpa (မကောင်းသော)',
         'C။ ပဿသ (ကောင်း)',
         'D။ ဗုဒ်ဓ (အဟောင်း)',
       ],
@@ -11638,7 +11638,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '"Dvikkhattuṃ" တွင် မည်သည့် အစိတ်အပိုင်းများ ပါဝင်သနည်း။',
       options: [
         'A dvi + ka + khattuṃ',
-        'B။ dvi + kkhattuṃ = နှစ်ဆ',
+        'B။ dvi + kkhattuṃ = နှစ်ကြိမ်',
         'C။ dvi + khattu = အုပ်စုနှစ်စု',
         'D။ dvi + kkha + tuṃ',
       ],
@@ -11655,7 +11655,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson22_q06': {
     'si': LocalizedQuizQuestionText(
-      questionText: '"Medhāvī" = medhā + vī. "vī" උපසර්ගයේ තේරුම කුමක්ද?',
+      questionText: '"Medhāvī" = medhā + vī. "vī" යන උපසර්ගයේ තේරුම කුමක්ද?',
       options: [
         'ඒ. අයත් වේ',
         'බී. හිමිකර ගැනීම (ප්‍රඥාව ඇති)',
@@ -11825,7 +11825,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: 'စာကြောင်း 7- "seṭṭho" သည် မည်သည့်ပုံစံ "pasattha" လဲ။',
+      questionText: 'စာကြောင်း 7- "seṭṭho" သည် "ပဿသ" ၏ မည်သည့်ပုံစံဖြစ်သနည်း။',
       options: [
         'A နှိုင်းယှဉ်',
         'B။ နှိုင်းယှဉ်ဒီဂရီ',
@@ -12352,7 +12352,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A.动词名词（不定式）+ "kāma"（欲望）= 想要去',
         'B.分词+kāma',
-        'C.名词+kāma',
+        'C.名词 + kāma',
         'D.形容词+kāma',
       ],
     ),
@@ -12576,12 +12576,12 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '句子11："pūjanīyā"使用哪个后缀？',
+      questionText: '句子 11："pūjanīyā" 使用哪个后缀？',
       options: [
         'A.又名',
-        'B.安娜\n<span id="T02818">C. PALI0000X（值得，值得）',
+        'B.安娜\n<span id="T02818">C. PALI01588X（值得，值得）',
         'C. Anīya（值得，值得）',
-        'D.钛\n<span id="T02820">句子14：PALI0000X是哪种形式？',
+        'D.钛\n<span id="T02820">句子 14：PALI01589X 属于哪种形式？',
       ],
     ),
     'my': LocalizedQuizQuestionText(
@@ -12614,7 +12614,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '句子14："gārayhā"是哪种形式？',
+      questionText: '句子 14："gārayhā" 属于哪种形式？',
       options: [
         'A.常规：garaha + anīya',
         'B.不规则：garaha + ya = gārayha（值得指责）',
@@ -12655,8 +12655,8 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '句子 13："gantukāmā" = gantuṃ + kāma。结构？',
       options: [
         'A.现在分词 + kāma',
-        'B.动词名词（不定式，tuṃ）+ kāma = 想要去',
-        'C.名词+kāma',
+        'B.动词名词（不定式，tuṃ）+ kāma = 想去',
+        'C.名词 + kāma',
         'D.过去分词+kāma',
       ],
     ),
@@ -12731,9 +12731,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '句子 17："Pāpakārino" 和 "puññakārino" — 哪个后缀？',
       options: [
         'A.又名',
-        'B.安娜\n<span id="T02838">C. Ī (kara + ī = PALI0000X/PALI0001X — 行动者)',
+        'B.安娜\n<span id="T02838">C. Ī (kara + ī = PALI01604X/PALI01605X — 行动者)',
         'C. Ī (kara + ī = kārī/kārino — 行动者)',
-        'D.钛\n<span id="T02840">句子 20：PALI0000X = gamana + āgamana。哪个后缀？',
+        'D.钛\n<span id="T02840">句子 20：PALI01606X = gamana + āgamana。哪个后缀？',
       ],
     ),
     'my': LocalizedQuizQuestionText(
@@ -12974,7 +12974,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'hi': LocalizedQuizQuestionText(
-      questionText: '"sambodhi" = saṃ + bodhi. Which Niggahita rule?',
+      questionText: '"संबोधि" = saṃ + बोधि. कौन सा निगाहिता नियम?',
       options: [
         'A. #1: ṃ→ the nasal of the same group (b→m)',
         'B. #2: ṃ→ñ before e/h',
@@ -13074,7 +13074,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A. #1：ṃ→同组鼻音',
         'B. #2: e之前的ṃ→ñ',
-        'C. #3: ṃ+y → ññ, y 被删除',
+        'C. #3：ṃ+y→ññ，y被删除',
         'D. #4：元音前的ṃ→m',
       ],
     ),
@@ -13186,7 +13186,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'zh': LocalizedQuizQuestionText(
       questionText: '"abbhugato" = abhi + uggato。哪种类型的桑迪？',
       options: [
-        'A. Vyañjana 变调',
+        'A. Vyañjana 桑迪',
         'B. Niggahita Sandhi',
         'C. Sara Sandhi #9（abhi→元音前的abbha）',
         'D.萨拉·桑迪#1',
@@ -13227,7 +13227,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'A. ṅ（因为j属于c,j组→ñ…不，j属于c,j组）',
         'B. ñ （因为 j 属于 c,j 组 → ñ）',
         'C. ṇ',
-        'D.米\n<span id="T02905">"etadavoca" = PALI0000X + 鳄梨。为什么ṃ→d？',
+        'D.米\n<span id="T02905">"etadavoca" = PALI01638X + 鳄梨。为什么ṃ→d？',
       ],
     ),
     'my': LocalizedQuizQuestionText(
@@ -13251,7 +13251,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
   },
   'lesson24_q10': {
     'si': LocalizedQuizQuestionText(
-      questionText: '"etadavoca" = etaṃ + අලිගැටපේර. ඇයි ṃ→d?',
+      questionText: '"etadavoca" = etaṃ + avoca. ඇයි ṃ→d?',
       options: [
         'ඒ. ṃ→d ස්වරයකට පෙර, සැම විටම',
         'බී. "ta" සහ "eta" + ස්වර → ṃ→d',
@@ -13354,7 +13354,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'hi': LocalizedQuizQuestionText(
-      questionText: '"paccāharati" = pati + āharati. Which Sara rule?',
+      questionText: '"paccāharati" = पति + आहार. कौन सा सारा नियम?',
       options: [
         'A. #1: elision of the vowel',
         'B. #8: ti→cc (pati + vowel → pacc…)',
@@ -13564,7 +13564,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'zh': LocalizedQuizQuestionText(
-      questionText: '"Rājā sukhaṃ vasati" — "sukhaṃ" 在哪种情况下以及扮演什么角色？',
+      questionText: '"Rājā sukhaṃ vasati" — "sukhaṃ" 属于哪种情况，扮演什么角色？',
       options: [
         'A.主格 - 主语',
         'B.宾格 - 状语（幸福地生活）',
@@ -13582,7 +13582,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'hi': LocalizedQuizQuestionText(
-      questionText: '"Rājā sukhaṃ vasati" — "sukhaṃ" किस मामले में है और क्या भूमिका है?',
+      questionText: '"Rājā sukhaṃ vasati" — "sukhaṃ" किस मामले में और क्या भूमिका है?',
       options: [
         'A. Nominative — subject',
         'B. Accusative — adverbial (lives happily)',
@@ -13848,7 +13848,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'hi': LocalizedQuizQuestionText(
-      questionText: '"Vinā Dhammaṃ" - यहां अभियोगात्मक का क्या अर्थ है?',
+      questionText: '"Vinā Dhammaṃ" — यहां अभियोगात्मक का क्या अर्थ है?',
       options: [
         'A. object',
         'B. goal',
@@ -13924,7 +13924,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'hi': LocalizedQuizQuestionText(
-      questionText: '"Ekaṃ samayaṃ Bhagavā" — कर्म कारक का क्या अर्थ है?',
+      questionText: '"Ekaṃ samayaṃ Bhagavā" — कर्मवाचक का क्या मतलब है?',
       options: [
         'A. object',
         'B. goal',
@@ -14257,7 +14257,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       ],
     ),
     'my': LocalizedQuizQuestionText(
-      questionText: '"Dhammo rakkhīyate" — "ဓမ္မာစရိယ" သည် မည်သည့်ကိစ္စနှင့် မည်သည့်အခန်းကဏ္ဍ။',
+      questionText: '"Dhammo rakkhīyate" — "ဓမ္မာစရိယ" သည် မည်သည့်ကိစ္စနှင့် မည်သည့်အခန်းကဏ္ဍတွင်ရှိသနည်း။',
       options: [
         'A အစွပ်စွဲ — အရာဝတ္ထု',
         'B။ အမည်ခံ — passive ၏အကြောင်းအရာ',
@@ -14404,7 +14404,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A.现在',
         'B.过去',
-        'C.命令式（Pañcamī）',
+        'C.命令式 (Pañcamī)',
         'D.未来',
       ],
     ),
@@ -14432,7 +14432,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '"ආසා" ක්‍රියා පදය "hū" වෙතින් වෙනස් වන්නේ කුමන ආකාරයෙන්ද?',
       options: [
         'ඒ. වෙනසක් නැත',
-        'බී. asa = පවතිනවා, වෙන්න | hū = බවට (වෙනස් කරන්න)',
+        'බී. asa = පවතිනවා, වෙන්න | hū = (වෙනස් කරන්න)',
         'සී. asa භාවිතා කරන්නේ අතීතයේ',
         'ඩී. hū අනාගතයේදී පමණක් භාවිතා වේ',
       ],
@@ -14443,7 +14443,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'A.没有区别',
         'B. asa = 存在，是 | hū = 成为（改变）',
         'C. asa 仅用于过去',
-        'D. hū仅在以后使用',
+        'D. hū仅在将来使用',
       ],
     ),
     'my': LocalizedQuizQuestionText(
@@ -14489,7 +14489,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A 3 ကာလ',
         'B။ 4 ကာလ',
-        'C။ 6 tenses (ပစ္စုပ္ပန်၊ Ajjatanī၊ Hīyattanī၊ Pañcamī၊ Sattamī၊ အနာဂတ်)',
+        'C။ ကာလ 6 ခု (ပစ္စုပ္ပန်၊ Ajjatanī၊ Hīyattanī၊ Pañcamī၊ Sattamī၊ အနာဂတ်)',
         'D။ 8 ကာလ',
       ],
     ),
