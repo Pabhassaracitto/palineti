@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
 import '../localization/learning_content_localizations.dart';
+import '../widgets/vocab_card_widget.dart';
 import 'day_navigator_screen.dart';
+import 'vocab_detail_screen.dart';
+import 'vocab_list_screen.dart';
 
 class LessonDetailScreen extends StatelessWidget {
   final LessonMeta lesson;
@@ -12,6 +15,7 @@ class LessonDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final vocab = vocabForLesson(lesson.lessonNumber);
 
     return Scaffold(
       backgroundColor: AppColors.paliBg,
@@ -60,29 +64,58 @@ class LessonDetailScreen extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           
-          // Show vocabulary hint
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.grey[200]!),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Icon(Icons.menu_book, color: Color(lesson.colorValue)),
-                    const SizedBox(width: 8),
-                    Text(
+          // Từ vựng của bài — chạm tiêu đề để xem toàn bộ
+          _buildVocabSection(context, vocab),
+        ],
+      ),
+    );
+  }
+
+  /// Danh sách từ vựng của bài, lấy từ `kLessonNNVocab`.
+  ///
+  /// Chỉ hiện 3 mục đầu để không dựng 105 widget cùng lúc (bài 20); chạm vào
+  /// tiêu đề để mở [VocabListScreen] — nơi dùng `ListView.builder` lười.
+  Widget _buildVocabSection(
+    BuildContext context,
+    List<PaliVocabModel> vocab,
+  ) {
+    final l10n = AppLocalizations.of(context);
+
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.grey[200]!),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          InkWell(
+            onTap: vocab.isEmpty
+                ? null
+                : () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => VocabListScreen(lesson: lesson),
+                      ),
+                    ),
+            borderRadius: BorderRadius.circular(8),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: Row(
+                children: [
+                  Icon(Icons.menu_book, color: Color(lesson.colorValue)),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
                       l10n.vocabAndGrammar,
                       style: const TextStyle(
                         fontSize: 16,
@@ -90,19 +123,53 @@ class LessonDetailScreen extends StatelessWidget {
                         color: AppColors.paliInk,
                       ),
                     ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  l10n.lessonDetailHint,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[600],
                   ),
-                ),
-              ],
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                    decoration: BoxDecoration(
+                      color: Color(lesson.colorValue).withOpacity(0.12),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(
+                      '${vocab.length}',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: Color(lesson.colorValue),
+                      ),
+                    ),
+                  ),
+                  if (vocab.isNotEmpty) ...[
+                    const SizedBox(width: 2),
+                    Icon(Icons.chevron_right, size: 20, color: Colors.grey[400]),
+                  ],
+                ],
+              ),
             ),
           ),
+          ...vocab.isEmpty
+              ? <Widget>[
+                  const SizedBox(height: 8),
+                  Text(
+                    l10n.lessonDetailHint,
+                    style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                  ),
+                ]
+              : <Widget>[
+                  const SizedBox(height: 12),
+                  ...vocab.take(3).map(
+                        (item) => VocabCardWidget(
+                          vocab: item,
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => VocabDetailScreen(vocab: item),
+                            ),
+                          ),
+                        ),
+                      ),
+                ],
         ],
       ),
     );
