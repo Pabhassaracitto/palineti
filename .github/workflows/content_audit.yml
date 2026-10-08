@@ -1,0 +1,60 @@
+name: Content audit
+
+# Static checks on the lesson data and the localisation sidecars.  No Flutter
+# toolchain needed, so this runs in seconds on every push and PR.
+#
+# What it enforces:
+#   1. Sidecar integrity   - catalog, key sets, quiz shape, Dart syntax.
+#   2. Vocabulary coverage - every Pali word an exercise asks the learner to
+#                            translate must be traceable to vocabulary taught
+#                            in that lesson or an earlier one.  This is the
+#                            "did we teach this before we tested it?" question.
+#   3. ARB coverage        - no missing/extra keys, no placeholder errors.
+#
+# The --max-untraced / --max-neverlisted thresholds are ceilings, not targets.
+# They sit just above today's measured value so that a regression fails the
+# build while ordinary content work (which lowers the numbers) does not.
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      max_untraced:
+        description: 'Fail above this many untraceable exercise words'
+        type: string
+        default: '221'
+      max_neverlisted:
+        description: 'Fail above this many words that appear in no word list'
+        type: string
+        default: '179'
+
+jobs:
+  audit:
+    name: Audit lesson data
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Sweep the sandbox (corpus.json is git-ignored)
+        run: python3 tools/_extract_corpus.py
+
+      - name: Sidecar integrity + translation quality report
+        run: python3 tools/generate_locale_sidecars.py --verbose-quality
+
+      - name: Vocabulary coverage gate
+        run: |
+          python3 tools/audit_vocab_coverage.py \
+            --max-untraced "${{ inputs.max_untraced || '221' }}" \
+            --max-neverlisted "${{ inputs.max_neverlisted || '179' }}"
+
+      - name: ARB coverage (UI strings)
+        run: python3 tools/audit_locales.py
