@@ -23,6 +23,13 @@ name: Translate learning content
 # improves.
 
 on:
+  # TEMPORARY one-shot trigger.  The GitHub App token available in the review
+  # sandbox cannot dispatch workflows (HTTP 403, missing the `workflows`
+  # scope), so a push is used to start this run instead.  Remove this block
+  # once the re-translation has landed.
+  push:
+    branches: [arena/d31ad54d-palineti]
+    paths: ['.github/workflows/translate_content.yml']
   workflow_dispatch:
     inputs:
       locales:
