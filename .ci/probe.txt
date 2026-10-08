@@ -92,3 +92,167 @@ separator protocol, 15 items, 821 chars, my
   strings with a lost Pali marker: 0/15
   item 1 restored: '"Buddho vadati" — ဘယ်သုံးသပ်ချက် မှန်ပါသလဲ ။'
 
+########## si ##########
+
+=== 'Mind Game: Review Practice 1' ===
+  bare text  : translated
+      'Mind Game: Review practice 1'
+  separator  : UNCHANGED
+      'PALI90000X Mind Game: Review Practice 1'
+  span       : UNCHANGED
+      '<span id="T99999">Mind Game: Review Practice 1</span>'
+  marker-only: translated
+      'PALI90000X\nMind Game: Review practice 1'
+
+=== 'Present participle anta/māna, past participle ta/na, gerundive tabba/a' ===
+  bare text  : translated
+      'වර්තමාන කෘදන්ත අන්ත/PALI00001X, අතීත කෘදන්ත ta/na, gerundive tabba/a'
+  separator  : UNCHANGED
+      'PALI90000X Present participle anta/PALI00001X, past participle ta/na, gerundive tabba/a'
+  span       : UNCHANGED
+      '<span id="T99999">Present participle anta/PALI00001X, past participle ta/na, gerundive tabba/a</span>'
+  marker-only: translated
+      'PALI90000X\nවර්තමාන කෘදන්ත අන්ත/PALI00001X, අතීත කෘදන්ත ta/na, gerundive tabba/a'
+
+=== '📘 Ablative & Genitive Cases + 1st-Person Verbs' ===
+  bare text  : UNCHANGED
+      '📘 Ablative & Genitive Cases + 1st-Person Verbs'
+  separator  : translated
+      'PALI90000X 📘 Ablative & Genitive අවස්ථා + 1st-Person Verbs'
+  span       : UNCHANGED
+      '<span id="T99999">📘 Ablative & Genitive Cases + 1st-Person Verbs</span>'
+  marker-only: UNCHANGED
+      'PALI90000X\n📘 Ablative & Genitive Cases + 1st-Person Verbs'
+
+=== 'Reading: Masc./Fem. "-ī" & Forming Feminines' ===
+  bare text  : translated
+      'කියවීම: Masc./Fem. "-ī" සහ ස්ත්\u200dරීන් සෑදීම'
+  separator  : translated
+      'PALI90000X කියවීම: Masc./Fem. "-ī" සහ ස්ත්\u200dරීන් සෑදීම'
+  span       : translated
+      '<span id="T99999">කියවීම: Masc./Fem. "-ī" සහ ස්ත්\u200dරීත්වය සෑදීම</span>'
+  marker-only: translated
+      'PALI90000X\nකියවීම: Masc./Fem. "-ī" සහ ස්ත්\u200dරීන් සෑදීම'
+########## my ##########
+
+=== 'Mind Game: Review Practice 1' ===
+  bare text  : translated
+      'စိတ်ဂိမ်း- ပြန်လည်သုံးသပ်ခြင်း အလေ့အကျင့် ၁'
+  separator  : translated
+      'PALI90000X စိတ်ဂိမ်း- ပြန်လည်သုံးသပ်ခြင်း အလေ့အကျင့် ၁'
+  span       : translated
+      '<span id="T99999">စိတ်ဂိမ်း- ပြန်လည်သုံးသပ်ခြင်း အလေ့အကျင့် 1</span>'
+  marker-only: translated
+      'PALI90000X\nစိတ်ဂိမ်း- ပြန်လည်သုံးသပ်ခြင်း အလေ့အကျင့် ၁'
+
+=== 'Present participle anta/māna, past participle ta/na, gerundive tabba/a' ===
+  bare text  : translated
+      'လက်ရှိပါဝင်မှု anta/PALI00001X၊ past participle ta/na၊ gerundive tabba/a'
+  separator  : translated
+      'PALI90000X ပစ္စုပ္ပန်ပါဝင်မှု anta/PALI00001X၊ past participle ta/na၊ gerundive tabba/a'
+  span       : translated
+      '<span id="T99999">လက်ရှိပါဝင်မှု anta/PALI00001X၊ past participle ta/na၊ gerundive tabba/a</span>'
+  marker-only: translated
+      'PALI90000X\nလက်ရှိပါဝင်မှု anta/PALI00001X၊ past participle ta/na၊ gerundive tabba/a'
+
+=== '📘 Ablative & Genitive Cases + 1st-Person Verbs' ===
+  bare text  : UNCHANGED
+      '📘 Ablative & Genitive Cases + 1st-Person Verbs'
+  separator  : UNCHANGED
+      'PALI90000X 📘 Ablative & Genitive Cases + 1st-Person Verbs'
+  span       : UNCHANGED
+      '<span id="T99999">📘 Ablative & Genitive Cases + 1st-Person Verbs</span>'
+  marker-only: UNCHANGED
+      'PALI90000X\n📘 Ablative & Genitive Cases + 1st-Person Verbs'
+
+=== 'Reading: Masc./Fem. "-ī" & Forming Feminines' ===
+  bare text  : translated
+      'စာဖတ်ခြင်း- Masc./Fem. "-ī" & Feminines များဖွဲ့စည်းခြင်း။'
+  separator  : translated
+      'PALI90000X စာဖတ်ခြင်း- Masc./Fem. "-ī" & Feminines များဖွဲ့စည်းခြင်း။'
+  span       : translated
+      '<span id="T99999">ဖတ်ခြင်း- Masc./Fem. "-ī" နှင့် မိန်းမများဖွဲ့ခြင်း</span>'
+  marker-only: translated
+      'PALI90000X\nစာဖတ်ခြင်း- Masc./Fem. "-ī" & Feminines များဖွဲ့စည်းခြင်း။'
+########## zh ##########
+
+=== 'Mind Game: Review Practice 1' ===
+  bare text  : translated
+      '智力游戏：复习练习 1'
+  separator  : translated
+      'PALI90000X 智力游戏：复习练习1'
+  span       : translated
+      '<span id="T99999">智力游戏：复习练习 1</span>'
+  marker-only: translated
+      'PALI90000X\n智力游戏：复习练习 1'
+
+=== 'Present participle anta/māna, past participle ta/na, gerundive tabba/a' ===
+  bare text  : translated
+      '现在分词 anta/PALI00001X，过去分词 ta/na，动名词 tabba/a'
+  separator  : translated
+      'PALI90000X 现在分词 anta/PALI00001X，过去分词 ta/na，动名词 tabba/a'
+  span       : translated
+      '<span id="T99999">现在分词 anta/PALI00001X，过去分词 ta/na，动名词 tabba/a</span>'
+  marker-only: translated
+      'PALI90000X\n现在分词 anta/PALI00001X，过去分词 ta/na，动名词 tabba/a'
+
+=== '📘 Ablative & Genitive Cases + 1st-Person Verbs' ===
+  bare text  : translated
+      '📘 夺格和属格 + 第一人称动词'
+  separator  : translated
+      'PALI90000X 📘 夺格和属格 + 第一人称动词'
+  span       : translated
+      '<span id="T99999">📘 夺格和属格 + 第一人称动词</span>'
+  marker-only: translated
+      'PALI90000X\n📘 夺格和属格 + 第一人称动词'
+
+=== 'Reading: Masc./Fem. "-ī" & Forming Feminines' ===
+  bare text  : translated
+      '阅读：男性/女性。 “-ī” & 形成女性化'
+  separator  : translated
+      'PALI90000X 读数：男性/女性。 “-ī” & 形成女性化'
+  span       : translated
+      '<span id="T99999">正在阅读：男性/女性。 “-ī”与女性化</span>'
+  marker-only: translated
+      'PALI90000X\n阅读：男性/女性。 “-ī” & 形成女性化'
+########## hi ##########
+
+=== 'Mind Game: Review Practice 1' ===
+  bare text  : translated
+      'माइंड गेम: समीक्षा अभ्यास 1'
+  separator  : translated
+      'PALI90000X माइंड गेम: समीक्षा अभ्यास 1'
+  span       : translated
+      '<span id="T99999">माइंड गेम: समीक्षा अभ्यास 1</span>'
+  marker-only: translated
+      'PALI90000X\nमाइंड गेम: समीक्षा अभ्यास 1'
+
+=== 'Present participle anta/māna, past participle ta/na, gerundive tabba/a' ===
+  bare text  : translated
+      'वर्तमान कृदंत anta/PALI00001X, भूत कृदंत ta/na, gerundive tabba/a'
+  separator  : translated
+      'PALI90000X वर्तमान कृदंत anta/PALI00001X, भूत कृदंत ta/na, gerundive tabba/a'
+  span       : translated
+      '<span id="T99999">वर्तमान कृदंत anta/PALI00001X, भूतकालिक कृदंत ta/na, gerundive tabba/a</span>'
+  marker-only: translated
+      'PALI90000X\nवर्तमान कृदंत anta/PALI00001X, भूत कृदंत ta/na, gerundive tabba/a'
+
+=== '📘 Ablative & Genitive Cases + 1st-Person Verbs' ===
+  bare text  : translated
+      '📘 विभक्ति एवं संबंधकारक मामले + प्रथम-पुरुष क्रिया'
+  separator  : translated
+      'PALI90000X 📘 विभक्ति एवं संबंधकारक मामले + प्रथम-व्यक्ति क्रिया'
+  span       : translated
+      '<span id="T99999">📘 विभक्ति एवं संबंधकारक मामले + प्रथम-व्यक्ति क्रिया</span>'
+  marker-only: translated
+      'PALI90000X\n📘 विभक्ति एवं संबंधकारक मामले + प्रथम-पुरुष क्रिया'
+
+=== 'Reading: Masc./Fem. "-ī" & Forming Feminines' ===
+  bare text  : translated
+      'पढ़ना: मास्क./महिला. "-आई" और स्त्रीलिंग का निर्माण'
+  separator  : translated
+      'PALI90000X रीडिंग: मास्क/महिला। "-आई" और स्त्रीलिंग का निर्माण'
+  span       : translated
+      '<span id="T99999">पढ़ना: मास्क./महिला। "-आई" और स्त्रीलिंग का गठन</span>'
+  marker-only: translated
+      'PALI90000X\nपढ़ना: मास्क./महिला. "-आई" और स्त्रीलिंग का निर्माण'
