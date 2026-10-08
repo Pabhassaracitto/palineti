@@ -99,7 +99,7 @@ def separator_probe(locale: str, size: int) -> int:
     payload, separators, protected = g._build_payload(batch)
     print(f"separator protocol, {len(batch)} items, {len(payload)} chars, {locale}")
     try:
-        text = g._request(locale, batch)
+        text = g._request(locale, payload)
     except Exception as exc:  # noqa: BLE001
         print(f"  REQUEST FAILED {type(exc).__name__}: {exc}")
         return 1
