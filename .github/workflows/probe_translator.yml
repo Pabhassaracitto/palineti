@@ -1,0 +1,41 @@
+name: Probe translator
+# TEMPORARY diagnostic workflow.  A full translation run costs ~27 minutes,
+# so iterating on marker-recovery logic through it is not workable.  This runs
+# only tools/probe_marker_loss.py against the strings that actually failed and
+# publishes the raw Google response, in about a minute.
+# Delete this file once the re-translation has landed.
+
+on:
+  push:
+    branches: [arena/d31ad54d-palineti]
+    paths: ['.github/workflows/probe_translator.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Probe marker recovery
+        run: |
+          mkdir -p .ci
+          python3 tools/probe_marker_loss.py \
+            --token T02027 --token T02868 --token T02150 \
+            --locale hi --locale si 2>&1 | tee .ci/probe.txt
+      - name: Publish
+        if: always()
+        run: |
+          set -euo pipefail
+          [ -f .ci/probe.txt ] || exit 0
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f .ci/probe.txt
+          git diff --cached --quiet && exit 0
+          git commit -m "ci: publish translator probe"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
