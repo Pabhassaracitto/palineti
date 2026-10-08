@@ -69,18 +69,30 @@ jobs:
       - name: Report current quality (before)
         run: python3 tools/generate_locale_sidecars.py --verbose-quality
 
-      - name: Translate
+      # Cheap pre-flight.  The endpoint is unrated and per-IP limited; if it
+      # refuses here, the 20-minute run below would only fail at the end.
+      - name: Probe the translation endpoint
         if: ${{ !inputs.report_only }}
+        id: probe
+        continue-on-error: true
+        run: |
+          mkdir -p .ci
+          python3 tools/probe_translator.py 2>&1 | tee .ci/translate-run.txt
+
+      - name: Translate
+        if: ${{ !inputs.report_only && steps.probe.outcome == 'success' }}
         run: |
           set -euo pipefail
+          mkdir -p .ci
           args=()
           # Accept "hi", "hi si" or "hi,si".
           IFS=',; ' read -ra LOCS <<< "${{ inputs.locales }}"
           for loc in "${LOCS[@]}"; do
             if [ -n "$loc" ]; then args+=(--locale "$loc"); fi
           done
-          echo "args: ${args[*]:-<all locales>}"
-          python3 tools/generate_locale_sidecars.py --translate "${args[@]}"
+          echo "args: ${args[*]:-<all locales>}" | tee -a .ci/translate-run.txt
+          python3 tools/generate_locale_sidecars.py --translate "${args[@]}" 2>&1 \
+            | tee -a .ci/translate-run.txt
 
       - name: Diff of regenerated sidecars
         if: ${{ !inputs.report_only }}
@@ -111,3 +123,20 @@ jobs:
             --verbose-quality \
             --max-untranslated "${{ inputs.max_untranslated }}" \
             --max-pali-lost "${{ inputs.max_pali_lost }}"
+
+      # The log host is not reachable from the review environment, so the only
+      # way to read why a run failed is to have the run publish its own output.
+      - name: Publish diagnostics
+        if: always() && ${{ !inputs.report_only }}
+        run: |
+          set -euo pipefail
+          [ -f .ci/translate-run.txt ] || exit 0
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f .ci/translate-run.txt
+          if git diff --cached --quiet; then
+            echo "no diagnostics to publish"
+            exit 0
+          fi
+          git commit -m "ci: publish translation diagnostics for run ${{ github.run_id }}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

@@ -392,8 +392,11 @@ def translations(items: list[Item], locale: str) -> dict[str, str]:
     for number, chunk in enumerate(chunks, 1):
         print(f"{locale}: translating batch {number}/{len(chunks)} ({len(chunk)} strings)", file=sys.stderr)
         result.update(translate_batch(locale, chunk))
-        # Keep below the unauthenticated public-endpoint request rate.
-        time.sleep(0.80)
+        # Keep below the unauthenticated public-endpoint request rate.  CI
+        # runners share an egress IP with every other job Google sees from
+        # that range, so 0.8s between batches was enough to draw a 429 partway
+        # through a full four-locale run.
+        time.sleep(2.0)
     if len(result) != len(items):
         die(f"{locale}: expected {len(items)} translations, got {len(result)}")
     return result

@@ -64,3 +64,6 @@ macos/
 # only a subset of locales is translated.  Deleted on a full run, but a failed
 # run leaves it behind, so keep it out of git.
 /.locale_translation_cache.json
+
+# CI diagnostics published by translate_content.yml
+/.ci/
