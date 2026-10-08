@@ -327,6 +327,22 @@ def protect_pali(source: str) -> tuple[str, dict[str, str]]:
 MAX_TRANSLATE_ATTEMPTS = 6
 
 
+def _find_marker(value: str, marker: str) -> str | None:
+    """Locate a protect_pali() marker in translated text.
+
+    Google sometimes inserts whitespace inside an opaque alphanumeric token
+    (``PALI0003X`` -> ``PALI 0003X``) or changes its case, which used to count
+    as a lost marker and, after the retries were exhausted, aborted the whole
+    translation run.  Matching with optional internal whitespace recovers
+    those; ``None`` means the marker really is gone.
+    """
+    if marker in value:
+        return marker
+    pattern = r"\s*".join(re.escape(ch) for ch in marker)
+    hit = re.search(pattern, value, re.IGNORECASE)
+    return hit.group(0) if hit else None
+
+
 def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[str, str]:
     # Literal Pāḷi inside an explanation is terminology, not prose: it is
     # swapped out for opaque markers before the request and restored
@@ -352,22 +368,52 @@ def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[st
         translated = "".join(piece[0] for piece in payload[0] if piece and piece[0])
         translated = html.unescape(translated)
         found = {token: value for token, value in re.findall(r'<span id="(T\d+)">(.*?)</span>', translated, re.S)}
-        if set(found) != {item.token for item in batch}:
-            # Google occasionally omits wrappers around very short Pāḷi-only
-            # options in a large request.  Keep those canonical source forms;
-            # retrying whole batches causes avoidable API-rate failures.
-            missing = {item.token for item in batch} - set(found)
-            extra = set(found) - {item.token for item in batch}
-            if extra:
-                raise ValueError(f"span recovery produced unexpected ids: {sorted(extra)[:3]}")
-            found.update({token: safe_by_token[token] for token in missing})
-        for token, value in found.items():
-            for marker, original in protected.get(token, {}).items():
-                if marker not in value:
-                    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
-                value = value.replace(marker, original)
-            found[token] = value.strip()
-        return found
+        extra = set(found) - {item.token for item in batch}
+        if extra:
+            raise ValueError(f"span recovery produced unexpected ids: {sorted(extra)[:3]}")
+
+        # A string counts as "recovered" only if every Pāḷi marker it carried
+        # came back, because a lost marker would leave the translation with a
+        # stray PALI0003X in it and no way to put the Pāḷi term back.
+        ok: dict[str, str] = {}
+        lost: list[Item] = []
+        for item in batch:
+            value = found.get(item.token)
+            if value is None:
+                lost.append(item)
+                continue
+            restored: str | None = value
+            for marker, original in protected[item.token].items():
+                hit = _find_marker(restored, marker)
+                if hit is None:
+                    restored = None
+                    break
+                restored = restored.replace(hit, original)
+            if restored is None:
+                lost.append(item)
+            else:
+                ok[item.token] = restored.strip()
+
+        if not lost:
+            return ok
+
+        # Retry only the strings that failed, in a much smaller request --
+        # Google handles short payloads better than a full batch.  Once the
+        # attempts are exhausted, keep the English source for those strings
+        # rather than failing a run that has already spent 20 minutes.  The
+        # quality report counts them as untranslated.
+        if attempt >= MAX_TRANSLATE_ATTEMPTS:
+            for item in lost:
+                print(f"  {locale}: keeping English for {item.token} "
+                      f"({item.bucket}/{item.key}) - Pāḷi markers lost "
+                      f"{attempt + 1} times", file=sys.stderr)
+                ok[item.token] = item.source
+            return ok
+        print(f"  {locale}: {len(lost)} string(s) lost their Pāḷi markers; "
+              f"retrying them alone", file=sys.stderr)
+        time.sleep(2)
+        ok.update(translate_batch(locale, lost, attempt + 1))
+        return ok
     except Exception as exc:
         # Rate limiting (429) from a shared CI egress IP is the common case
         # here, and it clears on a timescale of minutes, not seconds, so the
