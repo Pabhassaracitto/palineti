@@ -27,6 +27,10 @@ on:
   # sandbox cannot dispatch workflows (HTTP 403, missing the `workflows`
   # scope), so a push is used to start this run instead.  Remove this block
   # once the re-translation has landed.
+  #
+  # Run history: 1st died on a lost Pali marker (T02027) after 13m; the fix in
+  # 69a185f makes that string keep its English source instead of aborting, so
+  # this run should reach the commit step.
   push:
     branches: [arena/d31ad54d-palineti]
     paths: ['.github/workflows/translate_content.yml']
