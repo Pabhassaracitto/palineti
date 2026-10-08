@@ -324,6 +324,9 @@ def protect_pali(source: str) -> tuple[str, dict[str, str]]:
     return source, saved
 
 
+MAX_TRANSLATE_ATTEMPTS = 6
+
+
 def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[str, str]:
     # Literal Pāḷi inside an explanation is terminology, not prose: it is
     # swapped out for opaque markers before the request and restored
@@ -366,10 +369,14 @@ def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[st
             found[token] = value.strip()
         return found
     except Exception as exc:
-        if attempt >= 5:
+        # Rate limiting (429) from a shared CI egress IP is the common case
+        # here, and it clears on a timescale of minutes, not seconds, so the
+        # backoff has to be far longer than a normal transient-failure curve.
+        if attempt >= MAX_TRANSLATE_ATTEMPTS:
             raise
-        delay = 2 ** attempt
-        print(f"  retry {locale} ({exc}); sleeping {delay}s", file=sys.stderr)
+        delay = min(15 * 2 ** attempt, 240)
+        print(f"  retry {locale} attempt {attempt + 1}/{MAX_TRANSLATE_ATTEMPTS} "
+              f"({type(exc).__name__}: {exc}); sleeping {delay}s", file=sys.stderr)
         time.sleep(delay)
         return translate_batch(locale, batch, attempt + 1)
 

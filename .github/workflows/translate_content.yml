@@ -127,7 +127,7 @@ jobs:
       # The log host is not reachable from the review environment, so the only
       # way to read why a run failed is to have the run publish its own output.
       - name: Publish diagnostics
-        if: always() && ${{ !inputs.report_only }}
+        if: always()
         run: |
           set -euo pipefail
           [ -f .ci/translate-run.txt ] || exit 0
