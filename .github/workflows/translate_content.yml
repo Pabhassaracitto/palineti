@@ -55,6 +55,10 @@ on:
         description: 'Fail if any locale exceeds this %% of strings that lost their Pali terms'
         type: string
         default: '3'
+      only_gaps:
+        description: 'Translate only the strings still in English or missing their Pali (recommended)'
+        type: string
+        default: 'true'
       report_only:
         description: 'Only report; do not translate, write or commit'
         type: boolean
@@ -101,6 +105,9 @@ jobs:
           for loc in "${LOCS[@]}"; do
             if [ -n "$loc" ]; then args+=(--locale "$loc"); fi
           done
+          if [ "${{ inputs.only_gaps }}" = "true" ]; then
+            args+=(--only-gaps)
+          fi
           echo "args: ${args[*]:-<all locales>}" | tee -a .ci/translate-run.txt
           python3 tools/generate_locale_sidecars.py --translate "${args[@]}" 2>&1 \
             | tee -a .ci/translate-run.txt
