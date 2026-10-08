@@ -33,7 +33,11 @@ on:
   #   2nd (37807501845) reached translate() but every Hindi quiz string with
   #       several Pali terms lost a marker and fell back to English: Hindi
   #       ended at 28.3% untranslated, 753 strings kept English.
-  #   This run adds numeric recovery for transliterated markers.
+  #   3rd (37815983944) numeric marker recovery: hi still 28.2%.
+  #   Probe then showed hi drops every <span> wrapper at any batch size while
+  #   si/my keep them all, so the span protocol was replaced by plain-text
+  #   separators; the probe now reports 15/15 separators and 0/15 lost markers
+  #   for hi, si, zh and my.  This run is the first with that protocol.
   push:
     branches: [arena/d31ad54d-palineti]
     paths: ['.github/workflows/translate_content.yml']
