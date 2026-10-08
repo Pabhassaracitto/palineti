@@ -93,6 +93,42 @@ def batch_probe(locale: str, size: int) -> int:
     return 0
 
 
+def separator_probe(locale: str, size: int) -> int:
+    """Exercise the production separator protocol end to end for one batch."""
+    batch = [i for i in g.catalog() if i.bucket == "quiz"][:size]
+    payload, separators, protected = g._build_payload(batch)
+    print(f"separator protocol, {len(batch)} items, {len(payload)} chars, {locale}")
+    try:
+        text = g._request(locale, batch)
+    except Exception as exc:  # noqa: BLE001
+        print(f"  REQUEST FAILED {type(exc).__name__}: {exc}")
+        return 1
+    chunks = g._split_payload(text, separators)
+    if chunks is None:
+        print("  SPLIT FAILED: at least one separator did not come back")
+        print(f"  raw head: {text[:220]!r}")
+        return 1
+    print(f"  all {len(separators)} separators recovered")
+    bad = 0
+    for item, chunk in zip(batch, chunks):
+        misses = [m for m in protected[item.token]
+                  if g._find_marker(chunk, m) is None]
+        if misses:
+            bad += 1
+            print(f"  {item.token}: {len(misses)} Pali marker(s) lost")
+            print(f"      source: {item.source[:90]!r}")
+            print(f"      chunk : {chunk[:120]!r}")
+    print(f"  strings with a lost Pali marker: {bad}/{len(batch)}")
+    # what the final text looks like after restoration
+    item, chunk = batch[0], chunks[0]
+    for marker, original in protected[item.token].items():
+        hit = g._find_marker(chunk, marker)
+        if hit:
+            chunk = chunk.replace(hit, original)
+    print(f"  item 1 restored: {chunk.strip()[:150]!r}")
+    return 0
+
+
 def sweep(locale: str, sizes: list[int]) -> int:
     """Find the largest request for which Google keeps every <span> wrapper."""
     pool = [i for i in g.catalog() if i.bucket == "quiz"]
@@ -136,6 +172,8 @@ def main() -> int:
     ap.add_argument("--locale", action="append", help="locale, repeatable")
     ap.add_argument("--batch", type=int, default=0,
                     help="instead of single strings, send a real N-item batch")
+    ap.add_argument("--separators", type=int, default=0,
+                    help="exercise the production separator protocol")
     ap.add_argument("--sweep", action="store_true",
                     help="find the largest request size that keeps every span")
     args = ap.parse_args()
@@ -143,6 +181,12 @@ def main() -> int:
     tokens = args.token or DEFAULT_TOKENS
     locales = args.locale or ["hi"]
     by_token = {i.token: i for i in g.catalog()}
+
+    if args.separators:
+        for locale in locales:
+            separator_probe(locale, args.separators)
+            print()
+        return 0
 
     if args.sweep:
         for locale in locales:
