@@ -28,3 +28,47 @@ sweep for my: 1485 quiz items available
   size 10: spans 10/10, markers lost in 0,   679 chars  -> OK
   size 15: spans 15/15, markers lost in 0,  1031 chars  -> OK
 
+separator protocol, 15 items, 821 chars, hi
+  all 15 separators recovered
+  T01590: 1 Pali marker(s) lost
+      source: 'How should "Sūdā pacanti" be translated?'
+      chunk : ' PALI00004X का अनुवाद कैसे किया जाना चाहिए?\n'
+  T01595: 2 Pali marker(s) lost
+      source: 'In "Dārakā Buddhaṃ vandanti", what is the role of "Buddhaṃ"?'
+      chunk : ' PALI00005X में, PALI00006X की क्या भूमिका है?\n'
+  strings with a lost Pali marker: 2/15
+  item 1 restored: '"बुद्धो वदति" - कौन सा विश्लेषण सही है?'
+
+separator protocol, 15 items, 821 chars, si
+  all 15 separators recovered
+  T01590: 1 Pali marker(s) lost
+      source: 'How should "Sūdā pacanti" be translated?'
+      chunk : ' PALI00004X පරිවර්තනය කළ යුත්තේ කෙසේද?\n'
+  T01595: 2 Pali marker(s) lost
+      source: 'In "Dārakā Buddhaṃ vandanti", what is the role of "Buddhaṃ"?'
+      chunk : ' PALI00005X හි, PALI00006X හි කාර්යභාරය කුමක්ද?\n'
+  strings with a lost Pali marker: 2/15
+  item 1 restored: '"බුද්ධෝ වදති" — නිවැරදි විශ්ලේෂණය කුමක්ද?'
+
+separator protocol, 15 items, 821 chars, zh
+  all 15 separators recovered
+  T01590: 1 Pali marker(s) lost
+      source: 'How should "Sūdā pacanti" be translated?'
+      chunk : ' PALI00004X 应该如何翻译？\n'
+  T01595: 2 Pali marker(s) lost
+      source: 'In "Dārakā Buddhaṃ vandanti", what is the role of "Buddhaṃ"?'
+      chunk : ' 在PALI00005X中，PALI00006X的作用是什么？\n'
+  strings with a lost Pali marker: 2/15
+  item 1 restored: '“Buddho vadati” — 哪种分析是正确的？'
+
+separator protocol, 15 items, 821 chars, my
+  all 15 separators recovered
+  T01590: 1 Pali marker(s) lost
+      source: 'How should "Sūdā pacanti" be translated?'
+      chunk : ' PALI00004X ကို ဘယ်လိုဘာသာပြန်ရမလဲ။\n'
+  T01595: 2 Pali marker(s) lost
+      source: 'In "Dārakā Buddhaṃ vandanti", what is the role of "Buddhaṃ"?'
+      chunk : ' PALI00005X တွင်၊ PALI00006X ၏အခန်းကဏ္ဍကား အဘယ်နည်း။\n'
+  strings with a lost Pali marker: 2/15
+  item 1 restored: '"Buddho vadati" — ဘယ်သုံးသပ်ချက် မှန်ပါသလဲ ။'
+
