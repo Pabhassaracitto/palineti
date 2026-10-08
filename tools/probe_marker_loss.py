@@ -20,6 +20,7 @@ import html
 import json
 import re
 import sys
+import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -92,17 +93,62 @@ def batch_probe(locale: str, size: int) -> int:
     return 0
 
 
+def sweep(locale: str, sizes: list[int]) -> int:
+    """Find the largest request for which Google keeps every <span> wrapper."""
+    pool = [i for i in g.catalog() if i.bucket == "quiz"]
+    print(f"sweep for {locale}: {len(pool)} quiz items available")
+    for size in sizes:
+        items = pool[:size]
+        protected, spans = {}, []
+        for item in items:
+            safe, saved = g.protect_pali(item.source)
+            protected[item.token] = saved
+            spans.append(f'<span id="{item.token}">{safe}</span>')
+        query = "\n".join(spans)
+        params = urllib.parse.urlencode({
+            "client": "gtx", "sl": "en", "tl": g.GOOGLE_LOCALES[locale],
+            "dt": "t", "q": query,
+        })
+        try:
+            with urllib.request.urlopen(
+                    "https://translate.googleapis.com/translate_a/single?" + params,
+                    timeout=60) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+            text = html.unescape("".join(p[0] for p in payload[0] if p and p[0]))
+        except Exception as exc:  # noqa: BLE001
+            print(f"  size {size:2d}: REQUEST FAILED {type(exc).__name__}")
+            continue
+        found = dict(re.findall(r'<span id="(T\d+)">(.*?)</span>', text, re.S))
+        bad = sum(1 for i in items
+                  if i.token in found
+                  and any(g._find_marker(found[i.token], m) is None
+                          for m in protected[i.token]))
+        verdict = "OK" if len(found) == size and not bad else "SPANS DROPPED"
+        print(f"  size {size:2d}: spans {len(found):2d}/{size:2d}, "
+              f"markers lost in {bad}, {len(query):5d} chars  -> {verdict}")
+        time.sleep(1.0)
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--token", action="append", help="catalog token, repeatable")
     ap.add_argument("--locale", action="append", help="locale, repeatable")
     ap.add_argument("--batch", type=int, default=0,
                     help="instead of single strings, send a real N-item batch")
+    ap.add_argument("--sweep", action="store_true",
+                    help="find the largest request size that keeps every span")
     args = ap.parse_args()
 
     tokens = args.token or DEFAULT_TOKENS
     locales = args.locale or ["hi"]
     by_token = {i.token: i for i in g.catalog()}
+
+    if args.sweep:
+        for locale in locales:
+            sweep(locale, [2, 3, 4, 5, 6, 8, 10, 15])
+            print()
+        return 0
 
     if args.batch:
         for locale in locales:
