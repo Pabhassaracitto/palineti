@@ -330,47 +330,44 @@ def protect_pali(source: str) -> tuple[str, dict[str, str]]:
     return source, saved
 
 
-MAX_TRANSLATE_ATTEMPTS = 6
+MAX_TRANSLATE_ATTEMPTS = 4
+NETWORK_ATTEMPTS = 6
 
 
-def _find_marker(value: str, marker: str) -> str | None:
-    """Locate a protect_pali() marker in translated text.
+def _find_marker_span(value: str, marker: str,
+                      start: int = 0) -> tuple[int, int] | None:
+    """Locate a protect_pali() marker, returning its (start, end) offsets.
 
-    Google sometimes inserts whitespace inside an opaque alphanumeric token
-    (``PALI0003X`` -> ``PALI 0003X``) or changes its case, which used to count
-    as a lost marker and, after the retries were exhausted, aborted the whole
-    translation run.  Matching with optional internal whitespace recovers
-    those; ``None`` means the marker really is gone.
+    Same recovery rules as _find_marker(), but returns positions so the text
+    around a marker can be sliced -- the separator protocol needs that.
     """
-    if marker in value:
-        return marker
+    index = value.find(marker, start)
+    if index >= 0:
+        return index, index + len(marker)
     pattern = r"\s*".join(re.escape(ch) for ch in marker)
-    hit = re.search(pattern, value, re.IGNORECASE)
+    hit = re.search(pattern, value[start:], re.IGNORECASE)
     if hit:
-        # The whitespace-tolerant pattern can pick up an adjacent comma or
-        # bracket; trim punctuation off the ends but keep the interior, which
-        # may legitimately contain a space ("पाली 00001 X").
-        return hit.group(0).strip(" \t,.;:!?()[]{}\"'`")
-    # The letters get transliterated ("PALI0003X" -> "पाली0003X") and the
-    # digits may be rewritten into the target script too (Devanagari ०, Sinhala
-    # ෦, Myanmar ၀ are all decimal digits Unicode-wise).  The number's *value*
-    # survives either way, so match on that: int() accepts every one of those
-    # digit sets.  Do NOT build the pattern with re.escape(digits), which would
-    # only ever match ASCII.
+        return start + hit.start(), start + hit.end()
     digits = re.search(r"\d+", marker)
     if digits is None:
         return None
     want = int(digits.group(0))
-    for run in re.finditer(r"\d+", value):
+    for run in re.finditer(r"\d+", value[start:]):
         try:
             if int(run.group(0)) != want:
                 continue
         except ValueError:
             continue
-        left = _take_marker_chars(value, run.start(), -1)
-        right = _take_marker_chars(value, run.end(), +1)
-        return value[left:right].strip(" \t")
+        a = start + run.start()
+        b = start + run.end()
+        return _take_marker_chars(value, a, -1), _take_marker_chars(value, b, +1)
     return None
+
+
+def _find_marker(value: str, marker: str) -> str | None:
+    """Locate a protect_pali() marker in translated text, or None if gone."""
+    span = _find_marker_span(value, marker)
+    return None if span is None else value[span[0]:span[1]].strip(" \t,.;:!?()[]{}\"'`")
 
 
 def _marker_char(char: str) -> bool:
@@ -427,46 +424,96 @@ def _take_marker_chars(value: str, index: int, step: int) -> int:
     return cursor
 
 
-def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[str, str]:
-    # Literal Pāḷi inside an explanation is terminology, not prose: it is
-    # swapped out for opaque markers before the request and restored
-    # afterwards.  Without this the translator transliterates the quotation
-    # into the target script ("Acariyā" -> "ආචාරියා" / "अकारिया"), which
-    # silently corrupts every cited sentence.
-    # Canonical Pāḷi *keys* are copied separately, byte-for-byte, from the
-    # English sidecars and are never sent to the translator.
+SEPARATOR_BASE = 90000
+
+
+def _build_payload(batch: list[Item]) -> tuple[str, list[str], dict[str, dict[str, str]]]:
+    """Lay a batch out as plain text, each item introduced by its own marker.
+
+    HTML span wrappers are deliberately not used.  Google strips HTML tags for
+    some target languages: measured with tools/probe_marker_loss.py, a request
+    carrying two <span> wrappers comes back with only one of them for Hindi,
+    while Sinhala and Myanmar keep every wrapper at every size tried (2 to 15).
+    Hindi drops them regardless of batch size, so attribution cannot depend on
+    markup at all.
+
+    Markers are ordinary text and survive: the Pāḷi terms inside a string are
+    protected by markers of exactly this kind.  One mechanism then covers both
+    "where does this string end" and "put the Pāḷi back".
+    """
+    parts: list[str] = []
+    separators: list[str] = []
     protected: dict[str, dict[str, str]] = {}
-    safe_by_token: dict[str, str] = {}
-    spans: list[str] = []
-    for item in batch:
+    for offset, item in enumerate(batch):
         safe, saved = protect_pali(item.source)
         protected[item.token] = saved
-        safe_by_token[item.token] = safe
-        spans.append(f'<span id="{item.token}">{safe}</span>')
-    query = "\n".join(spans)
-    params = urllib.parse.urlencode({"client": "gtx", "sl": "en", "tl": GOOGLE_LOCALES[locale], "dt": "t", "q": query})
+        separator = f"PALI{SEPARATOR_BASE + offset:05d}X"
+        separators.append(separator)
+        parts.append(f"{separator} {safe}")
+    return "\n".join(parts), separators, protected
+
+
+def _split_payload(text: str, separators: list[str]) -> list[str] | None:
+    """Slice a translated payload back into one chunk per item.
+
+    Returns None if any separator is missing, which makes the caller shrink
+    the request rather than risk attaching a translation to the wrong string.
+    """
+    spans: list[tuple[int, int]] = []
+    cursor = 0
+    for separator in separators:
+        span = _find_marker_span(text, separator, cursor)
+        if span is None:
+            return None
+        spans.append(span)
+        cursor = span[1]
+    chunks: list[str] = []
+    for index, (_, end) in enumerate(spans):
+        limit = spans[index + 1][0] if index + 1 < len(spans) else len(text)
+        chunks.append(text[end:limit])
+    return chunks
+
+
+def _request(locale: str, batch: list[Item], attempt: int = 0) -> str:
+    """Send one request, retrying transient network failures with backoff."""
+    payload, separators, protected = _build_payload(batch)
+    params = urllib.parse.urlencode({
+        "client": "gtx", "sl": "en", "tl": GOOGLE_LOCALES[locale],
+        "dt": "t", "q": payload,
+    })
     url = "https://translate.googleapis.com/translate_a/single?" + params
     try:
         with urllib.request.urlopen(url, timeout=60) as response:
-            payload = json.loads(response.read().decode("utf-8"))
-        translated = "".join(piece[0] for piece in payload[0] if piece and piece[0])
-        translated = html.unescape(translated)
-        found = {token: value for token, value in re.findall(r'<span id="(T\d+)">(.*?)</span>', translated, re.S)}
-        extra = set(found) - {item.token for item in batch}
-        if extra:
-            raise ValueError(f"span recovery produced unexpected ids: {sorted(extra)[:3]}")
+            body = json.loads(response.read().decode("utf-8"))
+        return "".join(piece[0] for piece in body[0] if piece and piece[0])
+    except Exception as exc:  # noqa: BLE001
+        if attempt >= NETWORK_ATTEMPTS:
+            raise
+        delay = min(15 * 2 ** attempt, 240)
+        print(f"  {locale}: request failed ({type(exc).__name__}: {exc}); "
+              f"attempt {attempt + 1}/{NETWORK_ATTEMPTS}, sleeping {delay}s",
+              file=sys.stderr)
+        time.sleep(delay)
+        return _request(locale, batch, attempt + 1)
 
-        # A string counts as "recovered" only if every Pāḷi marker it carried
-        # came back, because a lost marker would leave the translation with a
-        # stray PALI0003X in it and no way to put the Pāḷi term back.
-        ok: dict[str, str] = {}
-        lost: list[Item] = []
-        for item in batch:
-            value = found.get(item.token)
-            if value is None:
-                lost.append(item)
-                continue
-            restored: str | None = value
+
+def translate_batch(locale: str, batch: list[Item], attempts: int = 0) -> dict[str, str]:
+    """Translate a batch, shrinking it until every string is accounted for.
+
+    A locale that cannot carry several strings in one request still has to
+    produce a translation, so on any doubt the batch is halved and retried.
+    A string that fails on its own keeps its English source, which the quality
+    report counts as untranslated -- never a wrong translation attached to the
+    wrong string.
+    """
+    _, separators, protected = _build_payload(batch)
+    chunks = _split_payload(_request(locale, batch), separators)
+
+    result: dict[str, str] = {}
+    lost: list[Item] = []
+    if chunks is not None:
+        for item, chunk in zip(batch, chunks):
+            restored: str | None = chunk
             for marker, original in protected[item.token].items():
                 hit = _find_marker(restored, marker)
                 if hit is None:
@@ -476,42 +523,32 @@ def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[st
             if restored is None:
                 lost.append(item)
             else:
-                ok[item.token] = restored.strip()
+                result[item.token] = restored.strip()
+    else:
+        lost = list(batch)
 
-        if not lost:
-            return ok
+    if not lost:
+        return result
 
-        # Retry only the strings that failed, in a much smaller request --
-        # Google handles short payloads better than a full batch.  Once the
-        # attempts are exhausted, keep the English source for those strings
-        # rather than failing a run that has already spent 20 minutes.  The
-        # quality report counts them as untranslated.
-        if attempt >= MAX_TRANSLATE_ATTEMPTS:
-            for item in lost:
-                raw = found.get(item.token)
-                print(f"  {locale}: keeping English for {item.token} "
-                      f"({item.bucket}/{item.key}) - Pāḷi markers lost "
-                      f"{attempt + 1} times", file=sys.stderr)
-                print(f"      source: {item.source!r}", file=sys.stderr)
-                print(f"      google: {raw!r}", file=sys.stderr)
-                ok[item.token] = item.source
-            return ok
-        print(f"  {locale}: {len(lost)} string(s) lost their Pāḷi markers; "
-              f"retrying them alone", file=sys.stderr)
-        time.sleep(2)
-        ok.update(translate_batch(locale, lost, attempt + 1))
-        return ok
-    except Exception as exc:
-        # Rate limiting (429) from a shared CI egress IP is the common case
-        # here, and it clears on a timescale of minutes, not seconds, so the
-        # backoff has to be far longer than a normal transient-failure curve.
-        if attempt >= MAX_TRANSLATE_ATTEMPTS:
-            raise
-        delay = min(15 * 2 ** attempt, 240)
-        print(f"  retry {locale} attempt {attempt + 1}/{MAX_TRANSLATE_ATTEMPTS} "
-              f"({type(exc).__name__}: {exc}); sleeping {delay}s", file=sys.stderr)
-        time.sleep(delay)
-        return translate_batch(locale, batch, attempt + 1)
+    if len(batch) > 1:
+        middle = len(batch) // 2
+        print(f"  {locale}: {len(lost)}/{len(batch)} strings unusable in one "
+              f"request ({len(batch)} items); splitting", file=sys.stderr)
+        time.sleep(1.0)
+        result.update(translate_batch(locale, batch[:middle]))
+        time.sleep(1.0)
+        result.update(translate_batch(locale, batch[middle:]))
+        return result
+
+    item = batch[0]
+    if attempts < MAX_TRANSLATE_ATTEMPTS:
+        print(f"  {locale}: retrying {item.token} alone "
+              f"(attempt {attempts + 1}/{MAX_TRANSLATE_ATTEMPTS})", file=sys.stderr)
+        time.sleep(3)
+        return translate_batch(locale, batch, attempts + 1)
+    print(f"  {locale}: keeping English for {item.token} "
+          f"({item.bucket}/{item.key})", file=sys.stderr)
+    return {item.token: item.source}
 
 
 def translations(items: list[Item], locale: str) -> dict[str, str]:

@@ -25,9 +25,9 @@ jobs:
       - name: Probe marker recovery
         run: |
           mkdir -p .ci
-          python3 tools/probe_marker_loss.py --sweep --locale hi 2>&1 | tee .ci/probe.txt
-          python3 tools/probe_marker_loss.py --sweep --locale si 2>&1 | tee -a .ci/probe.txt
-          python3 tools/probe_marker_loss.py --sweep --locale my 2>&1 | tee -a .ci/probe.txt
+          for loc in hi si zh my; do
+            python3 tools/probe_marker_loss.py --separators 15 --locale "$loc" 2>&1 | tee -a .ci/probe.txt
+          done
       - name: Publish
         if: always()
         run: |
