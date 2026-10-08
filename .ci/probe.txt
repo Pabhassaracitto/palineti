@@ -72,3 +72,23 @@ separator protocol, 15 items, 821 chars, my
   strings with a lost Pali marker: 2/15
   item 1 restored: '"Buddho vadati" — ဘယ်သုံးသပ်ချက် မှန်ပါသလဲ ။'
 
+separator protocol, 15 items, 821 chars, hi
+  all 15 separators recovered
+  strings with a lost Pali marker: 0/15
+  item 1 restored: '"बुद्धो वदति" - कौन सा विश्लेषण सही है?'
+
+separator protocol, 15 items, 821 chars, si
+  all 15 separators recovered
+  strings with a lost Pali marker: 0/15
+  item 1 restored: '"බුද්ධෝ වදති" — නිවැරදි විශ්ලේෂණය කුමක්ද?'
+
+separator protocol, 15 items, 821 chars, zh
+  all 15 separators recovered
+  strings with a lost Pali marker: 0/15
+  item 1 restored: '“Buddho vadati” — 哪种分析是正确的？'
+
+separator protocol, 15 items, 821 chars, my
+  all 15 separators recovered
+  strings with a lost Pali marker: 0/15
+  item 1 restored: '"Buddho vadati" — ဘယ်သုံးသပ်ချက် မှန်ပါသလဲ ။'
+
