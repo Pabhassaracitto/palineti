@@ -1,0 +1,129 @@
+  si (si): HTTP 200, markers kept = True
+      <span id="T00001">භික්ෂුව PALI0000X ඉගැන්වීම ආරක්ෂා කරයි.</span>
+<span id="T00002">ඔහු PALI0001X ඍෂිවරයා සමඟ කතා කරයි.</
+  zh (zh-CN): HTTP 200, markers kept = True
+      <span id="T00001">僧人守护PALI0000X教法。</span>
+<span id="T00002">他与 PALI0001X 圣人交谈。</span>
+  my (my): HTTP 200, markers kept = True
+      <span id="T00001">ရဟန်းသည် PALI0000X တရားတော်ကို အကာအကွယ်ပေးသည်။</span>
+<span id="T00002">သူသည် PALI0001X ပညာရှိနှင့် စက
+  hi (hi): HTTP 200, markers kept = True
+      <span id="T00001">भिक्षु PALI0000X शिक्षण की रक्षा करता है।</span>
+<span id="T00002">वह PALI0001X ऋषि से बात करता है।</s
+
+probe OK for all locales
+args: <all locales>
+si: translating batch 1/68 (24 strings)
+si: translating batch 2/68 (39 strings)
+si: translating batch 3/68 (39 strings)
+si: translating batch 4/68 (41 strings)
+si: translating batch 5/68 (39 strings)
+si: translating batch 6/68 (42 strings)
+si: translating batch 7/68 (54 strings)
+si: translating batch 8/68 (53 strings)
+si: translating batch 9/68 (45 strings)
+si: translating batch 10/68 (45 strings)
+si: translating batch 11/68 (45 strings)
+si: translating batch 12/68 (49 strings)
+si: translating batch 13/68 (41 strings)
+si: translating batch 14/68 (36 strings)
+si: translating batch 15/68 (42 strings)
+si: translating batch 16/68 (47 strings)
+si: translating batch 17/68 (49 strings)
+si: translating batch 18/68 (44 strings)
+si: translating batch 19/68 (44 strings)
+si: translating batch 20/68 (42 strings)
+si: translating batch 21/68 (48 strings)
+si: translating batch 22/68 (45 strings)
+si: translating batch 23/68 (41 strings)
+si: translating batch 24/68 (45 strings)
+si: translating batch 25/68 (50 strings)
+si: translating batch 26/68 (46 strings)
+si: translating batch 27/68 (56 strings)
+si: translating batch 28/68 (60 strings)
+si: translating batch 29/68 (60 strings)
+si: translating batch 30/68 (59 strings)
+si: translating batch 31/68 (59 strings)
+si: translating batch 32/68 (64 strings)
+si: translating batch 33/68 (57 strings)
+si: translating batch 34/68 (48 strings)
+si: translating batch 35/68 (46 strings)
+si: translating batch 36/68 (46 strings)
+si: translating batch 37/68 (49 strings)
+si: translating batch 38/68 (49 strings)
+si: translating batch 39/68 (43 strings)
+si: translating batch 40/68 (32 strings)
+si: translating batch 41/68 (47 strings)
+si: translating batch 42/68 (42 strings)
+si: translating batch 43/68 (44 strings)
+si: translating batch 44/68 (35 strings)
+  retry si attempt 1/6 (ValueError: protected Pāḷi marker PALI0003X was lost for T02027); sleeping 15s
+  retry si attempt 2/6 (ValueError: protected Pāḷi marker PALI0003X was lost for T02027); sleeping 30s
+  retry si attempt 3/6 (ValueError: protected Pāḷi marker PALI0003X was lost for T02027); sleeping 60s
+  retry si attempt 4/6 (ValueError: protected Pāḷi marker PALI0003X was lost for T02027); sleeping 120s
+  retry si attempt 5/6 (ValueError: protected Pāḷi marker PALI0003X was lost for T02027); sleeping 240s
+  retry si attempt 6/6 (ValueError: protected Pāḷi marker PALI0003X was lost for T02027); sleeping 240s
+Traceback (most recent call last):
+  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
+    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
+ValueError: protected Pāḷi marker PALI0003X was lost for T02027
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
+    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
+ValueError: protected Pāḷi marker PALI0003X was lost for T02027
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
+    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
+ValueError: protected Pāḷi marker PALI0003X was lost for T02027
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
+    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
+ValueError: protected Pāḷi marker PALI0003X was lost for T02027
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
+    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
+ValueError: protected Pāḷi marker PALI0003X was lost for T02027
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
+    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
+ValueError: protected Pāḷi marker PALI0003X was lost for T02027
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 983, in <module>
+    main()
+  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 972, in main
+    strings_by_locale[locale] = translations(items, locale)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 401, in translations
+    result.update(translate_batch(locale, chunk))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 381, in translate_batch
+    return translate_batch(locale, batch, attempt + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 381, in translate_batch
+    return translate_batch(locale, batch, attempt + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 381, in translate_batch
+    return translate_batch(locale, batch, attempt + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 3 more times]
+  File "/home/runner/work/palineti/palineti/tools/generate_locale_sidecars.py", line 367, in translate_batch
+    raise ValueError(f"protected Pāḷi marker {marker} was lost for {token}")
+ValueError: protected Pāḷi marker PALI0003X was lost for T02027
