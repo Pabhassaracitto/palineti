@@ -351,18 +351,80 @@ def _find_marker(value: str, marker: str) -> str | None:
         # bracket; trim punctuation off the ends but keep the interior, which
         # may legitimately contain a space ("पाली 00001 X").
         return hit.group(0).strip(" \t,.;:!?()[]{}\"'`")
-    # Google transliterated the letters but kept the digits ("PALI0003X" ->
-    # "पाली0003X").  Take the whole run of non-space characters around the
-    # number so the Devanagari prefix and the trailing X go with it.
+    # The letters get transliterated ("PALI0003X" -> "पाली0003X") and the
+    # digits may be rewritten into the target script too (Devanagari ०, Sinhala
+    # ෦, Myanmar ၀ are all decimal digits Unicode-wise).  The number's *value*
+    # survives either way, so match on that: int() accepts every one of those
+    # digit sets.  Do NOT build the pattern with re.escape(digits), which would
+    # only ever match ASCII.
     digits = re.search(r"\d+", marker)
-    if digits:
-        surround = r"[^\s,.;:!?()\[\]{}\"'`]{0,12}"
-        hit = re.search(
-            surround + r"\s?" + re.escape(digits.group(0)) + r"\s?" + surround,
-            value)
-        if hit:
-            return hit.group(0).strip(" \t")
+    if digits is None:
+        return None
+    want = int(digits.group(0))
+    for run in re.finditer(r"\d+", value):
+        try:
+            if int(run.group(0)) != want:
+                continue
+        except ValueError:
+            continue
+        left = _take_marker_chars(value, run.start(), -1)
+        right = _take_marker_chars(value, run.end(), +1)
+        return value[left:right].strip(" \t")
     return None
+
+
+def _marker_char(char: str) -> bool:
+    """True for characters that can belong to a marker token."""
+    return not char.isspace() and char not in ",.;:!?()[]{}\"'`"
+
+
+def _marker_part(token: str) -> bool:
+    """True if a whitespace-separated token may be half of a marker.
+
+    Google sometimes splits a marker at a space ("पाली 00001 X").  Crossing a
+    space is only safe when the token on the far side looks like marker debris
+    rather than a real word: the ASCII prefix PALI is upper case, and the
+    transliterated forms are non-ASCII.  A lower-case English word such as
+    "ending" is rejected, which matters because "ending पाली00001X" is a very
+    common shape.
+    """
+    if not token or len(token) > 12:
+        return False
+    if all(ord(c) > 127 for c in token):
+        return True
+    return token.isupper()
+
+
+def _take_marker_chars(value: str, index: int, step: int) -> int:
+    """Walk out from a digit run over marker characters, crossing one space.
+
+    ``step`` is -1 to walk left from ``index`` (a run start) or +1 to walk
+    right from ``index`` (a run end).  Returns the new boundary: the lowest
+    index touched walking left, the highest walking right.
+    """
+    cursor = index
+    for _ in range(12):
+        pos = cursor - 1 if step < 0 else cursor
+        if not 0 <= pos < len(value):
+            break
+        char = value[pos]
+        if _marker_char(char):
+            cursor = pos if step < 0 else pos + 1
+            continue
+        if not char.isspace():
+            break
+        # A single space may sit inside a marker ("पाली 00001 X"); cross it only
+        # when the token on the far side looks like marker debris rather than a
+        # real word, because "ending पाली00001X" is a very common shape.
+        gap = cursor - 2 if step < 0 else cursor + 1
+        far = gap
+        while 0 <= far < len(value) and _marker_char(value[far]):
+            far += step
+        token = value[far + 1:gap + 1] if step < 0 else value[gap:far]
+        if not _marker_part(token):
+            break
+        return far + 1 if step < 0 else far
+    return cursor
 
 
 def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[str, str]:
@@ -426,9 +488,12 @@ def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[st
         # quality report counts them as untranslated.
         if attempt >= MAX_TRANSLATE_ATTEMPTS:
             for item in lost:
+                raw = found.get(item.token)
                 print(f"  {locale}: keeping English for {item.token} "
                       f"({item.bucket}/{item.key}) - Pāḷi markers lost "
                       f"{attempt + 1} times", file=sys.stderr)
+                print(f"      source: {item.source!r}", file=sys.stderr)
+                print(f"      google: {raw!r}", file=sys.stderr)
                 ok[item.token] = item.source
             return ok
         print(f"  {locale}: {len(lost)} string(s) lost their Pāḷi markers; "
