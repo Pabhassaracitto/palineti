@@ -1,35 +1,22 @@
+batch of 15 items, 1031 chars, locale hi
+spans recovered: 3/15
+  T01586: SPAN MISSING
+  T01587: SPAN MISSING
+  T01588: SPAN MISSING
+  T01589: SPAN MISSING
+  T01591: SPAN MISSING
+  T01592: SPAN MISSING
+  T01593: SPAN MISSING
+  T01594: SPAN MISSING
+  T01596: SPAN MISSING
+  T01597: SPAN MISSING
+  T01598: SPAN MISSING
+  T01599: SPAN MISSING
 
-=== T02027  [quiz/lesson09_q01_05] ===
-  source    : 'B. FEMININE "-i" has the oblique singular ending "-iyā" (bhūmiyā), shared for Instrumental/Ablative/Dative/Genitive, while MASCULINE "-i" has its OWN endings: -inā (Inst.), -issa (Gen./Dat.), -ismā (Abl.), -ismiṃ (Loc.).'
-  protected : 'B. FEMININE "-i" has the oblique singular ending PALI00001X (PALI00002X), shared for Instrumental/Ablative/Dative/Genitive, while MASCULINE "-i" has its OWN endings: -PALI00003X (Inst.), -issa (Gen./Dat.), -PALI00004X (Abl.), -PALI00005X (Loc.).'
-  markers   : ['PALI00001X', 'PALI00002X', 'PALI00003X', 'PALI00004X', 'PALI00005X']
-  hi   -> raw: 'बी. स्त्रीलिंग "-i" का तिरछा एकवचन अंत PALI00001X (PALI00002X) है, जिसे इंस्ट्रुमेंटल/एब्लेटिव/डेटिव/जेनिटिव के लिए साझा किया गया है, जबकि पुल्लिंग "-i" का अपना अंत है: -PALI00003X (Inst.), -issa (Gen./Dat.), -PALI00004X (Abl.), -PALI00005X (स्थान)।'
-  hi      PALI00001X ('"-iyā"'): recovered via 'PALI00001X'
-  hi      PALI00002X ('bhūmiyā'): recovered via 'PALI00002X'
-  hi      PALI00003X ('inā'): recovered via 'PALI00003X'
-  hi      PALI00004X ('ismā'): recovered via 'PALI00004X'
-  hi      PALI00005X ('ismiṃ'): recovered via 'PALI00005X'
-  si   -> raw: 'B. FEMININE "-i" හට ආනත ඒකවචන අවසානය PALI00001X (PALI00002X), උපකරණ/අබ්ලේටිව්/Dative/Genitive සඳහා බෙදා ඇති අතර, MASCULINE "-i" හට එහිම අවසන් ඇත: -PALI00003X (Inst.0D0003X (Inst.0D0.0D), - (Abl.), -PALI00005X (Loc.).'
-  si      PALI00001X ('"-iyā"'): recovered via 'PALI00001X'
-  si      PALI00002X ('bhūmiyā'): recovered via 'PALI00002X'
-  si      PALI00003X ('inā'): recovered via 'PALI00003X'
-  si      PALI00004X ('ismā'): LOST
-  si      PALI00005X ('ismiṃ'): recovered via 'PALI00005X'
+lost 12/15 items in a 15-item batch
 
-=== T02868  [quiz/lesson24_q02] ===
-  source    : 'C. #3: ṃ→ññ before y'
-  protected : 'C. #3: ṃ→PALI00006X before y'
-  markers   : ['PALI00006X']
-  hi   -> raw: 'सी. #3: ṃ→PALI00006X y से पहले'
-  hi      PALI00006X ('ññ'): recovered via 'PALI00006X'
-  si   -> raw: 'C. #3: ṃ→PALI00006X y ට පෙර'
-  si      PALI00006X ('ññ'): recovered via 'PALI00006X'
+batch of 15 items, 1031 chars, locale si
+spans recovered: 15/15
 
-=== T02150  [quiz/lesson13_q01] ===
-  source    : '"Yo" in the sentence "Yo Dhammaṃ passati so Buddhaṃ passati" — which pronoun is it, and in which case?'
-  protected : '"Yo" in the sentence PALI00007X — which pronoun is it, and in which case?'
-  markers   : ['PALI00007X']
-  hi   -> raw: 'वाक्य PALI00007X में "यो" - यह कौन सा सर्वनाम है, और किस स्थिति में?'
-  hi      PALI00007X ('"Yo Dhammaṃ passati so Buddhaṃ passati"'): recovered via 'PALI00007X'
-  si   -> raw: 'PALI00007X වාක්\u200dයයේ "Yo" — එය කුමන සර්වනාමයද, සහ කුමන අවස්ථාවේදීද?'
-  si      PALI00007X ('"Yo Dhammaṃ passati so Buddhaṃ passati"'): recovered via 'PALI00007X'
+lost 0/15 items in a 15-item batch
+
