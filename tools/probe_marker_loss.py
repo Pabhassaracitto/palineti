@@ -129,6 +129,46 @@ def separator_probe(locale: str, size: int) -> int:
     return 0
 
 
+COMPARE_SOURCES = [
+    "Mind Game: Review Practice 1",
+    "Present participle anta/māna, past participle ta/na, gerundive tabba/a",
+    "📘 Ablative & Genitive Cases + 1st-Person Verbs",
+    "Reading: Masc./Fem. \"-ī\" & Forming Feminines",
+]
+
+
+def compare(locale: str) -> int:
+    """Send the same strings three ways to find why Google echoes the source.
+
+    The separator protocol prefixes every item with its own marker.  If Google
+    treats a line beginning with an untranslatable token as not worth
+    translating, that prefix is the reason ~275 Sinhala strings came back as
+    English where the previous span-based run translated them.
+    """
+    for source in COMPARE_SOURCES:
+        item = g.Item("T99999", "probe", "probe", "value", source)
+        safe, _ = g.protect_pali(source)
+        separator = f"PALI{90000:05d}X"
+        shapes = {
+            "bare text  ": safe,
+            "separator  ": f"{separator} {safe}",
+            "span       ": f'<span id="T99999">{safe}</span>',
+            "marker-only": f"{separator}\n{safe}",
+        }
+        print(f"\n=== {source!r} ===")
+        for name, payload in shapes.items():
+            try:
+                out = g._request(locale, payload)
+            except Exception as exc:  # noqa: BLE001
+                print(f"  {name}: REQUEST FAILED {type(exc).__name__}")
+                continue
+            unchanged = out.strip() == payload.strip()
+            print(f"  {name}: {'UNCHANGED' if unchanged else 'translated'}")
+            print(f"      {out.strip()[:110]!r}")
+            time.sleep(1.0)
+    return 0
+
+
 def sweep(locale: str, sizes: list[int]) -> int:
     """Find the largest request for which Google keeps every <span> wrapper."""
     pool = [i for i in g.catalog() if i.bucket == "quiz"]
@@ -172,6 +212,8 @@ def main() -> int:
     ap.add_argument("--locale", action="append", help="locale, repeatable")
     ap.add_argument("--batch", type=int, default=0,
                     help="instead of single strings, send a real N-item batch")
+    ap.add_argument("--compare", action="store_true",
+                    help="send the same strings with and without the separator")
     ap.add_argument("--separators", type=int, default=0,
                     help="exercise the production separator protocol")
     ap.add_argument("--sweep", action="store_true",
@@ -181,6 +223,11 @@ def main() -> int:
     tokens = args.token or DEFAULT_TOKENS
     locales = args.locale or ["hi"]
     by_token = {i.token: i for i in g.catalog()}
+
+    if args.compare:
+        for locale in locales:
+            compare(locale)
+        return 0
 
     if args.separators:
         for locale in locales:
