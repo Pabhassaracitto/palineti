@@ -74,21 +74,9 @@ si: translating batch 51/68 (50 strings)
 si: translating batch 52/68 (32 strings)
   si: 1 string(s) lost their Pāḷi markers; retrying them alone
   si: 1 string(s) lost their Pāḷi markers; retrying them alone
-  si: 1 string(s) lost their Pāḷi markers; retrying them alone
-  si: 1 string(s) lost their Pāḷi markers; retrying them alone
-  si: 1 string(s) lost their Pāḷi markers; retrying them alone
-  si: 1 string(s) lost their Pāḷi markers; retrying them alone
-  si: keeping English for T02363 (quiz/lesson16_q01_06) - Pāḷi markers lost 7 times
 si: translating batch 53/68 (45 strings)
 si: translating batch 54/68 (46 strings)
 si: translating batch 55/68 (50 strings)
-  si: 1 string(s) lost their Pāḷi markers; retrying them alone
-  si: 1 string(s) lost their Pāḷi markers; retrying them alone
-  si: 1 string(s) lost their Pāḷi markers; retrying them alone
-  si: 1 string(s) lost their Pāḷi markers; retrying them alone
-  si: 1 string(s) lost their Pāḷi markers; retrying them alone
-  si: 1 string(s) lost their Pāḷi markers; retrying them alone
-  si: keeping English for T02470 (quiz/lesson18_q8) - Pāḷi markers lost 7 times
 si: translating batch 56/68 (42 strings)
 si: translating batch 57/68 (40 strings)
 si: translating batch 58/68 (43 strings)
@@ -264,6 +252,7 @@ my: translating batch 53/68 (45 strings)
 my: translating batch 54/68 (46 strings)
   my: 1 string(s) lost their Pāḷi markers; retrying them alone
 my: translating batch 55/68 (50 strings)
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
 my: translating batch 56/68 (42 strings)
 my: translating batch 57/68 (40 strings)
 my: translating batch 58/68 (43 strings)
@@ -275,13 +264,17 @@ my: translating batch 62/68 (47 strings)
 my: translating batch 63/68 (44 strings)
   my: 1 string(s) lost their Pāḷi markers; retrying them alone
 my: translating batch 64/68 (43 strings)
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
+  my: 1 string(s) lost their Pāḷi markers; retrying them alone
 my: translating batch 65/68 (44 strings)
   my: 1 string(s) lost their Pāḷi markers; retrying them alone
 my: translating batch 66/68 (47 strings)
 my: translating batch 67/68 (48 strings)
 my: translating batch 68/68 (27 strings)
 hi: translating batch 1/68 (24 strings)
-  hi: 4 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 5 string(s) lost their Pāḷi markers; retrying them alone
   hi: 4 string(s) lost their Pāḷi markers; retrying them alone
   hi: 4 string(s) lost their Pāḷi markers; retrying them alone
   hi: 4 string(s) lost their Pāḷi markers; retrying them alone
@@ -396,17 +389,16 @@ hi: translating batch 25/68 (50 strings)
 hi: translating batch 26/68 (46 strings)
   hi: 14 string(s) lost their Pāḷi markers; retrying them alone
   hi: 14 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 14 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 14 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 14 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 14 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 13 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 13 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 13 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 13 string(s) lost their Pāḷi markers; retrying them alone
   hi: keeping English for T01091 (pos/danh từ, CC số nhiều) - Pāḷi markers lost 7 times
   hi: keeping English for T01092 (pos/danh từ, CC số ít) - Pāḷi markers lost 7 times
   hi: keeping English for T01093 (pos/danh từ, ĐC số nhiều) - Pāḷi markers lost 7 times
   hi: keeping English for T01094 (pos/danh từ, ĐC số ít) - Pāḷi markers lost 7 times
   hi: keeping English for T01098 (pos/ht.bđ.pt) - Pāḷi markers lost 7 times
   hi: keeping English for T01099 (pos/htpt) - Pāḷi markers lost 7 times
-  hi: keeping English for T01100 (pos/hū Ajjatanī, Ngôi 3 số ít) - Pāḷi markers lost 7 times
   hi: keeping English for T01113 (pos/knpt) - Pāḷi markers lost 7 times
   hi: keeping English for T01114 (pos/n.tr) - Pāḷi markers lost 7 times
   hi: keeping English for T01121 (pos/ĐC số nhiều) - Pāḷi markers lost 7 times
@@ -447,7 +439,7 @@ hi: translating batch 34/68 (48 strings)
   hi: keeping English for T01597 (quiz/lesson01_q03) - Pāḷi markers lost 7 times
   hi: keeping English for T01598 (quiz/lesson01_q03) - Pāḷi markers lost 7 times
 hi: translating batch 35/68 (46 strings)
-  hi: 28 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 29 string(s) lost their Pāḷi markers; retrying them alone
   hi: 28 string(s) lost their Pāḷi markers; retrying them alone
   hi: 28 string(s) lost their Pāḷi markers; retrying them alone
   hi: 28 string(s) lost their Pāḷi markers; retrying them alone
@@ -928,11 +920,11 @@ hi: translating batch 58/68 (43 strings)
   hi: keeping English for T02632 (quiz/lesson21_q12) - Pāḷi markers lost 7 times
 hi: translating batch 59/68 (43 strings)
   hi: 36 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 36 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 36 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 36 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 36 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 36 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 34 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 34 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 34 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 34 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 34 string(s) lost their Pāḷi markers; retrying them alone
   hi: keeping English for T02633 (quiz/lesson21_q12) - Pāḷi markers lost 7 times
   hi: keeping English for T02634 (quiz/lesson21_q12) - Pāḷi markers lost 7 times
   hi: keeping English for T02636 (quiz/lesson21_q13) - Pāḷi markers lost 7 times
@@ -943,7 +935,6 @@ hi: translating batch 59/68 (43 strings)
   hi: keeping English for T02642 (quiz/lesson21_q14) - Pāḷi markers lost 7 times
   hi: keeping English for T02643 (quiz/lesson21_q14) - Pāḷi markers lost 7 times
   hi: keeping English for T02644 (quiz/lesson21_q14) - Pāḷi markers lost 7 times
-  hi: keeping English for T02645 (quiz/lesson21_q15) - Pāḷi markers lost 7 times
   hi: keeping English for T02646 (quiz/lesson21_q15) - Pāḷi markers lost 7 times
   hi: keeping English for T02647 (quiz/lesson21_q15) - Pāḷi markers lost 7 times
   hi: keeping English for T02648 (quiz/lesson21_q15) - Pāḷi markers lost 7 times
@@ -964,7 +955,6 @@ hi: translating batch 59/68 (43 strings)
   hi: keeping English for T02667 (quiz/lesson21_q19) - Pāḷi markers lost 7 times
   hi: keeping English for T02668 (quiz/lesson21_q19) - Pāḷi markers lost 7 times
   hi: keeping English for T02669 (quiz/lesson21_q19) - Pāḷi markers lost 7 times
-  hi: keeping English for T02670 (quiz/lesson22_q01) - Pāḷi markers lost 7 times
   hi: keeping English for T02671 (quiz/lesson22_q01) - Pāḷi markers lost 7 times
   hi: keeping English for T02672 (quiz/lesson22_q01) - Pāḷi markers lost 7 times
   hi: keeping English for T02673 (quiz/lesson22_q01) - Pāḷi markers lost 7 times
@@ -1017,10 +1007,10 @@ hi: translating batch 60/68 (47 strings)
   hi: keeping English for T02721 (quiz/lesson22_q11) - Pāḷi markers lost 7 times
   hi: keeping English for T02722 (quiz/lesson22_q11) - Pāḷi markers lost 7 times
 hi: translating batch 61/68 (47 strings)
-  hi: 39 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 39 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 39 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 39 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 40 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 40 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 40 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 40 string(s) lost their Pāḷi markers; retrying them alone
   hi: 39 string(s) lost their Pāḷi markers; retrying them alone
   hi: 39 string(s) lost their Pāḷi markers; retrying them alone
   hi: keeping English for T02723 (quiz/lesson22_q11) - Pāḷi markers lost 7 times
@@ -1111,8 +1101,8 @@ hi: translating batch 62/68 (47 strings)
   hi: keeping English for T02814 (quiz/lesson23_q10) - Pāḷi markers lost 7 times
   hi: keeping English for T02816 (quiz/lesson23_q11) - Pāḷi markers lost 7 times
 hi: translating batch 63/68 (44 strings)
-  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
   hi: 37 string(s) lost their Pāḷi markers; retrying them alone
   hi: 37 string(s) lost their Pāḷi markers; retrying them alone
   hi: 37 string(s) lost their Pāḷi markers; retrying them alone
@@ -1155,17 +1145,16 @@ hi: translating batch 63/68 (44 strings)
   hi: keeping English for T02859 (quiz/lesson23_q19) - Pāḷi markers lost 7 times
   hi: keeping English for T02860 (quiz/lesson24_q01) - Pāḷi markers lost 7 times
 hi: translating batch 64/68 (43 strings)
-  hi: 42 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 42 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 42 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 42 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 42 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 42 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 41 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 41 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 41 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 41 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 41 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 41 string(s) lost their Pāḷi markers; retrying them alone
   hi: keeping English for T02861 (quiz/lesson24_q01) - Pāḷi markers lost 7 times
   hi: keeping English for T02862 (quiz/lesson24_q01) - Pāḷi markers lost 7 times
   hi: keeping English for T02863 (quiz/lesson24_q01) - Pāḷi markers lost 7 times
   hi: keeping English for T02864 (quiz/lesson24_q01) - Pāḷi markers lost 7 times
-  hi: keeping English for T02865 (quiz/lesson24_q02) - Pāḷi markers lost 7 times
   hi: keeping English for T02866 (quiz/lesson24_q02) - Pāḷi markers lost 7 times
   hi: keeping English for T02867 (quiz/lesson24_q02) - Pāḷi markers lost 7 times
   hi: keeping English for T02868 (quiz/lesson24_q02) - Pāḷi markers lost 7 times
@@ -1209,7 +1198,7 @@ hi: translating batch 65/68 (44 strings)
   hi: 38 string(s) lost their Pāḷi markers; retrying them alone
   hi: 38 string(s) lost their Pāḷi markers; retrying them alone
   hi: 38 string(s) lost their Pāḷi markers; retrying them alone
-  hi: 38 string(s) lost their Pāḷi markers; retrying them alone
+  hi: 37 string(s) lost their Pāḷi markers; retrying them alone
   hi: keeping English for T02904 (quiz/lesson24_q09) - Pāḷi markers lost 7 times
   hi: keeping English for T02906 (quiz/lesson24_q10) - Pāḷi markers lost 7 times
   hi: keeping English for T02907 (quiz/lesson24_q10) - Pāḷi markers lost 7 times
@@ -1220,7 +1209,6 @@ hi: translating batch 65/68 (44 strings)
   hi: keeping English for T02912 (quiz/lesson24_q11) - Pāḷi markers lost 7 times
   hi: keeping English for T02913 (quiz/lesson24_q11) - Pāḷi markers lost 7 times
   hi: keeping English for T02914 (quiz/lesson24_q11) - Pāḷi markers lost 7 times
-  hi: keeping English for T02915 (quiz/lesson24_q12) - Pāḷi markers lost 7 times
   hi: keeping English for T02916 (quiz/lesson24_q12) - Pāḷi markers lost 7 times
   hi: keeping English for T02917 (quiz/lesson24_q12) - Pāḷi markers lost 7 times
   hi: keeping English for T02918 (quiz/lesson24_q12) - Pāḷi markers lost 7 times
@@ -1364,7 +1352,7 @@ Canonical English counts: meta=26, day=52, phase=151, quiz=297, word=415, exampl
 
 Translation quality (per target locale):
   loc    strings  untranslated      %   pali lost      %
-  si        3069           195   6.4%           0   0.0%
-  zh        3069           159   5.2%           0   0.0%
+  si        3069           193   6.3%           0   0.0%
+  zh        3069           167   5.4%           0   0.0%
   my        3069           180   5.9%           0   0.0%
-  hi        3069           869  28.3%           0   0.0%
+  hi        3069           864  28.2%           0   0.0%
