@@ -474,9 +474,13 @@ def _split_payload(text: str, separators: list[str]) -> list[str] | None:
     return chunks
 
 
-def _request(locale: str, batch: list[Item], attempt: int = 0) -> str:
-    """Send one request, retrying transient network failures with backoff."""
-    payload, separators, protected = _build_payload(batch)
+def _request(locale: str, payload: str, attempt: int = 0) -> str:
+    """Send one payload, retrying transient network failures with backoff.
+
+    Takes the already-built payload rather than rebuilding it: _build_payload()
+    allocates fresh markers from a process-wide counter, so building twice
+    would protect the text with one set of markers and then look for another.
+    """
     params = urllib.parse.urlencode({
         "client": "gtx", "sl": "en", "tl": GOOGLE_LOCALES[locale],
         "dt": "t", "q": payload,
@@ -494,7 +498,7 @@ def _request(locale: str, batch: list[Item], attempt: int = 0) -> str:
               f"attempt {attempt + 1}/{NETWORK_ATTEMPTS}, sleeping {delay}s",
               file=sys.stderr)
         time.sleep(delay)
-        return _request(locale, batch, attempt + 1)
+        return _request(locale, payload, attempt + 1)
 
 
 def translate_batch(locale: str, batch: list[Item], attempts: int = 0) -> dict[str, str]:
@@ -506,8 +510,8 @@ def translate_batch(locale: str, batch: list[Item], attempts: int = 0) -> dict[s
     report counts as untranslated -- never a wrong translation attached to the
     wrong string.
     """
-    _, separators, protected = _build_payload(batch)
-    chunks = _split_payload(_request(locale, batch), separators)
+    payload, separators, protected = _build_payload(batch)
+    chunks = _split_payload(_request(locale, payload), separators)
 
     result: dict[str, str] = {}
     lost: list[Item] = []

@@ -4,6 +4,7 @@ name: Probe translator
 # only tools/probe_marker_loss.py against the strings that actually failed and
 # publishes the raw Google response, in about a minute.
 # Delete this file once the re-translation has landed.
+# Iteration: separator protocol end to end, after fixing the double build.
 
 on:
   push:
