@@ -25,9 +25,8 @@ jobs:
       - name: Probe marker recovery
         run: |
           mkdir -p .ci
-          python3 tools/probe_marker_loss.py \
-            --token T02027 --token T02868 --token T02150 \
-            --locale hi --locale si 2>&1 | tee .ci/probe.txt
+          python3 tools/probe_marker_loss.py --batch 15 --locale hi 2>&1 | tee .ci/probe.txt
+          python3 tools/probe_marker_loss.py --batch 15 --locale si 2>&1 | tee -a .ci/probe.txt
       - name: Publish
         if: always()
         run: |
