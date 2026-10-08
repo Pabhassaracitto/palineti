@@ -22,6 +22,7 @@ import time
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass
+from itertools import count
 from pathlib import Path
 from typing import Iterable
 
@@ -302,20 +303,25 @@ def catalog() -> list[Item]:
     return [Item(f"T{i:05d}", x.bucket, x.key, x.field, x.source) for i, x in enumerate(items, 1)]
 
 
+MARKER_COUNTER = count(1)
+
+
 def protect_pali(source: str) -> tuple[str, dict[str, str]]:
     saved: dict[str, str] = {}
     n = 0
 
     def save(match: re.Match[str]) -> str:
-        nonlocal n
         value = match.group(0)
         # Quoted English prose is not protected; only quoted Pāḷi/grammar words.
         if match.re is QUOTED_TERM_RE and not PALI_WORD_RE.search(value):
             return value
-        # Short alpha-numeric markers survive Google Translate intact (unlike
-        # repeated-letter pseudo words such as ZZ...ZZ, which it normalizes).
-        marker = f"PALI{n:04d}X"
-        n += 1
+        # The number is drawn from a counter that never resets, so it is
+        # unique across the whole run.  That matters for recovery: Google's
+        # Hindi model transliterates the Latin letters ("PALI0003X" ->
+        # "पाली0003X") but leaves the digits alone, so a distinctive number is
+        # the one part of the marker that can always be found again.
+        n = next(MARKER_COUNTER)
+        marker = f"PALI{n:05d}X"
         saved[marker] = value
         return marker
 
@@ -340,7 +346,23 @@ def _find_marker(value: str, marker: str) -> str | None:
         return marker
     pattern = r"\s*".join(re.escape(ch) for ch in marker)
     hit = re.search(pattern, value, re.IGNORECASE)
-    return hit.group(0) if hit else None
+    if hit:
+        # The whitespace-tolerant pattern can pick up an adjacent comma or
+        # bracket; trim punctuation off the ends but keep the interior, which
+        # may legitimately contain a space ("पाली 00001 X").
+        return hit.group(0).strip(" \t,.;:!?()[]{}\"'`")
+    # Google transliterated the letters but kept the digits ("PALI0003X" ->
+    # "पाली0003X").  Take the whole run of non-space characters around the
+    # number so the Devanagari prefix and the trailing X go with it.
+    digits = re.search(r"\d+", marker)
+    if digits:
+        surround = r"[^\s,.;:!?()\[\]{}\"'`]{0,12}"
+        hit = re.search(
+            surround + r"\s?" + re.escape(digits.group(0)) + r"\s?" + surround,
+            value)
+        if hit:
+            return hit.group(0).strip(" \t")
+    return None
 
 
 def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[str, str]:
