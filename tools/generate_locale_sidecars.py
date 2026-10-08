@@ -441,6 +441,11 @@ def _build_payload(batch: list[Item]) -> tuple[str, list[str], dict[str, dict[st
     protected by markers of exactly this kind.  One mechanism then covers both
     "where does this string end" and "put the Pāḷi back".
     """
+    if len(batch) == 1:
+        # A lone string needs no delimiter, and the bare shape is the one
+        # Google translated most reliably in the --compare probe.
+        safe, saved = protect_pali(batch[0].source)
+        return safe, [], {batch[0].token: saved}
     parts: list[str] = []
     separators: list[str] = []
     protected: dict[str, dict[str, str]] = {}
@@ -459,6 +464,8 @@ def _split_payload(text: str, separators: list[str]) -> list[str] | None:
     Returns None if any separator is missing, which makes the caller shrink
     the request rather than risk attaching a translation to the wrong string.
     """
+    if not separators:
+        return [text]
     spans: list[tuple[int, int]] = []
     cursor = 0
     for separator in separators:
@@ -472,6 +479,23 @@ def _split_payload(text: str, separators: list[str]) -> list[str] | None:
         limit = spans[index + 1][0] if index + 1 < len(spans) else len(text)
         chunks.append(text[end:limit])
     return chunks
+
+
+def _is_echo(item: Item, translated: str) -> bool:
+    """True when the target text is just the English source, untranslated.
+
+    Google returns the source unchanged for an arbitrary subset of requests.
+    Measured with probe_marker_loss.py --compare, the same string comes back
+    translated in one payload shape and untouched in another, with no pattern
+    that depends on the string: "Mind Game: Review Practice 1" translates bare
+    but not marker-prefixed, while the lesson-03 phase title does the reverse.
+    An echo is therefore a failed attempt to retry, not a result to accept --
+    accepting it is what pushed Sinhala from 123 to 289 untranslated strings in
+    one run.  Only strings containing Latin prose can echo; a string that is
+    pure Pali is legitimately identical to its source.
+    """
+    english = item.source.strip()
+    return bool(ASCII_RE.search(english)) and translated.strip() == english
 
 
 def _request(locale: str, payload: str, attempt: int = 0) -> str:
@@ -524,7 +548,7 @@ def translate_batch(locale: str, batch: list[Item], attempts: int = 0) -> dict[s
                     restored = None
                     break
                 restored = restored.replace(hit, original)
-            if restored is None:
+            if restored is None or _is_echo(item, restored):
                 lost.append(item)
             else:
                 result[item.token] = restored.strip()
@@ -1113,6 +1137,50 @@ def validate(items: list[Item]) -> None:
         print("Translation-quality gate passed.")
 
 
+def translate_gaps(items: list[Item], locales: tuple[str, ...]) -> None:
+    """Fill only the holes, so existing translations survive untouched.
+
+    A full regeneration re-translates all 3,069 strings per locale and replaces
+    whatever is already there, including hand-written content.  This re-sends
+    only the strings that a reader would still see in English or that lost
+    their Pali, and copies every other value through byte-for-byte.
+    """
+    g = globals()
+    g["ROOT"] = ROOT
+    existing: dict[tuple[str, str, str], dict[str, str | None]] = {}
+    for bucket, key, field, _english, locale, value in translation_quality_pairs():
+        existing.setdefault((bucket, key, field), {})[locale] = value
+
+    strings_by_locale: dict[str, dict[str, str]] = {}
+    for locale in locales:
+        keep: dict[str, str] = {}
+        gaps: list[Item] = []
+        reasons: dict[str, int] = {}
+        for item in items:
+            current = existing.get((item.bucket, item.key, item.field), {}).get(locale)
+            if current is None or not current.strip():
+                gaps.append(item)
+                reasons["missing"] = reasons.get("missing", 0) + 1
+            elif _is_echo(item, current):
+                gaps.append(item)
+                reasons["still English"] = reasons.get("still English", 0) + 1
+            else:
+                missing = [t for t in PALI_WORD_RE.findall(item.source)
+                           if t not in current]
+                if missing:
+                    gaps.append(item)
+                    reasons["lost Pali"] = reasons.get("lost Pali", 0) + 1
+                else:
+                    keep[item.token] = current.strip()
+        print(f"{locale}: {len(keep)} strings kept, {len(gaps)} to translate")
+        for reason, count in sorted(reasons.items(), key=lambda kv: -kv[1]):
+            print(f"    {count:5d}  {reason}")
+        fresh = translations(gaps, locale) if gaps else {}
+        strings_by_locale[locale] = {**keep, **fresh}
+    generate(items, strings_by_locale)
+    wire_overlays()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--translate", action="store_true", help="call Google Translate and write overlays")
@@ -1125,6 +1193,9 @@ def main() -> None:
                         help="fail validation above this %% of strings whose Pali terms were transliterated away")
     parser.add_argument("--verbose-quality", action="store_true",
                         help="print sample untranslated / Pali-lost strings")
+    parser.add_argument("--only-gaps", action="store_true",
+                        help="re-translate only the strings that are still English or "
+                             "lost their Pali, keeping every existing translation")
     args = parser.parse_args()
     global QUALITY_STRICT, QUALITY_MAX_UNTRANSLATED, QUALITY_MAX_PALI_LOST, QUALITY_VERBOSE
     QUALITY_STRICT = args.strict
@@ -1136,6 +1207,10 @@ def main() -> None:
         validate(items)
         return
     locales = tuple(args.locale or LOCALES)
+    if args.only_gaps:
+        translate_gaps(items, locales)
+        validate(items)
+        return
     # Rerunning a subset preserves existing target translations by reading the
     # canonical JSON cache emitted below. CI normally runs all four together.
     cache = ROOT / ".locale_translation_cache.json"
