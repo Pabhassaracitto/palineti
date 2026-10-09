@@ -991,8 +991,18 @@ def _outer_string_overlay_pairs(
     for locale in LOCALES:
         targets = dict(top_entries(generated.get(locale, "")))
         for key, english in source.items():
-            if key in targets:
-                yield bucket, key, "value", english, locale, targets[key]
+            if key not in targets:
+                continue
+            # These maps store ordinary Dart string literals. Decode them here
+            # so quality checks and --only-gaps compare the text, not its
+            # source-code quote characters (which otherwise hide echo gaps).
+            source_literal = english.strip()
+            target_literal = targets[key].strip()
+            if (not source_literal or source_literal[0] not in "'\""
+                    or not target_literal or target_literal[0] not in "'\""):
+                die(f"{generated_variable}/{locale}/{key}: expected string literals")
+            yield (bucket, key, "value", dart_decode(source_literal), locale,
+                   dart_decode(target_literal))
 
 
 def _quiz_overlay_pairs(bucket: str = "quiz"):
@@ -1194,7 +1204,21 @@ def translate_gaps(items: list[Item], locales: tuple[str, ...]) -> None:
     for bucket, key, field, _english, locale, value in translation_quality_pairs():
         existing.setdefault((bucket, key, field), {})[locale] = value
 
+    # generate() emits the complete four-locale overlay, even when the caller
+    # asked to translate only one locale. Seed unselected locales from their
+    # current sidecars so a targeted run cannot KeyError or overwrite them.
     strings_by_locale: dict[str, dict[str, str]] = {}
+    for locale in LOCALES:
+        strings_by_locale[locale] = {}
+        for item in items:
+            current = existing.get((item.bucket, item.key, item.field), {}).get(locale)
+            # An empty translated value is meaningful existing state; preserve
+            # it byte-for-byte for locales that were not selected. Only a
+            # genuinely absent entry falls back to its English source key.
+            if current is None:
+                current = item.source
+            strings_by_locale[locale][item.token] = current
+
     for locale in locales:
         keep: dict[str, str] = {}
         gaps: list[Item] = []
@@ -1214,7 +1238,7 @@ def translate_gaps(items: list[Item], locales: tuple[str, ...]) -> None:
                     gaps.append(item)
                     reasons["lost Pali"] = reasons.get("lost Pali", 0) + 1
                 else:
-                    keep[item.token] = current.strip()
+                    keep[item.token] = current
         print(f"{locale}: {len(keep)} strings kept, {len(gaps)} to translate")
         for reason, count in sorted(reasons.items(), key=lambda kv: -kv[1]):
             print(f"    {count:5d}  {reason}")
