@@ -1,7 +1,7 @@
 name: Content audit
 
-# Static checks on the lesson data and the localisation sidecars.  No Flutter
-# toolchain needed, so this runs in seconds on every push and PR.
+# Static checks on the lesson data and the localisation sidecars, plus
+# Flutter static analysis and unit/widget tests.
 #
 # What it enforces:
 #   1. Sidecar integrity   - catalog, key sets, quiz shape, Dart syntax.
@@ -10,6 +10,7 @@ name: Content audit
 #                            in that lesson or an earlier one.  This is the
 #                            "did we teach this before we tested it?" question.
 #   3. ARB coverage        - no missing/extra keys, no placeholder errors.
+#   4. Flutter analyze & test - 0 analyzer errors and all tests green.
 #
 # The --max-untraced / --max-neverlisted thresholds are ceilings, not targets.
 # They sit just above today's measured value so that a regression fails the
@@ -29,6 +30,9 @@ on:
         description: 'Fail above this many words that appear in no word list'
         type: string
         default: '162'
+
+permissions:
+  contents: write
 
 jobs:
   audit:
@@ -58,3 +62,86 @@ jobs:
 
       - name: ARB coverage (UI strings)
         run: python3 tools/audit_locales.py
+
+  flutter:
+    name: Flutter analyze & test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Run flutter analyze
+        id: analyze
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          flutter analyze --no-pub 2>&1 | tee /tmp/flutter_analyze.txt
+
+      - name: Run flutter test
+        id: test
+        continue-on-error: true
+        env:
+          CAPTURE_VOCAB_SCREENSHOTS: '1'
+        run: |
+          set -o pipefail
+          flutter test --no-pub --reporter expanded 2>&1 | tee /tmp/flutter_test.txt
+
+      - name: Publish check summary
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANALYZE_OUTCOME: ${{ steps.analyze.outcome }}
+          TEST_OUTCOME: ${{ steps.test.outcome }}
+        run: |
+          python3 - << 'PY'
+          import base64, json, os, pathlib, subprocess
+
+          repo = os.environ["GITHUB_REPOSITORY"]
+          sha = os.environ["GITHUB_SHA"]
+
+          def read_text(p):
+              path = pathlib.Path(p)
+              return path.read_text(errors="replace") if path.exists() else ""
+
+          blobs = {}
+          for key, p in [("L13", "/tmp/vocab_lesson_13.png"), ("L19", "/tmp/vocab_lesson_19.png")]:
+              path = pathlib.Path(p)
+              if path.exists():
+                  b64 = base64.b64encode(path.read_bytes()).decode()
+                  res = subprocess.run(
+                      ["gh", "api", f"repos/{repo}/git/blobs", "--input", "-", "--jq", ".sha"],
+                      input=json.dumps({"content": b64, "encoding": "base64"}).encode(),
+                      capture_output=True,
+                  )
+                  blobs[key] = res.stdout.decode().strip()
+
+          analyze_txt = read_text("/tmp/flutter_analyze.txt")[-20000:]
+          test_txt = read_text("/tmp/flutter_test.txt")[-20000:]
+          body = (
+              f"### flutter analyze ({os.environ.get('ANALYZE_OUTCOME')})\n"
+              f"```\n{analyze_txt}\n```\n\n"
+              f"### flutter test ({os.environ.get('TEST_OUTCOME')})\n"
+              f"```\n{test_txt}\n```\n\n"
+              f"Screenshots: {json.dumps(blobs)}"
+          )
+          subprocess.run(
+              ["gh", "api", f"repos/{repo}/commits/{sha}/comments", "--input", "-"],
+              input=json.dumps({"body": body}).encode(),
+              check=False,
+          )
+          PY
+
+      - name: Enforce pass
+        run: |
+          test "${{ steps.analyze.outcome }}" = "success"
+          test "${{ steps.test.outcome }}" = "success"

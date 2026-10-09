@@ -1,5 +1,108 @@
+import 'dart:io';
+import 'dart:ui' as ui;
+
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:palineti/l10n/generated/app_localizations.dart';
 import 'package:palineti/pali_course.dart';
+import 'package:palineti/presentation/screens/vocab_list_screen.dart';
+
+Future<void> _loadSystemFontsIfAvailable() async {
+  final fontCandidates = [
+    '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+    '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf',
+  ];
+  for (final path in fontCandidates) {
+    final file = File(path);
+    if (file.existsSync()) {
+      final bytes = file.readAsBytesSync();
+      for (final family in ['Roboto', 'Ahem']) {
+        final loader = FontLoader(family)
+          ..addFont(Future.value(ByteData.view(bytes.buffer)));
+        await loader.load();
+      }
+      break;
+    }
+  }
+
+  final flutterRoot = Platform.environment['FLUTTER_ROOT'];
+  if (flutterRoot != null) {
+    final iconFile = File(
+      '$flutterRoot/bin/cache/artifacts/material_fonts/MaterialIcons-Regular.otf',
+    );
+    if (iconFile.existsSync()) {
+      final bytes = iconFile.readAsBytesSync();
+      final loader = FontLoader('MaterialIcons')
+        ..addFont(Future.value(ByteData.view(bytes.buffer)));
+      await loader.load();
+    }
+  }
+}
+
+Future<void> _verifyAndCaptureVocabScreen(
+  WidgetTester tester, {
+  required LessonMeta lesson,
+  required int expectedCount,
+  required String screenshotPath,
+}) async {
+  final repaintKey = GlobalKey();
+
+  await tester.runAsync(() async {
+    await _loadSystemFontsIfAvailable();
+  });
+
+  await tester.binding.setSurfaceSize(const Size(430, 932));
+  addTearDown(() => tester.binding.setSurfaceSize(null));
+
+  await tester.pumpWidget(
+    RepaintBoundary(
+      key: repaintKey,
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        locale: const Locale('vi'),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: VocabListScreen(lesson: lesson),
+      ),
+    ),
+  );
+  await tester.pumpAndSettle();
+
+  expect(find.text('Bài ${lesson.lessonNumber}'), findsOneWidget);
+  expect(find.text('Từ vựng quan trọng'), findsOneWidget);
+  expect(find.text('$expectedCount'), findsOneWidget);
+
+  if (Platform.environment['CAPTURE_VOCAB_SCREENSHOTS'] == '1') {
+    await tester.runAsync(() async {
+      final boundary = repaintKey.currentContext?.findRenderObject()
+          as RenderRepaintBoundary?;
+      if (boundary != null) {
+        final image = await boundary.toImage(pixelRatio: 2.0);
+        final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+        if (byteData != null) {
+          File(screenshotPath).writeAsBytesSync(byteData.buffer.asUint8List());
+        }
+      }
+    });
+  }
+
+  final items = vocabForLesson(lesson.lessonNumber);
+  expect(items.length, expectedCount);
+
+  for (final item in items) {
+    await tester.scrollUntilVisible(
+      find.text(item.nominativeSingular),
+      200,
+      scrollable: find.descendant(
+        of: find.byType(ListView),
+        matching: find.byType(Scrollable),
+      ),
+    );
+    expect(find.text(item.nominativeSingular), findsWidgets);
+  }
+}
 
 // Guard rails around lib/data/lesson_vocab_index.dart.
 //
@@ -36,7 +139,7 @@ void main() {
 
     test('every entry points back at the lesson that declares it', () {
       for (var n = 1; n <= 26; n++) {
-        final expected = 'lesson_' + n.toString().padLeft(2, '0');
+        final expected = 'lesson_${n.toString().padLeft(2, '0')}';
         for (final v in vocabForLesson(n)) {
           expect(v.lessonId, expected,
               reason: '${v.id} is declared by lesson $n');
@@ -57,6 +160,26 @@ void main() {
               reason: '${v.id} has no meaning');
         }
       }
+    });
+  });
+
+  group('VocabListScreen UI verification', () {
+    testWidgets('Lesson 13 displays all 17 vocabulary entries', (tester) async {
+      await _verifyAndCaptureVocabScreen(
+        tester,
+        lesson: getLesson13Meta(),
+        expectedCount: 17,
+        screenshotPath: '/tmp/vocab_lesson_13.png',
+      );
+    });
+
+    testWidgets('Lesson 19 displays all 18 vocabulary entries', (tester) async {
+      await _verifyAndCaptureVocabScreen(
+        tester,
+        lesson: getLesson19Meta(),
+        expectedCount: 18,
+        screenshotPath: '/tmp/vocab_lesson_19.png',
+      );
     });
   });
 }
