@@ -256,3 +256,27 @@ separator protocol, 15 items, 821 chars, my
       '<span id="T99999">पढ़ना: मास्क./महिला। "-आई" और स्त्रीलिंग का गठन</span>'
   marker-only: translated
       'PALI90000X\nपढ़ना: मास्क./महिला. "-आई" और स्त्रीलिंग का निर्माण'
+########## si ##########
+  plain one-liner     bare: 8/8  newline: 8/8
+  emoji prefix        bare: 0/8  newline: 0/8
+  quotes inside       bare: 8/8  newline: 8/8
+  dash + slash        bare: 8/8  newline: 8/8
+  long technical      bare: 8/8  newline: 8/8
+########## my ##########
+  plain one-liner     bare: 8/8  newline: 8/8
+  emoji prefix        bare: 0/8  newline: 0/8
+  quotes inside       bare: 8/8  newline: 8/8
+  dash + slash        bare: 8/8  newline: 8/8
+  long technical      bare: 8/8  newline: 8/8
+########## zh ##########
+  plain one-liner     bare: 8/8  newline: 8/8
+  emoji prefix        bare: 8/8  newline: 8/8
+  quotes inside       bare: 8/8  newline: 8/8
+  dash + slash        bare: 8/8  newline: 8/8
+  long technical      bare: 8/8  newline: 8/8
+########## hi ##########
+  plain one-liner     bare: 8/8  newline: 8/8
+  emoji prefix        bare: 8/8  newline: 8/8
+  quotes inside       bare: 8/8  newline: 8/8
+  dash + slash        bare: 8/8  newline: 8/8
+  long technical      bare: 8/8  newline: 8/8
