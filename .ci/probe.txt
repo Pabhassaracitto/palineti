@@ -302,3 +302,35 @@ Traceback (most recent call last):
     g.ROOT = pathlib.Path(__file__).resolve().parents[1]
              ^^^^^^^
 NameError: name 'pathlib' is not defined
+########## si ##########
+si: 221 untranslated strings; probing first 12
+  phase/lesson01_phase6: 'Mind Game: Review Practice 2'  bare: echo  period: echo  quotes: echo
+  phase/lesson01_phase8: 'Mind Game: Review Practice 3'  bare: echo  period: echo  quotes: echo
+  phase/lesson14_phase2: '2. Present Passive Participle – īyamāna'  bare: echo  period: echo  quotes: echo
+  phase/lesson14_phase4: '4. Gerundive Participle – tabba / anīya / ya'  bare: echo  period: echo  quotes: echo
+  phase/lesson24_phase5: '🧠 Mind Game: Vyañjana + Niggahita Sandhi'  bare: echo  period: echo  quotes: echo
+  phase/lesson26_phase4: '🧠 Mind Game: The Passive Voice'  bare: echo  period: echo  quotes: echo
+  phase/lesson26_phase5: '🧠 Mind Game: The Verbs "hū" & "asa"'  bare: echo  period: echo  quotes: OK
+  pos/asa Hiện tại, Ngôi 3 số nhiều: "'asa Pres., 3rd pers. pl.'"  bare: echo  period: echo  quotes: echo
+  pos/dai_tu: "'pron.'"  bare: OK  period: echo  quotes: OK
+  pos/danh_tu: "'n.'"  bare: echo  period: echo  quotes: echo
+  pos/dong_tu: "'v.'"  bare: echo  period: echo  quotes: echo
+  pos/tinh_tu: "'adj.'"  bare: echo  period: echo  quotes: echo
+  => translated by shape: {'bare': 1, 'period': 0, 'quotes': 2}
+
+########## my ##########
+my: 247 untranslated strings; probing first 12
+  phase/lesson03_phase1: '📘 Ablative & Genitive Cases + 1st-Person Ver'  bare: echo  period: OK  quotes: echo
+  phase/lesson08_phase1: '📘 Masculine "-i" Noun Declension + Gerund'  bare: echo  period: OK  quotes: echo
+  phase/lesson10_phase4: 'Quiz — Lesson 10 Knowledge Check'  bare: echo  period: echo  quotes: OK
+  phase/lesson11_phase1: '📘 "-u/-ū" Declension + Imperative Mood'  bare: echo  period: OK  quotes: OK
+  phase/lesson14_phase4: '4. Gerundive Participle – tabba / anīya / ya'  bare: echo  period: OK  quotes: echo
+  phase/lesson14_phase5: '5. Master Verb Table – pp.134-136'  bare: echo  period: OK  quotes: echo
+  phase/lesson25_phase1: '📘 Nominative + Vocative + Accusative'  bare: echo  period: OK  quotes: OK
+  phase/lesson26_phase1: '📘 The Passive Voice'  bare: echo  period: OK  quotes: OK
+  pos/Bị động (a→ī): "'Passive (a→ī)'"  bare: OK  period: OK  quotes: OK
+  pos/Bị động (ā→ī): "'Passive (ā→ī)'"  bare: OK  period: OK  quotes: OK
+  pos/danh_tu: "'n.'"  bare: echo  period: echo  quotes: OK
+  pos/dong_tu: "'v.'"  bare: echo  period: echo  quotes: OK
+  => translated by shape: {'bare': 2, 'period': 9, 'quotes': 8}
+
