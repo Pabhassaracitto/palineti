@@ -37,7 +37,12 @@ on:
   #   Probe then showed hi drops every <span> wrapper at any batch size while
   #   si/my keep them all, so the span protocol was replaced by plain-text
   #   separators; the probe now reports 15/15 separators and 0/15 lost markers
-  #   for hi, si, zh and my.  This run is the first with that protocol.
+  #   for hi, si, zh and my.
+  #   4th (37827038134) --only-gaps with echo detection: hi 2.8%, zh 3.5%,
+  #       si 7.2%, my 8.0%, but 2,642 of the ~5,900 requests were retries.
+  #   --gaps probe proved the echo is deterministic per text and breaks when
+  #       the payload gains a trailing stop (my 9/12) or quotes (8/12).
+  #   This run adds shape escalation to the single-string path.
   push:
     branches: [arena/d31ad54d-palineti]
     paths: ['.github/workflows/translate_content.yml']
