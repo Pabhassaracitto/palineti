@@ -137,6 +137,41 @@ COMPARE_SOURCES = [
 ]
 
 
+ECHO_CASES = {
+    "plain one-liner": "Mind Game: Review Practice 1",
+    "emoji prefix": "📘 Ablative & Genitive Cases + 1st-Person Verbs",
+    "quotes inside": "Reading: Masc./Fem. \"-ī\" & Forming Feminines",
+    "dash + slash": "Learn feminine nouns ending in -ā and the verbal infinitive",
+    "long technical": "Present participle anta/māna, past participle ta/na, gerundive tabba/a",
+}
+
+
+def echo_stats(locale: str, rounds: int = 8) -> int:
+    """Send the same string repeatedly, both bare and newline-prefixed.
+
+    Goal: decide whether "Google returned the source unchanged" is random per
+    request (then retrying is the only option) or structural (then we can
+    avoid it by choice of payload shape).
+    """
+    for name, source in ECHO_CASES.items():
+        safe, _ = g.protect_pali(source)
+        shapes = {"bare": safe, "newline": "PALI90000X\n" + safe}
+        line = f"  {name:18s}"
+        for shape, payload in shapes.items():
+            translated = 0
+            for _ in range(rounds):
+                try:
+                    out = g._request(locale, payload)
+                except Exception:  # noqa: BLE001
+                    continue
+                if out.strip() != payload.strip() and out.strip() != safe.strip():
+                    translated += 1
+                time.sleep(1.2)
+            line += f"  {shape}: {translated}/{rounds}"
+        print(line)
+    return 0
+
+
 def compare(locale: str) -> int:
     """Send the same strings three ways to find why Google echoes the source.
 
@@ -212,6 +247,8 @@ def main() -> int:
     ap.add_argument("--locale", action="append", help="locale, repeatable")
     ap.add_argument("--batch", type=int, default=0,
                     help="instead of single strings, send a real N-item batch")
+    ap.add_argument("--echo-stats", action="store_true",
+                    help="measure how often the same string comes back untranslated")
     ap.add_argument("--compare", action="store_true",
                     help="send the same strings with and without the separator")
     ap.add_argument("--separators", type=int, default=0,
@@ -223,6 +260,11 @@ def main() -> int:
     tokens = args.token or DEFAULT_TOKENS
     locales = args.locale or ["hi"]
     by_token = {i.token: i for i in g.catalog()}
+
+    if args.echo_stats:
+        for locale in locales:
+            echo_stats(locale)
+        return 0
 
     if args.compare:
         for locale in locales:

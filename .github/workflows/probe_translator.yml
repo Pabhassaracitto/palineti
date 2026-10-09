@@ -28,7 +28,7 @@ jobs:
           mkdir -p .ci
           for loc in si my zh hi; do
             echo "########## $loc ##########" >> .ci/probe.txt
-            python3 tools/probe_marker_loss.py --compare --locale "$loc" 2>&1 | tee -a .ci/probe.txt
+            python3 tools/probe_marker_loss.py --echo-stats --locale "$loc" 2>&1 | tee -a .ci/probe.txt
           done
       - name: Publish
         if: always()
