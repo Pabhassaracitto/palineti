@@ -107,9 +107,12 @@ jobs:
           for name, p in [("flutter_analyze", "/tmp/flutter_analyze.txt"), ("flutter_test", "/tmp/flutter_test.txt")]:
               path = pathlib.Path(p)
               if path.exists():
-                  txt = path.read_text(errors="replace")[-30000:]
-                  enc = txt.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
-                  print(f"::notice title={name}::{enc}")
+                  txt = path.read_text(errors="replace")
+                  chunk_size = 2500
+                  chunks = [txt[i:i+chunk_size] for i in range(0, len(txt), chunk_size)]
+                  for idx, ch in enumerate(chunks[-4:], 1):
+                      enc = ch.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+                      print(f"::notice title={name}_{idx}::{enc}")
           PY
           mkdir -p .ci
           cp -f /tmp/flutter_analyze.txt .ci/flutter_analyze.txt 2>/dev/null || true
@@ -121,7 +124,6 @@ jobs:
           git add -f .ci/
           git diff --cached --quiet && exit 0
           git commit -m "ci: publish flutter analyze and test diagnostics"
-          git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Enforce pass
