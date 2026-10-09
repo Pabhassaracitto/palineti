@@ -187,7 +187,7 @@ class HomeScreen extends StatelessWidget {
   Widget _buildLessonCard(BuildContext context, LessonMeta lesson) {
     final l10n = AppLocalizations.of(context);
     // Treat all lessons initialized here as having data
-    final hasData = true;
+    final hasData = lesson.lessonNumber >= 1;
     final color = Color(lesson.colorValue);
 
     return Card(
