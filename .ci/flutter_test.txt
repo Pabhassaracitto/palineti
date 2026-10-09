@@ -1,0 +1,56 @@
+00:00 +0: loading /home/runner/work/palineti/palineti/test/pali_course_test.dart
+00:00 +0: /home/runner/work/palineti/palineti/test/pali_course_test.dart: pali_course barrel export works
+00:00 +1: /home/runner/work/palineti/palineti/test/pali_course_test.dart: pali_course vocab model works
+00:00 +2: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: nara nom_sg = naro
+00:00 +3: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: nara nom_pl = narā
+00:00 +4: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: nara acc_sg = naraṃ
+00:00 +5: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: nara acc_pl = nare
+00:00 +6: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: nara ins_sg = narena
+00:00 +7: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: nara dat_sg = narassa
+00:00 +8: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: nara gen_pl = narānaṃ
+00:00 +9: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: nara loc_sg = nare
+00:00 +10: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: nara voc_sg = nara
+00:00 +11: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: nara voc_pl = narā
+00:00 +12: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: Buddha nom_sg = Buddho
+00:00 +13: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: Buddha acc_sg = Buddhaṃ
+00:00 +14: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: Buddha nom_pl = Buddhā
+00:00 +15: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: Buddha acc_pl = Buddhe
+00:00 +16: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: gāma nom_sg = gāmo
+00:00 +17: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: gāma acc_sg = gāmaṃ
+00:00 +18: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: gāma nom_pl = gāmā
+00:00 +19: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: gāma acc_pl = gāme
+00:00 +20: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: generateFullTable nara full table has 16 entries
+00:00 +21: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: MascAParadigm: generateFullTable nara full table contains all cases
+00:00 +22: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: PaliParadigmEngine masc_a: nara nom_sg = naro
+00:00 +23: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: PaliParadigmEngine masc_a: Dhamma acc_sg = Dhammaṃ
+00:00 +24: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: PaliParadigmEngine unknown paradigmId falls back to root
+00:00 +25: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: GrammarProgressModel masteryScore = 0.0 khi chưa có attempt
+00:00 +26: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: GrammarProgressModel masteryScore = 1.0 sau 5 lần đúng
+00:00 +27: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: GrammarProgressModel isWeak = true sau 3 lần sai
+00:00 +28: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: GrammarProgressModel isWeak = false khi attemptCount < 3
+00:00 +29: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: GrammarProgressModel isMastered sau 5 lần đúng
+00:00 +30: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: GrammarProgressModel masteryScore tính đúng 3/5
+00:00 +31: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: PaliVocabModel getForm nom_sg = naro
+00:00 +32: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: PaliVocabModel getForm acc_pl = nare
+00:00 +33: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: PaliVocabModel nominativeSingular = naro
+00:00 +34: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: PaliVocabModel isDueForReview = true khi nextReview = null
+00:00 +35: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: Lesson 01 Data integrity vocab list has 17 items
+00:00 +36: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: Lesson 01 Data integrity all vocab have non-empty root
+00:00 +37: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: Lesson 01 Data integrity all vocab have pronunciation
+00:00 +38: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: Lesson 01 Data integrity Day 1 has exactly 2 phases
+00:00 +39: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: Lesson 01 Data integrity Day 1 phases: read_listen + mind_game
+00:00 +40: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: Lesson 01 Data integrity Day 2 has exactly 6 phases
+00:00 +41: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: Lesson 01 Data integrity Day 2 phases alternate quiz/mind_game
+00:00 +42: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: Lesson 01 Data integrity Each quiz phase has exactly 3 questions
+00:00 +43: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: Lesson 01 Data integrity correctIndex in range 0-3
+00:00 +44: /home/runner/work/palineti/palineti/test/morphology/masc_a_test.dart: Lesson 01 Data integrity MindGame Vietnamese segments have answers
+00:00 +45: /home/runner/work/palineti/palineti/test/widget_test.dart: Counter increments smoke test
+00:01 +46: /home/runner/work/palineti/palineti/test/vocab_coverage_test.dart: vocabForLesson every lesson 1-26 declares vocabulary
+00:01 +47: /home/runner/work/palineti/palineti/test/vocab_coverage_test.dart: vocabForLesson out-of-range lessons return an empty list
+00:01 +48: /home/runner/work/palineti/palineti/test/vocab_coverage_test.dart: vocabForLesson vocabulary ids are unique across the whole course
+00:01 +49: /home/runner/work/palineti/palineti/test/vocab_coverage_test.dart: vocabForLesson every entry points back at the lesson that declares it
+00:01 +50: /home/runner/work/palineti/palineti/test/vocab_coverage_test.dart: vocabForLesson vocabCountForLesson agrees with vocabForLesson
+00:01 +51: /home/runner/work/palineti/palineti/test/vocab_coverage_test.dart: vocabForLesson every entry carries a meaning
+00:01 +52: /home/runner/work/palineti/palineti/test/vocab_coverage_test.dart: VocabListScreen UI verification Lesson 13 displays all 17 vocabulary entries
+00:02 +53: /home/runner/work/palineti/palineti/test/vocab_coverage_test.dart: VocabListScreen UI verification Lesson 19 displays all 18 vocabulary entries
+00:02 +54: All tests passed!
