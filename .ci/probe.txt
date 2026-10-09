@@ -280,3 +280,25 @@ separator protocol, 15 items, 821 chars, my
   quotes inside       bare: 8/8  newline: 8/8
   dash + slash        bare: 8/8  newline: 8/8
   long technical      bare: 8/8  newline: 8/8
+########## si ##########
+Traceback (most recent call last):
+  File "/home/runner/work/palineti/palineti/tools/probe_marker_loss.py", line 370, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/palineti/palineti/tools/probe_marker_loss.py", line 312, in main
+    gap_shapes(locale)
+  File "/home/runner/work/palineti/palineti/tools/probe_marker_loss.py", line 157, in gap_shapes
+    g.ROOT = pathlib.Path(__file__).resolve().parents[1]
+             ^^^^^^^
+NameError: name 'pathlib' is not defined
+########## my ##########
+Traceback (most recent call last):
+  File "/home/runner/work/palineti/palineti/tools/probe_marker_loss.py", line 370, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/palineti/palineti/tools/probe_marker_loss.py", line 312, in main
+    gap_shapes(locale)
+  File "/home/runner/work/palineti/palineti/tools/probe_marker_loss.py", line 157, in gap_shapes
+    g.ROOT = pathlib.Path(__file__).resolve().parents[1]
+             ^^^^^^^
+NameError: name 'pathlib' is not defined
