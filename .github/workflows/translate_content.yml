@@ -23,11 +23,6 @@ name: Translate learning content
 # improves.
 
 on:
-  # Temporary fallback: dispatch is denied in this environment. This push
-  # trigger runs only Myanmar gaps; remove it after the workflow completes.
-  push:
-    branches: [arena/174b7314-palineti]
-    paths: ['.github/workflows/translate_content.yml']
   workflow_dispatch:
     inputs:
       locales:
@@ -83,26 +78,16 @@ jobs:
 
       - name: Translate
         if: ${{ !inputs.report_only && steps.probe.outcome == 'success' }}
-        env:
-          INPUT_LOCALES: ${{ inputs.locales }}
-          INPUT_ONLY_GAPS: ${{ inputs.only_gaps }}
         run: |
           set -euo pipefail
           mkdir -p .ci
           args=()
-          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
-            requested_locales="my"
-            only_gaps="true"
-          else
-            requested_locales="${INPUT_LOCALES:-}"
-            only_gaps="${INPUT_ONLY_GAPS:-false}"
-          fi
           # Accept "hi", "hi si" or "hi,si".
-          IFS=',; ' read -ra LOCS <<< "$requested_locales"
+          IFS=',; ' read -ra LOCS <<< "${{ inputs.locales }}"
           for loc in "${LOCS[@]}"; do
             if [ -n "$loc" ]; then args+=(--locale "$loc"); fi
           done
-          if [ "$only_gaps" = "true" ]; then
+          if [ "${{ inputs.only_gaps }}" = "true" ]; then
             args+=(--only-gaps)
           fi
           echo "args: ${args[*]:-<all locales>}" | tee -a .ci/translate-run.txt
@@ -133,21 +118,11 @@ jobs:
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Quality gate
-        env:
-          INPUT_MAX_UNTRANSLATED: ${{ inputs.max_untranslated }}
-          INPUT_MAX_PALI_LOST: ${{ inputs.max_pali_lost }}
         run: |
-          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
-            max_untranslated=8
-            max_pali_lost=3
-          else
-            max_untranslated="${INPUT_MAX_UNTRANSLATED:-6}"
-            max_pali_lost="${INPUT_MAX_PALI_LOST:-3}"
-          fi
           python3 tools/generate_locale_sidecars.py \
             --verbose-quality \
-            --max-untranslated "$max_untranslated" \
-            --max-pali-lost "$max_pali_lost"
+            --max-untranslated "${{ inputs.max_untranslated }}" \
+            --max-pali-lost "${{ inputs.max_pali_lost }}"
 
       # The log host is not reachable from the review environment, so the only
       # way to read why a run failed is to have the run publish its own output.
