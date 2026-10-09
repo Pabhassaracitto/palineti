@@ -9131,7 +9131,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A. ၎င်းတို့အားလုံးသည် phala (-a) ကဲ့သို့ နက်ရှိုင်းသော၊',
         'B. ၎င်းတို့အားလုံးသည် nara (-a) ကဲ့သို့ လွှမ်းမိုးနေသော ယောက်ျားများဖြစ်သည်။',
-        'C. Numbers ending in -i/-ī/-ā (e.g. vīsati, saṭṭhi, asīti, koṭi, cattāḷīsā…) are FEMININE, singular only (inflecting like bhūmi or kaññā); the hundreds/thousands ending in -a (sataṃ, sahassaṃ) are neuter.',
+        'C. -i/-ī/-ā ဖြင့်ဆုံးသော ကိန်းဂဏန်းများ (ဥပမာ vīsati, saṭṭhi, asīti, koṭi, cattāḷīsā…) သည် ဣတ္ထိလိင်ဖြစ်ပြီး ဧကဝုစ်ပုံစံသာရှိသည် (bhūmi သို့မဟုတ် kaññā ကဲ့သို့ ဝိဘတ်ပြောင်းသည်)။ -a ဖြင့်ဆုံးသော ရာနှင့်ထောင်ကိန်းများ (sataṃ, sahassaṃ) သည် နပုံသကလိင်ဖြစ်သည်။',
         'D. 19-99 နံပါတ်များသည် လိင်သုံးမျိုးလုံးတွင် သက်ရောက်နေသော အနည်းကိန်းနှင့် အများကိန်း နှစ်မျိုးလုံးရှိသည်။',
       ],
     ),
@@ -14488,7 +14488,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: 'အနှစ်ချုပ်- Lesson 26 တွင် passive voice ၏ tenses မည်မျှ သင်ကြားပေးသနည်း။',
       options: [
         'A. 3 tenses ။',
-        'B. 4 tenses',
+        'B. ကာလ ၄ မျိုး',
         'C. 6 tenses (ပစ္စုပ္ပန်၊ Ajjatanī၊ Hīyattanī၊ Pañcamī၊ Sattamī၊ အနာဂတ်)',
         'ဃ. 8 tenses',
       ],
