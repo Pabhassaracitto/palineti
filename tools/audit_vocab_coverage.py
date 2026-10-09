@@ -417,10 +417,6 @@ def analyse() -> list[dict]:
 
 def main() -> None:
     report = analyse()
-    if "--json" in sys.argv:
-        out = {"per_lesson": report}
-        print(json.dumps(out, ensure_ascii=False, indent=1))
-        return
     print(f"{'L':>3} {'vocab':>6} {'exerW':>6} {'traced':>7} "
           f"{'fabOnly':>8} {'untraced':>9} {'neverListed':>12}")
     tu = tv = 0
