@@ -21,7 +21,7 @@ Khoá học có 26 bài. Mỗi bài khai báo danh sách từ vựng `kLessonNNV
 `tools/audit_vocab_coverage.py` kiểm tra: *mọi từ Pāḷi mà bài tập bắt người học
 dịch phải truy ngược được về từ vựng của bài đó hoặc bài trước.*
 
-Đợt rà soát trước đã đưa con số toàn khoá từ 530 xuống **221**. Phần còn lại
+Đợt rà soát đã đưa con số toàn khoá từ 530 xuống **203** (ban đầu 221; commit `80a3509` tách thêm mệnh lệnh cách/aorist/enclitic). Phần còn lại
 tập trung ở bài 14 (30), 15 (25), 08 (20), 18 (18), 17 (17), 19 (16).
 
 Quan trọng: những từ thiếu ở bài 13/19 trước đây **không phải nội dung mới** —
@@ -75,7 +75,7 @@ Tham khảo cách làm đợt trước: commit `fe47ab0` (bài 13/19/01) và `d5
 
 ```bash
 python3 tools/_extract_corpus.py
-python3 tools/audit_vocab_coverage.py --max-untraced 221 --max-neverlisted 179
+python3 tools/audit_vocab_coverage.py --max-untraced 203 --max-neverlisted 162
 python3 tools/generate_locale_sidecars.py     # phải PASS
 ```
 
