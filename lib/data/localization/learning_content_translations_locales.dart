@@ -1173,7 +1173,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
   },
   'lesson01_phase6': {
     'si': LocalizedLearningText(
-      title: 'Mind Game: Review Practice 2',
+      title: 'මනස ක්‍රීඩාව: සමාලෝචන අභ්‍යාසය 2',
     ),
     'zh': LocalizedLearningText(
       title: '智力游戏：复习练习 2',
@@ -1201,7 +1201,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
   },
   'lesson01_phase8': {
     'si': LocalizedLearningText(
-      title: 'Mind Game: Review Practice 3',
+      title: 'මනස ක්‍රීඩාව: සමාලෝචන අභ්‍යාසය 3',
     ),
     'zh': LocalizedLearningText(
       title: '智力游戏：复习练习 3',
@@ -2097,7 +2097,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
   },
   'lesson14_phase2': {
     'si': LocalizedLearningText(
-      title: '2. Present Passive Participle – īyamāna',
+      title: '2. වර්තමාන කර්මකාරක කෘදන්තය – īyamāna',
     ),
     'zh': LocalizedLearningText(
       title: '2. 现在被动分词 – īyamāna',
@@ -2125,7 +2125,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
   },
   'lesson14_phase4': {
     'si': LocalizedLearningText(
-      title: '4. Gerundive Participle – tabba / anīya / ya',
+      title: '4. කෘත්‍ය කෘදන්තය – tabba / anīya / ya',
     ),
     'zh': LocalizedLearningText(
       title: '4. 动名词分词 – tabba / anīya / ya',
@@ -3021,7 +3021,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
   },
   'lesson24_phase5': {
     'si': LocalizedLearningText(
-      title: '🧠 Mind Game: Vyañjana + Niggahita Sandhi',
+      title: '🧠 මනස ක්‍රීඩාව: Vyañjana + Niggahita Sandhi',
     ),
     'zh': LocalizedLearningText(
       title: '🧠 智力游戏：Vyañjana + Niggahita Sandhi',
@@ -3175,7 +3175,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
   },
   'lesson26_phase4': {
     'si': LocalizedLearningText(
-      title: '🧠 Mind Game: The Passive Voice',
+      title: '🧠 මනස ක්‍රීඩාව: කර්මකාරක වාචය',
     ),
     'zh': LocalizedLearningText(
       title: '🧠 智力游戏：被动语态',
@@ -3189,7 +3189,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
   },
   'lesson26_phase5': {
     'si': LocalizedLearningText(
-      title: '🧠 Mind Game: The Verbs "hū" & "asa"',
+      title: '🧠 මනස ක්‍රීඩාව: “hū” සහ “asa” ක්‍රියාපද',
     ),
     'zh': LocalizedLearningText(
       title: '🧠 智力游戏：动词 "hū" 和“asa”',
@@ -6566,7 +6566,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '5. ස්ත්‍රී "-i" පරිහානිය (bhūmi) සහ MASCULINE "-i" (උදා. muni, kapi, aggi) අතර ප්‍රධාන වෙනස පිළිබඳ නිවැරදි ප්‍රකාශය කුමක්ද?',
       options: [
         'A. ඒවා සම්පූර්ණයෙන්ම සමාන වන අතර ලිංගභේදයෙන් පමණක් වෙනස් වේ.',
-        'B. FEMININE "-i" has the oblique singular ending "-iyā" (bhūmiyā), shared for Instrumental/Ablative/Dative/Genitive, while MASCULINE "-i" has its OWN endings: -inā (Inst.), -issa (Gen./Dat.), -ismā (Abl.), -ismiṃ (Loc.).',
+        'B. ස්ත්‍රී ලිංග “-i” සඳහා වක්‍ර ඒකවචන අවසානය “-iyā” (bhūmiyā) වේ; එය කරණ/අපාදාන/සම්ප්‍රදාන/සම්බන්ධ විභක්ති සඳහා පොදුය. පුරුෂ ලිංග “-i” සඳහා තමන්ගේම අවසාන ඇත: -inā (කරණ), -issa (සම්බන්ධ/සම්ප්‍රදාන), -ismā (අපාදාන), -ismiṃ (ස්ථානීය).',
         'C. දෙකටම "-āyo" ලෙස නාමික බහු වචන ඇත.',
         'D. ස්ත්‍රී "-i" ට චෝදන ඒකවචනයක් නොමැති අතර පිරිමින්ට එකක් ඇත.',
       ],
@@ -7708,7 +7708,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'අංකය. මස්ක්',
         'අංකය. fem.',
         'Ac. මස්ක්',
-        'Instr. fem.',
+        'කරණ විභක්තිය, ස්ත්‍රී ලිංගය',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
@@ -8010,7 +8010,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: 'pacanto, gacchanto, vadamāno යනු කුමන ආකාරයේ කෘදන්තද?',
       options: [
         'වර්තමාන ක්‍රියාකාරී කෘදන්තය - anta / māna',
-        'Present Passive Participle – īyamāna',
+        'වර්තමාන කර්මකාරක කෘදන්තය – īyamāna',
         'අතීත කෘදන්ත - ta / na',
         'විකල්ප කෘදන්තය - ටැබ්බා',
       ],
@@ -8048,7 +8048,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: 'pacīyamāna, rakkhīyamāna, sūyamāna යනු:',
       options: [
         'අතීත කෘදන්තය',
-        'Present Passive Participle – ya + māna, a→i',
+        'වර්තමාන කර්මකාරක කෘදන්තය – ya + māna, a→i',
         'විකල්ප කෘදන්තය',
         'වාචික නාම පදය',
       ],
@@ -8240,7 +8240,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'සාමාන්‍ය අතීත කෘදන්තය',
         'ස්ථානීය නිරපේක්ෂ: මම ගිය විට / මම ගිය පසු',
         'විකල්ප කෘදන්තය',
-        'Present Passive',
+        'වර්තමාන කර්මකාරකය',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
@@ -8278,7 +8278,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'මයී = අංකය., ද්වාරය = වර්තමාන කෘදන්තය',
         'Mayi gate = Loc. sg.: "මම ගිය විට" — ස්ථානීය නිරපේක්ෂ',
         'විකල්ප කෘදන්තය',
-        'Present Passive',
+        'වර්තමාන කර්මකාරකය',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
@@ -9113,7 +9113,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A. ඒවා සියල්ලම නපුංසක වන අතර, ෆාලා (-a) මෙන් ආවර්තනය වේ.',
         'B. ඔවුන් සියල්ලන්ම පිරිමි, නාරා (-අ) මෙන් ආක්‍රමණය කරයි.',
-        'C. Numbers ending in -i/-ī/-ā (e.g. vīsati, saṭṭhi, asīti, koṭi, cattāḷīsā…) are FEMININE, singular only (inflecting like bhūmi or kaññā); the hundreds/thousands ending in -a (sataṃ, sahassaṃ) are neuter.',
+        'C. -i/-ī/-ā වලින් අවසන් වන සංඛ්‍යා (උදා. vīsati, saṭṭhi, asīti, koṭi, cattāḷīsā…) ස්ත්‍රීලිංග වේ; ඒවා ඒකවචන පමණක් වන අතර bhūmi හෝ kaññā මෙන් විභක්ති වේ. -a වලින් අවසන් වන සිය හා දහස් ගණන් (sataṃ, sahassaṃ) නපුංසක ලිංග වේ.',
         'D. 19-99 ඉලක්කම්වලට ඒකවචන සහ බහු වචන යන දෙකම ඇත, එය ස්ත්‍රී පුරුෂ භාවය තුනටම බලපායි.',
       ],
     ),
@@ -9190,7 +9190,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'නාමික (නාම)',
         'චෝදනා (Acc.)',
         'උපකරණ/අබ්ලේටිව් (උපකරණ/Abl.)',
-        'Vocative (Voc.)',
+        'ආමන්ත්‍රණ විභක්තිය',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
@@ -11011,7 +11011,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'si': LocalizedQuizQuestionText(
       questionText: 'වාක්‍ය 4: "dujjanā" සහ "sujane" — du/su උපසර්ග වලින් අදහස් කරන්නේ කුමක්ද?',
       options: [
-        'A. du = to, su = from',
+        'A. du = වෙත, su = සිට',
         'B. du = නරක / අමාරු, su = හොඳ / සෞඛ්ය සම්පන්න → dujjanā = දුෂ්ට පුද්ගලයා, සුජානේ = හොඳ පුද්ගලයා',
         'C. du = පහළ, su = up',
         'D. du = වෙන්වීම, su = එකට',
@@ -11697,7 +11697,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A. සංඛ්‍යාතයේ උපසර්ගය (වාර ගණන)',
         'B. සංසන්දනය කිරීමේ උපසර්ගය',
-        'C. adverbial distributive suffix (dhā/so/thā)',
+        'C. ක්‍රියා විශේෂණීය බෙදාහැරීමේ ප්‍රත්‍යය (dhā/so/thā)',
         'D. සන්තක උපසර්ගය',
       ],
     ),
@@ -11774,7 +11774,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'A. පිරිමි',
         'B. ස්ත්‍රී',
         'C. නපුංසක (tta උපසර්ගය)',
-        'D. indeclinable',
+        'D. අවිකාරී පදය',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
@@ -12230,7 +12230,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'A. පිරිමි',
         'B. ගැහැණු',
         'C. නපුංසක',
-        'D. indeclinable',
+        'D. අවිකාරී පදය',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
@@ -13028,7 +13028,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'A. #1: ව්‍යාංජනාක්ෂරයකට පෙර ස්වරය දිගු කිරීම',
         'B. #3: o→a ව්‍යාංජනාක්ෂරයකට පෙර',
         'C. #4: ස්වරයකින් පසු ව්‍යාංජනාක්ෂරය දෙගුණ කිරීම',
-        'D. #5: aspirate → unaspirate',
+        'D. #5: මහාප්‍රාණ → අල්පප්‍රාණ',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
@@ -13522,7 +13522,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'A. නාමික',
         'B. චෝදනා',
         'C. උපකරණ (නිෂ්ක්‍රීය කාරකය)',
-        'D. Vocative',
+        'D. ආමන්ත්‍රණ විභක්තිය',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
@@ -13902,7 +13902,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'A. වස්තුව',
         'B. ඉලක්කය',
         'C. ස්ථානීය (එක් වරක් / වරකට වරක්)',
-        'D. adverb',
+        'D. ක්‍රියා විශේෂණය',
       ],
     ),
     'zh': LocalizedQuizQuestionText(
