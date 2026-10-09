@@ -86,7 +86,9 @@ void main() {
     });
     test('masteryScore = 1.0 sau 5 lần đúng', () {
       final m = GrammarProgressModel(userId: 'u1', grammarKey: 'acc_singular');
-      for (int i = 0; i < 5; i++) m.recordAttempt(true);
+      for (int i = 0; i < 5; i++) {
+        m.recordAttempt(true);
+      }
       expect(m.masteryScore, 1.0);
     });
     test('isWeak = true sau 3 lần sai', () {
@@ -104,7 +106,9 @@ void main() {
     });
     test('isMastered sau 5 lần đúng', () {
       final m = GrammarProgressModel(userId: 'u1', grammarKey: 'nom_plural');
-      for (int i = 0; i < 5; i++) m.recordAttempt(true);
+      for (int i = 0; i < 5; i++) {
+        m.recordAttempt(true);
+      }
       expect(m.isMastered, true);
     });
     test('masteryScore tính đúng 3/5', () {
@@ -139,8 +143,8 @@ void main() {
   });
 
   group('Lesson 01 Data integrity', () {
-    test('vocab list has 16 items', () =>
-        expect(kLesson01Vocab.length, 16));
+    test('vocab list has 17 items', () =>
+        expect(kLesson01Vocab.length, 17));
     test('all vocab have non-empty root', () {
       for (final v in kLesson01Vocab) {
         expect(v.root.isNotEmpty, true, reason: '${v.id} has empty root');
