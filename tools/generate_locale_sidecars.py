@@ -525,6 +525,43 @@ def _request(locale: str, payload: str, attempt: int = 0) -> str:
         return _request(locale, payload, attempt + 1)
 
 
+def _translate_single(locale: str, item: Item, attempt: int) -> str | None:
+    """Translate one string, escalating the payload shape on each attempt.
+
+    Google's echo (returning the source unchanged) is deterministic per exact
+    text: probe_marker_loss.py --gaps measured a Sinhala phase title echoing
+    in all three shapes while the same Myanmar titles translate once a full
+    stop is appended (9 of 12) or the text is wrapped in quotes (8 of 12).
+    Retrying the identical payload can therefore never succeed; changing the
+    payload can.  The shapes cycle bare -> trailing stop -> quoted, and the
+    added punctuation is stripped from the result before markers are restored.
+    """
+    safe, saved = protect_pali(item.source)
+    shape = attempt % 3
+    if shape == 1:
+        sent, cleaner = safe + ".", lambda text: text.rstrip().rstrip(".").rstrip()
+    elif shape == 2:
+        sent, cleaner = f'"{safe}"', lambda text: text.strip().strip('"“”').strip()
+    else:
+        sent, cleaner = safe, lambda text: text
+    try:
+        out = _request(locale, sent)
+    except Exception as exc:  # noqa: BLE001
+        print(f"  {locale}: single retry failed ({type(exc).__name__}: {exc})",
+              file=sys.stderr)
+        return None
+    cleaned = cleaner(out.strip())
+    if not cleaned or cleaned == safe or _is_echo(item, cleaned):
+        return None
+    restored = cleaned
+    for marker, original in saved.items():
+        hit = _find_marker(restored, marker)
+        if hit is None:
+            return None
+        restored = restored.replace(hit, original)
+    return restored.strip()
+
+
 def translate_batch(locale: str, batch: list[Item], attempts: int = 0) -> dict[str, str]:
     """Translate a batch, shrinking it until every string is accounted for.
 
@@ -569,11 +606,17 @@ def translate_batch(locale: str, batch: list[Item], attempts: int = 0) -> dict[s
         return result
 
     item = batch[0]
-    if attempts < MAX_TRANSLATE_ATTEMPTS:
-        print(f"  {locale}: retrying {item.token} alone "
+    # The batch flow above already sent the bare shape, so skip it here and
+    # escalate straight to the stop/quoted variants.
+    attempts = max(attempts, 1)
+    while attempts < MAX_TRANSLATE_ATTEMPTS:
+        translated = _translate_single(locale, item, attempts)
+        if translated is not None:
+            return {item.token: translated}
+        print(f"  {locale}: retrying {item.token} alone, shape {attempts % 3 + 1} "
               f"(attempt {attempts + 1}/{MAX_TRANSLATE_ATTEMPTS})", file=sys.stderr)
         time.sleep(3)
-        return translate_batch(locale, batch, attempts + 1)
+        attempts += 1
     print(f"  {locale}: keeping English for {item.token} "
           f"({item.bucket}/{item.key})", file=sys.stderr)
     return {item.token: item.source}
