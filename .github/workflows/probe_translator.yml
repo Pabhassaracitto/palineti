@@ -26,9 +26,9 @@ jobs:
       - name: Probe marker recovery
         run: |
           mkdir -p .ci
-          for loc in si my zh hi; do
+          for loc in si my; do
             echo "########## $loc ##########" >> .ci/probe.txt
-            python3 tools/probe_marker_loss.py --echo-stats --locale "$loc" 2>&1 | tee -a .ci/probe.txt
+            python3 tools/probe_marker_loss.py --gaps --locale "$loc" 2>&1 | tee -a .ci/probe.txt
           done
       - name: Publish
         if: always()
