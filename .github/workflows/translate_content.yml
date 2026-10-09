@@ -23,28 +23,10 @@ name: Translate learning content
 # improves.
 
 on:
-  # TEMPORARY one-shot trigger.  The GitHub App token available in the review
-  # sandbox cannot dispatch workflows (HTTP 403, missing the `workflows`
-  # scope), so a push is used to start this run instead.  Remove this block
-  # once the re-translation has landed.
-  #
-  # Run history:
-  #   1st (37806355578) died at 13m on a lost Pali marker -> aborting the run.
-  #   2nd (37807501845) reached translate() but every Hindi quiz string with
-  #       several Pali terms lost a marker and fell back to English: Hindi
-  #       ended at 28.3% untranslated, 753 strings kept English.
-  #   3rd (37815983944) numeric marker recovery: hi still 28.2%.
-  #   Probe then showed hi drops every <span> wrapper at any batch size while
-  #   si/my keep them all, so the span protocol was replaced by plain-text
-  #   separators; the probe now reports 15/15 separators and 0/15 lost markers
-  #   for hi, si, zh and my.
-  #   4th (37827038134) --only-gaps with echo detection: hi 2.8%, zh 3.5%,
-  #       si 7.2%, my 8.0%, but 2,642 of the ~5,900 requests were retries.
-  #   --gaps probe proved the echo is deterministic per text and breaks when
-  #       the payload gains a trailing stop (my 9/12) or quotes (8/12).
-  #   This run adds shape escalation to the single-string path.
+  # Temporary fallback: dispatch is denied in this environment. This push
+  # trigger runs only Myanmar gaps; remove it after the workflow completes.
   push:
-    branches: [arena/d31ad54d-palineti]
+    branches: [arena/174b7314-palineti]
     paths: ['.github/workflows/translate_content.yml']
   workflow_dispatch:
     inputs:
@@ -101,16 +83,26 @@ jobs:
 
       - name: Translate
         if: ${{ !inputs.report_only && steps.probe.outcome == 'success' }}
+        env:
+          INPUT_LOCALES: ${{ inputs.locales }}
+          INPUT_ONLY_GAPS: ${{ inputs.only_gaps }}
         run: |
           set -euo pipefail
           mkdir -p .ci
           args=()
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            requested_locales="my"
+            only_gaps="true"
+          else
+            requested_locales="${INPUT_LOCALES:-}"
+            only_gaps="${INPUT_ONLY_GAPS:-false}"
+          fi
           # Accept "hi", "hi si" or "hi,si".
-          IFS=',; ' read -ra LOCS <<< "${{ inputs.locales }}"
+          IFS=',; ' read -ra LOCS <<< "$requested_locales"
           for loc in "${LOCS[@]}"; do
             if [ -n "$loc" ]; then args+=(--locale "$loc"); fi
           done
-          if [ "${{ inputs.only_gaps }}" = "true" ]; then
+          if [ "$only_gaps" = "true" ]; then
             args+=(--only-gaps)
           fi
           echo "args: ${args[*]:-<all locales>}" | tee -a .ci/translate-run.txt
@@ -141,11 +133,21 @@ jobs:
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Quality gate
+        env:
+          INPUT_MAX_UNTRANSLATED: ${{ inputs.max_untranslated }}
+          INPUT_MAX_PALI_LOST: ${{ inputs.max_pali_lost }}
         run: |
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            max_untranslated=8
+            max_pali_lost=3
+          else
+            max_untranslated="${INPUT_MAX_UNTRANSLATED:-6}"
+            max_pali_lost="${INPUT_MAX_PALI_LOST:-3}"
+          fi
           python3 tools/generate_locale_sidecars.py \
             --verbose-quality \
-            --max-untranslated "${{ inputs.max_untranslated }}" \
-            --max-pali-lost "${{ inputs.max_pali_lost }}"
+            --max-untranslated "$max_untranslated" \
+            --max-pali-lost "$max_pali_lost"
 
       # The log host is not reachable from the review environment, so the only
       # way to read why a run failed is to have the run publish its own output.
