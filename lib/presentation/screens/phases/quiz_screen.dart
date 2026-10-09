@@ -30,8 +30,6 @@ class _QuizScreenState extends State<QuizScreen> {
   bool get _hasAnswered => _userAnswers.containsKey(_currentQuestionIndex);
   bool get _isLastQuestion =>
       _currentQuestionIndex == (widget.phase.questions!.length - 1);
-  bool get _allAnswered =>
-      _userAnswers.length == widget.phase.questions!.length;
 
   void _selectOption(int optionIndex) {
     if (_hasAnswered) return; // Đã trả lời rồi thì không cho chọn nữa

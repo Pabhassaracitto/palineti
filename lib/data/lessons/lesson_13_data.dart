@@ -618,13 +618,6 @@ Bài tập tập trung vào:
           'Translation hints for Exercise 13: look for interrogative "ka" forms at the start of questions (ko, kiṃ, kasmā, kissa); for correlatives pair "yo/yaṃ/yā" in the first clause with "so/taṃ/sā" in the second; look for "-ci" suffix marking indefinites (kiñci, koci).',
     );
 
-// Helper for mixed segments in Day2 Phase2 - Ex sentences
-List<MixedSegment> _ex(int n, String pali, String vi) => [
-      MixedSegment(text: '【Ex $n】 $pali'),
-      MixedSegment(text: vi, isVietnamese: true, answer: pali),
-      MixedSegment(text: '   ───   '),
-    ];
-
 LessonPhase _buildDay2Phase2() => LessonPhase(
       id: 'lesson13_phase5',
       phaseTypeStr: 'mind_game',
