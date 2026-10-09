@@ -146,6 +146,50 @@ ECHO_CASES = {
 }
 
 
+def gap_shapes(locale: str, limit: int = 12) -> int:
+    """Try the strings that are actually untranslated, in three payload shapes.
+
+    Retries in production failed 659 strings, yet some of the very same texts
+    translate fine when probed bare -- so before another full run, find out
+    which shape change breaks the echo: the text as-is, with a trailing full
+    stop appended, or wrapped in double quotes.
+    """
+    g.ROOT = pathlib.Path(__file__).resolve().parents[1]
+    g.LOC = g.ROOT / "lib/data/localization"
+    gaps: list[tuple[str, str, str, str]] = []
+    for bucket, key, field, en, loc, val in g.translation_quality_pairs():
+        if loc != locale or en is None or val is None:
+            continue
+        if en.strip() == val.strip() and g.ASCII_RE.search(en.strip()):
+            gaps.append((bucket, key, field, en.strip()))
+    print(f"{locale}: {len(gaps)} untranslated strings; probing first {limit}")
+    worked: dict[str, int] = {"bare": 0, "period": 0, "quotes": 0}
+    for bucket, key, field, source in gaps[:limit]:
+        safe, _ = g.protect_pali(source)
+        shapes = {
+            "bare": (safe, lambda out: out),
+            "period": (safe + ".", lambda out: out.rstrip(". ").rstrip(".")),
+            "quotes": ('"' + safe + '"', lambda out: out.strip('"“” ')),
+        }
+        line = f"  {bucket}/{key}: {source[:44]!r}"
+        for name, (payload, clean) in shapes.items():
+            try:
+                out = g._request(locale, payload)
+            except Exception as exc:  # noqa: BLE001
+                line += f"  {name}: ERR"
+                continue
+            cleaned = clean(out.strip())
+            if cleaned and cleaned != safe and cleaned != source:
+                worked[name] += 1
+                line += f"  {name}: OK"
+            else:
+                line += f"  {name}: echo"
+            time.sleep(1.0)
+        print(line)
+    print(f"  => translated by shape: {worked}")
+    return 0
+
+
 def echo_stats(locale: str, rounds: int = 8) -> int:
     """Send the same string repeatedly, both bare and newline-prefixed.
 
@@ -247,6 +291,8 @@ def main() -> int:
     ap.add_argument("--locale", action="append", help="locale, repeatable")
     ap.add_argument("--batch", type=int, default=0,
                     help="instead of single strings, send a real N-item batch")
+    ap.add_argument("--gaps", action="store_true",
+                    help="probe the currently-untranslated strings in three shapes")
     ap.add_argument("--echo-stats", action="store_true",
                     help="measure how often the same string comes back untranslated")
     ap.add_argument("--compare", action="store_true",
@@ -260,6 +306,12 @@ def main() -> int:
     tokens = args.token or DEFAULT_TOKENS
     locales = args.locale or ["hi"]
     by_token = {i.token: i for i in g.catalog()}
+
+    if args.gaps:
+        for locale in locales:
+            gap_shapes(locale)
+            print()
+        return 0
 
     if args.echo_stats:
         for locale in locales:
