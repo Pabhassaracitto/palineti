@@ -154,8 +154,6 @@ def gap_shapes(locale: str, limit: int = 12) -> int:
     which shape change breaks the echo: the text as-is, with a trailing full
     stop appended, or wrapped in double quotes.
     """
-    g.ROOT = pathlib.Path(__file__).resolve().parents[1]
-    g.LOC = g.ROOT / "lib/data/localization"
     gaps: list[tuple[str, str, str, str]] = []
     for bucket, key, field, en, loc, val in g.translation_quality_pairs():
         if loc != locale or en is None or val is None:
