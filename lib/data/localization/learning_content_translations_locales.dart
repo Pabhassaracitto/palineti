@@ -1305,7 +1305,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
       title: '📘 夺格和属格 + 第一人称动词',
     ),
     'my': LocalizedLearningText(
-      title: '📘 Ablative & Genitive Cases + 1st-Person Verbs',
+      title: '📘 Ablative & Genitive Cases + 1st-Person Verbs။',
     ),
     'hi': LocalizedLearningText(
       title: '📘 विभक्ति एवं संबंधकारक मामले + प्रथम-व्यक्ति क्रिया',
@@ -1669,7 +1669,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
       title: '📘 阳性“-i”名词变格 + 动名词',
     ),
     'my': LocalizedLearningText(
-      title: '📘 Masculine "-i" Noun Declension + Gerund',
+      title: '📘 Masculine "-i" Noun Declension + Gerund ။',
     ),
     'hi': LocalizedLearningText(
       title: '📘 पुल्लिंग "-i" संज्ञा विभक्ति + गेरुंड',
@@ -1851,7 +1851,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
       title: '测验 — 第 10 课知识检查',
     ),
     'my': LocalizedLearningText(
-      title: 'Quiz — Lesson 10 Knowledge Check',
+      title: 'ပဟေဠိ - သင်ခန်းစာ 10 အသိပညာစစ်ဆေးခြင်း',
     ),
     'hi': LocalizedLearningText(
       title: 'प्रश्नोत्तरी - पाठ 10 ज्ञान जाँच',
@@ -1865,7 +1865,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
       title: '📘 "-u/-ū" 变格 + 命令语气',
     ),
     'my': LocalizedLearningText(
-      title: '📘 "-u/-ū" Declension + Imperative Mood',
+      title: '📘 "-u/-ū" Declension + Imperative Mood။',
     ),
     'hi': LocalizedLearningText(
       title: '📘 "-u/-ū" गिरावट + अनिवार्य मनोदशा',
@@ -2131,7 +2131,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
       title: '4. 动名词分词 – tabba / anīya / ya',
     ),
     'my': LocalizedLearningText(
-      title: '4. Gerundive Participle – tabba / anīya / ya',
+      title: '4. Gerundive Participle – tabba / anīya / ya ။',
     ),
     'hi': LocalizedLearningText(
       title: '4. गेरुंडिव कृदंत – tabba / anīya / ya',
@@ -2145,7 +2145,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
       title: '5. 主动词表 – 第 134-136 页',
     ),
     'my': LocalizedLearningText(
-      title: '5. Master Verb Table – pp.134-136',
+      title: '5. Master Verb Table – pp.134-136။',
     ),
     'hi': LocalizedLearningText(
       title: '5. मास्टर वर्ब टेबल - पीपी.134-136',
@@ -3055,7 +3055,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
       title: '📘 主格 + 呼格 + 宾格',
     ),
     'my': LocalizedLearningText(
-      title: '📘 Nominative + Vocative + Accusative',
+      title: '📘 Nominative + Vocative + Accusative ။',
     ),
     'hi': LocalizedLearningText(
       title: '📘 नामवाचक + वाचिक + कर्मवाचक',
@@ -3139,7 +3139,7 @@ const Map<String, Map<String, LocalizedLearningText>> _additionalLessonPhaseTran
       title: '📘 被动语态',
     ),
     'my': LocalizedLearningText(
-      title: '📘 The Passive Voice',
+      title: '📘 The Passive Voice\nချက်ပြုတ်ရန်',
     ),
     'hi': LocalizedLearningText(
       title: '📘 निष्क्रिय आवाज',
@@ -3429,10 +3429,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'မည်သည့် Pāḷi ဖောင်သည် "gāma" (ရွာ) ၏ အမည်ခံ အများကိန်းဖြစ်သည်။',
       options: [
-        'A. gāmo',
-        'B. gāmaṃ',
-        'C. gāme',
-        'D. gāmā',
+        'A. gāmo။',
+        'B. gāmaṃ။',
+        'C. gāme။',
+        'D. gāmā။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -3543,9 +3543,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'ကွက်လပ်ကို ဖြည့်ပါ- "Sūdo ___ pacati." (ဆန် — accusative singular)',
       options: [
-        'A. odano',
-        'B. odanā',
-        'C. odanaṃ',
+        'အေ odano',
+        'B. odanā။',
+        'C. odanaṃ။',
         'D. odane',
       ],
     ),
@@ -3582,9 +3582,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: 'Q1 နာမ် "nara" ၏ Instrumental singular form သည် အဘယ်နည်း။',
       options: [
         'နာရီနာ',
-        'narāya',
-        'narānaṃ',
-        'narehi',
+        'narāya။',
+        'narānaṃ။',
+        'narehi။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -3619,9 +3619,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Q2။ နာမ် "nara" ၏ Dative အများကိန်းပုံစံကား အဘယ်နည်း။',
       options: [
-        'narassa',
+        'narassa။',
         'နာရီနာ',
-        'narānaṃ',
+        'narānaṃ။',
         'နာရဘီ',
       ],
     ),
@@ -3659,7 +3659,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'Gacchati',
         'အာဟာရတီ',
-        'Harati',
+        'ဟာရတီ',
         'ပါဟာရတီ',
       ],
     ),
@@ -3733,10 +3733,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Q5။ 2nd person အနည်းကိန်းအတွက် verb termination ဆိုတာ ဘာလဲ။',
       options: [
-        '-mi',
+        '-မိုင်',
         '-si',
-        '-tha',
-        '-ti',
+        '-သ',
+        '-ti။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -3809,10 +3809,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Q7။ နာမ် "samaṇa" ၏ Dative singular ပုံစံကား အဘယ်နည်း။',
       options: [
-        'samaṇena',
-        'samaṇāya',
-        'samaṇānaṃ',
-        'samaṇehi',
+        'samaṇena။',
+        'samaṇāya။',
+        'samaṇānaṃ။',
+        'samaṇehi။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -4075,10 +4075,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Q1 နာမ် "နရာ" ၏ အချည်းနှီးသော အနည်းကိန်းပုံစံကား အဘယ်နည်း။',
       options: [
-        'narā / naramhā / narasmā',
-        'narāya',
-        'narānaṃ',
-        'narehi',
+        'narā / naramhā / narasmā။',
+        'narāya။',
+        'narānaṃ။',
+        'narehi။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -4113,9 +4113,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Q2။ နာမ် "nara" ၏ အရှင်းလင်းဆုံး အများကိန်းပုံစံကား အဘယ်နည်း။',
       options: [
-        'naramhā',
+        'naramhā။',
         'နာရီနာ',
-        'narānaṃ',
+        'narānaṃ။',
         'narebhi/narehi',
       ],
     ),
@@ -4151,10 +4151,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Q3။ နာမ် "နရာ" ၏ Genitive singular ပုံစံကား အဘယ်နည်း။',
       options: [
-        'narā',
+        'narā။',
         'နာရီနာ',
-        'narassa',
-        'narānaṃ',
+        'narassa။',
+        'narānaṃ။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -4189,10 +4189,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Q4။ နာမ် "nara" ၏ Genitive အများကိန်းပုံစံကား အဘယ်နည်း။',
       options: [
-        'narassa',
+        'narassa။',
         'နာရီနာ',
-        'narānaṃ',
-        'narehi',
+        'narānaṃ။',
+        'narehi။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -4571,7 +4571,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'nare/naramhi/narasmiṃ',
         'နာရာ',
-        'narāya',
+        'narāya။',
         'နာရဘီ',
       ],
     ),
@@ -4607,10 +4607,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Q2။ နာမ် "nara" ၏ နေရာဒေသဆိုင်ရာ အများကိန်းပုံစံကား အဘယ်နည်း။',
       options: [
-        'naramhi',
-        'narānaṃ',
-        'naresu',
-        'narā',
+        'naramhi။',
+        'narānaṃ။',
+        'naresu။',
+        'narā။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -4645,10 +4645,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Q3။ နာမ် "နရာ" ၏ နာမ်အနည်းကိန်းကား အဘယ်နည်း။',
       options: [
-        'nare',
-        'narassa',
+        'nare။',
+        'narassa။',
         'nara/narā',
-        'narānaṃ',
+        'narānaṃ။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -4683,10 +4683,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Q4။ နာမ် "နရာ" ၏ နာမ်ရုပ်သည် အဘယ်နည်း။',
       options: [
-        'narā',
-        'nare',
-        'narassa',
-        'naramhi',
+        'narā။',
+        'nare။',
+        'narassa။',
+        'naramhi။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -4759,8 +4759,8 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Sandhi စည်းမျဉ်းအရ "so + api" ဟု ရေးသားထားသည်။',
       options: [
-        'soapī',
-        'so\'pi',
+        'soapī။',
+        'ဆိုပီ',
         'ဒါကြောင့် api',
         'ဆိုပီ',
       ],
@@ -4797,9 +4797,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'သည် sandhi စည်းမျဉ်းအရ "ahaṃ + api" ကို အောက်ပါအတိုင်း ရေးသားထားသည်။',
       options: [
-        'ahaṃapi',
-        'ahanpi',
-        'ahaṃ\'pi',
+        'ahaṃapi။',
+        'အာဟန်ပီ',
+        'ahaṃ\'pi။',
         'အဟမ်ပီ',
       ],
     ),
@@ -5066,7 +5066,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'A. -ā / -ā / -e (ယောက်ျားနှင့် ထပ်တူ)',
         'B. -e/-e/-āni',
         'C. -ā သို့မဟုတ် -āni (Nom./Voc.) နှင့် -e သို့မဟုတ် -āni (Acc.); ပုံမှန်ပုံစံမှာ-āni ဖြစ်သည်။',
-        'D. -ena / -ehi / -esu',
+        'D. -ena / -ehi / -esu ။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -5291,10 +5291,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '2. အောက်ပါ INFINITIVE ဖောင်များအနက်မှ မည်သည့်အရာသည် အမြစ် "paca" (ချက်ပြုတ်) အတွက် မှန်ကန်သနည်း။',
       options: [
-        'A. pacātuṃ',
+        'A. pacātuṃ။',
         'B. pacatuṃ (နောက်ဆုံး "a" ကို မပြောင်းလဲဘဲ ထိန်းသိမ်းထားပါ)',
         'C. pacituṃ (နောက်ဆုံး "a" ကို "i" သို့ ပြောင်းလဲပြီးနောက် -tuṃ ကို ထည့်ထားသည်)',
-        'D. pacitvā',
+        'D. pacitvā။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -5406,9 +5406,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '5. Locative (Sattamī) ဣတ္ထိ "-ā" နာမ်၏ အများကိန်းသည် အဘယ်နည်း။ ဥပမာ၊ "မြစ်များ" ဟူသည် အဘယ်နည်း။',
       options: [
         'A. -esu (naresu၊ ယောက်ျားကဲ့သို့)',
-        'B. -āsu (gaṅgāsu)',
-        'C. -ānaṃ (gaṅgānaṃ)',
-        'D. -āhi (gaṅgāhi)',
+        'B. -āsu (gaṅgāsu)။',
+        'C. -ānaṃ (gaṅgānaṃ)။',
+        'D. -āhi (gaṅgāhi)။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -5446,7 +5446,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         '-i/-ī',
         '-uṃ/-iṃsu',
         '-o',
-        '-iṃ',
+        '-iṃ။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -5481,10 +5481,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Q2။ Ajjatanī tense တွင် 1st person အများကိန်းအတွက် ကြိယာအဆုံးသတ်ကား အဘယ်နည်း။',
       options: [
-        '-imhā',
-        '-iṃ',
-        '-ittha',
-        '-iṃsu',
+        '-imhā။',
+        '-iṃ။',
+        '-ဒါ',
+        '-iṃsu။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -5519,10 +5519,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Q3။ Ajjatanī tense တွင် 2nd person အများကိန်းအတွက် ကြိယာအဆုံးသတ်သည် အဘယ်နည်း။',
       options: [
-        '-iṃ',
-        '-imhā',
+        '-iṃ။',
+        '-imhā။',
         '-o',
-        '-ittha',
+        '-ဒါ',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -5633,10 +5633,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'ကြိယာအရင်းမြစ်သည် "e" သို့မဟုတ် "ā" ဖြင့်အဆုံးသတ်သောအခါ မည်သည့်ဗျည်းကို Ajjatanī tense တွင် ထည့်သွင်းသနည်း။',
       options: [
-        '-r-',
-        '-h-',
-        '-s-',
-        '-t-',
+        '-r-။',
+        '-h-။',
+        '-s-။',
+        '-t-။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -5671,10 +5671,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Sandhi စည်းမျဉ်းအရ "pāto + eva" သည် အောက်ပါအတိုင်း ရေးထားသည်။',
       options: [
-        'pātoeva',
-        'pāteva',
-        'pāto\'va',
-        'pātovā',
+        'pātoeva။',
+        'pāteva။',
+        'pāto\'va။',
+        'pātovā။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -6013,9 +6013,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'ပုလ္လိင် "-i" နာမ်၏ Accusative singular အဆုံးသတ်ကား အဘယ်နည်း။',
       options: [
-        '-i',
-        '-iṃ',
-        '-inā',
+        '-ငါ',
+        '-iṃ။',
+        '-inā။',
         '-ino',
       ],
     ),
@@ -6051,10 +6051,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'ကြိယာ "kara" (do) ၏ Gerund (လုပ်ပြီးနောက်) ဟူသည် အဘယ်နည်း။',
       options: [
-        'karitvā',
-        'karatvā',
-        'katvā',
-        'katvāna',
+        'karitvā။',
+        'karatvā။',
+        'katvā။',
+        'katvāna။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -6089,10 +6089,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'ကြိယာ "paca" (ချက်ပြုတ်) ၏ Gerund ကဘာလဲ။',
       options: [
-        'pacatvā',
-        'pacitvā',
-        'pacetvā',
-        'pakitvā',
+        'pacatvā။',
+        'pacitvā။',
+        'pacetvā။',
+        'pakitvā။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -6127,10 +6127,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '"မုနိ" ၏ Ablative singular ပုံစံကား အဘယ်နည်း။',
       options: [
-        'muninā',
-        'muniṃ',
-        'munino',
-        'munīsu',
+        'muninā။',
+        'muniṃ။',
+        'မြူနီနို',
+        'munīsu။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -6434,7 +6434,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'A. -īsu (bhūmīsu၊ aṭavīsu၊ rattīsu)',
         'B. -esu (ယောက်ျား "-a" ကဲ့သို့)',
         'C. -āsu (ဣတ္ထိ "-ā" ကဲ့သို့)',
-        'D. -īhi (bhūmīhi)',
+        'D. -īhi (bhūmīhi)။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -6469,9 +6469,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '2. ကြိယာ "paca" (cook) ကို FUTURE tense၊ 3rd person singular ("he will cook") — ပုံစံကား အဘယ်နည်း။',
       options: [
-        'A. pacitā',
+        'A. pacitā။',
         'B. ပါစီစတီ',
-        'C. pacissāmi',
+        'C. pacissāmi။',
         'D. ပါကန်တီ',
       ],
     ),
@@ -6546,7 +6546,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '4. SINGULAR ပုဂ္ဂိုလ်များ (3rd/2nd/1st) အတွက် Future tense ends သည် အဘယ်နည်း။',
       options: [
         'A. -ati / -asi / -āmi (ပစ္စုပ္ပန်ကာလနှင့်တူသည်)၊',
-        'B. -issati / -issasi / -issāmi',
+        'B. -issati / -issasi / -issāmi။',
         'C. -issanti / -issatha / -issāma (ဤအစုသည် အများကိန်း)',
         'D. -tu / -hi / -mi (မဖြစ်မနေ)',
       ],
@@ -6735,10 +6735,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '4. အောက်ဖော်ပြပါ မည်သည့်အတွဲအတွဲသည် "-nī/-inī" ကို သရသံရှည် / "-u" ဖြင့်အဆုံးသတ်သည့် အမျိုးသားတစ်ဦးမှ ဣတ္ထိမဆန်သောအသွင်အသွင်ဆောင်ရန် အောက်တွင်ဖော်ပြထားသော မည်သည့်အတွဲအတွဲ။',
       options: [
-        'A. nara → nārī',
-        'B. deva → devī',
-        'C. aja → ajā',
-        'D. bhikkhu → bhikkhunī',
+        'A. nara → nārī။',
+        'B. deva → devī။',
+        'C. aja → ajā။',
+        'D. bhikkhu → bhikkhunī။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -6773,9 +6773,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '5. အောက်ဖော်ပြပါ ဥပမာသည် ဗျည်းဗျည်း (k/kh/g/gh) မတိုင်မီ တူညီသောအုပ်စု၏ နှာခေါင်းအဖြစ်သို့ ပြောင်းလဲနေသော နိဂတ (ṃ) ကို မှန်ကန်စွာ သရုပ်ဖော်သည်။',
       options: [
-        'A. seṭṭhaṃ + iva = seṭṭhaṃ\'va',
-        'B. ahaṃ + pi = aham\'pi',
-        'C. saṃ + gaho = saṅgaho',
+        'A. seṭṭhaṃ + iva = seṭṭhaṃ\'va။',
+        'B. ahaṃ + pi = aham\'pi။',
+        'C. saṃ + gaho = saṅgaho။',
         'D. itipi so bhagavā (no niizardita)',
       ],
     ),
@@ -6812,9 +6812,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: 'မေးခွန်း 1. Imperative, 3rd person singular တွင် ကြိယာ၏အဆုံးသတ်ကား အဘယ်နည်း။',
       options: [
         '-အာမီ',
-        '-atu',
-        '-a',
-        '-atha',
+        '-atu။',
+        '-က',
+        '-atha။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -6849,8 +6849,8 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'မေးခွန်း 2. Imperative, 2nd person plural မှာကြိယာရဲ့အဆုံးသတ်ဆိုတာဘာလဲ။',
       options: [
-        '-antu',
-        '-atha',
+        '-antu ။',
+        '-atha။',
         '-အာမ',
         '-အာဟိ',
       ],
@@ -6965,7 +6965,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         '-tu နှင့် -antu',
         '-a နှင့် -atha',
-        '-āhi, -āmi, -āma',
+        '-အာဟိ၊-အာမိ၊-အာမ',
         '-i နှင့် -ī',
       ],
     ),
@@ -8067,7 +8067,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'အတိတ်ပါဝင်မှု',
         'ပစ္စုပ္ပန် Passive Participle – ya + māna, a→i',
-        'Optative Participle',
+        'Optative Participle။',
         'နှုတ်နာမ်',
       ],
     ),
@@ -8103,10 +8103,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'ñāta, suta, gata,ṭhita, kata — ဘယ်နောက်ဆက်?',
       options: [
-        'anta / māna',
-        'tabba / anīya',
+        'anta / māna။',
+        'tabba / anīya။',
         'ta/na — Past Participle၊ a များသောအားဖြင့် → i',
-        'īyamāna',
+        'īyamāna။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -8181,7 +8181,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'ပစ္စုပ္ပန်အသက်ဝင်သည်။',
         'အတိတ် Passive Participle, ဓမ္မာစရိယ (masc., no. sg.)',
-        'Optative Participle',
+        'Optative Participle။',
         'ကြိယာကို ပစ္စုပ္ပန်တွင် ပေါင်းစပ်ထားသည်။',
       ],
     ),
@@ -8219,7 +8219,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'Nominative + conjugated ကြိယာ',
         'တူရိယာ (အေးဂျင့်) + neuter Optative Participle',
-        'Locative Absolute',
+        'တည်နေရာ အကြွင်းမဲ့',
         'ပစ္စုပ္ပန်အပိုင်း',
       ],
     ),
@@ -8257,7 +8257,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'သာမန်အတိတ်အပိုင်း',
         'Locative Absolute - ငါသွားတုန်းက / ငါသွားခဲ့တယ်။',
-        'Optative Participle',
+        'Optative Participle။',
         'ပစ္စုပ္ပန် Passive',
       ],
     ),
@@ -8293,9 +8293,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '"မေရီတံခါး so āgato." - မှန်ကန်သော သုံးသပ်ချက်။',
       options: [
-        'Mayi = Nom., gate = Present Participle',
+        'မာယီ = နာမ်၊ ဂိ=ပစ္စုပ္ပန်"၊',
         'Mayi gate = နေရာ။ sg.- "ငါသွားတုန်းက" — Locative Absolute',
-        'Optative Participle',
+        'Optative Participle။',
         'ပစ္စုပ္ပန် Passive',
       ],
     ),
@@ -8334,7 +8334,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'အမည်ခံ အများကိန်း',
         'နေရာ။ sg — Locative Absolute: သူ ကျောင်းတက်တုန်းက',
         'အတီးအမှုတ်',
-        'Optative Participle',
+        'Optative Participle။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -8447,8 +8447,8 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'အဆိုးမြင်အတိတ်အပိုင်း',
         'ñā ၏ ပစ္စုပ္ပန်တက်ကြွပါဝင်မှု- ရှေ့ဆက်- မသိခြင်း၊ သတိမထားမိခြင်း',
-        'Optative Participle',
-        'Passive',
+        'Optative Participle။',
+        'Passive။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -8485,7 +8485,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'အတိတ်ပါဝင်မှု — ဗိုလ်ချုပ် pl.',
         'ပစ္စုပ္ပန်အပိုင်း- ဗိုလ်ချုပ် pl.: တည်းခိုနေသော လူနာများ',
-        'Optative Participle',
+        'Optative Participle။',
         'နှုတ်နာမ်',
       ],
     ),
@@ -8523,8 +8523,8 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'အကောင့် pl မျက်နှာဖုံး — Present Participle: သောက်နေသောလူနာ',
         'နာမ်။ sg',
-        'Past Participle',
-        'Optative Participle',
+        'Past Participle။',
+        'Optative Participle။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -8559,10 +8559,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '"မြင်းဖြူ" — No. sg မျက်နှာဖုံး - မှန်ကန်သောပုံစံကား အဘယ်နည်း။',
       options: [
-        'setaṃ assaṃ',
-        'seto asso',
-        'setā assā',
-        'setāni assāni',
+        'setaṃ assaṃ။',
+        'ဆက်တို asso',
+        'setā assā။',
+        'setāni assāni။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -8598,9 +8598,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '"အဖြူ၊ အနီရောင်နှင့် အဝါရောင်ပန်းများ" — neuter Nom./Acc. အများကိန်း?',
       options: [
         'seto ratto pīto ခွေးပေါက်လေး',
-        'setā rattā pītā pupphā',
-        'setāni rattāni pītāni pupphāni',
-        'setāya rattāya pītāya pupphāya',
+        'setā rattā pītā pupphā။',
+        'setāni rattāni pītāni pupphāni။',
+        'setāya rattāya pītāya pupphāya။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -8711,10 +8711,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '"-a" နာမ်များမှ အပိုင်နာမဝိသေသနများ ဖြစ်ပေါ်လာသည့် နောက်ဆက်တွဲမှာ ?',
       options: [
-        '-mantu',
-        '-vantu',
-        '-tara',
-        '-īya',
+        '-mantu။',
+        'ဗန်တူ',
+        '-tara။',
+        '-īya။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -8749,10 +8749,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'guṇavantu — နံပါတ် sg မျက်နှာဖုံး လား?',
       options: [
-        'guṇavantaṃ',
-        'guṇavantā',
-        'guṇavā',
-        'guṇavante',
+        'guṇavantaṃ။',
+        'guṇavantā။',
+        'guṇavā။',
+        'guṇavante။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -8789,8 +8789,8 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'gilānassa — မျက်နှာဖုံး ဗိုလ်ချုပ် sg',
         'udakaṃ — neut နံပါတ်/အကောင့်။ sg',
-        'dātabbaṃ',
-        'imassa',
+        'dātabbaṃ။',
+        'အီမာဆာ',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -8825,10 +8825,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'ဣတ္ Loc ။ sg ima ၏ပါဝင်သည်?',
       options: [
-        'imamhi / imasmiṃ',
+        'imamhi / imasmiṃ။',
         'imissaṃ၊ imāyaṃ၊ assaṃ',
-        'imāsu',
-        'imāya',
+        'imāsu။',
+        'imāya။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -8863,10 +8863,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'amu - fem နံပါတ်/အကောင့်။ Lesson 15 စာအုပ်အရ အများကိန်း၊',
       options: [
-        'amū',
-        'amūyo',
-        'amuyo',
-        'amūni',
+        'amū။',
+        'amūyo။',
+        'အမူး',
+        'amūni။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -9357,10 +9357,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'ကြိယာ "ki" (buy) သည် Class 5 နှင့် သက်ဆိုင်သော်လည်း အထူးစည်းမျဉ်းတစ်ခုရှိသည်။ "Ki + nā + ti" = ?',
       options: [
-        'kināti',
+        'kināti။',
         'kiṇāti (nā→ṇā မတိုင်ခင်)',
         'ကီနိုတီ',
-        'kīyati',
+        'kīyati။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -9775,10 +9775,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'The Instrumental (Instr.) အနည်းကိန်း satthu ဆိုသည်မှာ?',
       options: [
-        'satthussa',
-        'satthari',
-        'satthunā',
-        'satthā',
+        'satthussa။',
+        'satthari။',
+        'satthunā။',
+        'satthā။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -9927,9 +9927,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '√bhū ၏ Kārita (ဖြစ်/ဖြစ်) ဟူသော စကားလုံးသည် "ပြုစုပျိုးထောင်ရန်၊ ဖွံ့ဖြိုးတိုးတက်ရန်" ဟူသော ဘုံအဓိပ္ပါယ်ဖြင့် မည်သည့်စကားလုံးဖြစ်သနည်း။',
       options: [
-        'bhāveti',
-        'bhavati',
-        'bhuñjati',
+        'bhāveti။',
+        'ဘာဝတီ',
+        'bhuñjati။',
         'ဗောဓိ',
       ],
     ),
@@ -9966,7 +9966,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: 'Kārita ၏ နောက်ဆက်တွဲ လေးခုတွင် မည်သည့်အရာ (-e၊ -aya၊ -āpe၊ -āpaya) သည် "သွယ်ဝိုက်သော အကြောင်းအရင်း/ တတိယလူကို ရအောင်ပြုလုပ်ခြင်း" ပုံစံကို အများဆုံး ထုတ်ပေးပါသည်။',
       options: [
         '-e',
-        '-aya',
+        '-အင်း',
         '-āpe / -āpaya (အကြောင်းတရားကြောင့်ဖြစ်သော၊ ဖြစ်အောင်)',
         '၏ နောက်ဆက်တွဲ တစ်ခုမျှမရှိပါ။',
       ],
@@ -10006,7 +10006,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'သွားပါ / gāvena',
         'gāvena / Givena',
         'gobhi/gohi',
-        'gavaṃ',
+        'gavaṃ။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -10041,10 +10041,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Dative/Genitive (Dat./Gen.) "go" ၏ အများကိန်းပုံစံကား အဘယ်နည်း။',
       options: [
-        'gāvo',
+        'gāvo။',
         'gosu',
-        'gavaṃ / gunnaṃ / gonaṃ',
-        'gobhi',
+        'gavaṃ / gunnaṃ / gonaṃ ။',
+        'ဂိုဘီ',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -10079,9 +10079,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'Instrumental (Instr.) အနည်းကိန်း "မန" (စိတ်၊ အတွေး) ဟူသည် အဘယ်နည်း။',
       options: [
-        'manaṃ',
+        'manaṃ။',
         'mansā / manena',
-        'manasā',
+        'manasā။',
         'မာနာဆို',
       ],
     ),
@@ -10117,10 +10117,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '"sira" ကို နောက်ဆက်တွဲ "-sā" နဲ့ ပေါင်းလိုက်တဲ့အခါ ရလဒ်က ဘာလဲ?',
       options: [
-        'sirasā',
-        'sira + sā',
-        'sirasa',
-        'sirāsā',
+        'sirasā။',
+        'sira + sā။',
+        'စီရဆာ',
+        'sirāsā။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -10155,8 +10155,8 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'တတိယပုဂ္ဂိုလ် အများကိန်း မပြည့်စုံ (Hīyattanī) တွင် ကြိယာ၏အဆုံးသတ်သည် ?',
       options: [
-        '-iṃsu',
-        '-uṃ',
+        '-iṃsu။',
+        '-uṃ။',
         '-ū',
         '-o',
       ],
@@ -10497,9 +10497,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '၂။"ဗုဒ္ဓဓမ္မ"(ဗုဒ္ဓ၏တရား၊ ပိုင်ဆိုင်မှု"၏") ဒြပ်ပေါင်းသည် မည်သည့်အမျိုးအစားဖြစ်သနည်း။',
       options: [
-        'A. Kammadhāraya',
-        'B. Bahubbīhi',
-        'C. Tappurisa — Genitive (Chaṭṭhī / case 6)',
+        'A. Kammadhāraya။',
+        'B. Bahubbīhi။',
+        'C. Tappurisa — Genitive (Chaṭṭhī / case 6)။',
         'D. Dvanda',
       ],
     ),
@@ -10536,9 +10536,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '3. "nāmarūpaṃ" (အမည်နှင့်ပုံစံ၊ စိတ်-ရုပ်ကိုဖော်ပြခြင်း၊ စုစုပေါင်း 5 ခုအစုစု) သည် မည်သည့်အမျိုးအစားဖြစ်သည်။',
       options: [
         'A. Dvanda — အစုတစ်ခု ("ca", neuter-singular ဖြင့် ပေါင်းထားသော နာမ်များ)',
-        'B. Tappurisa',
-        'C. Kammadhāraya',
-        'D. Bahubbīhi',
+        'ခ. Tappurisa',
+        'C. Kammadhāraya။',
+        'D. Bahubbīhi။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -10573,9 +10573,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '4. "diṭṭhadhammo" (ဓမ္မကို မြင်ဖူးသူ → အရိယာကို ရည်ညွှန်းသည် ၊ မြင်သော တရား ) သည် အဘယ်အမျိုးအစား ဖြစ်ပါသနည်း။',
       options: [
-        'A. Kammadhāraya',
-        'B. Tappurisa',
-        'C. Avyayībhāva',
+        'A. Kammadhāraya။',
+        'ခ. Tappurisa',
+        'C. Avyayībhāva။',
         'D. Bahubbīhi (တရားတစ်​ခုလုံးသည်​ တရား​ဟောမြင်​ဖူးသူအား မတူညီသည့်​အရာဝတ္ထုကို ရည်​ညွှန်းသည်​)',
       ],
     ),
@@ -10612,9 +10612,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '5. "anupubbaṃ" ပေါင်းစပ်မှု (တဖြည်း ဖြည်းအားဖြင့်၊ ရှေ့ဆက် "anu-" ဖြင့် အစပြု၍ neuter-singular adverb ဖြစ်လာခြင်း) သည် မည်သည့်အမျိုးအစား ဖြစ်ပါသနည်း။',
       options: [
         'A. Dvanda',
-        'B. Avyayībhāva (adverbial compound)',
-        'C. Kammadhāraya',
-        'D. Bahubbīhi',
+        'B. Avyayībhāva (ကြိယာဝိသေသနဒြပ်ပေါင်း)',
+        'C. Kammadhāraya။',
+        'D. Bahubbīhi။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -10649,10 +10649,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '6. "vanavāso" (သစ်တောတွင်နေထိုင်ခြင်း၊ တည်နေရာဆက်စပ်မှု "တောထဲတွင်") သည် မည်သည့်အမျိုးအစားလဲ။',
       options: [
-        'A. Kammadhāraya',
+        'A. Kammadhāraya။',
         'B. Tappurisa — တည်နေရာ (Sattamī / case 7)',
         'C. Dvanda',
-        'D. Avyayībhāva',
+        'D. Avyayībhāva။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -10689,8 +10689,8 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A. Kammadhāraya (အပြုသဘော / "A သည် B")',
         'B. Dvanda',
-        'C. Tappurisa',
-        'D. Bahubbīhi',
+        'C. Tappurisa။',
+        'D. Bahubbīhi။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -10726,9 +10726,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '8. "catusaccaṃ" (သစ္စာလေးပါး → အရိယာသစ္စာလေးပါး၊ ဂဏန်း + နာမ်၊ အစုကို ရည်ညွှန်းခြင်း၊ neuter-singular "catusaccaṃ") ဆိုသည်မှာ Kammadhāraya ၏ အမျိုးအစားခွဲဖြစ်သည်။',
       options: [
         'A. Dvanda',
-        'B. Tappurisa',
+        'ခ. Tappurisa',
         'C. Digu (ဂဏန်းပေါင်း)',
-        'D. Avyayībhāva',
+        'D. Avyayībhāva။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -10877,8 +10877,8 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'ဗျည်းနှစ်ဆတိုးခြင်း၏စည်းမျဉ်းသည် မည်သည့်ရှေ့ဆက်နှင့်သက်ဆိုင်သနည်း။',
       options: [
-        'A. abhi, adhi, ati',
-        'B. ā, apa, api',
+        'A. abhi, adhi, ati။',
+        'ဘီအာ၊ အပါ၊ အာပီ',
         'C. du, ni, u (တစ်ခါတစ်ရံ vi)',
         'D. parā၊ pari၊ pati',
       ],
@@ -11031,7 +11031,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A. du = to, su = တို့မှ',
         'B. du = မကောင်းမှု/ခဲယဉ်း, su = ကောင်းမှု/ကုသိုလ် → dujjanā = လူဆိုး, sujane = သူတော်ကောင်း၊',
-        'C. du = down, su = up',
+        'ဂ. du = အောက်၊ su = အပေါ်',
         'D. du = ခွဲထွက်ခြင်း၊ su = အတူတကွ',
       ],
     ),
@@ -11561,9 +11561,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'ဘယ် နောက်ဆက်တွဲက FEMININE နာမ်ကို ကိုယ်စားပြုတဲ့ အခြေအနေကို ဖြစ်စေတာလဲ။',
       options: [
-        'A. Tta',
-        'B. Ya',
-        'C. Tā',
+        'A. Tta။',
+        'ခ.ယာ',
+        'C. Tā။',
         'D. မာယာ',
       ],
     ),
@@ -11942,7 +11942,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: 'ဝါကျ 14- "ārogyena" = ārogya + ena (Instr.)။ မူရင်းနောက်ဆက်?',
       options: [
         'A. Tā (ဣတ္ထိယ)',
-        'B. Ya (neuter) — aroga + ya = ārogya',
+        'ခ.ယာ (အနု) — aroga + ya = ārogya',
         'C. မာယာ (ဖြင့်)၊',
         'D. Ika (ပိုင်)',
       ],
@@ -12169,7 +12169,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'အနှစ်ချုပ်- မည်သည့် Taddhita suffix NEUTER noun ဖြစ်လာသနည်း။',
       options: [
-        'A. Tā',
+        'A. Tā။',
         'B. Tta နှင့် Ya',
         'C. မာယာ',
         'D. Ika',
@@ -12247,7 +12247,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       options: [
         'A. ပုလ္လိင်',
         'ခ။ဣတ္',
-        'C. neuter',
+        'C. neuter ။',
         'D. ငြင်းနိုင်စရာ',
       ],
     ),
@@ -12360,7 +12360,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
       questionText: '"Gantukāma" = gantuṃ + kāma။ မှန်ကန်သောဖွဲ့စည်းမှု?',
       options: [
         'A. နှုတ်နာမ် (အဆုံးမရှိ) + "kāma" (ဆန္ဒ) = သွားလိုသောဆန္ဒ၊',
-        'B. participle + kāma',
+        'B. participle + kāma။',
         'C. နာမ် + kāma',
         'D. နာမဝိသေသန + kāma',
       ],
@@ -12397,10 +12397,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'ဘယ်ပုံမမှန်တဲ့ပုံစံက အမှန်လဲ။',
       options: [
-        'A. bhuji + ya = bhujja',
+        'A. bhuji + ya = bhujja။',
         'B. bhuji + ya = bhojja (စားရန်)',
-        'C. bhuji + ya = bhavja',
-        'D. bhuji + ya = bhojaya',
+        'C. bhuji + ya = bhavja ။',
+        'ဃ။ ဘူဂျီ + ယာ = ဘိုဂျာယာ',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -12587,7 +12587,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'စာကြောင်း 11- "pūjanīyā" သည် မည်သည့်နောက်ဆက်ကို အသုံးပြုသနည်း။',
       options: [
-        'A. Aka',
+        'A. Aka ။',
         'B. Ana',
         'C. Anīya (ထိုက်တန်၊ ထိုက်တန်သည်)',
         'D. ပြေတီဦး',
@@ -12666,7 +12666,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'A. လက်ရှိပါဝင်မှု + kāma',
         'B. နှုတ်နာမ် (အဆုံးမရှိ၊ tuṃ) + kāma = သွားလိုသောဆန္ဒ',
         'C. နာမ် + kāma',
-        'D. past participle + kāma',
+        'D. past participle + kāma။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -12739,7 +12739,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'ဝါကျ 17- "Pāpakārino" နှင့် "puññakārino" — မည်သည့် နောက်ဆက်တွဲ။',
       options: [
-        'A. Aka',
+        'A. Aka ။',
         'B. Ana',
         'C. Ī (kara + ī = kārī/kārino — ပြုသူ)',
         'D. ပြေတီဦး',
@@ -12780,7 +12780,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'A. A (စိတ္တဇ)၊',
         'B. Ana (လုပ်ဆောင်ချက်): gamu+ana=gamana၊ ā+gamu+ana=āgamana',
         'ဂ.ပြေတီ',
-        'D. Aka',
+        'D. Aka ။',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -13195,7 +13195,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '"abbhuggato" = အဘိ + ဥဂတ်တို။ Sandhi အမျိုးအစားက ဘာလဲ။',
       options: [
-        'A. Vyañjana Sandhi',
+        'A. Vyañjana Sandhi။',
         'B. Niggerita Sandhi',
         'C. Sara Sandhi #9 (abhi → abbha)',
         'D. Sara Sandhi နံပါတ် ၁',
@@ -13236,7 +13236,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
         'A. ṅ (j သည် c၊j အုပ်စု → ñ… မဟုတ်ပါ၊ j သည် c၊j အုပ်စုမှ ဖြစ်သည်)၊',
         'B. ñ (j သည် c၊j အုပ်စု → ñ ဖြစ်သောကြောင့်)',
         'ဂ.ṇ',
-        'D. m',
+        'ဃ.ဍ',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -14221,9 +14221,9 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: '3rd person အနည်းကိန်းအတွက် passive အဆုံးသတ်သည် ?',
       options: [
-        '-ti',
-        '-te',
-        '-mi',
+        '-ti။',
+        '-te။',
+        '-မိုင်',
         '-si',
       ],
     ),
@@ -14373,10 +14373,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'တတိယလူအတွက် အချည်းနှီးအဆုံးသတ် PLURAL ကဘာလဲ။',
       options: [
-        '-ti',
-        '-te',
-        '-nte',
-        '-mi',
+        '-ti။',
+        '-te။',
+        '-nte။',
+        '-မိုင်',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
@@ -14487,10 +14487,10 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> _additionalQuizQuestio
     'my': LocalizedQuizQuestionText(
       questionText: 'အနှစ်ချုပ်- Lesson 26 တွင် passive voice ၏ tenses မည်မျှ သင်ကြားပေးသနည်း။',
       options: [
-        'A. 3 tenses',
+        'A. 3 tenses ။',
         'B. 4 tenses',
         'C. 6 tenses (ပစ္စုပ္ပန်၊ Ajjatanī၊ Hīyattanī၊ Pañcamī၊ Sattamī၊ အနာဂတ်)',
-        'D. 8 tenses',
+        'ဃ. 8 tenses',
       ],
     ),
     'hi': LocalizedQuizQuestionText(
