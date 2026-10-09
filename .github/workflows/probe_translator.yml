@@ -40,4 +40,7 @@ jobs:
           git add -f .ci/probe.txt
           git diff --cached --quiet && exit 0
           git commit -m "ci: publish translator probe"
+          # Other jobs (bot commits, diagnostics) may push while this probe
+          # runs; rebase onto the current remote head before pushing.
+          git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
