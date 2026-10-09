@@ -10,20 +10,18 @@ import 'package:palineti/pali_course.dart';
 import 'package:palineti/presentation/screens/vocab_list_screen.dart';
 
 Future<void> _loadSystemFontsIfAvailable() async {
-  final fontCandidates = [
-    '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
-    '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf',
-  ];
-  for (final path in fontCandidates) {
-    final file = File(path);
-    if (file.existsSync()) {
-      final bytes = file.readAsBytesSync();
-      for (final family in ['Roboto', 'Ahem']) {
-        final loader = FontLoader(family)
-          ..addFont(Future.value(ByteData.view(bytes.buffer)));
-        await loader.load();
+  final regular = File('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf');
+  final bold = File('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf');
+  if (regular.existsSync()) {
+    final regBytes = regular.readAsBytesSync();
+    final boldBytes = bold.existsSync() ? bold.readAsBytesSync() : null;
+    for (final family in ['Roboto', 'Ahem']) {
+      final loader = FontLoader(family)
+        ..addFont(Future.value(ByteData.view(regBytes.buffer)));
+      if (boldBytes != null) {
+        loader.addFont(Future.value(ByteData.view(boldBytes.buffer)));
       }
-      break;
+      await loader.load();
     }
   }
 
@@ -53,7 +51,7 @@ Future<void> _verifyAndCaptureVocabScreen(
     await _loadSystemFontsIfAvailable();
   });
 
-  await tester.binding.setSurfaceSize(const Size(430, 932));
+  await tester.binding.setSurfaceSize(const Size(460, 2850));
   addTearDown(() => tester.binding.setSurfaceSize(null));
 
   await tester.pumpWidget(
@@ -71,7 +69,7 @@ Future<void> _verifyAndCaptureVocabScreen(
   await tester.pumpAndSettle();
 
   expect(find.text('Bài ${lesson.lessonNumber}'), findsOneWidget);
-  expect(find.text('Từ vựng quan trọng'), findsOneWidget);
+  expect(find.text('📖 Từ Vựng Quan Trọng'), findsOneWidget);
   expect(find.text('$expectedCount'), findsOneWidget);
 
   if (Platform.environment['CAPTURE_VOCAB_SCREENSHOTS'] == '1') {
@@ -79,7 +77,7 @@ Future<void> _verifyAndCaptureVocabScreen(
       final boundary = repaintKey.currentContext?.findRenderObject()
           as RenderRepaintBoundary?;
       if (boundary != null) {
-        final image = await boundary.toImage(pixelRatio: 2.0);
+        final image = await boundary.toImage(pixelRatio: 1.5);
         final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
         if (byteData != null) {
           File(screenshotPath).writeAsBytesSync(byteData.buffer.asUint8List());

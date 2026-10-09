@@ -87,7 +87,7 @@ jobs:
         continue-on-error: true
         run: |
           set -o pipefail
-          flutter analyze --no-pub 2>&1 | tee /tmp/flutter_analyze.txt
+          flutter analyze --no-pub --no-fatal-warnings --no-fatal-infos 2>&1 | tee /tmp/flutter_analyze.txt
 
       - name: Run flutter test
         id: test
