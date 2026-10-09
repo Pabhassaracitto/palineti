@@ -1,4 +1,4 @@
-# Giao việc: cải thiện `root_of()` — tách đuôi hình thái Pāli
+# Giao việc: cải thiện `root_of()` — phần còn lại (gerundive & quá khứ phân từ)
 
 > Prompt này để giao cho một agent khác. Viết để đứng độc lập — không cần đọc
 > lịch sử hội thoại. Dán toàn bộ nội dung từ mục **Yêu cầu** trở xuống.
@@ -10,14 +10,25 @@
 Repo: `Pabhassaracitto/palineti`, branch `arena/d31ad54d-palineti`.
 Làm việc trên branch đó; commit và push lên chính branch đó.
 
-**Mục tiêu:** công cụ `tools/audit_vocab_coverage.py` kiểm tra "mọi từ Pāḷi
-mà bài tập bắt dịch phải truy ngược được về từ vựng đã học". Nó dùng hàm
-`root_of()` để đưa từ biến cách về gốc trước khi tra cứu. `root_of()` hiện
-chưa tách được nhiều đuôi hình thái, nên khoảng một nửa trong 221 cặp còn
-lại là **báo động giả** — dạng biến cách của từ đã dạy.
+**Bối cảnh (đã làm xong ngày 2026-10-09, commit `80a3509`):** `root_of()`
+đã được thêm đuôi mệnh lệnh cách (`-āhi/-hi/-dhi/-ātha/-etha/-antu`), aorist
+ngôi 1 không tăng âm (`-iṃ`), fallback tách tăng âm (`adāsiṃ → dāsiṃ`) và
+tách enclitic (`soapī = so+api`). Kết quả: untraced **220 → 203**,
+never-listed **179 → 162**.
 
-Cải thiện `root_of()` (và/hoặc danh sách `ENDINGS`) để các dạng sau truy
-vết được, **không làm giảm** khả năng bắt lỗi thật.
+**Phần còn lại của việc này:** hai nhóm hình thái cần **bảng động từ bất
+quy tắc** mới tách đúng, không thêm đuôi chung chung được vì gốc biến đổi:
+
+- **Gerundive `-tabba`:** `kātabbaṃ` (gốc `kar` → `kā`), `daṭṭhabbaṃ`
+  (gốc `dis`/`dakkh` → `daṭṭh`), `nahātabbaṃ` (`nahā`), `pātabbaṃ` (`pā`),
+  `bhajitabbā`, `saṅgaṇhitabbā`, `bujjhitabbāni` (`bhuj` → `bujjh`).
+- **Quá khứ phân từ `-ta`:** `khittaṃ` (`khip` → `khitta`), `likhitāni`
+  (`likh`), `pūjitā`, `vippamuttassa` (`vippamucc`), `bujjhitāni`, `pacitā`,
+  `pesitā`, `vanditā`.
+
+**Mục tiêu:** thêm bảng ánh xạ `dạng-bất-quy-tắc → gốc-đã-dạy` (chỉ những
+gốc có trong từ vựng đã đăng ký), để các dạng trên truy vết được mà
+**không làm giảm** khả năng bắt lỗi thật. Đích: untraced ≤ 185 (hiện 203).
 
 ### Các đuôi cần xử lý (đo từ bài 8/14/15)
 
@@ -43,16 +54,16 @@ vết được, **không làm giảm** khả năng bắt lỗi thật.
    python3 tools/audit_vocab_coverage.py --json > /tmp/sau.json
    ```
    So sánh `untraced` và `neverListed` toàn khoá. Đích: `untraced` giảm từ
-   221 xuống ≤ 170 mà **không** xuất hiện cặp mới thuộc dạng "từ chưa từng
+   203 xuống ≤ 185 mà **không** xuất hiện cặp mới thuộc dạng "từ chưa từng
    dạy nay được coi là đã dạy" (kiểm tra bằng cách nhìn diff danh sách).
 5. Cập nhật chốt CI trong `.github/workflows/content_audit.yml`:
-   `--max-untraced <số mới>` (lấy số đo được, không làm tròn đẹp).
+   `--max-untraced <số mới>` (hiện là 203) và `--max-neverlisted` (hiện 162).
 
 ### Kiểm tra trước khi giao nộp
 
 ```bash
 python3 tools/_extract_corpus.py
-python3 tools/audit_vocab_coverage.py --max-untraced <số mới> --max-neverlisted 179
+python3 tools/audit_vocab_coverage.py --max-untraced <số mới> --max-neverlisted 162
 python3 tools/generate_locale_sidecars.py     # vẫn PASS
 ```
 
