@@ -90,4 +90,4 @@ warning • The declaration '_allAnswered' isn't referenced. Try removing the de
    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement • lib/presentation/widgets/vocab_card_widget.dart:119:35 • deprecated_member_use
    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement • lib/presentation/widgets/vocab_card_widget.dart:121:54 • deprecated_member_use
 
-89 issues found. (ran in 6.6s)
+89 issues found. (ran in 9.3s)
