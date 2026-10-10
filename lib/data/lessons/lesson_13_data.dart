@@ -28,6 +28,42 @@ final kLesson13Vocab = <PaliVocabModel>[
       'di-saa', 'Uttarāya disāya vasāma.', 'Chúng tôi sống ở phương Bắc.'),
   _v(2, 'nāma', 'neut_a', 'tên', 'name', 'naa-ma', 'Kiṃ tassa nāmaṃ?',
       'Tên của anh ta là gì?'),
+  // ─── 14 tính từ chỉ định (bảng E — chia như đại từ "ya") ─────
+  _v(3, 'añña', 'adj_a', 'cái khác, vật khác', 'other, different', 'añ-ña',
+      'Añño puriso gacchati.', 'Một người khác đang đi.'),
+  _v(4, 'aññatara', 'adj_a', 'cái nào đó, cái nọ', 'a certain one, one of',
+      'añ-ña-ta-ra', 'Aññataro puriso gacchati.', 'Một người nọ đang đi.'),
+  _v(5, 'apara', 'adj_a', 'khác, phía Tây, tiếp theo',
+      'other, western, subsequent', 'a-pa-ra', 'Aparo puriso gacchati.',
+      'Người khác đang đi.'),
+  _v(6, 'dakkhiṇa', 'adj_a', 'phía Nam', 'southern', 'dak-khi-ṇa',
+      'Dakkhiṇāya disāya vasāma.', 'Chúng tôi sống ở phương Nam.'),
+  _v(7, 'eka', 'adj_a', 'một, chắc, một vài', 'one, a certain, some', 'e-ka',
+      'Eko puriso gacchati.', 'Một người đang đi.'),
+  _v(8, 'itara', 'adj_a', 'khác, còn lại', 'other, the remaining', 'i-ta-ra',
+      'Itaro puriso gacchati.', 'Người còn lại đang đi.'),
+  _v(9, 'katara', 'adj_a', 'cái nào? (cho 2)', 'which? (of two)', 'ka-ta-ra',
+      'Kataro puriso gacchati?', 'Người nào (trong hai) đang đi?'),
+  _v(10, 'katama', 'adj_a', 'cái nào? (cho nhiều)', 'which? (of many)',
+      'ka-ta-ma', 'Katamo puriso gacchati?', 'Người nào đang đi?'),
+  _v(11, 'pacchima', 'adj_a', 'phía Tây, cuối cùng', 'western, last, latter',
+      'pac-chi-ma', 'Pacchimāya disāya vasāma.', 'Chúng tôi sống ở phương Tây.'),
+  _v(12, 'para', 'adj_a', 'khác, xa hơn', 'other, further, beyond', 'pa-ra',
+      'Paro puriso gacchati.', 'Người kia đang đi.'),
+  _v(13, 'pubba', 'adj_a', 'đầu tiên, phía Đông, sớm hơn',
+      'former, eastern, earlier', 'pub-ba', 'Pubbāya disāya vasāma.',
+      'Chúng tôi sống ở phương Đông.'),
+  _v(14, 'puratthima', 'adj_a', 'phía Đông', 'eastern', 'pu-rat-thi-ma',
+      'Puratthimāya disāya vasāma.', 'Chúng tôi sống ở phương Đông.'),
+  _v(15, 'sabba', 'adj_a', 'tất cả, mọi', 'all, every', 'sab-ba',
+      'Sabbe purisā gacchanti.', 'Tất cả mọi người đang đi.'),
+  _v(16, 'uttara', 'adj_a', 'cao hơn, phía Bắc',
+      'northern, higher, subsequent', 'ut-ta-ra', 'Uttarāya disāya vasāma.',
+      'Chúng tôi sống ở phương Bắc.'),
+  // ─── Danh từ trong nhóm "6 bất biến từ mới" ─────────────────
+  _v(17, 'payojana', 'neut_a', 'việc sử dụng, điều cần thiết, lợi ích',
+      'use, purpose, benefit', 'pa-yo-ja-na', 'Kena payojanena?',
+      'Vì mục đích gì?'),
 ];
 
 PaliVocabModel _v(int id, String root, String paradigmId, String wordVi,
@@ -179,7 +215,7 @@ E. 14 TÍNH TỪ CHỈ ĐỊNH (chia như "ya")
 │ añña         │ cái khác, vật khác          │
 │ aññatara     │ cái nào đó, cái nọ          │
 │ apara        │ khác, phía Tây, tiếp theo   │
-│ dhakkhiṇa    │ phía Nam                    │
+│ dakkhiṇa    │ phía Nam                    │
 │ eka          │ một, chắc, một vài          │
 │ itara        │ khác, còn lại               │
 │ katara       │ cái nào? (cho 2)            │
@@ -239,7 +275,7 @@ E. 14 TÍNH TỪ CHỈ ĐỊNH (chia như "ya")
         FabVocabItem(wordEn: 'añña', pronunciation: 'añ-ña', wordVi: 'cái khác, vật khác', partOfSpeech: 'tinh_tu'),
         FabVocabItem(wordEn: 'aññatara', pronunciation: 'añ-ña-ta-ra', wordVi: 'cái nào đó, cái nọ', partOfSpeech: 'tinh_tu'),
         FabVocabItem(wordEn: 'apara', pronunciation: 'a-pa-ra', wordVi: 'khác, phía Tây, tiếp theo', partOfSpeech: 'tinh_tu'),
-        FabVocabItem(wordEn: 'dhakkhiṇa', pronunciation: 'dhak-khi-ṇa', wordVi: 'phía Nam', partOfSpeech: 'tinh_tu'),
+        FabVocabItem(wordEn: 'dakkhiṇa', pronunciation: 'dhak-khi-ṇa', wordVi: 'phía Nam', partOfSpeech: 'tinh_tu'),
         FabVocabItem(wordEn: 'eka', pronunciation: 'e-ka', wordVi: 'một, chắc, một vài', partOfSpeech: 'tinh_tu'),
         FabVocabItem(wordEn: 'itara', pronunciation: 'i-ta-ra', wordVi: 'khác, còn lại', partOfSpeech: 'tinh_tu'),
         FabVocabItem(wordEn: 'katara', pronunciation: 'ka-ta-ra', wordVi: 'cái nào? (cho 2)', partOfSpeech: 'tinh_tu'),
@@ -388,8 +424,8 @@ LessonPhase _buildDay1Phase2() => LessonPhase(
         MixedSegment(text: 'uttara'),
         MixedSegment(text: 'cao hơn, phía Bắc', isVietnamese: true, answer: 'uttara'),
         MixedSegment(text: '   │   '),
-        MixedSegment(text: 'dhakkhiṇa'),
-        MixedSegment(text: 'phía Nam', isVietnamese: true, answer: 'dhakkhiṇa'),
+        MixedSegment(text: 'dakkhiṇa'),
+        MixedSegment(text: 'phía Nam', isVietnamese: true, answer: 'dakkhiṇa'),
         MixedSegment(text: '   │   '),
         MixedSegment(text: 'puratthima'),
         MixedSegment(text: 'phía Đông', isVietnamese: true, answer: 'puratthima'),

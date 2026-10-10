@@ -59,3 +59,8 @@ macos/
 # Audit artefacts (regenerate with tools/_extract_corpus.py / audit_vocab_coverage.py)
 /tools/corpus.json
 /tools/vocab_audit.json
+
+# Partial translation cache written by tools/generate_locale_sidecars.py when
+# only a subset of locales is translated.  Deleted on a full run, but a failed
+# run leaves it behind, so keep it out of git.
+/.locale_translation_cache.json
