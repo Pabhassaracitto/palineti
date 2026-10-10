@@ -186,6 +186,23 @@ final kLesson15Vocab = <PaliVocabModel>[
   _v(77, 'ñātī / ñātaka', 'n_m', 'bà con, thân quyến', 'ñātī', 'ñā-tī', '', ''),
   _v(78, 'sukhāpeti', 'verb_caus', 'làm hạnh phúc, an lạc', 'sukhāpeti',
       'su-khā-pe-ti', '', ''),
+
+  // ─── Bổ sung P1: từ bài tập 15 đã in sẵn trong câu ví dụ của chính các mục
+  // từ vựng trên — đăng ký lại nội dung đã có ───
+  // purisa: câu ví dụ của các mục 1 (ayaṃ), 15 (asu), 52 (dhanavantu), 54
+  // (bandhumantu) — 'Ayaṃ puriso gacchati.' = 'Người đàn ông này đi.';
+  // bài tập câu 5 'Ko nāma ayaṃ puriso?' (bài 1 dạy đồng nghĩa 'nara').
+  _v(79, 'purisa', 'n_m', 'người đàn ông, người nam', 'man, male person',
+      'pu-ri-sa', 'Ayaṃ puriso gacchati.', 'Người đàn ông này đi.'),
+  // jāti: câu ví dụ của mục 30 (antima) 'Ayaṃ me antimā jāti.' = 'Đây là kiếp
+  // sống cuối cùng của tôi.' — chính là bài tập câu 10.
+  _v(80, 'jāti', 'n_f', 'kiếp sống, đời sống, sự sanh', 'birth, life, existence',
+      'jā-ti', 'Ayaṃ me antimā jāti.', 'Đây là kiếp sống cuối cùng của tôi.'),
+  // sukha: câu ví dụ của mục 56 (puññavantu) 'Puññavantā sukhena vasanti.'
+  // = 'Những người có phước sống an lạc.'; bài tập câu 17 dùng sukhena (SDC).
+  _v(81, 'sukha', 'n_n', 'an lạc, hạnh phúc, sự sung sướng',
+      'happiness, bliss; (adj.) happy, pleasant', 'su-kha',
+      'Puññavantā sukhena vasanti.', 'Những người có phước sống an lạc.'),
 ];
 
 PaliVocabModel _v(int id, String root, String paradigmId, String wordVi,
