@@ -207,7 +207,7 @@ const Map<String, Map<String, LocalizedQuizQuestionText>> quizQuestionEnL05_08 =
   'lesson07_q10': {
     'en': LocalizedQuizQuestionText(
       questionText:
-          '"Acariyā tesaṃ sissānaṃ pubbaṇhe ovādaṃ adaṃsu." means:',
+          '"Ācariyā tesaṃ sissānaṃ pubbaṇhe ovādaṃ adaṃsu." means:',
       options: [
         'The teachers gave the pupils advice in the morning.',
         'The teachers received advice from the pupils in the morning.',
