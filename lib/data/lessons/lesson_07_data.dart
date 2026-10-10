@@ -397,7 +397,7 @@ mayam'pi, tumhe'yeva.
   → Hôm qua vị sa-môn đã thuyết Pháp. (desesi = disa+s+i, có -s- vì gốc kết thúc a/e.)
 ③ Dārako pāto'va tassa pāṭhasālaṃ agamī.
   → Đứa trẻ sáng sớm đã đi đến trường học của anh ấy. (pāto'va = sandhi pāto+eva.)
-④ Acariyā tesaṃ sissānaṃ pubbaṇhe ovādaṃ adaṃsu.
+④ Ācariyā tesaṃ sissānaṃ pubbaṇhe ovādaṃ adaṃsu.
   → Các thầy giáo đã cho lời khuyên đến học trò của họ vào buổi sáng. (adaṃsu = dā+ṃsu.)
 ⑤ Ciraṃ te amhākaṃ gharaṃ na agamiṃsu.
   → Lâu rồi họ đã không đến nhà chúng tôi.
@@ -435,8 +435,8 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
         MixedSegment(text: "【Ex 3】 Dārako pāto'va tassa pāṭhasālaṃ agamī."),
         MixedSegment(text: 'Đứa trẻ sáng sớm đã đi đến trường học của anh ấy.', isVietnamese: true, answer: "Dārako pāto'va tassa pāṭhasālaṃ agamī."),
         MixedSegment(text: '   ───   '),
-        MixedSegment(text: '【Ex 4】 Acariyā tesaṃ sissānaṃ pubbaṇhe ovādaṃ adaṃsu.'),
-        MixedSegment(text: 'Các thầy giáo đã cho lời khuyên đến học trò của họ vào buổi sáng.', isVietnamese: true, answer: 'Acariyā tesaṃ sissānaṃ pubbaṇhe ovādaṃ adaṃsu.'),
+        MixedSegment(text: '【Ex 4】 Ācariyā tesaṃ sissānaṃ pubbaṇhe ovādaṃ adaṃsu.'),
+        MixedSegment(text: 'Các thầy giáo đã cho lời khuyên đến học trò của họ vào buổi sáng.', isVietnamese: true, answer: 'Ācariyā tesaṃ sissānaṃ pubbaṇhe ovādaṃ adaṃsu.'),
         MixedSegment(text: '   ───   '),
         MixedSegment(text: '【Ex 5】 Ciraṃ te amhākaṃ gharaṃ na agamiṃsu.'),
         MixedSegment(text: 'Lâu rồi họ đã không đến nhà chúng tôi.', isVietnamese: true, answer: 'Ciraṃ te amhākaṃ gharaṃ na agamiṃsu.'),
@@ -444,8 +444,8 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
         MixedSegment(text: '【Ex 6】 Dārikā tāsaṃ janakassa purato aṭṭhaṃsu.'),
         MixedSegment(text: 'Các cô gái đã đứng trước người cha của họ.', isVietnamese: true, answer: 'Dārikā tāsaṃ janakassa purato aṭṭhaṃsu.'),
         MixedSegment(text: '   ───   '),
-        MixedSegment(text: '【Ex 7】 Tvaṃ tassā hatthe mayhaṃ pottakaṃ passo.'),
-        MixedSegment(text: 'Bạn hãy thấy cuốn sách nhỏ của tôi trong tay cô ấy.', isVietnamese: true, answer: 'Tvaṃ tassā hatthe mayhaṃ pottakaṃ passo.'),
+        MixedSegment(text: '【Ex 7】 Tvaṃ tassā hatthe mayhaṃ potthakaṃ passo.'),
+        MixedSegment(text: 'Bạn hãy thấy cuốn sách nhỏ của tôi trong tay cô ấy.', isVietnamese: true, answer: 'Tvaṃ tassā hatthe mayhaṃ potthakaṃ passo.'),
         MixedSegment(text: '   ───   '),
         MixedSegment(text: "【Ex 8】 Tvaṃ gaṅgāyaṃ nahāyituṃ pāto'va agamo."),
         MixedSegment(text: 'Bạn đã đi tắm ở sông Hằng vào sáng sớm.', isVietnamese: true, answer: "Tvaṃ gaṅgāyaṃ nahāyituṃ pāto'va agamo."),
@@ -486,8 +486,8 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
         MixedSegment(text: '【Ex 20】 Ahaṃ pubbaṇhe tesaṃ ārāmamhi aṭṭhāsiṃ.'),
         MixedSegment(text: 'Tôi đã đứng trong vườn của họ vào buổi sáng.', isVietnamese: true, answer: 'Ahaṃ pubbaṇhe tesaṃ ārāmamhi aṭṭhāsiṃ.'),
         MixedSegment(text: '   ───   '),
-        MixedSegment(text: '【Ex 21】 Ahaṃ tassa mittāya lekhanaṃ likhituṃ salāyaṃ pīṭhe nisīdiṃ.'),
-        MixedSegment(text: 'Tôi đã ngồi trên ghế trong phòng để viết thư cho bạn của anh ấy.', isVietnamese: true, answer: 'Ahaṃ tassa mittāya lekhanaṃ likhituṃ salāyaṃ pīṭhe nisīdiṃ.'),
+        MixedSegment(text: '【Ex 21】 Ahaṃ tassa mittāya lekhanaṃ likhituṃ sālāyaṃ pīṭhe nisīdiṃ.'),
+        MixedSegment(text: 'Tôi đã ngồi trên ghế trong phòng để viết thư cho bạn của anh ấy.', isVietnamese: true, answer: 'Ahaṃ tassa mittāya lekhanaṃ likhituṃ sālāyaṃ pīṭhe nisīdiṃ.'),
         MixedSegment(text: '   ───   '),
         MixedSegment(text: "【Ex 22】 Mayaṃ pāto'va gaṅgāyaṃ nahāyimhā."),
         MixedSegment(text: 'Chúng tôi đã tắm ở sông Hằng vào sáng sớm.', isVietnamese: true, answer: "Mayaṃ pāto'va gaṅgāyaṃ nahāyimhā."),
@@ -522,8 +522,8 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
         MixedSegment(text: '【Ex 32】 So eva tassa janakassa pāde dhovī.'),
         MixedSegment(text: 'Chính anh ấy đã rửa chân cho cha của anh ấy.', isVietnamese: true, answer: 'So eva tassa janakassa pāde dhovī.'),
         MixedSegment(text: '   ───   '),
-        MixedSegment(text: '【Ex 33】 Ciraṃ mayhaṃ mitto tassa āpaṇasmā bhaṇdāni na kiṇi.'),
-        MixedSegment(text: 'Bạn của tôi đã lâu rồi không mua đồ từ chợ của anh ấy.', isVietnamese: true, answer: 'Ciraṃ mayhaṃ mitto tassa āpaṇasmā bhaṇdāni na kiṇi.'),
+        MixedSegment(text: '【Ex 33】 Ciraṃ mayhaṃ mitto tassa āpaṇasmā bhaṇḍāni na kiṇi.'),
+        MixedSegment(text: 'Bạn của tôi đã lâu rồi không mua đồ từ chợ của anh ấy.', isVietnamese: true, answer: 'Ciraṃ mayhaṃ mitto tassa āpaṇasmā bhaṇḍāni na kiṇi.'),
         MixedSegment(text: '   ───   '),
         MixedSegment(text: '【Ex 34】 Vejjā aparaṇhe gilānasālaṃ na āgamiṃsu.'),
         MixedSegment(text: 'Các bác sĩ đã không đến phòng bệnh vào buổi chiều.', isVietnamese: true, answer: 'Vejjā aparaṇhe gilānasālaṃ na āgamiṃsu.'),
@@ -569,7 +569,7 @@ LessonPhase _buildDay2Phase3() => LessonPhase(
         ),
         QuizQuestion(
           id: 'lesson07_q10',
-          questionText: '"Acariyā tesaṃ sissānaṃ pubbaṇhe ovādaṃ adaṃsu." có nghĩa là:',
+          questionText: '"Ācariyā tesaṃ sissānaṃ pubbaṇhe ovādaṃ adaṃsu." có nghĩa là:',
           options: [
             'Các thầy giáo cho các học trò lời khuyên vào buổi sáng.',
             'Các thầy giáo nhận lời khuyên từ học trò vào buổi sáng.',

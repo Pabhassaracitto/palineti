@@ -55,3 +55,7 @@ gitignore
 linux/
 macos/
 /.grapuco/config.json
+
+# Audit artefacts (regenerate with tools/_extract_corpus.py / audit_vocab_coverage.py)
+/tools/corpus.json
+/tools/vocab_audit.json

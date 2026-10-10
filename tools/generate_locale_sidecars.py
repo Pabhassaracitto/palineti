@@ -28,6 +28,12 @@ from typing import Iterable
 ROOT = Path(__file__).resolve().parents[1]
 LOC = ROOT / "lib/data/localization"
 LOCALES = ("si", "zh", "my", "hi")
+
+# Filled in by main(); see --strict / --max-untranslated.
+QUALITY_STRICT = False
+QUALITY_MAX_UNTRANSLATED: float | None = None
+QUALITY_MAX_PALI_LOST: float | None = None
+QUALITY_VERBOSE = False
 GOOGLE_LOCALES = {"si": "si", "zh": "zh-CN", "my": "my", "hi": "hi"}
 
 # Literal Pāḷi in an explanation is terminology, not prose to be translated.
@@ -319,12 +325,21 @@ def protect_pali(source: str) -> tuple[str, dict[str, str]]:
 
 
 def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[str, str]:
-    # Google normalizes pseudo-word placeholders in long grammar explanations
-    # (and can even reorder repeated placeholders), so feed source terms
-    # directly.  Canonical Pāḷi *keys* are copied separately, byte-for-byte,
-    # from the English sidecars and are never sent to the translator.
+    # Literal Pāḷi inside an explanation is terminology, not prose: it is
+    # swapped out for opaque markers before the request and restored
+    # afterwards.  Without this the translator transliterates the quotation
+    # into the target script ("Acariyā" -> "ආචාරියා" / "अकारिया"), which
+    # silently corrupts every cited sentence.
+    # Canonical Pāḷi *keys* are copied separately, byte-for-byte, from the
+    # English sidecars and are never sent to the translator.
     protected: dict[str, dict[str, str]] = {}
-    spans = [f'<span id="{item.token}">{item.source}</span>' for item in batch]
+    safe_by_token: dict[str, str] = {}
+    spans: list[str] = []
+    for item in batch:
+        safe, saved = protect_pali(item.source)
+        protected[item.token] = saved
+        safe_by_token[item.token] = safe
+        spans.append(f'<span id="{item.token}">{safe}</span>')
     query = "\n".join(spans)
     params = urllib.parse.urlencode({"client": "gtx", "sl": "en", "tl": GOOGLE_LOCALES[locale], "dt": "t", "q": query})
     url = "https://translate.googleapis.com/translate_a/single?" + params
@@ -342,8 +357,7 @@ def translate_batch(locale: str, batch: list[Item], attempt: int = 0) -> dict[st
             extra = set(found) - {item.token for item in batch}
             if extra:
                 raise ValueError(f"span recovery produced unexpected ids: {sorted(extra)[:3]}")
-            source_by_token = {item.token: item.source for item in batch}
-            found.update({token: source_by_token[token] for token in missing})
+            found.update({token: safe_by_token[token] for token in missing})
         for token, value in found.items():
             for marker, original in protected.get(token, {}).items():
                 if marker not in value:
@@ -657,6 +671,186 @@ def _quiz_overlay_check(generated_path: Path, items: list[Item]) -> None:
                 die(f"quiz/{question_id}/{locale}: expected questionText + four options")
 
 
+# ── translation-quality checks ─────────────────────────────────────────────
+
+ASCII_RE = re.compile(r"[A-Za-z]")
+
+
+def _nested_overlay_pairs(
+    generated_path: Path,
+    generated_variable: str,
+    source_path: Path,
+    source_variable: str,
+    fields: tuple[str, ...],
+    bucket: str,
+):
+    """Yield (bucket, key, field, english, locale, value) for id -> locale maps."""
+    generated = dict(top_entries(variable_body(generated_path.read_text(), generated_variable)))
+    source = dict(top_entries(variable_body(source_path.read_text(), source_variable)))
+    for key, source_locale_map in source.items():
+        source_en = dict(top_entries(source_locale_map)).get("en")
+        if source_en is None:
+            die(f"{generated_variable}/{key}: source lacks en")
+        targets = dict(top_entries(generated.get(key, "")))
+        for field in fields:
+            english = string_after(source_en, field)
+            if english is None:
+                continue
+            for locale in LOCALES:
+                entry = targets.get(locale)
+                if entry is None:
+                    continue
+                yield bucket, key, field, english, locale, string_after(entry, field)
+
+
+def _outer_learning_overlay_pairs(
+    generated_path: Path,
+    generated_variable: str,
+    source_path: Path,
+    source_variable: str,
+    fields: tuple[str, ...],
+    bucket: str,
+):
+    generated = dict(top_entries(variable_body(generated_path.read_text(), generated_variable)))
+    source_outer = dict(top_entries(variable_body(source_path.read_text(), source_variable)))
+    source = dict(top_entries(source_outer["en"]))
+    for key, source_value in source.items():
+        targets = dict(top_entries(generated.get(key, "")))
+        for field in fields:
+            english = string_after(source_value, field)
+            if english is None:
+                continue
+            for locale in LOCALES:
+                entry = targets.get(locale)
+                if entry is None:
+                    continue
+                yield bucket, key, field, english, locale, string_after(entry, field)
+
+
+def _outer_string_overlay_pairs(
+    generated_path: Path,
+    generated_variable: str,
+    source_path: Path,
+    source_variable: str,
+    bucket: str,
+):
+    generated = dict(top_entries(variable_body(generated_path.read_text(), generated_variable)))
+    source_outer = dict(top_entries(variable_body(source_path.read_text(), source_variable)))
+    source = dict(top_entries(source_outer["en"]))
+    for locale in LOCALES:
+        targets = dict(top_entries(generated.get(locale, "")))
+        for key, english in source.items():
+            if key in targets:
+                yield bucket, key, "value", english, locale, targets[key]
+
+
+def _quiz_overlay_pairs(bucket: str = "quiz"):
+    generated = dict(top_entries(variable_body(
+        (LOC / "learning_content_translations_locales.dart").read_text(),
+        "_additionalQuizQuestionTranslations")))
+    for path in sorted((LOC / "quiz_translations").glob("quiz_en_*.dart")):
+        text = path.read_text()
+        map_match = re.search(r"const\s+Map<[^=]+>\s+\w+\s*=\s*\{", text)
+        start = text.find("{", map_match.start())
+        for key, locale_map in top_entries(text[start + 1:scan_balanced(text, start) - 1]):
+            english = dict(top_entries(locale_map)).get("en")
+            if english is None:
+                continue
+            targets = dict(top_entries(generated.get(key, "")))
+            english_values = [string_after(english, "questionText")]
+            english_values.extend(strings_in_list(english, "options"))
+            for locale in LOCALES:
+                entry = targets.get(locale)
+                if entry is None:
+                    continue
+                values = [string_after(entry, "questionText")]
+                values.extend(strings_in_list(entry, "options"))
+                for index, (en, value) in enumerate(zip(english_values, values)):
+                    if en is None or value is None:
+                        continue
+                    field = "questionText" if index == 0 else f"option{index - 1}"
+                    yield bucket, key, field, en, locale, value
+
+
+def translation_quality_pairs():
+    main = LOC / "learning_content_translations.dart"
+    vocab = LOC / "learning_content_translations_vocab.dart"
+    content = LOC / "learning_content_translations_content.dart"
+    mind = LOC / "mind_game_translations.dart"
+    generated_main = LOC / "learning_content_translations_locales.dart"
+    generated_vocab = LOC / "learning_content_translations_vocab_locales.dart"
+    generated_content = LOC / "learning_content_translations_content_locales.dart"
+    generated_mind = LOC / "mind_game_translations_locales.dart"
+    fields = ("title", "description", "content")
+    for bucket, source_variable, generated_variable in (
+        ("meta", "lessonMetaTranslations", "_additionalLessonMetaTranslations"),
+        ("day", "lessonDayTranslations", "_additionalLessonDayTranslations"),
+        ("phase", "lessonPhaseTranslations", "_additionalLessonPhaseTranslations"),
+    ):
+        yield from _nested_overlay_pairs(
+            generated_main, generated_variable, main, source_variable, fields, bucket)
+    yield from _outer_learning_overlay_pairs(
+        generated_content, "_additionalPhaseContentTranslations",
+        content, "phaseContentTranslations", fields, "content")
+    for bucket, source_variable, generated_variable in (
+        ("word", "vocabWordTranslations", "_additionalVocabWordTranslations"),
+        ("example", "vocabExampleTranslations", "_additionalVocabExampleTranslations"),
+        ("pos", "vocabPosTranslations", "_additionalVocabPosTranslations"),
+    ):
+        yield from _outer_string_overlay_pairs(
+            generated_vocab, generated_variable, vocab, source_variable, bucket)
+    yield from _outer_string_overlay_pairs(
+        generated_mind, "_additionalMindGameSegmentTranslations",
+        mind, "mindGameSegmentTranslations", "mind")
+    yield from _quiz_overlay_pairs()
+
+
+def translation_quality_report(verbose: bool = False) -> dict[str, dict[str, int]]:
+    """Count strings that were never translated and strings whose Pāḷi was lost.
+
+    A string counts as *untranslated* when it is byte-identical to the English
+    source and the source actually contains Latin prose to translate (a string
+    that is pure Pāḷi or pure punctuation legitimately stays identical).
+
+    A string counts as *pali-lost* when a Pāḷi word quoted in the English
+    source does not survive verbatim in the target -- the translator has
+    transliterated or dropped it.
+    """
+    stats: dict[str, dict[str, int]] = {
+        locale: {"strings": 0, "untranslated": 0, "pali_lost": 0} for locale in LOCALES}
+    examples: dict[str, dict[str, list[str]]] = {
+        locale: {"untranslated": [], "pali_lost": []} for locale in LOCALES}
+    for bucket, key, field, english, locale, value in translation_quality_pairs():
+        if english is None or value is None:
+            continue
+        stats[locale]["strings"] += 1
+        en, target = english.strip(), value.strip()
+        if ASCII_RE.search(en) and en == target:
+            stats[locale]["untranslated"] += 1
+            if len(examples[locale]["untranslated"]) < 3:
+                examples[locale]["untranslated"].append(f"{bucket}/{key}/{field}: {en[:70]!r}")
+        missing = [term for term in PALI_WORD_RE.findall(en) if term not in target]
+        if missing and en != target:
+            stats[locale]["pali_lost"] += 1
+            if len(examples[locale]["pali_lost"]) < 3:
+                examples[locale]["pali_lost"].append(
+                    f"{bucket}/{key}/{field}: lost {missing[:3]} -> {target[:70]!r}")
+    print("Translation quality (per target locale):")
+    print(f"  {'loc':5}{'strings':>9}{'untranslated':>14}{'%':>7}{'pali lost':>12}{'%':>7}")
+    for locale in LOCALES:
+        s = stats[locale]
+        un = 100.0 * s["untranslated"] / s["strings"] if s["strings"] else 0.0
+        pl = 100.0 * s["pali_lost"] / s["strings"] if s["strings"] else 0.0
+        print(f"  {locale:5}{s['strings']:>9}{s['untranslated']:>14}{un:>6.1f}%"
+              f"{s['pali_lost']:>12}{pl:>6.1f}%")
+    if verbose:
+        for locale in LOCALES:
+            for kind, lines in examples[locale].items():
+                for line in lines:
+                    print(f"    [{locale}] {kind}: {line}")
+    return stats
+
+
 def validate(items: list[Item]) -> None:
     # Lesson 23 was added after the original handoff table was written, so the
     # canonical English sidecar correctly contains 26 metadata records.
@@ -715,13 +909,44 @@ def validate(items: list[Item]) -> None:
 
     print("Catalog, key-set, quiz-shape, and string-aware syntax validation passed.")
     print("Canonical English counts:", ", ".join(f"{k}={v}" for k, v in expected.items()))
+    print()
+    stats = translation_quality_report(verbose=QUALITY_VERBOSE)
+    if QUALITY_STRICT or QUALITY_MAX_UNTRANSLATED is not None:
+        offenders = []
+        for locale in LOCALES:
+            s = stats[locale]
+            for key, label, flag in (
+                ("untranslated", "untranslated", QUALITY_MAX_UNTRANSLATED),
+                ("pali_lost", "Pali-lost", QUALITY_MAX_PALI_LOST),
+            ):
+                ratio = 100.0 * s[key] / s["strings"] if s["strings"] else 0.0
+                if QUALITY_STRICT and s[key]:
+                    offenders.append(f"{locale}: {s[key]} {label}")
+                elif flag is not None and ratio > flag:
+                    offenders.append(f"{locale}: {ratio:.1f}% {label} > {flag:.1f}%")
+        if offenders:
+            die("translation quality: " + "; ".join(offenders))
+        print("Translation-quality gate passed.")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--translate", action="store_true", help="call Google Translate and write overlays")
     parser.add_argument("--locale", choices=LOCALES, action="append", help="only translate a locale (repeatable)")
+    parser.add_argument("--strict", action="store_true",
+                        help="fail validation if any target string is untranslated")
+    parser.add_argument("--max-untranslated", type=float, default=None, metavar="PCT",
+                        help="fail validation above this %% of untranslated strings per locale")
+    parser.add_argument("--max-pali-lost", type=float, default=None, metavar="PCT",
+                        help="fail validation above this %% of strings whose Pali terms were transliterated away")
+    parser.add_argument("--verbose-quality", action="store_true",
+                        help="print sample untranslated / Pali-lost strings")
     args = parser.parse_args()
+    global QUALITY_STRICT, QUALITY_MAX_UNTRANSLATED, QUALITY_MAX_PALI_LOST, QUALITY_VERBOSE
+    QUALITY_STRICT = args.strict
+    QUALITY_MAX_UNTRANSLATED = args.max_untranslated
+    QUALITY_MAX_PALI_LOST = args.max_pali_lost
+    QUALITY_VERBOSE = args.verbose_quality
     items = catalog()
     if not args.translate:
         validate(items)
