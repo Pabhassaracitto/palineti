@@ -173,6 +173,23 @@ final kLesson14Vocab = <PaliVocabModel>[
       'Taṇhāya vippamuttassa n’atthi soko.', 'Với người thoát ái, không có sầu.'),
   _v(64, 'carati', 'verb_pres', 'đi, hành trì', 'carati', 'ca-ra-ti',
       'Brahmacariyaṃ carati.', 'Anh ấy thực hành phạm hạnh.'),
+
+  // ─── Bổ sung P1: từ bài tập 14 đã in sẵn trong bảng giảng / FAB / câu ví dụ
+  // của chính các mục từ vựng trên — đăng ký lại nội dung đã có ───
+  // itthī: FAB phase1 ('pacantī / pacamānā itthī' = người nữ đang nấu;
+  // 'Sabbā itthiyo dhammaṃ sunantiyo nisīdiṃsu' = Tất cả những người nữ…),
+  // bài tập câu 9 dùng itthiyo (CC số nhiều).
+  _v(65, 'itthī', 'n_f', 'người nữ, phụ nữ', 'woman, female', 'it-thī',
+      'Sabbā itthiyo dhammaṃ sunantiyo nisīdiṃsu.',
+      'Tất cả những người nữ đang nghe Pháp đã ngồi xuống.'),
+  // idaṃ: câu ví dụ của mục 22 (rakkhita) 'Idaṃ nagaraṃ balavantena rakkhitaṃ'
+  // = 'Thành phố này…'; bài tập câu 21 'Idaṃ te kataṃ.' (bài 15 dạy idaṃ ở id 10).
+  _v(66, 'idaṃ', 'pron_dem', 'cái này, điều này', 'this', 'i-daṃ',
+      'Idaṃ te kataṃ.', 'Cái này đã được làm bởi bạn.'),
+  // sākhā: câu ví dụ của mục 25 (chinna) 'Sākhā tena chinnā.' = 'Cành cây đã bị
+  // hắn cắt.' — chính là bài tập câu 22.
+  _v(67, 'sākhā', 'n_f', 'cành cây', 'branch, twig', 'sā-khā',
+      'Sākhā tena chinnā.', 'Cành cây đã bị hắn cắt.'),
 ];
 
 /// Helper ngắn, tạo một PaliVocabModel với đủ tham số.
