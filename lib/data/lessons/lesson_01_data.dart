@@ -179,6 +179,17 @@ final kLesson01Vocab = <PaliVocabModel>[
     exampleVi: 'Đứa trẻ đảnh lễ Đức Phật.',
   ),
   PaliVocabModel(
+    id: 'pv_L01_vadati',
+    root: 'vada',
+    paradigmId: 'verb_pres',
+    wordVi: 'nói, thuyết',
+    wordEn: 'speaks, says',
+    lessonId: 'lesson_01',
+    pronunciation: 'VAH-dah-ti',
+    examplePali: 'Buddho vadati.',
+    exampleVi: 'Đức Phật nói.',
+  ),
+  PaliVocabModel(
     id: 'pv_L01_rakkhati',
     root: 'rakkha',
     paradigmId: 'verb_pres',

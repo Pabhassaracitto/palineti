@@ -82,6 +82,10 @@ final kLesson08Vocab = <PaliVocabModel>[
   _v(20, 'vanditvā', 'gerund', 'sau khi lễ bái', 'having honoured',
       'van-dit-vā', 'Buddhaṃ vanditvā nisīdati.',
       'Lễ bái Đức Phật xong rồi ngồi xuống.'),
+  // --- căn mẫu của cả bài (thiếu trong danh sách gốc) ---
+  _v(21, 'muni', 'masc_i', 'bậc ẩn sĩ, nhà tu hành, người trầm mặc',
+      'sage, ascetic, hermit', 'mu-ni', 'Muninā saddhiṃ samaṇo gacchati.',
+      'Vị sa-môn đang đi cùng với bậc ẩn sĩ.'),
 ];
 
 PaliVocabModel _v(int id, String root, String paradigmId, String wordVi,
@@ -504,8 +508,8 @@ LessonPhase _buildDay2Phase2() => LessonPhase(
         MixedSegment(text: '【Ex 25】 Pīṭhesu nisīditvā mayaṃ munissa ovādaṃ suṇimhā.'),
         MixedSegment(text: 'Chúng tôi đã nghe lời khuyên của vị ẩn sĩ sau khi ngồi trên các ghế.', isVietnamese: true, answer: 'Pīṭhesu nisīditvā mayaṃ munissa ovādaṃ suṇimhā.'),
         MixedSegment(text: '   ───   '),
-        MixedSegment(text: '【Ex 26】 Ārāmaṃ katvā narapati muṇino pūjesi.'),
-        MixedSegment(text: 'Đức vua đã cúng dường vị ẩn sĩ sau khi xây vườn.', isVietnamese: true, answer: 'Ārāmaṃ katvā narapati muṇino pūjesi.'),
+        MixedSegment(text: '【Ex 26】 Ārāmaṃ katvā narapati munino pūjesi.'),
+        MixedSegment(text: 'Đức vua đã cúng dường vị ẩn sĩ sau khi xây vườn.', isVietnamese: true, answer: 'Ārāmaṃ katvā narapati munino pūjesi.'),
         MixedSegment(text: '   ───   '),
         MixedSegment(text: '【Ex 27】 Mayhaṃ pātarāsaṃ atithinā saddhiṃ bhuñjitvā ahaṃ mayhaṃ ñātayo passituṃ agamiṃ.'),
         MixedSegment(text: 'Tôi đã đi gặp bà con của tôi sau khi ăn sáng với người khách.', isVietnamese: true, answer: 'Mayhaṃ pātarāsaṃ atithinā saddhiṃ bhuñjitvā ahaṃ mayhaṃ ñātayo passituṃ agamiṃ.'),

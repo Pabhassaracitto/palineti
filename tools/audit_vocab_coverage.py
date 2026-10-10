@@ -355,7 +355,14 @@ def analyse() -> list[dict]:
 
     report = []
     for row in per_lesson:
+        # A lesson's own vocabulary, teaching text and FAB sheet are all
+        # available to the learner before that lesson's exercises, so they
+        # must be folded in *before* checking, not after.  (They used to be
+        # OR-ed in at the end of the body, which made every word that a
+        # lesson teaches in its own FAB look like it was never taught.)
         cum_roots |= row["roots"]
+        cum_teaching |= row["teaching"]
+        cum_fab |= row["fab"]
         untraceable = {}
         only_fab = {}
         for tok, sources in sorted(row["exercise"].items()):
@@ -377,8 +384,6 @@ def analyse() -> list[dict]:
             "never_in_any_vocab_list": sorted(never_listed),
             "samples": {t: untraceable[t] for t in sorted(untraceable)[:8]},
         })
-        cum_teaching |= row["teaching"]
-        cum_fab |= row["fab"]
 
     return report
 
@@ -398,7 +403,41 @@ def main() -> None:
               f"{r['traced']:>7} {len(r['fab_only']):>8} "
               f"{len(r['untraceable']):>9} {len(r['never_in_any_vocab_list']):>12}")
     print(f"totals: untraced={tu} neverListed={tv}")
+    return tu, tv
+
+
+def _arg(name: str, cast=float):
+    flag = f"--{name}"
+    if flag in sys.argv:
+        try:
+            return cast(sys.argv[sys.argv.index(flag) + 1])
+        except (IndexError, ValueError):
+            die(f"{flag} needs a numeric value")
+    return None
+
+
+def die(msg: str) -> None:
+    print(f"error: {msg}", file=sys.stderr)
+    raise SystemExit(1)
 
 
 if __name__ == "__main__":
-    main()
+    if "--json" in sys.argv:
+        print(json.dumps({"per_lesson": analyse()}, ensure_ascii=False, indent=1))
+        raise SystemExit(0)
+
+    max_untraced = _arg("max-untraced", int)
+    max_never = _arg("max-neverlisted", int)
+    tu, tv = main()
+
+    # CI gate: every word an exercise asks the learner to translate should be
+    # traceable to vocabulary taught in that lesson or an earlier one.
+    failed = False
+    if max_untraced is not None and tu > max_untraced:
+        print(f"error: {tu} untraceable exercise words > {max_untraced}",
+              file=sys.stderr)
+        failed = True
+    if max_never is not None and tv > max_never:
+        print(f"error: {tv} words never listed > {max_never}", file=sys.stderr)
+        failed = True
+    raise SystemExit(1 if failed else 0)

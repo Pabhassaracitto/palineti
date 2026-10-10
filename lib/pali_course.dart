@@ -30,6 +30,7 @@ export 'data/lessons/lesson_24_data.dart';
 export 'data/lessons/lesson_25_data.dart';
 export 'data/lessons/lesson_26_data.dart';
 export 'data/models/lesson_model.dart';
+export 'data/lesson_vocab_index.dart';
 // ── Models ────────────────────────────────────────────────────
 export 'data/models/pali_vocab_model.dart';
 export 'data/morphology/irregular_forms.dart';

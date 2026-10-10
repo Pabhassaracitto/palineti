@@ -1,0 +1,102 @@
+name: Translate learning content
+
+# Regenerates the si / zh / my / hi sidecars and enforces the two quality
+# gates that would otherwise let a bad translation run through unnoticed:
+#
+#   --max-untranslated  strings still identical to the English source
+#   --max-pali-lost     strings whose Pāḷi terms came back transliterated
+#                       into the target script (e.g. 'atta' -> the Devanagari
+#                       word for 'flour').  This was the single biggest defect
+#                       in the current Hindi content: 12.3% of strings.
+#
+# Both numbers are measured by tools/generate_locale_sidecars.py.  Current
+# baseline (3069 strings per locale):
+#
+#   loc   untranslated    pali lost
+#   si         3.9%         10.5%
+#   zh         3.5%          5.2%
+#   my         5.1%          5.6%
+#   hi        25.7%         12.3%   <- Hindi needs a re-translation pass
+#
+# Set the gates below the baseline you want to hold.  Raising them to the
+# current measured value makes the gate useless; lower them as the content
+# improves.
+
+on:
+  workflow_dispatch:
+    inputs:
+      locales:
+        description: 'Locales to translate (hi / si / zh / my). Leave blank for all four.'
+        type: string
+        default: ''
+      max_untranslated:
+        description: 'Fail if any locale exceeds this %% of untranslated strings'
+        type: string
+        default: '2'
+      max_pali_lost:
+        description: 'Fail if any locale exceeds this %% of strings that lost their Pali terms'
+        type: string
+        default: '2'
+      report_only:
+        description: 'Only report; do not translate, write or commit'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    name: Translate + gate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Report current quality (before)
+        run: python3 tools/generate_locale_sidecars.py --verbose-quality
+
+      - name: Translate
+        if: ${{ !inputs.report_only }}
+        run: |
+          set -euo pipefail
+          args=()
+          # Accept "hi", "hi si" or "hi,si".
+          IFS=',; ' read -ra LOCS <<< "${{ inputs.locales }}"
+          for loc in "${LOCS[@]}"; do
+            if [ -n "$loc" ]; then args+=(--locale "$loc"); fi
+          done
+          echo "args: ${args[*]:-<all locales>}"
+          python3 tools/generate_locale_sidecars.py --translate "${args[@]}"
+
+      - name: Diff of regenerated sidecars
+        if: ${{ !inputs.report_only }}
+        run: git --no-pager diff --stat || true
+
+      - name: Quality gate
+        run: |
+          python3 tools/generate_locale_sidecars.py \
+            --verbose-quality \
+            --max-untranslated "${{ inputs.max_untranslated }}" \
+            --max-pali-lost "${{ inputs.max_pali_lost }}"
+
+      - name: Commit regenerated sidecars
+        if: ${{ !inputs.report_only }}
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain lib/data/localization)" ]; then
+            echo "No sidecar changes to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lib/data/localization
+          git commit -m "chore(l10n): regenerate content sidecars via translate_content workflow"
+          # actions/checkout leaves HEAD detached, so push an explicit ref.
+          git push origin "HEAD:${GITHUB_REF_NAME}"
