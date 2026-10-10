@@ -24,11 +24,11 @@ on:
       max_untraced:
         description: 'Fail above this many untraceable exercise words'
         type: string
-        default: '221'
+        default: '203'
       max_neverlisted:
         description: 'Fail above this many words that appear in no word list'
         type: string
-        default: '179'
+        default: '162'
 
 jobs:
   audit:
@@ -53,8 +53,8 @@ jobs:
       - name: Vocabulary coverage gate
         run: |
           python3 tools/audit_vocab_coverage.py \
-            --max-untraced "${{ inputs.max_untraced || '221' }}" \
-            --max-neverlisted "${{ inputs.max_neverlisted || '179' }}"
+            --max-untraced "${{ inputs.max_untraced || '203' }}" \
+            --max-neverlisted "${{ inputs.max_neverlisted || '162' }}"
 
       - name: ARB coverage (UI strings)
         run: python3 tools/audit_locales.py

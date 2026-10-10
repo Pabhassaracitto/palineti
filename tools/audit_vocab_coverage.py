@@ -74,6 +74,8 @@ ENDINGS = sorted({
     "iṃsu", "uṃ", "itvā", "tuṃ", "anto", "antā", "amāna", "anīya",
     "aṃ", "ā", "e", "o", "ena", "i", "ī", "u", "ū", "ṃ", "ni", "yo",
     "su", "hi", "bhi", "ti", "si", "tha", "mi", "ma", "nti", "a",
+    # Aorist 1sg without augment (passiṃ, vasiṃ, supiṃ).
+    "iṃ",
 }, key=len, reverse=True)
 
 
@@ -193,6 +195,10 @@ def pali_tokens(text: str) -> list[str]:
 
 VERB_PRESENT_ENDINGS = [
     "ati", "anti", "asi", "atha", "āmi", "āma", "atu", "antū", "eyya",
+    # Imperative (2sg -āhi/-hi/-dhi, 2pl -tha/-ātha/-etha, 3pl -antu) and
+    # aorist-ish stems; the audit only accepts a match when the remaining stem
+    # is a taught root, so extra endings cannot create false positives.
+    "āhi", "hi", "dhi", "ātha", "etha", "antu",
     "eyyāmi", "eyyāma", "eyyātha", "imha", "ittha", "iṃsu", "iṃsū",
     "issati", "issanti", "issasi", "issatha", "issāmi", "issāma",
     "issatha", "ituṃ", "itvā", "amāna", "anta", "antī", "amāna",
@@ -238,7 +244,13 @@ def variants(tok: str) -> set[str]:
     return out
 
 
-def root_of(tok: str, roots: set[str]) -> str | None:
+# Enclitic particles fuse onto the preceding word in running text
+# (so api -> soapī, pāto eva -> pāteva, ahaṃ api -> ahaṃapi).  Stripping
+# them is tried last, so a real vocabulary word can never be hidden by it.
+ENCLITICS = ("api", "pi", "eva", "va", "nu", "ca")
+
+
+def root_of(tok: str, roots: set[str], _depth: int = 0) -> str | None:
     """Which taught root does this surface form belong to (best effort)?"""
     if not roots:
         return None
@@ -280,6 +292,21 @@ def root_of(tok: str, roots: set[str]) -> str | None:
     for r in sorted(roots, key=len, reverse=True):
         if len(r) >= 4 and tok.startswith(r) and len(tok) - len(r) <= 5:
             return r
+    if _depth == 0:
+        # The aorist augment is a bare leading "a" (adāsiṃ -> dāsiṃ); the
+        # prefix list already contains "a" but only tries bases of length >= 3,
+        # and it does not re-run ending stripping on the remainder.
+        if len(tok) > 3 and tok[0] == "a":
+            hit = root_of(tok[1:], roots, 1)
+            if hit:
+                return hit
+        # Trailing enclitics (soapī = so + api).  Only strip when what is left
+        # still looks Pāli and actually matches something taught.
+        for enc in ENCLITICS:
+            if tok.endswith(enc) and len(tok) - len(enc) >= 3:
+                hit = root_of(tok[: -len(enc)], roots, 1)
+                if hit:
+                    return hit
     return None
 
 
@@ -390,10 +417,6 @@ def analyse() -> list[dict]:
 
 def main() -> None:
     report = analyse()
-    if "--json" in sys.argv:
-        out = {"per_lesson": report}
-        print(json.dumps(out, ensure_ascii=False, indent=1))
-        return
     print(f"{'L':>3} {'vocab':>6} {'exerW':>6} {'traced':>7} "
           f"{'fabOnly':>8} {'untraced':>9} {'neverListed':>12}")
     tu = tv = 0
