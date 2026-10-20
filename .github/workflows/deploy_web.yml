@@ -1,0 +1,100 @@
+name: Deploy Web (GitHub Pages)
+
+# Builds the Flutter web app and publishes it to GitHub Pages.
+#
+#   * push to `main`  -> build + deploy to https://<owner>.github.io/<repo>/
+#   * pull request    -> build only (catches compile errors before merge)
+#   * manual          -> build + deploy on demand
+#
+# One-time setup (already done by the automation that created this file, but
+# kept here for forks): Settings > Pages > Build and deployment > Source must
+# be "GitHub Actions".
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# Only one Pages deployment at a time; a newer push cancels an older run.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    name: Build web bundle
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Enable web
+        run: flutter config --enable-web
+
+      - name: Show toolchain versions
+        run: |
+          flutter --version
+          dart --version
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Build web (release)
+        env:
+          # Project Pages live under /<repo>/, so the base href must match.
+          # When the app is later served from a custom domain root, replace this
+          # with `--base-href "/"`.
+          BASE_HREF: /${{ github.event.repository.name }}/
+        run: |
+          flutter build web \
+            --release \
+            --base-href "$BASE_HREF" \
+            --no-web-resources-cdn
+
+      - name: Prepare Pages payload
+        run: |
+          # Serve the app for unknown paths (safe fallback for direct links).
+          cp build/web/index.html build/web/404.html
+          # Keep GitHub's Jekyll pipeline out of the way.
+          touch build/web/.nojekyll
+          ls -lh build/web
+          du -sh build/web
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          # Enables Pages (source: GitHub Actions) on the first run.
+          enablement: true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
