@@ -1,11 +1,11 @@
 {
-    "name": "palineti",
-    "short_name": "palineti",
+    "name": "Palineti — Học Pāḷi",
+    "short_name": "Palineti",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#FFF8E7",
+    "theme_color": "#B8860B",
+    "description": "26 bài ngữ pháp Pāḷi, từ vựng, bài tập và giải thích song ngữ Việt/Anh.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
