@@ -104,13 +104,20 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          status=$(curl -s -o /dev/null -w "%{http_code}" \
+          body=$(mktemp)
+          status=$(curl -s -o "$body" -w "%{http_code}" \
             -H "Authorization: Bearer $GH_TOKEN" \
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/pages")
           echo "GET /repos/${{ github.repository }}/pages -> HTTP $status"
+          cat "$body"
           if [ "$status" = "404" ]; then
             echo "::error title=GitHub Pages chưa bật::Vào Settings > Pages > Build and deployment > Source = \"GitHub Actions\", rồi chạy lại workflow này."
+            exit 1
+          fi
+          build_type=$(jq -r '.build_type // empty' "$body")
+          if [ "$build_type" != "workflow" ]; then
+            echo "::error title=Sai nguồn deploy::Pages đang dùng build_type='$build_type'. Đổi Settings > Pages > Source thành \"GitHub Actions\"."
             exit 1
           fi
 
