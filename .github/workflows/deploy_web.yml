@@ -74,11 +74,16 @@ jobs:
           ls -lh build/web
           du -sh build/web
 
+      # Not needed for a PR build, and it only succeeds once Pages exists.
       - name: Configure Pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
         with:
-          # Enables Pages (source: GitHub Actions) on the first run.
+          # Tries to enable Pages (source: GitHub Actions) on the first run.
+          # Needs an admin-capable token; if it cannot, the deploy job below
+          # prints the one-click fix instead of failing the build.
           enablement: true
+        continue-on-error: true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -95,6 +100,20 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+      - name: Check Pages is enabled
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          status=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages")
+          echo "GET /repos/${{ github.repository }}/pages -> HTTP $status"
+          if [ "$status" = "404" ]; then
+            echo "::error title=GitHub Pages chưa bật::Vào Settings > Pages > Build and deployment > Source = \"GitHub Actions\", rồi chạy lại workflow này."
+            exit 1
+          fi
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
