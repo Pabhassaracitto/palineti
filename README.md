@@ -7,6 +7,24 @@ GitHub Copilot Chat Assistant — README viết bằng tiếng Việt.
 ## Tổng quan
 Palineti là một dự án Flutter (Dart) bắt đầu từ template mặc định. Mục tiêu của README này là cung cấp hướng dẫn nhanh để cài đặt, chạy, đóng gói, và thông tin CI (GitHub Actions) để bạn có thể build thoải mái trên workflow mà không lo bị timeout.
 
+## Bản web (GitHub Pages)
+🌐 **https://pabhassaracitto.github.io/palineti/**
+
+Bản web được build tự động từ nhánh `main` bằng workflow
+[`.github/workflows/deploy_web.yml`](.github/workflows/deploy_web.yml):
+
+- Push lên `main` → `flutter build web --release` rồi deploy lên GitHub Pages.
+- Pull request → chỉ build để bắt lỗi biên dịch (không deploy).
+- Chạy tay: **Actions → Deploy Web (GitHub Pages) → Run workflow**.
+
+Bật lần đầu (chỉ một lần): **Settings → Pages → Build and deployment →
+Source = “GitHub Actions”**.
+
+Base href được truyền tự động theo tên repo (`/palineti/`). Nếu sau này gắn
+custom domain ở gốc miền, đổi `BASE_HREF` trong workflow thành `/`.
+Build dùng `--no-web-resources-cdn` để bundle tự chứa (không phụ thuộc CDN
+gstatic khi chạy).
+
 ## Tính năng
 - Ứng dụng Flutter đa nền tảng (Android, iOS, Web, Windows, Linux, macOS).
 - Cấu trúc dự án đã chuẩn bị sẵn nhiều thư mục nền tảng.
